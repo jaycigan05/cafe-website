@@ -1,0 +1,34 @@
+/*Reset the margin, padding and box-size(border-size)*/
+/* The use of border-box*/
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root
+{
+	--color-bg: #FAF4EC;
+	--color-primary: #6F4E37;
+	--color-accent: #E0894A;
+	--color-text: #3E2C23;
+
+	--space-sm: 1rem;
+	--space-md: 1.5rem;
+
+	--radius: 12px;
+
+	body
+	{
+		background-color: var(--color-bg);
+		color: var(--color-text);
+		line-height: 1.6;
+	}
+
+	h1
+	{
+		color: var(--color-primary);
+		margin-bottom: var(--space-sm);
+	}
+}
