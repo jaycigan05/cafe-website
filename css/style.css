@@ -18,17 +18,17 @@
 	--space-md: 1.5rem;
 
 	--radius: 12px;
+}
 
-	body
-	{
-		background-color: var(--color-bg);
-		color: var(--color-text);
-		line-height: 1.6;
-	}
+body
+{
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	line-height: 1.6;
+}
 
-	h1
-	{
-		color: var(--color-primary);
-		margin-bottom: var(--space-sm);
-	}
+h1
+{
+	color: var(--color-primary);
+	margin-bottom: var(--space-sm);
 }
