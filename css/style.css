@@ -88,3 +88,58 @@ a:hover
 {
 	background-color: var(--color-accent);
 }
+
+/* HEADER and Navigate */
+.site-header
+{
+	background-color: var(--color-surface);
+	border-bottom: 1px solid var(--color-border);
+	padding: var(--space-sm) 0;
+}
+
+.site-header .container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo
+{
+	font-family: var(--font-heading);
+	font-size: 1.5rem;
+	color: var(--color-primary-dark);
+}
+
+.nav-links
+{
+	list-style: none;
+	display:flex;
+	gap: var(--space-md);
+}
+
+.nav-links a
+{
+	color: var(--color-text);
+	font-weight: 600;
+}
+
+.nav-links a:hover
+{
+	color: var(--color-accent);
+}
+
+/* Footer */
+.site-footer
+{
+	background-color: var(--color-primary-dark);
+	color: var(--color-bg);
+	text-align: center;
+	padding: var(--space-md) 0;
+	margin-top: var(--space-xl);
+}
+
+.site-footer a
+{
+	color:var(--color-bg);
+}
