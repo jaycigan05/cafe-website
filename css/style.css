@@ -146,6 +146,21 @@ a:hover
 	color: var(--color-accent);
 }
 
+/* cta btn: book now button */
+.nav-cta
+{
+	background-color: var(--color-accent);
+	color: var(--color-surface) !important;
+	padding: var(--space-xs) var(--space-sm);
+	border-radius: var(--radius);
+	font-weight: 700;
+}
+
+.nav-cta:hover
+{
+	background-color: var(--color-primary-dark);
+}
+
 /* Footer */
 .site-footer
 {
@@ -156,7 +171,44 @@ a:hover
 	margin-top: var(--space-xl);
 }
 
+.site-footer .container
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}
+
 .site-footer a
 {
 	color: var(--color-bg);
+}
+
+.footer-columns
+{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: var(--space-lg);
+}
+
+.footer-column h4
+{
+	font-family: var(--font-heading);
+	color: var(--color-bg);
+	margin-bottom: var(--space-xs);
+}
+
+.footer-column p,
+.footer-column a
+{
+	color: var(--color-border);
+	display: block;
+	margin-bottom: var(--space-xs);
+}
+
+.footer-bottom
+{
+	text-align: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	padding-top: var(--space-sm);
 }
