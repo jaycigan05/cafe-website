@@ -59,6 +59,7 @@ body
 h1, h2, h3
 {
 	font-family: var(--font-heading);
+	letter-spacing: 0.1em;
 	color: var(--color-primary-dark);
 	margin-bottom: var(--space-sm);
 	line-height: 1.2;
@@ -92,7 +93,7 @@ a:hover
 {
 	display: inline-block;
 	background-color: var(--color-primary);
-	color: var(--color-surface);
+	color: var(--color-surface) !important;
 	padding: var(--space-xs) var(--space-md);
 	border-radius: var(--radius);
 	text-decoration: none;
@@ -126,6 +127,7 @@ a:hover
 	font-family: var(--font-logo);
 	font-size: 1.5rem;
 	color: var(--color-primary-dark);
+	text-decoration: none;
 }
 
 .nav-links
@@ -146,6 +148,21 @@ a:hover
 	color: var(--color-accent);
 }
 
+/* cta btn: book now button */
+.nav-cta
+{
+	background-color: var(--color-accent);
+	color: var(--color-surface) !important;
+	padding: var(--space-xs) var(--space-sm);
+	border-radius: var(--radius);
+	font-weight: 700;
+}
+
+.nav-cta:hover
+{
+	background-color: var(--color-primary-dark);
+}
+
 /* Footer */
 .site-footer
 {
@@ -156,7 +173,70 @@ a:hover
 	margin-top: var(--space-xl);
 }
 
+.site-footer .container
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}
+
 .site-footer a
 {
 	color: var(--color-bg);
+}
+
+.footer-columns
+{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: var(--space-lg);
+}
+
+.footer-column h4
+{
+	font-family: var(--font-heading);
+	letter-spacing: 0.2em;
+	color: var(--color-bg);
+	margin-bottom: var(--space-xs);
+}
+
+.footer-column p,
+.footer-column a
+{
+	color: var(--color-border);
+	display: block;
+	margin-bottom: var(--space-xs);
+}
+
+.footer-bottom
+{
+	text-align: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	padding-top: var(--space-sm);
+}
+
+/* ===== RESPONSIVE: HEADER & FOOTER ===== */
+@media (max-width: 768px) {
+
+  /* Header: stack logo on top, nav below */
+  .site-header .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  /* Nav links: wrap onto multiple lines if needed */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  /* Footer columns: stack vertically instead of side by side */
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
