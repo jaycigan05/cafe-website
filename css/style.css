@@ -207,7 +207,7 @@ section
 	padding: var(--space-xl) 0;
 }
 
-.section-subtilte
+.section-subtitle
 {
 	text-align: center;
 	color: var(--color-text-muted);
@@ -218,12 +218,6 @@ section
 .dogs
 {
 	background-color: var(--color-bg);
-}
-
-.dogs .section-subtitle
-{
-	text-align: center;
-	margin-bottom: var(--space-lg);
 }
 
 .dogs h2
@@ -237,7 +231,6 @@ section
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: var(--space-md);
-	align-items: start;
 }
 
 .dog-card
@@ -267,7 +260,6 @@ section
 	object-position: center top;
 	border-radius: 0;
 	display: block;
-	margin-bottom: var(--space-sm);
 }
 
 .dog-mochi .dog-photo {object-position: center 20%;}
@@ -288,6 +280,7 @@ section
 .dog-info
 {
 	padding: var(--space-sm);
+	flex: 1;
 }
 
 .dog-info h3
@@ -295,7 +288,6 @@ section
 	/* margin-top: var(--space-sm);
 	margin-bottom: var(--space-xs); */
 	padding: var(--space-sm);
-	flex: 1;
 }
 
 /* Footer */
