@@ -191,6 +191,11 @@
   margin-top: var(--space-md);
 }
 
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
 /* ===== STEP 3: SUCCESS CARD ===== */
 .success-card {
   text-align: center;
@@ -213,6 +218,12 @@
 
 .success-card .btn {
   margin-top: var(--space-md);
+}
+
+.success-msg {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: var(--space-sm);
 }
 
 /* ===== LOGIN ERROR ===== */

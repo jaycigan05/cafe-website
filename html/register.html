@@ -74,12 +74,15 @@
 			</div>
 			<div class="form-group">
 			  <label for="phone">Phone Number</label>
-			  <input type="tel" id="phone" placeholder="e.g. 0123456789">
+			  <input type="tel" id="phone" placeholder="e.g. 601123456789">
 			  <span class="error-msg" id="err-phone"></span>
 			</div>
 			<div class="form-group">
 			  <label for="password">Password</label>
 			  <input type="password" id="password" placeholder="Min 8 characters">
+			  <small class="field-hint">
+  					Min 8 characters, must include uppercase, lowercase, number and symbol.
+			  </small>
 			  <span class="error-msg" id="err-password"></span>
 			</div>
 			<div class="form-group">
@@ -129,16 +132,19 @@
 			</div>
 		  </div>
 
-		  <!-- STEP 3A: signup success -->
-		  <div class="form-step" id="step-3-signup">
-			<div class="success-card">
-			  <div class="success-icon">🐾</div>
-			  <h2>Welcome to Pawfee Club!</h2>
-			  <p id="welcome-name"></p>
-			  <p id="welcome-phone"></p>
-			  <a href="index.html" class="btn" id="go-home-signup">Go to Homepage</a>
+		<!-- STEP 3A: signup success -->
+		<div class="form-step" id="step-3-signup">
+  			<div class="success-card">
+    			<div class="success-icon">🐾</div>
+    				<h2>Welcome to Pawfee Club!</h2>
+    				<p id="welcome-name"></p>
+    				<p id="welcome-phone"></p>
+    				<p class="success-msg">
+      					Registration successful! Please login to access your account.
+    				</p>
+    				<button class="btn" id="go-to-login">Login Now</button>
+  				</div>
 			</div>
-		  </div>
 
 		  <!-- STEP 3B: login success -->
 		  <div class="form-step" id="step-3-login">
