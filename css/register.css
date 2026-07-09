@@ -191,6 +191,11 @@
   margin-top: var(--space-md);
 }
 
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
 /* ===== STEP 3: SUCCESS CARD ===== */
 .success-card {
   text-align: center;
