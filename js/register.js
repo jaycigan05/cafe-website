@@ -1,6 +1,7 @@
 // ============================================================
 // PAWFEE CAFÉ - register.js
 // Handles: multi-step form, validation, login simulation
+// localStorage used to persist registered user across refreshes
 // ============================================================
 
 // ---- STEP 1: grab all elements we need ----
@@ -13,16 +14,24 @@ const stepEl = {
 };
 
 const progEl = {
-  p1: document.getElementById('prog-1'),
-  p2: document.getElementById('prog-2'),
-  p3: document.getElementById('prog-3'),
+  p1:    document.getElementById('prog-1'),
+  p2:    document.getElementById('prog-2'),
+  p3:    document.getElementById('prog-3'),
   line1: document.querySelectorAll('.progress-line')[0],
   line2: document.querySelectorAll('.progress-line')[1]
 };
 
-// ---- STEP 2: helper functions ----
+// ---- STEP 2: load saved user from localStorage if exists ----
+// this allows login to work even after page refresh
+let registeredUser = null;
+const savedUser = localStorage.getItem('pawfeeUser');
+if (savedUser) {
+  registeredUser = JSON.parse(savedUser);
+}
 
-// showStep: hides all steps, then shows only the one you want
+// ---- STEP 3: helper functions ----
+
+// showStep: hides all steps, shows only the target one
 function showStep(stepToShow) {
   Object.values(stepEl).forEach(function(step) {
     step.classList.remove('active');
@@ -30,9 +39,8 @@ function showStep(stepToShow) {
   stepToShow.classList.add('active');
 }
 
-// updateProgress: updates which dots are active or done
+// updateProgress: updates progress bar dots and lines
 function updateProgress(stepNumber) {
-  // reset all first
   [progEl.p1, progEl.p2, progEl.p3].forEach(function(dot) {
     dot.classList.remove('active', 'done');
   });
@@ -40,7 +48,6 @@ function updateProgress(stepNumber) {
     line.classList.remove('done');
   });
 
-  // apply correct state based on step number
   if (stepNumber === 1) {
     progEl.p1.classList.add('active');
   }
@@ -58,7 +65,7 @@ function updateProgress(stepNumber) {
   }
 }
 
-// showError: puts a message under a field and marks it red
+// showError: marks field red and shows message below it
 function showError(inputId, errorId, message) {
   const input = document.getElementById(inputId);
   const error = document.getElementById(errorId);
@@ -66,7 +73,7 @@ function showError(inputId, errorId, message) {
   error.textContent = message;
 }
 
-// clearError: removes the red border and error message
+// clearError: removes red border and error message
 function clearError(inputId, errorId) {
   const input = document.getElementById(inputId);
   const error = document.getElementById(errorId);
@@ -74,25 +81,55 @@ function clearError(inputId, errorId) {
   error.textContent = '';
 }
 
+// resetSignupForm: clears all signup fields and errors
+function resetSignupForm() {
+  document.getElementById('first-name').value = '';
+  document.getElementById('last-name').value  = '';
+  document.getElementById('email').value      = '';
+  document.getElementById('phone').value      = '';
+  document.getElementById('password').value   = '';
+  document.getElementById('age').value        = '';
+  document.getElementById('gender').value     = '';
+  document.getElementById('promo').checked    = false;
+
+  clearError('first-name', 'err-first-name');
+  clearError('last-name',  'err-last-name');
+  clearError('email',      'err-email');
+  clearError('phone',      'err-phone');
+  clearError('password',   'err-password');
+  clearError('age',        'err-age');
+  clearError('gender',     'err-gender');
+}
+
+// resetLoginForm: clears all login fields and errors
+function resetLoginForm() {
+  document.getElementById('login-email').value    = '';
+  document.getElementById('login-password').value = '';
+  document.getElementById('login-fail').style.display = 'none';
+
+  clearError('login-email',    'err-login-email');
+  clearError('login-password', 'err-login-password');
+}
+
 // redirectAfterLogin: sets localStorage flag then redirects
 function redirectAfterLogin() {
   localStorage.setItem('justLoggedIn', 'true');
   setTimeout(function() {
-    window.location.href = '../html/index.html';
-  }, 1500); // waits 1.5 seconds so user can read success message
+    window.location.href = 'index.html';
+  }, 1500);
 }
 
-// ---- STEP 3: signup validation ----
+// ---- STEP 4: signup validation ----
 function validateSignup() {
   let isValid = true;
 
-  const firstName  = document.getElementById('first-name').value.trim();
-  const lastName   = document.getElementById('last-name').value.trim();
-  const email      = document.getElementById('email').value.trim();
-  const phone      = document.getElementById('phone').value.trim();
-  const password   = document.getElementById('password').value;
-  const age        = document.getElementById('age').value;
-  const gender     = document.getElementById('gender').value;
+  const firstName = document.getElementById('first-name').value.trim();
+  const lastName  = document.getElementById('last-name').value.trim();
+  const email     = document.getElementById('email').value.trim();
+  const phone     = document.getElementById('phone').value.trim();
+  const password  = document.getElementById('password').value;
+  const age       = document.getElementById('age').value;
+  const gender    = document.getElementById('gender').value;
 
   // clear all errors first
   clearError('first-name', 'err-first-name');
@@ -103,23 +140,25 @@ function validateSignup() {
   clearError('age',        'err-age');
   clearError('gender',     'err-gender');
 
-  // validate each field
-if (firstName === '') {
-  showError('first-name', 'err-first-name', 'First name is required.');
-  isValid = false;
-} else if (!/^[a-zA-Z\s]+$/.test(firstName)) {
-  showError('first-name', 'err-first-name', 'First name must contain letters only.');
-  isValid = false;
-}
+  // first name
+  if (firstName === '') {
+    showError('first-name', 'err-first-name', 'First name is required.');
+    isValid = false;
+  } else if (!/^[a-zA-Z\s]+$/.test(firstName)) {
+    showError('first-name', 'err-first-name', 'First name must contain letters only.');
+    isValid = false;
+  }
 
+  // last name
   if (lastName === '') {
-  showError('last-name', 'err-last-name', 'Last name is required.');
-  isValid = false;
-} else if (!/^[a-zA-Z\s]+$/.test(lastName)) {
-  showError('last-name', 'err-last-name', 'Last name must contain letters only.');
-  isValid = false;
-}
+    showError('last-name', 'err-last-name', 'Last name is required.');
+    isValid = false;
+  } else if (!/^[a-zA-Z\s]+$/.test(lastName)) {
+    showError('last-name', 'err-last-name', 'Last name must contain letters only.');
+    isValid = false;
+  }
 
+  // email
   if (email === '') {
     showError('email', 'err-email', 'Email is required.');
     isValid = false;
@@ -128,39 +167,44 @@ if (firstName === '') {
     isValid = false;
   }
 
+  // phone
+  // phone
   if (phone === '') {
     showError('phone', 'err-phone', 'Phone number is required.');
     isValid = false;
-  } else if (phone.length < 10) {
-    showError('phone', 'err-phone', 'Please enter a valid phone number.');
+  } else if (!/^60\d{9,10}$/.test(phone)) {
+    showError('phone', 'err-phone', 'Please enter a valid Malaysian number e.g. 601123456789');
     isValid = false;
   }
 
+  // password
   if (password === '') {
-  showError('password', 'err-password', 'Password is required.');
-  isValid = false;
-} else if (password.length < 8) {
-  showError('password', 'err-password', 'Password must be at least 8 characters.');
-  isValid = false;
-} else if (!/[A-Z]/.test(password)) {
-  showError('password', 'err-password', 'Password must include at least one capital letter.');
-  isValid = false;
-} else if (!/[a-z]/.test(password)) {
-  showError('password', 'err-password', 'Password must include at least one small letter.');
-  isValid = false;
-} else if (!/[0-9]/.test(password)) {
-  showError('password', 'err-password', 'Password must include at least one number.');
-  isValid = false;
-} else if (!/[^a-zA-Z0-9]/.test(password)) {
-  showError('password', 'err-password', 'Password must include at least one symbol e.g. !@#$');
-  isValid = false;
-}
+    showError('password', 'err-password', 'Password is required.');
+    isValid = false;
+  } else if (password.length < 8) {
+    showError('password', 'err-password', 'Password must be at least 8 characters.');
+    isValid = false;
+  } else if (!/[A-Z]/.test(password)) {
+    showError('password', 'err-password', 'Password must include at least one capital letter.');
+    isValid = false;
+  } else if (!/[a-z]/.test(password)) {
+    showError('password', 'err-password', 'Password must include at least one small letter.');
+    isValid = false;
+  } else if (!/[0-9]/.test(password)) {
+    showError('password', 'err-password', 'Password must include at least one number.');
+    isValid = false;
+  } else if (!/[^a-zA-Z0-9]/.test(password)) {
+    showError('password', 'err-password', 'Password must include at least one symbol e.g. !@#$');
+    isValid = false;
+  }
 
+  // age
   if (age === '' || Number(age) < 18) {
     showError('age', 'err-age', 'You must be 18 or above to register.');
     isValid = false;
   }
 
+  // gender
   if (gender === '') {
     showError('gender', 'err-gender', 'Please select your gender.');
     isValid = false;
@@ -169,42 +213,40 @@ if (firstName === '') {
   return isValid;
 }
 
-// ---- STEP 4: store registered user for login simulation ----
-// we save the email, password and name in memory (not localStorage)
-// so login can check against it in the same session
-let registeredUser = null;
+// ---- STEP 5: event listeners ----
 
-// ---- STEP 5: button event listeners ----
-
-// "Create Account" button on step 1
+// "Create Account" on step 1
 document.getElementById('go-signup').addEventListener('click', function() {
+  resetSignupForm();
   showStep(stepEl.s2signup);
   updateProgress(2);
 });
 
-// "Login" button on step 1
+// "Login" on step 1
 document.getElementById('go-login').addEventListener('click', function() {
+  resetLoginForm();
   showStep(stepEl.s2login);
   updateProgress(2);
 });
 
 // "Back" on signup form
 document.getElementById('back-signup').addEventListener('click', function() {
+  resetSignupForm();
   showStep(stepEl.s1);
   updateProgress(1);
 });
 
 // "Back" on login form
 document.getElementById('back-login').addEventListener('click', function() {
+  resetLoginForm();
   showStep(stepEl.s1);
   updateProgress(1);
 });
 
-// "Next" on signup form: validate then proceed to step 3
+// "Next" on signup form: validate then go to step 3
 document.getElementById('next-signup').addEventListener('click', function() {
-  if (!validateSignup()) return; // stop here if invalid
+  if (!validateSignup()) return;
 
-  // save registered user for login simulation
   registeredUser = {
     firstName: document.getElementById('first-name').value.trim(),
     lastName:  document.getElementById('last-name').value.trim(),
@@ -213,7 +255,9 @@ document.getElementById('next-signup').addEventListener('click', function() {
     password:  document.getElementById('password').value
   };
 
-  // fill in success card
+  // save to localStorage so login works after refresh
+  localStorage.setItem('pawfeeUser', JSON.stringify(registeredUser));
+
   document.getElementById('welcome-name').textContent =
     'Hi ' + registeredUser.firstName + ' ' + registeredUser.lastName + '! 🐾';
   document.getElementById('welcome-phone').textContent =
@@ -221,10 +265,17 @@ document.getElementById('next-signup').addEventListener('click', function() {
 
   showStep(stepEl.s3signup);
   updateProgress(3);
-  redirectAfterLogin();
 });
 
-// "Login" button on login form: check credentials
+// "Login Now" on signup success card
+document.getElementById('go-to-login').addEventListener('click', function() {
+  resetLoginForm();
+  document.getElementById('login-email').value = registeredUser.email;
+  showStep(stepEl.s2login);
+  updateProgress(2);
+});
+
+// "Login" button on login form
 document.getElementById('submit-login').addEventListener('click', function() {
   const loginEmail    = document.getElementById('login-email').value.trim();
   const loginPassword = document.getElementById('login-password').value;
@@ -234,8 +285,8 @@ document.getElementById('submit-login').addEventListener('click', function() {
   clearError('login-password', 'err-login-password');
   failBox.style.display = 'none';
 
-  // basic empty checks
   let isValid = true;
+
   if (loginEmail === '') {
     showError('login-email', 'err-login-email', 'Email is required.');
     isValid = false;
@@ -246,20 +297,17 @@ document.getElementById('submit-login').addEventListener('click', function() {
   }
   if (!isValid) return;
 
-  // check against registered user
   if (
     registeredUser &&
     loginEmail === registeredUser.email &&
     loginPassword === registeredUser.password
   ) {
-    // login success
     document.getElementById('login-welcome-name').textContent =
       'Welcome back, ' + registeredUser.firstName + '! 🐾';
     showStep(stepEl.s3login);
     updateProgress(3);
     redirectAfterLogin();
   } else {
-    // login fail
     failBox.style.display = 'block';
   }
 });
