@@ -249,6 +249,7 @@
   .choose-buttons {
     flex-direction: column;
   }
+<<<<<<< HEAD
 }
 
 @media (max-width: 420px) {
@@ -280,4 +281,6 @@
   .form-nav .btn {
     width: 100%;
   }
+=======
+>>>>>>> f1496b399c57be4d47ef4c061229722256967cde
 }
