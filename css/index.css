@@ -1,165 +1,477 @@
-/* ===== HERO SECTION ===== */
+/* ============================
+   PAWFEE CAFÉ — INDEX PAGE STYLESHEET
+   (hero, about, menu preview, resident dogs, reviews, cta banner)
+   Requires style.css to be loaded first for :root variables, buttons, eyebrow.
+   ============================ */
+
+/* ============================
+   HERO
+   ============================ */
+
 .hero {
-  background-color: var(--color-surface);
-  padding: var(--space-xl) 0;
-  text-align: center;
-  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--charcoal);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: var(--space-md);
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.hero p {
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(58, 57, 54, 0.88) 40%, rgba(130, 127, 120, 0.72) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.paw-trail {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.paw-trail span:nth-child(even) {
+  transform: translateY(6px);
+}
+
+.hero-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+}
+
+.hero-heading .accent {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Interactive word-by-word hover on the hero heading */
+.hero-heading-interactive .word {
+  display: inline-block;
+  transition: color var(--transition), transform var(--transition);
+  cursor: default;
+}
+
+.hero-heading-interactive .word:hover {
+  color: var(--accent);
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.hero-heading-interactive .word.accent:hover {
+  color: var(--text-light);
+}
+
+/* Cursor-follow paw prints (populated by script.js) */
+.paw-cursor-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.paw-print {
+  position: absolute;
   font-size: 1.1rem;
-  color: var(--color-text-muted);
-  max-width: 600px;
-  margin: 0 auto var(--space-lg) auto;
+  opacity: 0.8;
+  transform: translate(-50%, -50%) scale(0.9);
+  animation: pawFade 0.9s ease-out forwards;
+}
+
+@keyframes pawFade {
+  0% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.4) translateY(-10px);
+  }
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 38px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  opacity: 0.65;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
-  gap: var(--space-sm);
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-/* Meet Our Dogs */
-.dogs
-{
-	background-color: var(--color-bg);
+.hero-buttons .btn {
+  border-radius: 999px;
 }
 
-.dogs h2
-{
-	font-size: 2rem;
-	text-align: center;
-	margin-bottom: var(--space-xs);
+.hero-buttons .btn-outline {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--text-dark);
 }
 
-.dogs-grid
-{
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: var(--space-md);
+.hero-buttons .btn-outline:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
 }
 
-.dog-card
-{
-	background-color: var(--color-surface);
-	border-radius: var(--radius);
-	box-shadow: var(--shadow);
-	/* padding: var(--space-md); */
-	overflow: hidden;
-	text-align: center;
-	transition: transform 0.2s ease;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+/* ============================
+   ABOUT
+   ============================ */
+
+.about {
+  padding: 100px 0;
+  background: var(--cream);
 }
 
-.dog-photo
-{
-	width: 100%;
-	height: 250px;
-	object-fit: cover;
-	object-position: center top;
-	border-radius: 0;
-	display: block;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+ 
+.about-image {
+  position: relative;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 4/3.2;
+  overflow: hidden;
+}
+ 
+.about-image img {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 4/3.2;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background: #e5ddcf;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+ 
+.about-image img.active {
+  opacity: 1;
 }
 
-.dog-mochi .dog-photo {object-position: center 20%;}
-.dog-boba .dog-photo {object-position: center 50%;}
-.dog-kopi .dog-photo {object-position: center 20%;}
-.dog-teh .dog-photo {object-position: center 15%;}
-
-
-
-.dog-breed
-{
-	color: var(--color-accent);
-	font-size: 0.85rem;
-	font-weight: 600;
-	margin-bottom: var(--space-sm);
+/* Manual "next" control for the story slider */
+.about-image-next {
+  position: absolute;
+  z-index: 3;
+  right: 16px;
+  bottom: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(58, 42, 32, 0.55);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition: background var(--transition), transform var(--transition);
 }
 
-.dog-info
-{
-	padding: var(--space-sm);
-	flex: 1;
+.about-image-next:hover,
+.about-image-next:focus-visible {
+  background: var(--accent);
+  transform: scale(1.08);
 }
 
-
-/* Preview Menu */
-.menu-preview
-{
-	background-color: var(--color-surface)
+.about-image-next svg {
+  transform: translateX(1px);
 }
 
-.menu-preview h2
-{
-	font-size: 2rem;
-	text-align: center;
-	margin-bottom: var(--space-xs);
+/* Dot indicators, bottom-left of the story image */
+.about-image-dots {
+  position: absolute;
+  z-index: 3;
+  left: 16px;
+  bottom: 20px;
+  display: flex;
+  gap: 8px;
 }
 
-.p_menu-grid
-{
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: var(--space-md);
+.about-image-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
 }
 
-.p_menu-card
-{
-	background-color: var(--color-bg);
-	border-radius: var(--radius);
-	box-shadow: var(--shadow);
-	overflow: hidden;
-	text-align: center;
-	transition: transform 0.2s ease;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+.about-image-dot.active {
+  background: var(--white);
+  transform: scale(1.25);
 }
 
-.dog-card:hover,
-.p_menu-card:hover
-{
-	transform: translateY(-4px);
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  line-height: 1.25;
 }
 
-.p_menu-photo
-{
-	width: 100%;
-	height: 250px;
-	object-fit: cover;
-	object-position: center top;
-	border-radius: 0;
-	display: block;
+.about-content p {
+  color: var(--text-muted);
+  margin-bottom: 26px;
+  max-width: 440px;
 }
 
-.p_menu-info
-{
-	padding: var(--space-sm);
-	flex: 1;
+/* ============================
+   SHARED SECTION HEADINGS (index page)
+   ============================ */
+
+.menu-preview h2,
+.resident-dogs h2,
+.reviews-teaser h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 10px 0 50px;
 }
 
-.dog-info h3,
-.p_menu-info h3
-{
-	/* margin-top: var(--space-sm);
-	margin-bottom: var(--space-xs); */
-	padding: var(--space-sm);
+.center-btn {
+  text-align: center;
+  margin-top: 44px;
 }
 
-.preview-cta
-{
-	text-align: center;
-	margin-top: var(--space-lg);
+/* ============================
+   MENU PREVIEW
+   ============================ */
+
+.menu-preview {
+  padding: 100px 0;
 }
 
+<<<<<<< HEAD
+/* ============================
+   RESIDENT DOGS (section wrapper — homepage teaser only.
+   .dog-grid / .dog-card / .dog-name / .dog-type live in style.css
+   so they can be reused on the team page)
+   ============================ */
+
+.resident-dogs {
+  padding: 100px 0;
+  background: var(--cream);
+}
+
+/* ============================
+   REVIEWS TEASER
+   ============================ */
+
+.reviews-teaser {
+  padding: 100px 0;
+}
+
+.rimage{
+    border-radius: 100%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin-right: 20px;
+}
+
+/* Review Cards */
+.reviewRow
+{
+    display:grid;
+    flex-direction: column;
+    gap:5px;
+
+}
+
+.reviewCard
+{
+    background:white;
+    border:2px solid #d3a859;
+    border-radius:20px;
+    padding:20px;
+    text-align:left;
+    box-shadow:var(--shadow);
+    transition:.3s;
+    margin: 20px;
+    width: 96%;
+    height: 80%;
+}
+
+.reviewCard:hover
+{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+/* ============================
+   CTA BANNER
+   ============================ */
+
+.cta-banner {
+  background: var(--cream);
+  padding: 90px 0;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--charcoal-dark);
+  margin-bottom: 10px;
+}
+
+.cta-content p {
+  color: var(--text-muted);
+  opacity: 1;
+  margin-bottom: 30px;
+}
+
+/* On the cream banner, use the solid accent button so it stands out */
+.cta-content .btn-solid {
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 999px;
+}
+
+.cta-content .btn-solid:hover {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+/* ============================
+   RESPONSIVE — INDEX PAGE SECTIONS
+   ============================ */
+
+@media (max-width: 900px) {
+  .hero-container,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-container {
+    text-align: left;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .review-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-stats {
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-flip-card {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    padding-top: 32px;
+    padding-bottom: 48px;
+    gap: 36px;
+  }
+
+  .about,
+  .menu-preview,
+  .resident-dogs,
+  .reviews-teaser,
+  .cta-banner {
+    padding: 64px 0;
+  }
+
+  .about-image-next {
+    width: 34px;
+    height: 34px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .about-image-dots {
+    left: 12px;
+    bottom: 16px;
+  }
+=======
 /* ===== ONBOARDING TOOLTIP ===== */
 .tooltip-overlay {
   position: fixed;
@@ -214,4 +526,5 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
+>>>>>>> f1496b399c57be4d47ef4c061229722256967cde
 }

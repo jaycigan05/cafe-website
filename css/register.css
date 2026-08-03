@@ -249,4 +249,38 @@
   .choose-buttons {
     flex-direction: column;
   }
+<<<<<<< HEAD
+}
+
+@media (max-width: 420px) {
+  .register-main {
+    padding: var(--space-lg) 0;
+  }
+
+  .register-box {
+    padding: var(--space-sm);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .progress-step span {
+    font-size: 0.68rem;
+  }
+
+  .progress-dot {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .form-nav {
+    flex-direction: column-reverse;
+    gap: var(--space-xs);
+  }
+
+  .form-nav .btn {
+    width: 100%;
+  }
+=======
+>>>>>>> f1496b399c57be4d47ef4c061229722256967cde
 }
