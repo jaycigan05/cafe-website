@@ -1,1 +1,940 @@
+/* ======================================================
+        PORTFOLIO.CSS
+        PART 1
+====================================================== */
+
+/* ======================================================
+                    INTRO SECTION
+====================================================== */
+
+body{
+    background:#FFF8F0;
+    color:#4A352A;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.portfolioContainer1{
+
+    width:100%;
+    background:linear-gradient(135deg,#5A4032,#6B4C3B);
+    padding:70px;
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+/* ---------- INTRO ---------- */
+
+.intro{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.introContainer{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:300px 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+/* ---------- PHOTO ---------- */
+
+.profileBox{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.profileBox img{
+
+    width:500px;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:100%;
+    border:2px solid #D8A074;
+    transition:.35s;
+
+}
+
+.profileBox img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ---------- TEXT ---------- */
+
+.introText h4{
+
+    color:#F8E8C8;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.95rem;
+
+    margin-bottom:12px;
+
+}
+
+.introText h1{
+
+    color:#FFFFFF;
+
+    font-size:3.8rem;
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+
+    font-family:var(--font-display);
+
+}
+
+.introText h2{
+
+    color:#E29A52;
+
+    font-size:2rem;
+
+    margin-bottom:30px;
+
+    font-family:var(--font-display);
+
+}
+
+.introText p{
+
+    color:#F5ECE5;
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+    max-width:720px;
+
+    margin-bottom:40px;
+
+    font-family:var(--font-body);
+
+}
+
+/* ---------- BUTTONS ---------- */
+
+.buttonGroup{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.buttonGroup .btn{
+
+    background:#D38A45;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.buttonGroup .btn:hover{
+
+    background:#E7A15A;
+
+    transform:translateY(-4px);
+
+}
+
+
+.btn-outline:hover{
+
+    background:#D38A45;
+
+    color:white;
+
+}
+
+/* ======================================================
+                    SECTION
+====================================================== */
+
+.portfolioSection{
+    margin:0 auto;
+}
+
+.portfolioContainer2,
+.portfolioContainer4,
+.portfolioContainer6
+{
+
+    width:100%;
+    background:#f1e4cd;
+    padding:30px;
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.portfolioTitle{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:50px;
+    position:relative;
+}
+
+
+/* ======================================================
+                ABOUT ME
+====================================================== */
+
+.aboutLayout{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+}
+
+.storyCard{
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.storyCard:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.storyCard h3{
+
+    margin-bottom:20px;
+
+}
+
+.storyCard p{
+
+    line-height:2;
+
+    color:#6E5A50;
+
+}
+
+.sideCards{
+
+    display:grid;
+
+    gap:30px;
+
+}
+
+.infoCard{
+
+    background:#FFF3E5;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.infoCard:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.infoCard h3{
+
+    margin-bottom:15px;
+
+}
+
+.infoCard ul{
+
+    list-style:none;
+
+}
+
+.infoCard li{
+
+    margin:10px 0;
+
+}
+
+/* ======================================================
+                DESIGN JOURNEY
+====================================================== */
+.portfolioContainer3,
+.portfolioContainer5{
+    width:100%;
+    background:#ffffff;
+    padding:30px;
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.journey{
+
+    position:relative;
+
+    margin-top:40px;
+
+}
+
+.journeyLine{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.journeyStep{
+
+    background:#F5ECE5;
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    position:relative;
+
+    transition:.3s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.journeyStep:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.journeyIcon{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    background:#F4D6A0;
+
+    margin-bottom:20px;
+
+}
+
+.journeyStep h4{
+
+    margin-bottom:15px;
+
+}
+
+.journeyStep p{
+
+    color:#6E5A50;
+
+    line-height:1.8;
+
+}
+
+
+.journeyStep:last-child::after{
+
+    display:none;
+
+}
+
+/* ======================================================
+                SIMPLE ANIMATION
+====================================================== */
+
+.fade{
+
+    animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+                    SKILLS
+====================================================== */
+
+.skillsLayout{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+
+
+.skillCard{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.skillCard:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.skillTop{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.skillTop h3{
+
+    font-size:1.2rem;
+
+}
+
+.skillPercent{
+
+    color:#C58B45;
+
+    font-weight:bold;
+
+}
+
+.skillBar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#ECECEC;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.skillFill{
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:linear-gradient(90deg,#F4D6A0,#C58B45);
+
+}
+
+/* ======================================================
+                FEATURED PROJECT
+====================================================== */
+
+.projectRow{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+    margin-bottom:80px;
+
+}
+
+.projectRow:nth-child(even){
+
+    direction:rtl;
+
+}
+
+.projectRow:nth-child(even) .projectContent{
+
+    direction:ltr;
+
+}
+
+.projectImage{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
+
+.projectImage img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.4s;
+
+}
+
+.projectImage:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.projectContent h3{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+.projectContent p{
+
+    line-height:1.9;
+
+    color:#6E5A50;
+
+    margin-bottom:25px;
+
+}
+
+.projectTags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.projectTags span{
+
+    background:#F4D6A0;
+
+    color:#4A352A;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+                    FUN FACTS
+====================================================== */
+
+.funFacts{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.factCard{
+
+    background:#FFF3E5;
+
+    border-radius:25px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.factCard:nth-child(even){
+
+    margin-top:35px;
+
+}
+
+.factCard:hover{
+
+    transform:translateY(-10px) rotate(-2deg);
+
+}
+
+.factIcon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.factCard h4{
+
+    margin-bottom:15px;
+
+}
+
+.factCard p{
+
+    color:#6E5A50;
+
+    line-height:1.7;
+
+}
+
+
+
+/* ======================================================
+                    RESPONSIVE
+====================================================== */
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:1200px){
+
+    .portfolioContainer{
+        width:92%;
+    }
+
+    .introContainer{
+        grid-template-columns:320px 1fr;
+        gap:50px;
+    }
+
+    .profileBox img{
+        width:300px;
+    }
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+    .intro{
+        padding:100px 0 60px;
+    }
+
+    .introContainer{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .profileBox{
+
+        order:1;
+
+    }
+
+    .introText{
+
+        order:2;
+
+    }
+
+    .introText p{
+
+        margin:auto;
+
+    }
+
+    .buttonGroup{
+
+        justify-content:center;
+
+    }
+
+    .aboutLayout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .journeyLine{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .journeyStep::after{
+
+        display:none;
+
+    }
+
+    .skillsLayout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .projectRow{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .projectRow:nth-child(even){
+
+        direction:ltr;
+
+    }
+
+    .funFacts{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+    .portfolioSection{
+
+        padding:70px 0;
+
+    }
+
+    .portfolioTitle{
+
+        font-size:2.2rem;
+
+    }
+
+    .introText h1{
+
+        font-size:2.8rem;
+
+    }
+
+    .introText h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .profileBox img{
+
+        width:240px;
+
+    }
+
+    .storyCard{
+
+        padding:30px;
+
+    }
+
+    .infoCard{
+
+        padding:25px;
+
+    }
+
+    .journeyLine{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .funFacts{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contactSection{
+
+        padding:40px 25px;
+
+    }
+
+    .contactButtons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .contactButtons a{
+
+        width:220px;
+
+        text-align:center;
+
+    }
+
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width:480px){
+
+    .intro{
+
+        min-height:auto;
+
+        padding:90px 0 50px;
+
+    }
+
+    .introText h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .introText h2{
+
+        font-size:1rem;
+
+    }
+
+    .portfolioTitle{
+
+        font-size:1.8rem;
+
+    }
+
+    .profileBox img{
+
+        width:180px;
+
+    }
+
+    .storyCard,
+    .infoCard,
+    .skillCard,
+    .factCard,
+    .contactSection{
+
+        padding:20px;
+
+    }
+
+    .buttonGroup{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .buttonGroup .btn{
+
+        width:100%;
+
+        max-width:250px;
+
+        text-align:center;
+
+    }
+
+}
 
