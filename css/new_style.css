@@ -3,7 +3,7 @@
    (shared across all pages: reset, colors, navbar, buttons, footer)
    ============================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Lemon&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Mogra&family=Patrick+Hand&display=swap');
 
 :root {
   /* ---- Theme palette ---- */
@@ -14,13 +14,13 @@
   --accent: #A67C52; 
   --accent-dark: #68523B;
   --text-dark: #3E2C23;
-  --text-muted: #aa947b; 
+  --text-muted: #AA947B; 
   --text-light: #E9D9C4; 
 
   /* ---- Theme fonts ---- */
-  --font-display: 'Lilita One', sans-serif;
-  --font-body: 'Karla', sans-serif;
-  --font-logo: 'Lemon', sans-serif;
+  --font-display: 'Mogra', sans-serif;
+  --font-body: 'Patrick Hand', sans-serif;
+  --font-logo: 'Coiny', sans-serif;
 
   --radius: 12px;
   --radius-sm: 12px;
@@ -62,7 +62,21 @@
   box-sizing: border-box;
 }
 
+/* ---------------------------------------------------------
+   METHOD A — SITE-WIDE FONT SIZE BUMP
+   The browser default root font-size is 16px, which every `rem`
+   value across every page's CSS is calculated from. Bumping it
+   here to 18px scales ALL rem-based type (headings, body text,
+   buttons, cards, etc.) up by ~12.5% site-wide in one place,
+   instead of hand-adjusting dozens of individual clamp()/rem
+   values across menu.css and every other page's stylesheet.
+   Chosen because Mogra / Patrick Hand / Coiny all have a smaller
+   visual x-height than the previous fonts (Open Sans/Karla) at
+   the same declared font-size, making text read as "too small"
+   even though nothing was misconfigured.
+   --------------------------------------------------------- */
 html {
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
@@ -83,10 +97,33 @@ img {
   display: block;
 }
 
+/* ---------------------------------------------------------
+   ACCESSIBILITY HELPERS (page-local for now)
+   Skip link, screen-reader-only text, and visible focus ring.
+   Kept here per-page until the team consolidates a shared
+   a11y.css — do not delete without checking other pages first.
+   --------------------------------------------------------- */
+.visually-hidden{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+[tabindex]:focus-visible{
+  outline:var(--focus-ring); outline-offset:3px; border-radius:6px;
+}
+
+.skip-link{
+  position:absolute; left:12px; top:-60px; background:var(--text-dark); color:#fff;
+  padding:10px 16px; border-radius:0 0 10px 10px; z-index:999; font-weight:700;
+  transition:top .2s ease;
+}
+.skip-link:focus{ top:0; }
+
 /* Generic fallback heading/paragraph styling — more specific
    selectors elsewhere (e.g. .hero-heading, .staff-section h2)
    still win, this only fills in unstyled headings/paragraphs */
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
   letter-spacing: 0.05em;
   color: var(--brown);
@@ -163,6 +200,12 @@ h2.center {
   min-width: 0;   /* lets logo-text's own nowrap + potential ellipsis (if ever added) work correctly inside flex */
 }
 
+.logo-image{
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+}
+
 .logo-text {
   font-family: var(--font-logo);
   font-weight: 600;
@@ -173,11 +216,6 @@ h2.center {
   letter-spacing: 1px;
   color: var(--nav-text);
   white-space: nowrap; /* never wrap the logo text, no matter how tight the space */
-}
-
-.logo-icon {
-  font-size: 1.1rem;
-  flex-shrink: 0;
 }
 
 .nav-links {
@@ -421,6 +459,7 @@ h2.center {
 
 .footer-links h4,
 .footer-social h4 {
+  color: var(--accent);
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;

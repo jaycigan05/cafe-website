@@ -15,45 +15,17 @@
    --------------------------------------------------------- */
 :root{
   --cream-card:  #FFFDF8;                       /* menu card background */
-  --blush:       #C78FAA;                       /* "For Dogs" accent + link underline */
+  --blush:       #e4b4a3;                       /* "For Dogs" accent + link underline */
   --line:        #EEDCC6;                       /* borders/dividers on this page */
   --shadow-soft: 0 8px 22px rgba(74,53,42,.10);  /* light card shadow, menu-only for now */
-}
-
-/* ---------------------------------------------------------
-   ACCESSIBILITY HELPERS (page-local for now)
-   Skip link, screen-reader-only text, and visible focus ring.
-   Kept here per-page until the team consolidates a shared
-   a11y.css — do not delete without checking other pages first.
-   --------------------------------------------------------- */
-:root{
   --focus-ring: 3px solid #7A4A22;
 }
-
-.visually-hidden{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-}
-
-a:focus-visible, button:focus-visible, input:focus-visible,
-[tabindex]:focus-visible{
-  outline:var(--focus-ring); outline-offset:3px; border-radius:6px;
-}
-
-.skip-link{
-  position:absolute; left:12px; top:-60px; background:var(--text-dark); color:#fff;
-  padding:10px 16px; border-radius:0 0 10px 10px; z-index:999; font-weight:700;
-  transition:top .2s ease;
-}
-.skip-link:focus{ top:0; }
 
 /* ---------------------------------------------------------
    BASE ELEMENT TWEAKS
    Only the element defaults NOT already covered by style.css
    (that file handles *, html, body, a, img, h1–h3, etc.)
    --------------------------------------------------------- */
-h4{ font-family:var(--font-display); }
-
 .hero-content{ padding:0; max-width:680px; margin:0 auto; text-align:center; }
 
 /* ---------------------------------------------------------
@@ -68,6 +40,10 @@ h4{ font-family:var(--font-display); }
 }
 .section-head h2{ font-size:clamp(1.8rem,3.4vw,2.6rem); }
 .section-head p{ margin-top:10px; color:var(--text-muted); font-weight:600; }
+
+#fullMenu{
+  background: var(--white);
+}
 
 /* ---------------------------------------------------------
    CARD "MEDIA" FALLBACK BACKGROUNDS
@@ -99,6 +75,8 @@ h4{ font-family:var(--font-display); }
 .toggle-track{
   position:relative; display:flex; background:#fff; border-radius:999px;
   padding:6px; box-shadow:var(--shadow-soft); border:2px solid var(--line);
+  width: 340px;
+  max-width: 90vw;
 }
 .toggle-track .toggle-thumb{
   position:absolute; top:6px; bottom:6px; left:6px;
@@ -112,7 +90,9 @@ h4{ font-family:var(--font-display); }
   background:linear-gradient(135deg,var(--blush),var(--accent-dark));
 }
 .toggle-track button{
-  font-family: var(--font-body);
+  flex: 1;
+  justify-content: center;
+  font-family: var(--font-display);   /* fixed: was var(--font-body) by mistake — this should match the header font */
   position:relative; z-index:1; border:none; background:transparent;
   padding:9px 20px; border-radius:999px; font-weight:700; font-size:.85rem;
   color:var(--accent-dark);
@@ -153,11 +133,11 @@ h4{ font-family:var(--font-display); }
 .hero-podium::before{
   background-image:
     linear-gradient(180deg,
-      rgba(62,42,28,.68) 0%,
-      rgba(62,42,28,.55) 30%,
-      rgba(62,42,28,.28) 55%,
+      rgba(62,42,28,.80) 0%,
+      rgba(62,42,28,.75) 30%,
+      rgba(62,42,28,.45) 55%,
       rgba(255,246,234,.65) 82%,
-      var(--cream) 100%),
+      var(--white) 100%),
     url('../images/menu/Background/For_Humans_Background.jpg');
   opacity:1;
 }
@@ -457,32 +437,32 @@ h4{ font-family:var(--font-display); }
    is in the grid, not the browser window, so it stays readable
    whether the grid is showing 1, 2, 3 or 4 columns. */
 .card-body h3{
-  font-size:clamp(.82rem,5cqw,1.05rem);
+  font-size:clamp(1rem,5.8cqw,1.25rem);
   line-height:1.3;
   display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; line-clamp:1;
   overflow:hidden; min-height:1.3em;
 }
 .card-price{
   font-family:var(--font-display); color:var(--accent-dark); font-weight:700;
-  font-size:clamp(.8rem,4.6cqw,1.02rem);
+  font-size:clamp(.95rem,5.4cqw,1.2rem);
   white-space:nowrap;
 }
 .card-desc{
   margin-top:6px;
-  font-size:clamp(.72rem,3.6cqw,.85rem);
+  font-size:clamp(.85rem,4.2cqw,1rem);
   color:var(--text-muted); font-weight:600; line-height:1.4;
   display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2;
   overflow:hidden; min-height:2.8em;
 }
 .card-ingredients{
   margin-top:10px;
-  font-size:clamp(.68rem,3.2cqw,.75rem);
+  font-size:clamp(.8rem,3.8cqw,.9rem);
   color:var(--accent-dark); font-weight:700; text-transform:uppercase; letter-spacing:.03em;
 }
 .card-ingredients span{
   text-transform:none; color:var(--text-muted); font-weight:600; letter-spacing:0;
   line-height:1.4;
-  font-size:clamp(.68rem,3.2cqw,.75rem);
+  font-size:clamp(.8rem,3.8cqw,.9rem);
   display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2;
   overflow:hidden; min-height:2.8em;
 }
