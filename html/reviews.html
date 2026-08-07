@@ -6,6 +6,7 @@
         <title>Pawfee Café | Home</title>
         <link rel="stylesheet" href="../css/new_style.css">
         <link rel="stylesheet" href="../css/review.css">
+        
     </head>
 
     <body>
@@ -34,358 +35,380 @@
             </div>
         </header>
 
-        <!--===== REVIEW CONTAINER =====-->
-        <div class="reviewContainer">
-            <section class="reviewHero">
-                <video class="video" autoplay muted loop>
-                    <source src="../images/Vid1.mp4" type="video/mp4">
-                </video>
+        <!-- ===== Animation ===== -->
+        <section class="reviewSummary reveal">
+            <div class="reviewContainer">
+                <section class="reviewHero">
+                    <video class="video" autoplay muted loop>
+                        <source src="../images/Vid1.mp4" type="video/mp4">
+                    </video>
 
-                <div class="reviewContent">
-                    <h1>Check Out What </h1>
-                    <h1>Our Customers Say</h1>
-                    <p>Real reviews from every customers!</p>
+                    <div class="reviewContent">
+                        <div class="hero-title">
+
+                            <div class="paw-group">
+                                <img src="../images/menu/Paw_Print.png" class="paw paw-sm">
+                                <img src="../images/menu/Paw_Print.png" class="paw paw-md">
+                                <img src="../images/menu/Paw_Print.png" class="paw paw-lg">
+                            </div>
+
+                            <h1>Check Out What</h1>
+
+                            <div class="paw-group">
+                                <img src="../images/menu/Paw_Print.png" class="paw paw-lg">
+                                <img src="../images/menu/Paw_Print.png" class="paw paw-md">
+                                <img src="../images/menu/Paw_Print.png" class="paw paw-sm">
+                            </div>
+                        </div>
+
+                        <h2>Our Customers Say</h2>
+
+                        <p>Real Reviews From Our Loyal Customers</p>
+                        
+                    </div>
+
+                </section>
+
+                <!--===== RATING SECTION =====-->
+                <div class = "ratingContainer">
+                    <!--===== RATING SECTION PART 1 =====-->
+                    <div class = "ratingSection1">
+                        <h1>4.9</h1>
+                        <h2>⭐⭐⭐⭐⭐</h2>
+                        <h3>Average Rating Based on 500+ Customers</h3>
+                    </div>
+
+                    <!--===== RATING SECTION PART 2 =====-->
+                    <div class="ratingSection2">
+                        <div class="ratingRow">
+                            <span class="number">5</span>
+                            <span class="star">⭐</span>
+                            <meter value="470" min="0" max="500"></meter>
+                            <span class="count">(470)</span>
+                        </div>
+
+                        <div class="ratingRow">
+                            <span class="number">4</span>
+                            <span class="star">⭐</span>
+                            <meter value="20" min="0" max="500"></meter>
+                            <span class="count">(20)</span>
+                        </div>
+
+                        <div class="ratingRow">
+                            <span class="number">3</span>
+                            <span class="star">⭐</span>
+                            <meter value="5" min="0" max="500"></meter>
+                            <span class="count">(5)</span>
+                        </div>
+
+                        <div class="ratingRow">
+                            <span class="number">2</span>
+                            <span class="star">⭐</span>
+                            <meter value="3" min="0" max="500"></meter>
+                            <span class="count">(3)</span>
+                        </div>
+
+                        <div class="ratingRow">
+                            <span class="number">1</span>
+                            <span class="star">⭐</span>
+                            <meter value="2" min="0" max="500"></meter>
+                            <span class="count">(2)</span>
+                        </div>
+
+                    </div>
+                </div>  
+
+                <!--===== COMMENTS =====-->
+                <h1 class = "commentTitle"> Customer Reviews</h1>
+                <div class = "ratingContainer2">
+
+                    <div class="reviewFilter">
+                        <label for="ratingFilter"> Filter Reviews :</label>
+                
+                        <select id="ratingFilter" onchange="filterReviews()">
+                            <option value="all">⭐ All Reviews</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐☆</option>
+                            <option value="3">⭐⭐⭐☆☆</option>
+                            <option value="2">⭐⭐☆☆☆</option>
+                            <option value="1">⭐☆☆☆☆</option>
+                        </select>
+                    </div>
+
+                    <div class="reviewRow">
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P1.jpg" alt="Profile 1" class="rimage">
+                            <h3>Emily Tan</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Absolutely loved the coffee and the friendly dogs. I'll definitely be back!"</p>
+                            <div class="reviewDate">📅 July 2, 2025</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P2.jpg" alt="Profile 2" class="rimage">
+                            <h3>Daniel Wong</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Excellent service, delicious drinks, and adorable dogs!"</p>
+                            <div class="reviewDate">📅 July 10, 2025</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P3.jpg" alt="Profile 3" class="rimage">
+                            <h3>Sarah Lee</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Boba was so cute and the desserts were delicious!"</p>
+                            <div class="reviewDate">📅 July 7, 2025</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P4.jpg" alt="Profile 4" class="rimage">
+                            <h3>Jason Lim</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Perfect place to study while enjoying coffee with adorable dogs."</p>
+                            <div class="reviewDate">📅 July 5, 2025</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P5.jpg" alt="Profile 5" class="rimage">
+                            <h3>Amanda Lee</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"The atmosphere was cozy and every dog was incredibly friendly!"</p>
+                            <div class="reviewDate">📅 August 2, 2025</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P6.jpg" alt="Profile 6" class="rimage">
+                            <h3>Ryan Lim</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"The matcha latte was amazing and the staff were welcoming."</p>
+                            <div class="reviewDate">📅 June 10, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P7.jpg" alt="Profile 7" class="rimage">
+                            <h3>Chloe Tan</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Best dog café I've visited. Highly recommended!"</p>
+                            <div class="reviewDate">📅 June 15, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P8.jpg" alt="Profile 8" class="rimage">
+                            <h3>Justin Lee</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Very clean café with lovely and playful dogs."</p>
+                            <div class="reviewDate">📅 June 22, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P9.jpg" alt="Profile 9" class="rimage">
+                            <h3>Michelle Tan</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"A wonderful place to relax with friends."</p>
+                            <div class="reviewDate">📅 June 28, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P10.jpg" alt="Profile 10" class="rimage">
+                            <h3>Kevin Ong</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"The drinks were worth every sip!"</p>
+                            <div class="reviewDate">📅 July 3, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P11.jpg" alt="Profile 11" class="rimage">
+                            <h3>Ally Wong</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"The dogs were gentle and well cared for."</p>
+                            <div class="reviewDate">📅 February 11, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P12.jpg" alt="Profile 12" class="rimage">
+                            <h3>Eric Tan</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"A hidden gem for pet lovers!"</p>
+                            <div class="reviewDate">📅 July 12, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P13.jpg" alt="Profile 13" class="rimage">
+                            <h3>Rachel Ho</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Fantastic customer service and tasty desserts."</p>
+                            <div class="reviewDate">📅 July 18, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P14.jpg" alt="Profile 14" class="rimage">
+                            <h3>Marcus Lim</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Everything exceeded my expectations."</p>
+                            <div class="reviewDate">📅 July 24, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P15.jpg" alt="Profile 15" class="rimage">
+                            <h3>Olivia Goh</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Will definitely recommend this café to everyone."</p>
+                            <div class="reviewDate">📅 July 30, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P16.jpg" alt="Profile 16" class="rimage">
+                            <h3>Nicholas Low</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Great coffee, great staff, great dogs!"</p>
+                            <div class="reviewDate">📅 August 5, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P17.jpg" alt="Profile 17" class="rimage">
+                            <h3>Tiffany Lee</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"One of my favourite cafés in town."</p>
+                            <div class="reviewDate">📅 August 11, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="5">
+                            <img src="../images/P18.jpg" alt="Profile 18" class="rimage">
+                            <h3>Ethan Wong</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Can't wait for my next visit!"</p>
+                            <div class="reviewDate">📅 August 16, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="4">
+                            <img src="../images/P19.jpg" alt="Profile 19" class="rimage">
+                            <h3>Grace Lim</h3>
+                            <div class="stars">⭐⭐⭐⭐☆</div>
+                            <p>"Great experience overall. It was a little busy but still enjoyable."</p>
+                            <div class="reviewDate">📅 August 22, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="4">
+                            <img src="../images/P20.jpg" alt="Profile 20" class="rimage">
+                            <h3>Jason Chua</h3>
+                            <div class="stars">⭐⭐⭐⭐☆</div>
+                            <p>"Loved the drinks and dogs. More seating would be nice."</p>
+                            <div class="reviewDate">📅 August 29, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="4">
+                            <img src="../images/P21.jpg" alt="Profile 21" class="rimage">
+                            <h3>Kevin Ong</h3>
+                            <div class="stars">⭐⭐⭐⭐☆</div>
+                            <p>"Friendly staff and nice atmosphere. Waiting time was slightly longer."</p>
+                            <div class="reviewDate">📅 September 3, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="3">
+                            <img src="../images/P22.jpg" alt="Profile 22" class="rimage">
+                            <h3>Brandon Lee</h3>
+                            <div class="stars">⭐⭐⭐☆☆</div>
+                            <p>"The café was nice, but it was quite busy during the weekend."</p>
+                            <div class="reviewDate">📅 September 7, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="3">
+                            <img src="../images/P23.jpg" alt="Profile 23" class="rimage">
+                            <h3>Kelly Tan</h3>
+                            <div class="stars">⭐⭐⭐☆☆</div>
+                            <p>"The drinks were good, although I expected a larger food menu."</p>
+                            <div class="reviewDate">📅 September 12, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="2">
+                            <img src="../images/P24.jpg" alt="Profile 24" class="rimage">
+                            <h3>Aaron Lim</h3>
+                            <div class="stars">⭐⭐☆☆☆</div>
+                            <p>"The environment was pleasant, but my order took longer than expected."</p>
+                            <div class="reviewDate">📅 September 18, 2026</div>
+                        </div>
+
+                        <div class="reviewCard" data-rating="1">
+                            <img src="../images/P25.jpeg" alt="Profile 25" class="rimage">
+                            <h3>Hannah Goh</h3>
+                            <div class="stars">⭐☆☆☆☆</div>
+                            <p>"Unfortunately the café was overcrowded and I couldn't fully enjoy the experience."</p>
+                            <div class="reviewDate">📅 September 24, 2026</div>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <!--===== RATING SECTION =====-->
-            <div class = "ratingContainer">
-                <!--===== RATING SECTION PART 1 =====-->
-                <div class = "ratingSection1">
-                    <h1>4.9</h1>
-                    <h2>⭐⭐⭐⭐⭐</h2>
-                    <h3>Average Rating Based on 500+ Customers</h3>
-                </div>
-
-                <!--===== RATING SECTION PART 2 =====-->
-                <div class="ratingSection2">
-                    <div class="ratingRow">
-                        <span class="number">5</span>
-                        <span class="star">⭐</span>
-                        <meter value="470" min="0" max="500"></meter>
-                        <span class="count">(470)</span>
-                    </div>
-
-                    <div class="ratingRow">
-                        <span class="number">4</span>
-                        <span class="star">⭐</span>
-                        <meter value="20" min="0" max="500"></meter>
-                        <span class="count">(20)</span>
-                    </div>
-
-                    <div class="ratingRow">
-                        <span class="number">3</span>
-                        <span class="star">⭐</span>
-                        <meter value="5" min="0" max="500"></meter>
-                        <span class="count">(5)</span>
-                    </div>
-
-                    <div class="ratingRow">
-                        <span class="number">2</span>
-                        <span class="star">⭐</span>
-                        <meter value="3" min="0" max="500"></meter>
-                        <span class="count">(3)</span>
-                    </div>
-
-                    <div class="ratingRow">
-                        <span class="number">1</span>
-                        <span class="star">⭐</span>
-                        <meter value="2" min="0" max="500"></meter>
-                        <span class="count">(2)</span>
-                    </div>
-
-                </div>
-            </div>  
-
-            <!--===== COMMENTS =====-->
-            <h1 class = "reviewh"> ✨ Customer Reviews  ✨ </h1>
-            <div class = "ratingContainer2">
-
-                <div class="reviewFilter">
-                    <label for="ratingFilter"> 🐾Filter Reviews 🐾:</label>
+                <!--Customer Memories-->
+                <h1>Customer Memories</h1>
             
-                    <select id="ratingFilter" onchange="filterReviews()">
-                        <option value="all">⭐ All Reviews</option>
-                        <option value="5">⭐⭐⭐⭐⭐</option>
-                        <option value="4">⭐⭐⭐⭐☆</option>
-                        <option value="3">⭐⭐⭐☆☆</option>
-                        <option value="2">⭐⭐☆☆☆</option>
-                        <option value="1">⭐☆☆☆☆</option>
-                    </select>
-                </div>
-
-                <div class="reviewRow">
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P1.jpg" alt="Profile 1" class="rimage">
-                        <h3>Emily Tan</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Absolutely loved the coffee and the friendly dogs. I'll definitely be back!"</p>
-                        <div class="reviewDate">📅 July 2, 2025</div>
+                <section class="memoryWall">
+                    <div class="photoCard p1">
+                        <div class="clip">📎</div>
+                        <img src="../images/M1.jpg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P2.jpg" alt="Profile 2" class="rimage">
-                        <h3>Daniel Wong</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Excellent service, delicious drinks, and adorable dogs!"</p>
-                        <div class="reviewDate">📅 July 10, 2025</div>
+                    <div class="photoCard p2">
+                        <div class="clip">📎</div>
+                        <img src="../images/M2.jpg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P3.jpg" alt="Profile 3" class="rimage">
-                        <h3>Sarah Lee</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Boba was so cute and the desserts were delicious!"</p>
-                        <div class="reviewDate">📅 July 7, 2025</div>
+                    <div class="photoCard p3">
+                        <div class="clip">📎</div>
+                        <img src="../images/M3.jpg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P4.jpg" alt="Profile 4" class="rimage">
-                        <h3>Jason Lim</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Perfect place to study while enjoying coffee with adorable dogs."</p>
-                        <div class="reviewDate">📅 July 5, 2025</div>
+                    <div class="photoCard p4">
+                        <div class="clip">📎</div>
+                        <img src="../images/M4.jpg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P5.jpg" alt="Profile 5" class="rimage">
-                        <h3>Amanda Lee</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"The atmosphere was cozy and every dog was incredibly friendly!"</p>
-                        <div class="reviewDate">📅 August 2, 2025</div>
+                    <div class="photoCard p5">
+                        <div class="clip">📎</div>
+                        <img src="../images/M5.jpg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P6.jpg" alt="Profile 6" class="rimage">
-                        <h3>Ryan Lim</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"The matcha latte was amazing and the staff were welcoming."</p>
-                        <div class="reviewDate">📅 June 10, 2026</div>
+                    <div class="photoCard p6">
+                        <div class="clip">📎</div>
+                        <img src="../images/M6.jpg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P7.jpg" alt="Profile 7" class="rimage">
-                        <h3>Chloe Tan</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Best dog café I've visited. Highly recommended!"</p>
-                        <div class="reviewDate">📅 June 15, 2026</div>
+                    <div class="photoCard p7">
+                        <div class="clip">📎</div>
+                        <img src="../images/M7.jpeg" class="photo" alt="">
                     </div>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P8.jpg" alt="Profile 8" class="rimage">
-                        <h3>Justin Lee</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Very clean café with lovely and playful dogs."</p>
-                        <div class="reviewDate">📅 June 22, 2026</div>
+                    <div class="photoCard p8">
+                        <div class="clip">📎</div>
+                        <img src="../images/M8.jpg" class="photo" alt="">
                     </div>
+                </section>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P9.jpg" alt="Profile 9" class="rimage">
-                        <h3>Michelle Tan</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"A wonderful place to relax with friends."</p>
-                        <div class="reviewDate">📅 June 28, 2026</div>
-                    </div>
+                <!--Leave Review-->
+                <div class = "ratingContainer3">
+                    <h1>Leave Your Review</h1>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P10.jpg" alt="Profile 10" class="rimage">
-                        <h3>Kevin Ong</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"The drinks were worth every sip!"</p>
-                        <div class="reviewDate">📅 July 3, 2026</div>
-                    </div>
+                    <form class="reviewForm" id="reviewForm">
+                        <input type="text" id="customerName" placeholder="Your Name" required>
+                        
+                        <select id="rating" required>
+                            <option value="">Select Rating</option>
+                            <option value="★★★★★">★★★★★</option>
+                            <option value="★★★★☆">★★★★☆</option>
+                            <option value="★★★☆☆">★★★☆☆</option>
+                            <option value="★★☆☆☆">★★☆☆☆</option>
+                            <option value="★☆☆☆☆">★☆☆☆☆</option>
+                        </select>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P11.jpg" alt="Profile 11" class="rimage">
-                        <h3>Ally Wong</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"The dogs were gentle and well cared for."</p>
-                        <div class="reviewDate">📅 February 11, 2026</div>
-                    </div>
+                        <textarea id="reviewText" placeholder="Write your review..." required></textarea>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P12.jpg" alt="Profile 12" class="rimage">
-                        <h3>Eric Tan</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"A hidden gem for pet lovers!"</p>
-                        <div class="reviewDate">📅 July 12, 2026</div>
-                    </div>
+                        <button type="submit" class="submitButton">Submit Review</button>
 
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P13.jpg" alt="Profile 13" class="rimage">
-                        <h3>Rachel Ho</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Fantastic customer service and tasty desserts."</p>
-                        <div class="reviewDate">📅 July 18, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P14.jpg" alt="Profile 14" class="rimage">
-                        <h3>Marcus Lim</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Everything exceeded my expectations."</p>
-                        <div class="reviewDate">📅 July 24, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P15.jpg" alt="Profile 15" class="rimage">
-                        <h3>Olivia Goh</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Will definitely recommend this café to everyone."</p>
-                        <div class="reviewDate">📅 July 30, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P16.jpg" alt="Profile 16" class="rimage">
-                        <h3>Nicholas Low</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Great coffee, great staff, great dogs!"</p>
-                        <div class="reviewDate">📅 August 5, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P17.jpg" alt="Profile 17" class="rimage">
-                        <h3>Tiffany Lee</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"One of my favourite cafés in town."</p>
-                        <div class="reviewDate">📅 August 11, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="5">
-                        <img src="../images/P18.jpg" alt="Profile 18" class="rimage">
-                        <h3>Ethan Wong</h3>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Can't wait for my next visit!"</p>
-                        <div class="reviewDate">📅 August 16, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="4">
-                        <img src="../images/P19.jpg" alt="Profile 19" class="rimage">
-                        <h3>Grace Lim</h3>
-                        <div class="stars">⭐⭐⭐⭐☆</div>
-                        <p>"Great experience overall. It was a little busy but still enjoyable."</p>
-                        <div class="reviewDate">📅 August 22, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="4">
-                        <img src="../images/P20.jpg" alt="Profile 20" class="rimage">
-                        <h3>Jason Chua</h3>
-                        <div class="stars">⭐⭐⭐⭐☆</div>
-                        <p>"Loved the drinks and dogs. More seating would be nice."</p>
-                        <div class="reviewDate">📅 August 29, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="4">
-                        <img src="../images/P21.jpg" alt="Profile 21" class="rimage">
-                        <h3>Kevin Ong</h3>
-                        <div class="stars">⭐⭐⭐⭐☆</div>
-                        <p>"Friendly staff and nice atmosphere. Waiting time was slightly longer."</p>
-                        <div class="reviewDate">📅 September 3, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="3">
-                        <img src="../images/P22.jpg" alt="Profile 22" class="rimage">
-                        <h3>Brandon Lee</h3>
-                        <div class="stars">⭐⭐⭐☆☆</div>
-                        <p>"The café was nice, but it was quite busy during the weekend."</p>
-                        <div class="reviewDate">📅 September 7, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="3">
-                        <img src="../images/P23.jpg" alt="Profile 23" class="rimage">
-                        <h3>Kelly Tan</h3>
-                        <div class="stars">⭐⭐⭐☆☆</div>
-                        <p>"The drinks were good, although I expected a larger food menu."</p>
-                        <div class="reviewDate">📅 September 12, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="2">
-                        <img src="../images/P24.jpg" alt="Profile 24" class="rimage">
-                        <h3>Aaron Lim</h3>
-                        <div class="stars">⭐⭐☆☆☆</div>
-                        <p>"The environment was pleasant, but my order took longer than expected."</p>
-                        <div class="reviewDate">📅 September 18, 2026</div>
-                    </div>
-
-                    <div class="reviewCard" data-rating="1">
-                        <img src="../images/P25.jpeg" alt="Profile 25" class="rimage">
-                        <h3>Hannah Goh</h3>
-                        <div class="stars">⭐☆☆☆☆</div>
-                        <p>"Unfortunately the café was overcrowded and I couldn't fully enjoy the experience."</p>
-                        <div class="reviewDate">📅 September 24, 2026</div>
-                    </div>
+                    </form>
                 </div>
             </div>
+        </section>
 
-            <!--Customer Memories-->
-            <h1 >📸 Customer Memories 📸</h1>
-            
-            <section class="memoryWall">
-                <div class="photoCard p1">
-                    <div class="clip">📎</div>
-                    <img src="../images/M1.jpg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p2">
-                    <div class="clip">📎</div>
-                    <img src="../images/M2.jpg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p3">
-                    <div class="clip">📎</div>
-                    <img src="../images/M3.jpg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p4">
-                    <div class="clip">📎</div>
-                    <img src="../images/M4.jpg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p5">
-                    <div class="clip">📎</div>
-                    <img src="../images/M5.jpg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p6">
-                    <div class="clip">📎</div>
-                    <img src="../images/M6.jpg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p7">
-                    <div class="clip">📎</div>
-                    <img src="../images/M7.jpeg" class="photo" alt="">
-                </div>
-
-                <div class="photoCard p8">
-                    <div class="clip">📎</div>
-                    <img src="../images/M8.jpg" class="photo" alt="">
-                </div>
-            </section>
-
-            <!--Leave Review-->
-            <div class = "ratingContainer3">
-                <h1>💬Leave Your Review</h1>
-
-                <form class="reviewForm" id="reviewForm">
-                    <input type="text" id="customerName" placeholder="Your Name" required>
-                    
-                    <select id="rating" required>
-                        <option value="">Select Rating</option>
-                        <option value="★★★★★">★★★★★</option>
-                        <option value="★★★★☆">★★★★☆</option>
-                        <option value="★★★☆☆">★★★☆☆</option>
-                        <option value="★★☆☆☆">★★☆☆☆</option>
-                        <option value="★☆☆☆☆">★☆☆☆☆</option>
-                    </select>
-
-                    <textarea id="reviewText" placeholder="Write your review..." required></textarea>
-
-                    <button type="submit" class="submitButton">Submit Review</button>
-
-                </form>
-            </div>
-        </div>
-
+        <!-- ===== POP UP MESSAGE WHEN SUBMITTED ===== -->
         <div id="successPopup" class="successPopup">
             <div class="popupContent">
                 <div class="popupIcon">🎉</div>
@@ -427,6 +450,7 @@
                     </a>
                     </div>
                 </div>
+                
 
                 <div class="footer-image">
                     <img src="../images/cafe-interior.jpg" alt="Inside Pawfee Café" loading="lazy">
@@ -434,6 +458,7 @@
             </div>
             <p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
         </footer>
+        </div>
 
         <script src="../js/index.js"></script>
         <script src="../js/team.js"></script>

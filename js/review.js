@@ -2,19 +2,14 @@
 // Filter Reviews
 // ==============================
 
-function filterReviews()
-{
+function filterReviews() {
     const selectedRating = document.getElementById("ratingFilter").value;
     const reviews = document.querySelectorAll(".reviewCard");
 
-    reviews.forEach(function(review)
-    {
-        if (selectedRating === "all" || review.dataset.rating === selectedRating)
-        {
+    reviews.forEach(function (review) {
+        if (selectedRating === "all" || review.dataset.rating === selectedRating) {
             review.style.display = "block";
-        }
-        else
-        {
+        } else {
             review.style.display = "none";
         }
     });
@@ -27,14 +22,35 @@ function filterReviews()
 const reviewForm = document.getElementById("reviewForm");
 const reviewList = document.querySelector(".reviewRow");
 
+// Load saved reviews
+loadReviews();
+
+// ==============================
+// Load Reviews
+// ==============================
+
+function loadReviews() {
+    const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+    reviews.forEach(review => {
+        addReview(
+            review.name,
+            review.rating,
+            review.ratingNumber,
+            review.reviewText,
+            review.date
+        );
+    });
+}
+
 // ==============================
 // Submit Review
 // ==============================
 
 reviewForm.addEventListener("submit", submitReview);
 
-function submitReview(event)
-{
+function submitReview(event) {
+
     event.preventDefault();
 
     const name = document.getElementById("customerName").value;
@@ -43,35 +59,36 @@ function submitReview(event)
 
     let ratingNumber = "";
 
-    if (rating === "★★★★★")
-    {
+    if (rating === "★★★★★") {
         ratingNumber = "5";
     }
-    else if (rating === "★★★★☆")
-    {
+    else if (rating === "★★★★☆") {
         ratingNumber = "4";
     }
-    else if (rating === "★★★☆☆")
-    {
+    else if (rating === "★★★☆☆") {
         ratingNumber = "3";
     }
-    else if (rating === "★★☆☆☆")
-    {
+    else if (rating === "★★☆☆☆") {
         ratingNumber = "2";
     }
-    else if (rating === "★☆☆☆☆")
-    {
+    else {
         ratingNumber = "1";
     }
 
-    const today = new Date().toLocaleDateString("en-US",
-    {
+    const today = new Date().toLocaleDateString("en-US", {
         month: "long",
         day: "numeric",
         year: "numeric"
     });
 
+    // Display review immediately
     addReview(name, rating, ratingNumber, reviewText, today);
+
+    // Save to Local Storage
+    saveReview(name, rating, ratingNumber, reviewText, today);
+
+    // Show success popup
+    document.getElementById("successPopup").classList.add("show");
 
     reviewForm.reset();
 
@@ -79,19 +96,37 @@ function submitReview(event)
 }
 
 // ==============================
+// Save Review
+// ==============================
+
+function saveReview(name, rating, ratingNumber, reviewText, date) {
+
+    const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+    reviews.unshift({
+        name,
+        rating,
+        ratingNumber,
+        reviewText,
+        date
+    });
+
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+}
+
+// ==============================
 // Add Review
 // ==============================
 
-function addReview(name, rating, ratingNumber, reviewText, date)
-{
+function addReview(name, rating, ratingNumber, reviewText, date) {
+
     const reviewCard = document.createElement("div");
 
     reviewCard.className = "reviewCard";
     reviewCard.dataset.rating = ratingNumber;
 
-    reviewCard.innerHTML =
-    `
-        <img src="../Images/profile.jpg" class="rimage" alt="Profile">
+    reviewCard.innerHTML = `
+        <img src="../images/profile.jpg" class="rimage" alt="Profile">
 
         <h3>${name}</h3>
 
@@ -106,21 +141,34 @@ function addReview(name, rating, ratingNumber, reviewText, date)
 }
 
 // ==============================
-// Success Pop Up
+// Success Popup
 // ==============================
 
-const form = document.getElementById("reviewForm");
-
-form.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    document.getElementById("successPopup").classList.add("show");
-
-    form.reset();
-
-});
-
-function closePopup(){
+function closePopup() {
     document.getElementById("successPopup").classList.remove("show");
 }
+
+// ==============================
+// Scroll Reveal
+// ==============================
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+    reveals.forEach((item) => {
+
+        const windowHeight = window.innerHeight;
+        const revealTop = item.getBoundingClientRect().top;
+        const revealPoint = 120;
+
+        if (revealTop < windowHeight - revealPoint) {
+            item.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
