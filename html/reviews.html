@@ -37,48 +37,46 @@
 
         <!-- ===== Animation ===== -->
         <section class="reviewSummary reveal">
+
             <div class="reviewContainer">
+
                 <section class="reviewHero">
+                    <!-- Hero Video Background -->
                     <video class="video" autoplay muted loop>
                         <source src="../images/Vid1.mp4" type="video/mp4">
                     </video>
 
+                    <!-- Hero Text Content -->
                     <div class="reviewContent">
                         <div class="hero-title">
-
                             <div class="paw-group">
                                 <img src="../images/menu/Paw_Print.png" class="paw paw-sm">
                                 <img src="../images/menu/Paw_Print.png" class="paw paw-md">
                                 <img src="../images/menu/Paw_Print.png" class="paw paw-lg">
                             </div>
-
                             <h1>Check Out What</h1>
-
                             <div class="paw-group">
                                 <img src="../images/menu/Paw_Print.png" class="paw paw-lg">
                                 <img src="../images/menu/Paw_Print.png" class="paw paw-md">
                                 <img src="../images/menu/Paw_Print.png" class="paw paw-sm">
                             </div>
                         </div>
-
                         <h2>Our Customers Say</h2>
-
                         <p>Real Reviews From Our Loyal Customers</p>
-                        
                     </div>
 
                 </section>
 
                 <!--===== RATING SECTION =====-->
                 <div class = "ratingContainer">
-                    <!--===== RATING SECTION PART 1 =====-->
+                    <!--===== RATING SECTION PART 1 - Overall Rating =====-->
                     <div class = "ratingSection1">
                         <h1>4.9</h1>
                         <h2>⭐⭐⭐⭐⭐</h2>
                         <h3>Average Rating Based on 500+ Customers</h3>
                     </div>
 
-                    <!--===== RATING SECTION PART 2 =====-->
+                    <!--===== RATING SECTION PART 2 - Statistics =====-->
                     <div class="ratingSection2">
                         <div class="ratingRow">
                             <span class="number">5</span>
@@ -122,6 +120,7 @@
                 <h1 class = "commentTitle"> Customer Reviews</h1>
                 <div class = "ratingContainer2">
 
+                    <!-- Review Filter Dropdown -->
                     <div class="reviewFilter">
                         <label for="ratingFilter"> Filter Reviews :</label>
                 
@@ -135,6 +134,7 @@
                         </select>
                     </div>
 
+                    <!-- Customer Review Cards -->
                     <div class="reviewRow">
                         <div class="reviewCard" data-rating="5">
                             <img src="../images/P1.jpg" alt="Profile 1" class="rimage">
@@ -338,9 +338,10 @@
                     </div>
                 </div>
 
-                <!--Customer Memories-->
+                <!--CUSTOMER MEMORIES-->
                 <h1>Customer Memories</h1>
             
+                <!-- Customer Photo Gallery -->
                 <section class="memoryWall">
                     <div class="photoCard p1">
                         <div class="clip">📎</div>
@@ -383,10 +384,10 @@
                     </div>
                 </section>
 
-                <!--Leave Review-->
+                <!-- REVIEW SUBMISSION FORM -->
                 <div class = "ratingContainer3">
                     <h1>Leave Your Review</h1>
-
+                    <!-- Review Form -->
                     <form class="reviewForm" id="reviewForm">
                         <input type="text" id="customerName" placeholder="Your Name" required>
                         
@@ -398,13 +399,11 @@
                             <option value="★★☆☆☆">★★☆☆☆</option>
                             <option value="★☆☆☆☆">★☆☆☆☆</option>
                         </select>
-
                         <textarea id="reviewText" placeholder="Write your review..." required></textarea>
-
                         <button type="submit" class="submitButton">Submit Review</button>
-
                     </form>
                 </div>
+                
             </div>
         </section>
 

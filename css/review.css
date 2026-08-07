@@ -1,4 +1,7 @@
-/* LOAD IN ANIMATION */
+/* =====================================
+   SCROLL REVEAL ANIMATION
+   Applies a fade-in effect when sections enter the viewport.
+===================================== */
 .reveal
 {
     opacity: 0;
@@ -12,7 +15,10 @@
     transform: translateY(0);
 }
 
-/* Review Container */
+/* =====================================
+   HERO SECTION
+   Background video and introductory text.
+===================================== */
 .reviewContainer
 {
     width: 100%;
@@ -134,6 +140,7 @@
     animation-delay:.8s;
 }
 
+/* Floating paw print animation */
 @keyframes floatPaw
 {
     0%,100%
@@ -146,7 +153,10 @@
     }
 }
 
-/* Rating Container */
+/* =====================================
+   CUSTOMER RATING SUMMARY
+   Displays the average rating and rating distribution.
+===================================== */
 .ratingContainer
 {
     display:flex;
@@ -238,7 +248,10 @@ meter::-webkit-meter-optimum-value
 }
 
 
-/* Comment Part */
+/* =====================================
+   CUSTOMER COMMENTS PART
+   stores customers comments, filter and scrollbar
+===================================== */
 .commentTitle
 {
     font-size:45px;
@@ -281,7 +294,10 @@ meter::-webkit-meter-optimum-value
     font-family: var(--font-body);
 }
 
-/* Rating Filter */
+/* =====================================
+   REVIEW FILTER
+   Allows users to filter reviews based on star ratings.
+===================================== */
 .reviewFilter
 {
     display:flex;
@@ -327,7 +343,10 @@ meter::-webkit-meter-optimum-value
     margin-right: 20px;
 }
 
-/* Review Cards */
+/* =====================================
+   CUSTOMER REVIEW CARDS
+   Displays customer feedback inside scrollable cards.
+===================================== */
 .reviewRow
 {
     display:flex;
@@ -406,7 +425,10 @@ meter::-webkit-meter-optimum-value
     font-size:14px;
 }
 
-/* Memories */
+/* =====================================
+   CUSTOMER MEMORY WALL
+   Polaroid-style image gallery with hover animations.
+===================================== */
 .memoryWall
 {
     display:grid;
@@ -480,7 +502,10 @@ meter::-webkit-meter-optimum-value
     transform:scale(1.05);
 }
 
-/* Review Form */
+/* =====================================
+   REVIEW SUBMISSION FORM
+   Allows visitors to submit their own customer reviews.
+===================================== */
 .ratingContainer3
 {
     width:80%;          
@@ -531,7 +556,10 @@ meter::-webkit-meter-optimum-value
     border:2px solid var(--accent);
 }
 
-/* Submit Button */
+/* =====================================
+   SUBMIT BUTTON
+   allow users to submit comment
+===================================== */
 .submitButton
 {
     background:var(--accent-dark);
@@ -550,6 +578,10 @@ meter::-webkit-meter-optimum-value
     background:var(--brown);
 }
 
+/* =====================================
+   SUCCESS POPUP
+   Displayed after a review is submitted.
+===================================== */
 .successPopup
 {
     display:none;
@@ -627,9 +659,9 @@ meter::-webkit-meter-optimum-value
 }
 
 /* =====================================
-   RESPONSIVE
+   RESPONSIVE DESIGN
+   Adjusts the layout for laptops, tablets and mobile devices.
 ===================================== */
-
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
 {

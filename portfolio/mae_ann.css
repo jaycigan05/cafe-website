@@ -1,5 +1,6 @@
 /* ======================================================
-                    INTRO SECTION
+   GENERAL PAGE STYLING
+   Sets the overall background and text colours
 ====================================================== */
 body
 {
@@ -7,7 +8,11 @@ body
     color:var(--brown);
 }
 
-/* ---------- CONTAINER ---------- */
+/* ======================================================
+   INTRO SECTION
+   Hero section containing profile image and introduction
+====================================================== */
+/* ---------- Main Intro Container ---------- */
 .portfolioContainer1
 {
     width:100%;
@@ -16,7 +21,7 @@ body
     box-shadow:0 18px 40px rgba(0,0,0,.15);
 }
 
-/* ---------- INTRO ---------- */
+/* ---------- Intro Layout ---------- */
 .intro
 {
     display:flex;
@@ -34,7 +39,7 @@ body
     align-items:center;
 }
 
-/* ---------- PHOTO ---------- */
+/* ---------- Profile Image ---------- */
 .profileBox
 {
     display:flex;
@@ -57,7 +62,7 @@ body
     transform:scale(1.05);
 }
 
-/* ---------- TEXT ---------- */
+/* ---------- Introduction Text ---------- */
 .introText h4
 {
     color: var(--text-light);
@@ -93,7 +98,7 @@ body
     font-family:var(--font-body);
 }
 
-/* ---------- BUTTONS ---------- */
+/* ---------- Action Buttons ---------- */
 .buttonGroup
 {
     display:flex;
@@ -126,19 +131,21 @@ body
     color:var(--cream);
 }
 
-
 .btn-print{
     cursor: pointer;
 }
 
 /* ======================================================
-                    SECTION
+   SHARED PAGE SECTIONS
+   Common styling used throughout the portfolio
 ====================================================== */
+/* ---------- Section Containers ---------- */
 .portfolioSection
 {
     margin:0 auto;
 }
 
+/* ---------- About me, Skills, Contact ---------- */
 .portfolioContainer2,
 .portfolioContainer4,
 .portfolioContainer6
@@ -149,6 +156,17 @@ body
     box-shadow:0 18px 40px rgba(0,0,0,.15);
 }
 
+/* ---------- Design Journey, Featured Project ---------- */
+.portfolioContainer3,
+.portfolioContainer5
+{
+    width:100%;
+    background:var(--white);
+    padding:30px;
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
 .portfolioTitle{
     text-align:center;
     font-size:50px;
@@ -157,8 +175,10 @@ body
 }
 
 /* ======================================================
-                ABOUT ME
+   ABOUT ME SECTION
+   Personal background and education
 ====================================================== */
+/* ---------- About Section Layout ---------- */
 .aboutLayout
 {
     display:grid;
@@ -166,6 +186,7 @@ body
     gap:30px;
 }
 
+/* ---------- Story Card ---------- */
 .storyCard
 {
     background:var(--white);
@@ -191,6 +212,7 @@ body
     color:var(--accent-dark);
 }
 
+/* ---------- Information Cards ---------- */
 .sideCards
 {
     display:grid;
@@ -227,18 +249,10 @@ body
 }
 
 /* ======================================================
-                DESIGN JOURNEY
+   DESIGN JOURNEY
+   Timeline of learning and achievements
 ====================================================== */
-.portfolioContainer3,
-.portfolioContainer5
-{
-    width:100%;
-    background:var(--white);
-    padding:30px;
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
-
-}
-
+/* ---------- Timeline Layout ---------- */
 .journey
 {
     position:relative;
@@ -252,6 +266,7 @@ body
     gap:30px;
 }
 
+/* ---------- Timeline Cards ---------- */
 .journeyStep
 {
     background:var(--nav-bg);
@@ -300,8 +315,10 @@ body
 }
 
 /* ======================================================
-               ANIMATION
+   PAGE ANIMATIONS
+   Fade-in animation when the page loads
 ====================================================== */
+/* ---------- Fade Animation ---------- */
 .fade
 {
     animation:fade .8s ease;
@@ -323,8 +340,10 @@ body
 }
 
 /* ======================================================
-                    SKILLS
+   SKILLS SECTION
+   Displays programming skills with progress bars
 ====================================================== */
+/* ---------- Skills Grid Layout ---------- */
 .skillsLayout
 {
     display:grid;
@@ -332,6 +351,7 @@ body
     gap:35px;
 }
 
+/* ---------- Skill Cards ---------- */
 .skillCard
 {
     background:var(--white);
@@ -346,6 +366,7 @@ body
     transform:translateY(-8px);
 }
 
+/* ---------- Skill Information ---------- */
 .skillTop
 {
     display:flex;
@@ -365,6 +386,7 @@ body
     font-weight:bold;
 }
 
+/* ---------- Skill Progress Bars ---------- */
 .skillBar
 {
     width:100%;
@@ -381,9 +403,27 @@ body
     background:linear-gradient(90deg,var(--text-light),var(--accent));
 }
 
+/* ---------- Individual Skill Levels ---------- */
+.htmlSkill
+{
+    width:95%;
+}
+
+.cssSkill
+{
+    width:90%;
+}
+
+.jsSkill
+{
+    width:75%;
+}
+
 /* ======================================================
-                FEATURED PROJECT
+   FEATURED PROJECT
+   Displays the main portfolio project
 ====================================================== */
+/* ---------- Project Layout ---------- */
 .projectRow
 {
     display:grid;
@@ -403,6 +443,7 @@ body
     direction:ltr;
 }
 
+/* ---------- Project Image ---------- */
 .projectImage
 {
     overflow:hidden;
@@ -453,8 +494,10 @@ body
 }
 
 /* ======================================================
-                    CONTACT
+   CONTACT SECTION
+   Displays contact information cards
 ====================================================== */
+/* ---------- Contact Card Layout ---------- */
 .contact
 {
     display:grid;
@@ -462,6 +505,7 @@ body
     gap:25px;
 }
 
+/* ---------- Contact Cards ---------- */
 .contactCard
 {
     background:var(--white);
@@ -500,7 +544,8 @@ body
 }
 
 /* ======================================================
-                    RESPONSIVE
+   RESPONSIVE DESIGN
+   Adjusts layout for different screen sizes
 ====================================================== */
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
@@ -704,10 +749,10 @@ body
         width:180px;
 
     }
+
 /* ======================================================
    RESPONSIVE
 ====================================================== */
-
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
 {
