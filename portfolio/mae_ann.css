@@ -1,12 +1,6 @@
 /* ======================================================
-        PORTFOLIO.CSS
-        PART 1
-====================================================== */
-
-/* ======================================================
                     INTRO SECTION
 ====================================================== */
-
 body
 {
     background:var(--cream);
@@ -14,7 +8,6 @@ body
 }
 
 /* ---------- CONTAINER ---------- */
-
 .portfolioContainer1
 {
     width:100%;
@@ -57,7 +50,6 @@ body
     border-radius:100%;
     border:2px solid var(--accent);
     transition:.35s;
-
 }
 
 .profileBox img:hover
@@ -66,7 +58,6 @@ body
 }
 
 /* ---------- TEXT ---------- */
-
 .introText h4
 {
     color: var(--text-light);
@@ -103,7 +94,6 @@ body
 }
 
 /* ---------- BUTTONS ---------- */
-
 .buttonGroup
 {
     display:flex;
@@ -120,6 +110,7 @@ body
     border-radius:50px;
     transition:.3s;
     font-weight:600;
+    font-family: var(--font-body);
 }
 
 .buttonGroup .btn:hover
@@ -128,12 +119,16 @@ body
     transform:translateY(-4px);
 }
 
-
 .btn-outline:hover
 {
 
     background:var(--accent-hover);
     color:var(--cream);
+}
+
+
+.btn-print{
+    cursor: pointer;
 }
 
 /* ======================================================
@@ -460,237 +455,197 @@ body
 /* ======================================================
                     CONTACT
 ====================================================== */
-
-.contact{
-
+.contact
+{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:25px;
-
 }
 
-.contactCard{
-
+.contactCard
+{
     background:var(--white);
-
     border-radius:25px;
-
     padding:35px 25px;
-
     text-align:center;
-
     transition:.35s;
-
     box-shadow:0 12px 25px rgba(0,0,0,.08);
-
 }
 
-.contactCard:nth-child(even){
-
+.contactCard:nth-child(even)
+{
     margin-top:35px;
-
 }
 
-.contactCard:hover{
-
+.contactCard:hover
+{
     transform:translateY(-10px) rotate(-2deg);
-
 }
 
-.contactIcon{
-
+.contactIcon
+{
     font-size:3rem;
-
     margin-bottom:20px;
-
 }
 
-.contactCard h4{
-
+.contactCard h4
+{
     margin-bottom:15px;
-
 }
 
-.contactCard p{
-
-    color:#6E5A50;
-
+.contactCard p
+{
+    color:var(--brown);
     line-height:1.7;
-
 }
-
-
 
 /* ======================================================
                     RESPONSIVE
 ====================================================== */
-
 /* ---------- Laptop ---------- */
+@media (max-width:1200px)
+{
 
-@media (max-width:1200px){
-
-    .portfolioContainer{
+    .portfolioContainer
+    {
         width:92%;
     }
 
-    .introContainer{
+    .introContainer
+    {
         grid-template-columns:320px 1fr;
         gap:50px;
     }
 
-    .profileBox img{
+    .profileBox img
+    {
         width:300px;
     }
 
 }
 
 /* ---------- Tablet ---------- */
-
-@media (max-width:992px){
-
-    .intro{
+@media (max-width:992px)
+{
+    .intro
+    {
         padding:100px 0 60px;
     }
 
-    .introContainer{
-
+    .introContainer
+    {
         grid-template-columns:1fr;
-
         text-align:center;
-
     }
 
-    .profileBox{
-
+    .profileBox
+    {
         order:1;
-
     }
 
-    .introText{
-
+    .introText
+    {
         order:2;
-
     }
 
-    .introText p{
-
+    .introText p
+    {
         margin:auto;
-
     }
 
-    .buttonGroup{
-
+    .buttonGroup
+    {
         justify-content:center;
-
     }
 
-    .aboutLayout{
-
+    .aboutLayout
+    {
         grid-template-columns:1fr;
-
     }
 
-    .journeyLine{
-
+    .journeyLine
+    {
         grid-template-columns:repeat(2,1fr);
-
     }
 
-    .journeyStep::after{
-
+    .journeyStep::after
+    {
         display:none;
-
     }
 
-    .skillsLayout{
-
+    .skillsLayout
+    {
         grid-template-columns:1fr;
-
     }
 
-    .projectRow{
-
+    .projectRow
+    {
         grid-template-columns:1fr;
-
         gap:30px;
-
     }
 
-    .projectRow:nth-child(even){
-
+    .projectRow:nth-child(even)
+    {
         direction:ltr;
-
     }
 
-    .funFacts{
-
+    .funFacts
+    {
         grid-template-columns:repeat(2,1fr);
-
     }
-
 }
 
 /* ---------- Mobile ---------- */
+@media (max-width:768px)
+{
 
-@media (max-width:768px){
-
-    .portfolioSection{
-
+    .portfolioSection
+    {
         padding:70px 0;
-
     }
 
-    .portfolioTitle{
-
+    .portfolioTitle
+    {
         font-size:2.2rem;
-
     }
 
-    .introText h1{
-
+    .introText h1
+    {
         font-size:2.8rem;
-
     }
 
-    .introText h2{
-
+    .introText h2
+    {
         font-size:1.2rem;
-
     }
 
-    .profileBox img{
-
+    .profileBox img
+    {
         width:240px;
-
     }
 
-    .storyCard{
-
+    .storyCard
+    {
         padding:30px;
-
     }
 
-    .infoCard{
-
+    .infoCard
+    {
         padding:25px;
-
     }
 
-    .journeyLine{
-
+    .journeyLine
+    {
         grid-template-columns:1fr;
-
     }
 
-    .funFacts{
-
+    .funFacts
+    {
         grid-template-columns:1fr;
-
     }
 
-    .contactSection{
+    .contactSection
+    {
 
         padding:40px 25px;
 
@@ -749,34 +704,216 @@ body
         width:180px;
 
     }
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+/* ---------- Laptop ---------- */
+@media (max-width:1200px)
+{
+    .introContainer
+    {
+        grid-template-columns:300px 1fr;
+        gap:50px;
+    }
+
+    .profileBox img
+    {
+        width:350px;
+    }
+
+    .projectRow
+    {
+        gap:40px;
+    }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width:992px)
+{
+    .portfolioContainer1,
+    .portfolioContainer2,
+    .portfolioContainer3,
+    .portfolioContainer4,
+    .portfolioContainer5,
+    .portfolioContainer6
+    {
+        padding:40px 30px;
+    }
+
+    .introContainer
+    {
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:40px;
+    }
+
+    .profileBox
+    {
+        order:1;
+    }
+
+    .introText
+    {
+        order:2;
+    }
+
+    .introText p
+    {
+        margin:0 auto 30px;
+    }
+
+    .buttonGroup
+    {
+        justify-content:center;
+    }
+
+    .aboutLayout
+    {
+        grid-template-columns:1fr;
+    }
+
+    .journeyLine
+    {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .skillsLayout
+    {
+        grid-template-columns:1fr;
+    }
+
+    .projectRow
+    {
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .projectRow:nth-child(even)
+    {
+        direction:ltr;
+    }
+
+    .contact
+    {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:768px)
+{
+    .portfolioTitle
+    {
+        font-size:40px;
+    }
+
+    .introText h1
+    {
+        font-size:2.8rem;
+    }
+
+    .introText h2
+    {
+        font-size:1.5rem;
+    }
+
+    .introText p
+    {
+        font-size:1rem;
+    }
+
+    .profileBox img
+    {
+        width:240px;
+    }
 
     .storyCard,
     .infoCard,
     .skillCard,
-    .factCard,
-    .contactSection{
-
-        padding:20px;
-
+    .journeyStep
+    {
+        padding:25px;
     }
 
-    .buttonGroup{
-
-        flex-direction:column;
-
-        align-items:center;
-
+    .journeyLine
+    {
+        grid-template-columns:1fr;
     }
 
-    .buttonGroup .btn{
-
-        width:100%;
-
-        max-width:250px;
-
-        text-align:center;
-
+    .contact
+    {
+        grid-template-columns:1fr;
     }
 
+    .contactCard:nth-child(even)
+    {
+        margin-top:0;
+    }
 }
 
+/* ---------- Small Phones ---------- */
+@media (max-width:480px)
+{
+    .portfolioContainer1,
+    .portfolioContainer2,
+    .portfolioContainer3,
+    .portfolioContainer4,
+    .portfolioContainer5,
+    .portfolioContainer6
+    {
+        padding:30px 20px;
+    }
+
+    .portfolioTitle
+    {
+        font-size:32px;
+    }
+
+    .introText h1
+    {
+        font-size:2.2rem;
+    }
+
+    .introText h2
+    {
+        font-size:1.2rem;
+    }
+
+    .introText p
+    {
+        font-size:.95rem;
+    }
+
+    .profileBox img
+    {
+        width:180px;
+    }
+
+    .storyCard,
+    .infoCard,
+    .skillCard,
+    .journeyStep,
+    .contactCard
+    {
+        padding:20px;
+    }
+
+    .buttonGroup
+    {
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .buttonGroup .btn
+    {
+        width:100%;
+        max-width:260px;
+        text-align:center;
+    }
+
+    .projectTags
+    {
+        justify-content:center;
+    }
+}}

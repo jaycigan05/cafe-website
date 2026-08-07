@@ -197,11 +197,11 @@ h2.center {
   align-items: center;
   gap: 8px;
   flex-shrink: 0; /* logo keeps its natural size — never gets squeezed by the nav-links */
-  min-width: 0;   /* lets logo-text's own nowrap + potential ellipsis (if ever added) work correctly inside flex */
+  min-width: 0;   /* lets logo-text's own nowrap + potential ellipsis (if ever added) work correctly inside flex */ 
 }
 
 .logo-image{
-  height: 44px;
+  height: 58px;
   width: auto;
   flex-shrink: 0;
 }

@@ -1,15 +1,18 @@
 // ==============================
 // Filter Reviews
 // ==============================
-
-function filterReviews() {
+function filterReviews() 
+{
     const selectedRating = document.getElementById("ratingFilter").value;
     const reviews = document.querySelectorAll(".reviewCard");
 
-    reviews.forEach(function (review) {
-        if (selectedRating === "all" || review.dataset.rating === selectedRating) {
+    reviews.forEach(function (review) 
+    {
+        if (selectedRating === "all" || review.dataset.rating === selectedRating) 
+            {
             review.style.display = "block";
-        } else {
+        } else 
+            {
             review.style.display = "none";
         }
     });
@@ -28,12 +31,14 @@ loadReviews();
 // ==============================
 // Load Reviews
 // ==============================
-
-function loadReviews() {
+function loadReviews() 
+{
     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-    reviews.forEach(review => {
-        addReview(
+    reviews.forEach(review => 
+        {
+        addReview
+        (
             review.name,
             review.rating,
             review.ratingNumber,
@@ -49,7 +54,8 @@ function loadReviews() {
 
 reviewForm.addEventListener("submit", submitReview);
 
-function submitReview(event) {
+function submitReview(event) 
+{
 
     event.preventDefault();
 
@@ -59,23 +65,28 @@ function submitReview(event) {
 
     let ratingNumber = "";
 
-    if (rating === "★★★★★") {
+    if (rating === "★★★★★") 
+        {
         ratingNumber = "5";
     }
-    else if (rating === "★★★★☆") {
+    else if (rating === "★★★★☆") 
+        {
         ratingNumber = "4";
     }
-    else if (rating === "★★★☆☆") {
+    else if (rating === "★★★☆☆") 
+        {
         ratingNumber = "3";
     }
-    else if (rating === "★★☆☆☆") {
+    else if (rating === "★★☆☆☆") 
+        {
         ratingNumber = "2";
     }
     else {
         ratingNumber = "1";
     }
 
-    const today = new Date().toLocaleDateString("en-US", {
+    const today = new Date().toLocaleDateString("en-US", 
+        {
         month: "long",
         day: "numeric",
         year: "numeric"
@@ -99,11 +110,13 @@ function submitReview(event) {
 // Save Review
 // ==============================
 
-function saveReview(name, rating, ratingNumber, reviewText, date) {
+function saveReview(name, rating, ratingNumber, reviewText, date) 
+{
 
     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-    reviews.unshift({
+    reviews.unshift(
+        {
         name,
         rating,
         ratingNumber,
@@ -118,7 +131,8 @@ function saveReview(name, rating, ratingNumber, reviewText, date) {
 // Add Review
 // ==============================
 
-function addReview(name, rating, ratingNumber, reviewText, date) {
+function addReview(name, rating, ratingNumber, reviewText, date) 
+{
 
     const reviewCard = document.createElement("div");
 
@@ -144,7 +158,8 @@ function addReview(name, rating, ratingNumber, reviewText, date) {
 // Success Popup
 // ==============================
 
-function closePopup() {
+function closePopup() 
+{
     document.getElementById("successPopup").classList.remove("show");
 }
 
@@ -154,20 +169,21 @@ function closePopup() {
 
 const reveals = document.querySelectorAll(".reveal");
 
-function revealOnScroll() {
+function revealOnScroll() 
+{
 
-    reveals.forEach((item) => {
+    reveals.forEach((item) => 
+        {
 
         const windowHeight = window.innerHeight;
         const revealTop = item.getBoundingClientRect().top;
         const revealPoint = 120;
 
-        if (revealTop < windowHeight - revealPoint) {
+        if (revealTop < windowHeight - revealPoint) 
+            {
             item.classList.add("active");
         }
-
     });
-
 }
 
 window.addEventListener("scroll", revealOnScroll);
