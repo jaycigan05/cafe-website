@@ -19,7 +19,6 @@
     border-radius: 20px;
     padding: 0 0 50px 0;
     margin: 10px auto 20px;
-    
 }
 
 .video{
@@ -28,7 +27,6 @@
     object-fit: cover;
     display: block;
     border-radius: 20px;
-    
 }
 
 .reviewContent{
@@ -37,24 +35,24 @@
     left:50%;
     transform:translateX(-50%);
     text-align:center;
-    color:white;
+    color:var(--white);
     z-index:2;
     width:90%;
     font-family: var(--font-display);
 }
 
 .reviewContent h1{
-    color: rgb(255, 255, 255);
+    color: var(--white);
     font-size:60px;
     margin-bottom:10px;
     text-shadow: 4px 4px 8px rgba(70, 45, 30, 0.8);
 }
 
 .reviewContent p{
-    font-size: 25px;
-    color: rgb(255, 254, 254);
+    font-size: 30px;
+    color: var(--text-light);
     text-shadow: 4px 4px 8px rgba(70, 45, 30, 0.8);
-   font-family: var(--font-display);
+    font-family: var(--font-display);
 }
 
 
@@ -76,7 +74,7 @@
 }
 
 .ratingSection1 {
-    flex:1;
+     flex:1;
      height: auto;
      padding: 10px;
      margin: 15px;
