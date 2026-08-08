@@ -11,7 +11,7 @@ const dogData = [
   { name: "Biscuit",     type: "Beagle" },
   { name: "Bailey",      type: "Bearded Collie" },
   { name: "Peanut",      type: "Bernese Mountain" },
-  { name: "Mashmallow",  type: "Bichon Frise" },
+  { name: "Ruby",        type: "Yorkshire Terrier" },
   { name: "Oreo",        type: "Border Collie" },
   { name: "Mochi",       type: "Brittany" },
   { name: "Nala",        type: "Cairn Terrier" },
@@ -36,7 +36,6 @@ const dogData = [
   { name: "Zoe",         type: "Soft Coated Wheaten" },
   { name: "Oliver",      type: "Toypoddle" },
   { name: "Leo",         type: "West Highland White Terrier" },
-  { name: "Ruby",        type: "Yorkshire Terrier" },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

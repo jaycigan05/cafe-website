@@ -1,575 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Pawfee Café - Reviews</title>
+    <head>
+        <!-- Basic Page Information -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wong Mae Ann | Portfolio</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/review.css">
-</head>
+        <!-- External Stylesheets -->
+        <link rel="stylesheet" href="../css/new_style.css">
+        <link rel="stylesheet" href="mae_ann.css">
+        <link rel="stylesheet" href="mae_ann-print.css" media="print">
 
-<body>
-    <header class="site-header">
-        <div class="container">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
 
-            <span class="logo">Pawfee Café 🐾🦴</span>
+    <body>
 
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li>
-                        <a href="register.html" class="nav-cta">
-                            Join Now
+        <!-- ===== NAVBAR ===== -->
+        <header class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img class="logo-image" src="../images/public/PAWFEE_CAFE_LOGO.svg" alt="" aria-hidden="true">
+                    <span class="logo-text">PAWFEE CAFÉ</span>
+                </a>
+
+                <nav class="nav-links" id="navLinks">
+                    <a href="../html/index.html" class="nav-link">Home</a>
+                    <a href="../html/menu.html" class="nav-link">Menu</a>
+                    <a href="../html/reviews.html" class="nav-link">Reviews</a>
+                    <a href="../html/team.html" class="nav-link active">Team</a>
+                    <a href="../html/register.html" class="nav-link nav-cta">Join Us</a>
+                </nav>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- ================= INTRO SECTION ================= -->
+        <!-- Displays personal introduction and quick action buttons -->
+        <section class="intro">
+
+            <div class="portfolioContainer1">
+
+                <div class="introContainer">
+
+                <div class="profileBox">
+                    <img src="../images/mae.png" alt="Wong Mae Ann">
+                </div>
+
+                <div class="introText fade">
+                    <h4>Portfolio</h4>
+                    <h1>Wong Mae Ann</h1>
+                    <h2>University Student</h2>
+                    <p>
+                        I am an Computer Science student with a passion
+                        for creating responsive websites that are both
+                        visually appealing and user-friendly. I enjoy turning
+                        ideas into interactive web experiences and continuously
+                        improving my programming and design skills.
+                    </p>
+
+                    <div class="buttonGroup">
+                        <a href="#projects" class="btn">
+                            View Projects
                         </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!--Reviews Container-->
-
-    <div class="reviewContainer">
-
-        <!-- Banner -->
-        <img
-            src="Images/DC.webp"
-            alt="Pawfee Cafe Banner"
-            class="img">
-
-        <h1>⭐ Reviews ⭐</h1>
-
-        <div class="ratingBox">
-
-            <p class="rp">
-                4.9 / 5 Average Rating
-            </p>
-        </div>
-
-        <!--Statistics-->
-
-        <div class="statisticsRow">
-
-            <div class="statisticsCard">
-
-                🥰
-
-                <h2>500+</h2>
-
-                <p class="rp">
-                    Happy Customers
-                </p>
+                        <button type="button" class="btn btn-print" onclick="window.print()">
+                            Print CV
+                        </button>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="statisticsCard">
+         <!-- ================= ABOUT ME ================= -->
+        <!-- Shows personal background, education and interests -->
+        <section class="portfolioSection">
 
-                🐾
+            <div class="portfolioContainer2">
 
-                <h2>1000+</h2>
+                <h2 class="portfolioTitle">
+                    About Me
+                </h2>
 
-                <p class="rp">
-                    Wagging Tails
-                </p>
-            </div>
+                <div class="aboutLayout">
 
-            <div class="statisticsCard">
+                    <div class="storyCard">
 
-                ☕
-
-                <h2>3000+</h2>
-
-                <p class="rp">
-                    Cups Served
-                </p>
-            </div>
-
-            <div class="statisticsCard">
-
-                📸
-
-                <h2>600+</h2>
-
-                <p class="rp">
-                    Happy Memories
-                </p>
-            </div>
-        </div>
-
-        <!--Customer Reviews-->
-        <div class = "ratingContainer">
-            <h1 >
-                💬 What Customers Say
-            </h1>
-
-        <div class="reviewFilter">
-
-            <label for="ratingFilter">
-                Filter Reviews:
-            </label>
-
-            <select
-                id="ratingFilter"
-                onchange="filterReviews()">
-
-                <option value="all">
-                    ⭐ All Reviews
-                </option>
-
-                <option value="5">
-                    ⭐⭐⭐⭐⭐
-                </option>
-
-                <option value="4">
-                    ⭐⭐⭐⭐☆
-                option>
-
-                <option value="3">
-                    ⭐⭐⭐☆☆
-                </option>
-
-                option value="2">
-                    ⭐⭐☆☆☆
-                </option>
-
-                <option value="1">
-                    ⭐☆☆☆☆
-                </option>
-
-            </select>
-
-        </div>
-
-    <div class="reviewRow">
-
-        <!-- 5 Stars -->
-        <div class="reviewCard" data-rating="5">
-            <img src="Images/P1.jpg" alt="Profile 1" class="rimage">
-            <h3>Emily Tan</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "The coffee was amazing and Mochi followed me everywhere.
-                Definitely visiting again!"
-            </p>
-            <div class="reviewDate">📅 July 2, 2025</div>
-        </div>
-
-        <div class="reviewCard" data-rating="5">
-            <img src="Images/P2.jpg" alt="Profile 2" class="rimage">
-            <h3>Daniel Wong</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "Excellent service, delicious drinks and the dogs were so friendly.
-                Highly recommended!"
-            </p>
-            <div class="reviewDate">📅 July 10, 2025</div>
-        </div>
-
-        <div class="reviewCard" data-rating="5">
-            <img src="Images/P3.jpg" alt="Profile 3" class="rimage">
-            <h3>Sarah Lee</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "Boba was so cute and the desserts were delicious too!"
-            </p>
-            <div class="reviewDate">📅 July 7, 2025</div>
-        </div>
-
-        <div class="reviewCard" data-rating="5">
-            <img src="Images/P4.jpg" alt="Profile 4" class="rimage">
-            <h3>Jason Lim</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "Perfect place for studying while enjoying coffee with adorable dogs."
-            </p>
-            <div class="reviewDate">📅 July 5, 2025</div>
-        </div>
-
-        <div class="reviewCard" data-rating="5">
-            <img src="Images/P5.jpg" alt="Profile 5" class="rimage">
-            <h3>Amanda Lee</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "The atmosphere was cozy and every dog was incredibly friendly!"
-            </p>
-            <div class="reviewDate">📅 August 2, 2025</div>
-        </div>
-
-        <!-- 4 Stars -->
-        <div class="reviewCard" data-rating="4">
-            <img src="Images/P6.jpg" alt="Profile 6" class="rimage">
-            <h3>Ryan Lim</h3>
-            <div class="stars">⭐⭐⭐⭐☆</div>
-            <p>
-                "The drinks were delicious and the dogs were adorable.
-                It was a little busy, but I still had a wonderful time."
-            </p>
-            <div class="reviewDate">📅 June 10, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="4">
-            <img src="Images/P7.jpg" alt="Profile 7" class="rimage">
-            <h3>Chloe Tan</h3>
-            <div class="stars">⭐⭐⭐⭐☆</div>
-            <p>
-                "Lovely atmosphere and friendly staff.
-                I wish there were more dessert choices."
-            </p>
-            <div class="reviewDate">📅 June 15, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="4">
-            <img src="Images/P8.jpg" alt="Profile 8" class="rimage">
-            <h3>Justin Lee</h3>
-            <div class="stars">⭐⭐⭐⭐☆</div>
-            <p>
-                "Very relaxing place.
-                I would love to visit again with my friends."
-            </p>
-            <div class="reviewDate">📅 June 22, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="4">
-            <img src="Images/P9.jpg" alt="Profile 9" class="rimage">
-            <h3>Michelle Tan</h3>
-            <div class="stars">⭐⭐⭐⭐☆</div>
-            <p>
-                "The café was clean and cozy.
-                More seating would make it even better."
-            </p>
-            <div class="reviewDate">📅 June 28, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="4">
-            <img src="Images/P10.jpg" alt="Profile 10" class="rimage">
-            <h3>Kevin Ong</h3>
-            <div class="stars">⭐⭐⭐⭐☆</div>
-            <p>
-                "Friendly staff and delicious coffee.
-                The wait was slightly longer than expected."
-            </p>
-            <div class="reviewDate">📅 July 3, 2026</div>
-        </div>
-
-        <!-- 3 Stars -->
-        <div class="reviewCard" data-rating="3">
-            <img src="Images/P11.jpg" alt="Profile 11" class="rimage">
-            <h3>Ally Wong</h3>
-            <div class="stars">⭐⭐⭐☆☆</div>
-            <p>
-                "The café was nice but it was quite noisy during peak hours."
-            </p>
-            <div class="reviewDate">📅 February 11, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="3">
-            <img src="Images/P12.jpg" alt="Profile 12" class="rimage">
-            <h3>Eric Tan</h3>
-            <div class="stars">⭐⭐⭐☆☆</div>
-            <p>
-                "The drinks were good, but I expected a larger food menu."
-            </p>
-            <div class="reviewDate">📅 July 12, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="3">
-            <img src="Images/P13.jpg" alt="Profile 13" class="rimage">
-            <h3>Rachel Ho</h3>
-            <div class="stars">⭐⭐⭐☆☆</div>
-            <p>
-                "Nice experience overall.
-                The waiting time was a little long."
-            </p>
-            <div class="reviewDate">📅 July 18, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="3">
-            <img src="Images/P14.jpg" alt="Profile 14" class="rimage">
-            <h3>Marcus Lim</h3>
-            <div class="stars">⭐⭐⭐☆☆</div>
-            <p>
-                "The dogs were lovely, but it was crowded on weekends."
-            </p>
-            <div class="reviewDate">📅 July 24, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="3">
-            <img src="Images/P15.jpg" alt="Profile 15" class="rimage">
-            <h3>Olivia Goh</h3>
-            <div class="stars">⭐⭐⭐☆☆</div>
-            <p>
-            "   Overall a pleasant visit, but service could be a little faster."
-            </p>
-            <div class="reviewDate">📅 July 30, 2026</div>
-        </div>
-
-        <!-- 2 Stars -->
-        <div class="reviewCard" data-rating="2">
-            <img src="Images/P16.jpg" alt="Profile 16" class="rimage">
-            <h3>Nicholas Low</h3>
-            <div class="stars">⭐⭐☆☆☆</div>
-            <p>
-                "The café was too crowded and service was slower than expected."
-            </p>
-            <div class="reviewDate">📅 August 5, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="2">
-            <img src="Images/P17.jpg" alt="Profile 17" class="rimage">
-            <h3>Tiffany Lee</h3>
-            <div class="stars">⭐⭐☆☆☆</div>
-            <p>
-                "The drinks were okay, but the waiting time was disappointing."
-            </p>
-            <div class="reviewDate">📅 August 11, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="2">
-            <img src="Images/P18.jpg" alt="Profile 18" class="rimage">
-            <h3>Ethan Wong</h3>
-            <div class="stars">⭐⭐☆☆☆</div>
-            <p>
-                "The atmosphere was pleasant, but the service needs improvement."
-            </p>
-            <div class="reviewDate">📅 August 16, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="2">
-            <img src="Images/P19.jpg" alt="Profile 19" class="rimage">
-            <h3>Grace Lim</h3>
-            <div class="stars">⭐⭐☆☆☆</div>
-            <p>
-                "Not enough seating when we arrived."
-            </p>
-            <div class="reviewDate">📅 August 22, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="2">
-            <img src="Images/P20.jpg" alt="Profile 20" class="rimage">
-            <h3>Jason Chua</h3>
-            <div class="stars">⭐⭐☆☆☆</div>
-            <p>
-                "The food was nice but the drinks took too long to arrive."
-            </p>
-            <div class="reviewDate">📅 August 29, 2026</div>
-        </div>
-
-        <!-- 1 Star -->
-        <div class="reviewCard" data-rating="1">
-            <img src="Images/P21.jpg" alt="Profile 21" class="rimage">
-            <h3>Kevin Ong</h3>
-            <div class="stars">⭐☆☆☆☆</div>
-            <p>
-                "Unfortunately my order was delayed.
-                Hopefully the service improves next time."
-            </p>
-            <div class="reviewDate">📅 September 3, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="1">
-            <img src="Images/P22.jpg" alt="Profile 22" class="rimage">
-            <h3>Brandon Lee</h3>
-            <div class="stars">⭐☆☆☆☆</div>
-            <p>
-                "The café was overcrowded and it was difficult to find a seat."
-            </p>
-            <div class="reviewDate">📅 September 7, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="1">
-            <img src="Images/P23.jpg" alt="Profile 23" class="rimage">
-            <h3>Kelly Tan</h3>
-            <div class="stars">⭐☆☆☆☆</div>
-            <p>
-                "The drink wasn't served at the temperature I expected."
-            </p>
-            <div class="reviewDate">📅 September 12, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="1">
-            <img src="Images/P24.jpg" alt="Profile 24" class="rimage">
-            <h3>Aaron Lim</h3>
-            <div class="stars">⭐☆☆☆☆</div>
-            <p>
-                "Unfortunately my visit didn't meet my expectations."
-            </p>
-            <div class="reviewDate">📅 September 18, 2026</div>
-        </div>
-
-        <div class="reviewCard" data-rating="1">
-            <img src="Images/P25.jpeg" alt="Profile 25" class="rimage">
-            <h3>Hannah Goh</h3>
-            <div class="stars">⭐☆☆☆☆</div>
-            <p>
-                "The café was very busy and the overall experience wasn't as relaxing as I had hoped."
-            </p>
-            <div class="reviewDate">📅 September 24, 2026</div>
-        </div>
-    </div>
-    </div>
-
-        <!--Customer Memories-->
-
-        <h1 class="mp">
-            📸 Customer Memories
-        </h1>
-
-        <div class="memoryRow">
-
-            <img src="Images/CM1.jpg"
-                alt="Customer playing with dogs">
-
-            <img src="Images/CM2.jpg"
-                alt="Customer enjoying coffee">
-
-            <img src="Images/CM3.jpg"
-                alt="Dogs relaxing in the cafe">
-
-            <img src="Images/CM4.webp"
-                alt="Happy customer at Pawfee Cafe">
-        </div>
-
-        <!--Leave Review-->
-        <div class = "ratingContainer">
-            <h1 class="mp">
-            💬Leave Your Review
-        </h1>
-
-        <div class="reviewForm">
-
-            <input
-                type="text"
-                placeholder="Your Name">
-            <select>
-
-                <option>
-                    ⭐ Select Rating
-                </option>
-
-                <option>
-                    ⭐⭐⭐⭐⭐
-                </option>
-
-                <option>
-                    ⭐⭐⭐⭐☆
-                </option>
-
-                <option>
-                    ⭐⭐⭐☆☆
-                </option>
-
-                <option>
-                    ⭐⭐☆☆☆
-                </option>
-
-                <option>
-                    ⭐☆☆☆☆
-                </option>
-            </select>
-
-            <textarea
-                placeholder="Write your review here..."></textarea>
-
-            <button class="seeMoreButton">
-                Submit 🐾
-            </button>
-
-        </div>
-
-        </div>
-    </div>
-    <!--Footer-->
-
-    <footer class="site-footer">
-        <div class="container">
-
-            <div class="footer-columns">
-
-                <div class="footer-column">
-
-                    <h4>Visit Us</h4>
-
-                    <p>
-                        123, Jalan ABC,
-                        Taman Harimau,
-                        Wilayah Persekutuan Kuala Lumpur
+                        <h3>My Story</h3>
+                        <p>
+                        I enjoy designing websites that combine creativity
+                        with functionality. Through university projects,
+                        I have gained experience in HTML, CSS, JavaScript,
+                        and Java programming. Every project allows
+                        me to learn something new while improving my ability
+                        to create responsive and accessible websites.
                     </p>
+                    </div>
 
-                    <p>
-                        hello@pawfeecafe.com
-                    </p>
+                    <div class="sideCards">
 
+                        <div class="infoCard">
+
+                            <h3>Education</h3>
+                            <ul>
+                                <li>🎓 Degree in Computer Science</li>
+                                <li>🏫 Sunway University</li>
+                            </ul>
+                        </div>
+
+                        <div class="infoCard">
+
+                            <h3>Interests</h3>
+                            <ul>
+                                <li>☕ UI Design</li>
+                                <li>💻 Front-End Development</li>
+                            </ul>
+                        </div>
+                    </div>  
                 </div>
-
-                <div class="footer-column">
-
-                    <h4>Opening Hours</h4>
-
-                    <p>Mon - Fri: 9am - 9pm</p>
-
-                    <p>Sat - Sun: 8am - 10pm</p>
-
-                </div>
-
-                <div class="footer-column">
-
-                    <h4>Follow Us</h4>
-
-                    <a href="#">Instagram</a>
-
-                    <a href="#">Facebook</a>
-
-                </div>
-
             </div>
+        </section>
 
-            <div class="footer-bottom">
+        <!-- ================= DESIGN JOURNEY ================= -->
+        <!-- Timeline showing learning milestones and future goals -->
+        <section class="portfolioSection">
 
-                <p>
-                    &copy; 2026 Pawfee Café. All rights reserved.
-                </p>
+            <div class="portfolioContainer3">
 
+                <h2 class="portfolioTitle">Design Journey</h2>
+
+                <div class="journey">
+
+                    <div class="journeyLine">
+
+                        <div class="journeyStep">
+                            <div class="journeyIcon">🌱</div>
+                            <h4>Started Learning</h4>
+                            <p>Learned HTML and CSS fundamentals.</p>
+                        </div>
+
+                        <div class="journeyStep">
+                            <div class="journeyIcon">☕</div>
+                            <h4>Pawfee Café</h4>
+                            <p>Built a responsive multi-page café website.</p>
+                        </div>
+
+                        <div class="journeyStep">
+                            <div class="journeyIcon">💻</div>
+                            <h4>Java</h4>
+                            <p>Learned Java Scripts and built interactive web features.</p>
+                        </div>
+
+                        <div class="journeyStep">
+                            <div class="journeyIcon">🚀</div>
+                            <h4>Future Goal</h4>
+                            <p>Become a professional Front-End Developer.</p>
+                        </div>
+
+                    </div>
+             </div>
             </div>
+        </section>
 
-        </div>
-    </footer>
+        <!-- ================= TECHNICAL SKILLS ================= -->
+        <!-- Displays programming skills using CSS progress bars -->
+        <section class="portfolioSection">
 
-    <!--Review Filter JavaScript-->
+            <div class="portfolioContainer4">
 
-    <script>
+                <h2 class="portfolioTitle">My Skills</h2>
 
-    function filterReviews(){
+                <div class="skillsLayout">
 
-        const selectedRating =
-            document.getElementById("ratingFilter").value;
+                    <div class="skillCard">
+                        <div class="skillTop">
+                            <h3>HTML</h3>
+                            <span class="skillPercent">95%</span>
+                        </div>
+                        <div class="skillBar">
+                            <div class="skillFill htmlSkill"></div>
+                        </div>
+                    </div>
 
-        const reviews =
-            document.querySelectorAll(".reviewCard");
+                    <div class="skillCard">
+                        <div class="skillTop">
+                            <h3>CSS</h3>
+                            <span class="skillPercent">90%</span>
+                        </div>
+                        <div class="skillBar">
+                            <div class="skillFill cssSkill"></div>
+                        </div>
+                    </div>
 
-        reviews.forEach(function(review){
+                    <div class="skillCard">
+                        <div class="skillTop">
+                            <h3>JavaScript</h3>
+                            <span class="skillPercent">75%</span>
+                        </div>
+                        <div class="skillBar">
+                            <div class="skillFill jsSkill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            if(selectedRating === "all"){
-                review.style.display = "block";
-            }
-            else if(review.dataset.rating === selectedRating){
-            review.style.display = "block";
-            }
+        <!-- ================= FEATURED PROJECT ================= -->
+        <!-- Highlights the main web development project -->
+        <section class="portfolioSection" id="projects">
 
-            else{
+            <div class="portfolioContainer5">
 
-                review.style.display = "none";
+                <h2 class="portfolioTitle">Featured Project</h2>
 
-            }
+                <div class="projectRow">
 
-        });
+                    <div class="projectImage">
+                        <img src="../images/reviewpage.png" alt="Pawfee Café Website">
+                    </div>
 
-    }
+                    <div class="projectContent">
 
-    </script>
+                        <h3>Pawfee Café Website</h3>
 
-</body>
+                        <p>
+                            Pawfee Café is a responsive café website created
+                            as a group project. I was responsible for designing
+                            and developing the review page and portfolio page. The project
+                            focuses on responsive layouts, accessibility and
+                            modern web design.
+                        </p>
+
+                        <div class="projectTags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT INFORMATION ================= -->
+        <!-- Lists personal contact methods and social media -->
+        <section class="portfolioSection">
+
+            <div class="portfolioContainer6">
+
+                <h2 class="portfolioTitle">Contact</h2>
+
+                <div class="contact">
+
+                    <div class="contactCard">
+                        <div class="contactIcon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>24047185@imail.sunway.edu.my</p>
+                    </div>
+
+                    <div class="contactCard">
+                        <div class="contactIcon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p>+60 18-327-7001</p>
+                    </div>
+
+                    <div class="contactCard">
+                        <div class="contactIcon">
+                        <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <h4>Facebook</h4>
+                        <p>Mae Ann</p>
+                    </div>
+
+                    <div class="contactCard">
+                        <div class="contactIcon">
+                        <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <h4>Instagram</h4>
+                        <p>mae0211594</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="section-container footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text footer-logo">PAWFEE CAFÉ</span>
+                    <p>123 Bark Street, Selangor, Malaysia</p>
+                    <p>Open daily · 11am – 9pm</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="team.html">Team</a>
+                    <a href="register.html">Join Us</a>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow along</h4>
+                    <div class="social-icons">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor"
+                            stroke-width="1.8" />
+                        <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" />
+                        </svg>
+                        <span class="social-label">Instagram</span>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="footer-image">
+                    <img src="../images/cafe-interior.jpg" alt="Inside Pawfee Café" loading="lazy">
+                </div>
+            </div>
+            <p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
+

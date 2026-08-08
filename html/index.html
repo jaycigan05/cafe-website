@@ -5,19 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pawfee Café | Home</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <!-- new_style.css = site-wide rules (navbar, footer, buttons, colours).
+       index.css = rules for this page only (hero, about, menu preview,
+       resident dogs, reviews, cta banner). Load order matters: index.css
+       comes second so it can safely reuse new_style.css's variables. -->
+  <link rel="stylesheet" href="../css/new_style.css">
   <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
 
-<<<<<<< HEAD
+<!-- Accessibility: lets keyboard/screen-reader users jump straight past
+     the navbar to the page content, instead of tabbing through every
+     nav link first. Hidden until it receives keyboard focus. -->
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">
+        <img class="logo-image" src="../images/public/PAWFEE_CAFE_LOGO.svg" alt="" aria-hidden="true">
         <span class="logo-text">PAWFEE CAFÉ</span>
-        <span class="logo-icon">🐾🦴</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
@@ -36,6 +44,8 @@
     </div>
   </header>
 
+<main id="mainContent">
+
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
     <video class="hero-video" autoplay muted loop playsinline poster="../images/interact-poster.jpg">
@@ -43,23 +53,18 @@
     </video>
     <div class="hero-overlay"></div>
 
-    <!-- cursor-follow paw prints render here via script.js -->
-    <div class="paw-cursor-layer" id="pawCursorLayer" aria-hidden="true"></div>
-
     <div class="hero-container">
       <div class="hero-left">
-        <div class="paw-trail" aria-hidden="true">
-          <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
-        </div>
         <p class="eyebrow">A café built for two species</p>
-        <h1 class="hero-heading hero-heading-interactive">
-          <span class="word">Good</span> <span class="word">vibes.</span><br>
-          <span class="word">Good</span> <span class="word">coffee.</span><br>
-          <span class="word accent">Good</span> <span class="word accent">dogs.</span>
+        <h1 class="hero-heading">
+          Good vibes.<br>
+          Good coffee.<br>
+          <span class="accent">Good dogs.</span>
         </h1>
       </div>
 
       <div class="hero-right">
+        <!-- Trust-building quick stats, purely static text -->
         <div class="hero-stats">
           <div class="stat">
             <span class="stat-number">4.9</span>
@@ -67,7 +72,7 @@
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-number">30+</span>
+            <span class="stat-number">30</span>
             <span class="stat-label">regular dogs</span>
           </div>
           <div class="stat-divider"></div>
@@ -77,6 +82,7 @@
           </div>
         </div>
 
+        <!-- Primary hero calls-to-action -->
         <div class="hero-buttons">
           <a href="menu.html" class="btn btn-outline">See the Menu</a>
           <a href="register.html" class="btn btn-solid">Join Us</a>
@@ -89,18 +95,20 @@
   <!-- ===== ABOUT / OUR STORY ===== -->
   <section class="about" id="about">
     <div class="section-container about-grid">
+      <!-- Auto-rotating photo slider (logic in index.js:initAboutSlider).
+           The 3 images below are the only slides — index.js reads them
+           straight from the DOM, cross-fades whichever has the "active"
+           class, and generates the nav dots into #aboutImageDots itself. -->
       <div class="about-image" id="aboutImage">
-        <img src="../images/ourstory1.webp" alt="Playing with dog" class="active" loading="lazy">
-        <img src="../images/ourstory2.webp" alt="Dog getting a treat" loading="lazy">
-        <img src="../images/ourstory3.jpg" alt="Our regular dogs" loading="lazy">
+        <img src="../images/ourstory1.webp" alt="Playing with dog" class="about-slide active" loading="lazy">
+        <img src="../images/ourstory2.webp" alt="Dog getting a treat" class="about-slide" loading="lazy">
+        <img src="../images/ourstory3.jpg" alt="Our regular dogs" class="about-slide" loading="lazy">
 
         <button type="button" class="about-image-next" id="aboutImageNext" aria-label="Next photo">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 6 15 12 9 18"></polyline>
-          </svg>
+          <img class="about-image-next-icon" src="../images/arrow.svg" alt="" aria-hidden="true">
         </button>
 
+        <!-- Filled in by JS — one dot per photo above -->
         <div class="about-image-dots" id="aboutImageDots" role="tablist" aria-label="Our story photos"></div>
       </div>
       <div class="about-content">
@@ -110,7 +118,7 @@
           We started Pawfee Café because coffee tastes better with a wagging tail nearby. What began as a dream to blend
           specialty brews with animal rescue is now a cozy community hub where every latte pairs with unconditional
           love. Whether you are here to unplug with a furry companion or meet your future best friend, every sip
-          supports a rescue pup's journey to a forever home. Stop by, grab your favorite drink, and let us prove that
+          supports a rescue pup's journey to a forever home. Stop by, grab your favorite drink and let us prove that
           happiness is just a pawprint away.
         </p>
         <a href="team.html" class="btn btn-ghost">Meet the team →</a>
@@ -125,13 +133,136 @@
       <p class="eyebrow eyebrow-dark center">Top Seller</p>
       <h2 class="center">Something for every set of paws</h2>
 
+      <!-- For Humans / For Dogs toggle — same look as the Menu page.
+           No JavaScript: two hidden radio inputs act as the toggle
+           state, the <label>s below act as clickable buttons (clicking
+           a label checks its matching radio), and index.css uses the
+           ":checked ~" CSS selector to show/hide the matching podium
+           and slide the pill highlight left/right. Only one of
+           .podium-human / .podium-dog is visible at any time. -->
+      <div class="podium-toggle">
+        <input type="radio" name="menuFlavor" id="flavorHuman" class="podium-toggle-input" checked>
+        <input type="radio" name="menuFlavor" id="flavorDog" class="podium-toggle-input">
+
+        <div class="toggle-switch">
+          <div class="toggle-track">
+            <label for="flavorHuman" class="toggle-btn">For Humans</label>
+            <label for="flavorDog" class="toggle-btn">For Dogs</label>
+          </div>
+        </div>
+
+        <!-- Top 3 podium — For Humans. Ranked by "popularity" score in
+             the Menu page's MENU_ITEMS data (menu.js): Grilled Chicken
+             Chop (99), Carbonara (97), Beef Burger (93). Hardcoded here
+             since this page has no access to that JS data/logic. -->
+        <div class="podium podium-human">
+          <div class="podium-slot" data-slot="left">
+            <div class="podium-card">
+              <span class="podium-medal" aria-hidden="true">🥈</span>
+              <div class="podium-shape">
+                <div class="podium-content">
+                  <div class="podium-media">
+                    <img class="card-media-inner" src="../images/menu/Pasta&Pizza/Carbonara.jpg" alt="Carbonara" loading="lazy">
+                  </div>
+                  <p class="podium-name">Carbonara</p>
+                  <span class="podium-rank-label">#2 best seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="podium-slot podium-center" data-slot="center">
+            <div class="podium-card">
+              <span class="podium-medal" aria-hidden="true">🥇</span>
+              <div class="podium-shape">
+                <div class="podium-content">
+                  <div class="podium-media">
+                    <img class="card-media-inner" src="../images/menu/Mains/Grilled_Chicken_Chop.jpg" alt="Grilled Chicken Chop" loading="lazy">
+                  </div>
+                  <p class="podium-name">Grilled Chicken Chop</p>
+                  <span class="podium-rank-label">#1 best seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="podium-slot" data-slot="right">
+            <div class="podium-card">
+              <span class="podium-medal" aria-hidden="true">🥉</span>
+              <div class="podium-shape">
+                <div class="podium-content">
+                  <div class="podium-media">
+                    <img class="card-media-inner" src="../images/menu/Burgers&Sandwiches/Beef_Burger.jpg" alt="Beef Burger" loading="lazy">
+                  </div>
+                  <p class="podium-name">Beef Burger</p>
+                  <span class="podium-rank-label">#3 best seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top 3 podium — For Dogs (Paw Menu category). Same ranking
+             approach: Blueberry Pupcakes (99), Dog Biscuits (97),
+             Pumpkin Pancakes (95). Hidden by default; index.css reveals
+             this and hides .podium-human when #flavorDog is checked. -->
+        <div class="podium podium-dog">
+          <div class="podium-slot" data-slot="left">
+            <div class="podium-card">
+              <span class="podium-medal" aria-hidden="true">🥈</span>
+              <div class="podium-shape">
+                <div class="podium-content">
+                  <div class="podium-media">
+                    <img class="card-media-inner" src="../images/menu/Paw_Menu/Dog_Biscuits.jpg" alt="Dog Biscuits" loading="lazy">
+                  </div>
+                  <p class="podium-name">Dog Biscuits</p>
+                  <span class="podium-rank-label">#2 best seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="podium-slot podium-center" data-slot="center">
+            <div class="podium-card">
+              <span class="podium-medal" aria-hidden="true">🥇</span>
+              <div class="podium-shape">
+                <div class="podium-content">
+                  <div class="podium-media">
+                    <img class="card-media-inner" src="../images/menu/Paw_Menu/Blueberry_Pupcakes.jpg" alt="Blueberry Pupcakes" loading="lazy">
+                  </div>
+                  <p class="podium-name">Blueberry Pupcakes</p>
+                  <span class="podium-rank-label">#1 best seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="podium-slot" data-slot="right">
+            <div class="podium-card">
+              <span class="podium-medal" aria-hidden="true">🥉</span>
+              <div class="podium-shape">
+                <div class="podium-content">
+                  <div class="podium-media">
+                    <img class="card-media-inner" src="../images/menu/Paw_Menu/Pumpkin_Pancakes.jpg" alt="Pumpkin Pancakes" loading="lazy">
+                  </div>
+                  <p class="podium-name">Pumpkin Pancakes</p>
+                  <span class="podium-rank-label">#3 best seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="center-btn">
         <a href="menu.html" class="btn btn-ghost">View Full Menu →</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== RESIDENT DOGS ===== -->
+  <!-- ===== RESIDENT DOGS =====
+       Static teaser of 6 dogs (out of 31 total — see team.html for the
+       full roster, which is generated dynamically from js/team.js). -->
   <section class="resident-dogs" id="resident-dogs">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">Say hello</p>
@@ -165,8 +296,8 @@
         </div>
         <div class="dog-card">
           <img src="../images/dogs/dog-06.avif" alt="Marshmallow, resident dog" loading="lazy">
-          <span class="dog-name">Marshmallow</span>
-          <span class="dog-type">Bichon Frise</span>
+          <span class="dog-name">Ruby</span>
+          <span class="dog-type">Yorkshire Terrie</span>
         </div>
       </div>
 
@@ -176,7 +307,11 @@
     </div>
   </section>
 
-  <!-- ===== REVIEWS TEASER ===== -->
+  <!-- ===== REVIEWS TEASER =====
+       3 real reviews copied word-for-word from reviews.html (same
+       names, star ratings, quotes and dates), styled to match that
+       page's review cards. This is a snapshot, not a live feed — if
+       reviews.html's content changes, update these 3 cards by hand. -->
   <section class="reviews-teaser" id="reviews-teaser">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">What guests say</p>
@@ -184,27 +319,29 @@
       
        <div class="reviewRow">
 
-        <!-- 5 Stars -->
+        <!-- 5 Stars — copied from reviews.html -->
         <div class="reviewCard" data-rating="5">
-            <img src="Images/P1.jpg" alt="Profile 1" class="rimage">
+            <img src="../images/P1.jpg" alt="Profile 1" class="rimage">
             <h3>Emily Tan</h3>
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "The coffee was amazing and Mochi followed me everywhere.
-                Definitely visiting again!"
-            </p>
-            <div class="reviewDate">📅 July 2, 2025</div>
+            <p>"Absolutely loved the coffee and the friendly dogs. I'll definitely be back!"</p>
+            <div class="reviewDate">📅 July 2, 2026</div>
         </div>
 
         <div class="reviewCard" data-rating="5">
-            <img src="Images/P2.jpg" alt="Profile 2" class="rimage">
+            <img src="../images/P2.jpg" alt="Profile 2" class="rimage">
             <h3>Daniel Wong</h3>
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                "Excellent service, delicious drinks and the dogs were so friendly.
-                Highly recommended!"
-            </p>
-            <div class="reviewDate">📅 July 10, 2025</div>
+            <p>"Excellent service, delicious drinks, and adorable dogs!"</p>
+            <div class="reviewDate">📅 July 10, 2026</div>
+        </div>
+
+        <div class="reviewCard" data-rating="5">
+            <img src="../images/P3.jpg" alt="Profile 3" class="rimage">
+            <h3>Sarah Lee</h3>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Boba was so cute and the desserts were delicious!"</p>
+            <div class="reviewDate">📅 July 15, 2026</div>
         </div>
       </div>
 
@@ -214,24 +351,33 @@
     </div>
   </section>
 
-  <!-- ===== CTA BANNER ===== -->
+  <!-- ===== CTA BANNER =====
+       Simple closing call-to-action. Clicking the phone-number button
+       copies the café phone number to the visitor's clipboard instead
+       of opening the device phone dialer. -->
   <section class="cta-banner">
     <div class="section-container cta-content">
       <h2>Ready to visit us?</h2>
-      <p>Just walk in anytime, or reserve a table ahead if you'd like it guaranteed.</p>
-      <a href="register.html" class="btn btn-solid">Book a Table</a>
+      <p>Just walk in anytime or give us a call and we'll save you a seat.</p>
+      <a href="#" id="copyCafePhone" class="btn btn-solid" data-phone="+60 12-345 6789" aria-label="Copy café phone number"><img class="btn-phone-icon" src="../images/phone.svg" alt="" aria-hidden="true"> <span class="phone-label">+60 12-345 6789</span></a>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+</main>
+
+  <!-- ===== FOOTER =====
+       Shared layout/structure across every page (see new_style.css
+       for the actual styling) — only the content below changes. -->
   <footer class="footer">
     <div class="section-container footer-grid">
+      <!-- Brand + address block -->
       <div class="footer-brand">
         <span class="logo-text footer-logo">PAWFEE CAFÉ</span>
         <p>123 Bark Street, Selangor, Malaysia</p>
         <p>Open daily · 11am – 9pm</p>
       </div>
 
+      <!-- Site navigation, duplicated from the navbar for convenience -->
       <div class="footer-links">
         <h4>Explore</h4>
         <a href="index.html">Home</a>
@@ -241,16 +387,13 @@
         <a href="register.html">Join Us</a>
       </div>
 
+      <!-- Social links. "#" is a placeholder — swap in the real
+           Instagram profile URL when the café has one. -->
       <div class="footer-social">
         <h4>Follow along</h4>
         <div class="social-icons">
           <a href="#" class="social-link" aria-label="Instagram">
-            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor"
-                stroke-width="1.8" />
-              <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.8" />
-              <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" />
-            </svg>
+            <img class="social-icon" src="../images/instagram.svg" alt="" aria-hidden="true">
             <span class="social-label">Instagram</span>
           </a>
         </div>
@@ -263,89 +406,8 @@
     <p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
   </footer>
 
+  <!-- Nav toggle, About slider, and cursor paw prints — see index.js -->
   <script src="../js/index.js"></script>
-  <script src="../js/team.js"></script>
 </body>
 
 </html>
-=======
-		<section class="menu-preview">
-			<div class="container">
-				<h2>What's Brewing ☕🍵</h2>
-				<p class="section-subtitle">Something for every mood, every visit</p>
-				<div class="p_menu-grid">
-					<div class="p_menu-card p_menu-coffee">
-						<img src="../images/Coffee.jpeg" alt="Coffee" class="p_menu-photo">
-						<div class="p_menu-info">
-							<h3>Coffee</h3>
-							<p>Warm, bold and crafted with love. Our Coffee will make you want to stay all day.</p>
-						</div>
-					</div>
-					<div class="p_menu-card p_menu-smoothies">
-						<img src="../images/Smoothies.jpeg" alt="Smoothies" class="p_menu-photo">
-						<div class="p_menu-info">
-							<h3>Smoothies</h3>
-							<p>Fruity, refreshing and totally guilt-free. Perfect for a slow afternoon with dogs.</p>
-						</div>
-					</div>
-					<div class="p_menu-card p_menu-pasta">
-						<img src="../images/Pasta.jpeg" alt="Pasta" class="p_menu-photo">
-						<div class="p_menu-info">
-							<h3>Pasta</h3>
-							<p>Hearty, comforting and made from scratch daily. The kind of pasta that makes you forget you're in a dog café.</p>
-						</div>
-					</div>
-					<div class="p_menu-card p_menu-dessert">
-						<img src="../images/Dessert.jpg" alt="Dessert" class="p_menu-photo">
-						<div class="p_menu-info">
-							<h3>Dessert</h3>
-							<p>Soft, creamy and dangerously good. Pairs perfectly with a latte and a sleepy corgi.</p>
-						</div>
-					</div>
-				</div>
-				<div class="preview-cta">
-					<a href="menu.html" class="btn btn-outline">Explore Menu</a>
-				</div>
-				</div>
-			</div>
-		</section>
-
-		<footer class="site-footer">
-			<div class="container">
-				<div class="footer-columns">
-					<div class="footer-column">
-						<h4>Visit Us</h4>
-						<p>123, Jalan ABC, Taman Harimau, Wilayah Persekutuan Kuala Lumpur</p>
-						<p>hello@pawfeecafe.com</p>
-					</div>
-					<div class="footer-column">
-						<h4>Opening Hours</h4>
-						<p>Mon - Fri: 9am - 9pm</p>
-						<p>Sat - Sun: 8am - 10pm</p>
-					</div>
-					<div class="footer-column">
-						<h4>Follow Us</h4>
-						<a href="#">Instagram</a>
-						<a href="#">Facebook</a>
-					</div>
-				</div>
-				<div class="footer-bottom">
-					<p>&copy; 2026 Pawfee Café. All rights reserved.</p>
-				</div>
-			</div>
-		</footer>
-
-		<!-- ONBOARDING TOOLTIP (shows after login) -->
-		<div class="tooltip-overlay hidden" id="tooltip-overlay">
-  			<div class="tooltip-arrow" id="tooltip-arrow"></div>
-  			<div class="tooltip-box" id="tooltip-box">
-    			<p>👋 Welcome to Pawfee Café!</p>
-    			<p>Start by browsing our menu, leaving a review or meeting the team 🐾</p>
-    			<button class="btn" id="tooltip-close">Got it!</button>
-  			</div>
-		</div>
-
-		<script src="../js/main.js"></script>
-	</body>
-</html>
->>>>>>> f1496b399c57be4d47ef4c061229722256967cde
