@@ -2,30 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jayci Gan | Pawfee Café Team</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/new_style.css">
   <link rel="stylesheet" href="jayci.css">
   <link rel="stylesheet" href="jayci-print.css" media="print">
 </head>
   <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
 
-    <header class="site-header">
-      <div class="container">
-        <span class="logo">Pawfee Café 🐾🦴</span>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="../html/index.html">Home</a></li>
-            <li><a href="../html/menu.html">Menu</a></li>
-            <li><a href="../html/register.html">Register</a></li>
-            <li><a href="../html/reviews.html">Reviews</a></li>
-            <li><a href="../html/team.html">Team</a></li>
-            <li><a href="../html/register.html" class="nav-cta">Join Now</a></li>
-          </ul>
+    <!-- ===== PAWFEE CAFÉ NAVBAR ===== -->
+    <header class="navbar portfolio-navbar">
+      <div class="nav-container">
+        <a href="../html/index.html" class="logo" aria-label="Pawfee Café home">
+          <img class="logo-image" src="../images/public/PAWFEE_CAFE_LOGO.svg" alt="" aria-hidden="true">
+          <span class="logo-text">PAWFEE CAFÉ</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+          <a href="../html/index.html" class="nav-link">Home</a>
+          <a href="../html/menu.html" class="nav-link">Menu</a>
+          <a href="../html/reviews.html" class="nav-link">Reviews</a>
+          <a href="../html/team.html" class="nav-link active">Team</a>
+          <a href="../html/register.html" class="nav-link nav-cta">Join Us</a>
         </nav>
+
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
-    <main>
+    <main id="mainContent">
 
       <!-- HERO -->
       <section class="p-hero">
@@ -230,31 +240,40 @@
 
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4>Visit Us</h4>
-            <p>123, Jalan ABC, Taman Harimau,
-               Wilayah Persekutuan Kuala Lumpur</p>
-            <p>hello@pawfeecafe.com</p>
-          </div>
-          <div class="footer-column">
-            <h4>Opening Hours</h4>
-            <p>Mon - Fri: 9am - 9pm</p>
-            <p>Sat - Sun: 8am - 10pm</p>
-          </div>
-          <div class="footer-column">
-            <h4>Follow Us</h4>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+    <footer class="footer portfolio-footer">
+      <div class="section-container footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text footer-logo">PAWFEE CAFÉ</span>
+          <p>123, Jalan ABC, Taman Harimau, Wilayah Persekutuan Kuala Lumpur</p>
+          <p>hello@pawfeecafe.com</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="../html/index.html">Home</a>
+          <a href="../html/menu.html">Menu</a>
+          <a href="../html/reviews.html">Reviews</a>
+          <a href="../html/team.html">Team</a>
+          <a href="../html/register.html">Join Us</a>
+        </div>
+
+        <div class="footer-social">
+          <h4>Follow along</h4>
+          <div class="social-icons">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <img class="social-icon" src="../images/instagram.svg" alt="" aria-hidden="true">
+              <span class="social-label">Instagram</span>
+            </a>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Pawfee Café. All rights reserved.</p>
+
+        <div class="footer-image">
+          <img src="../images/cafe-interior.jpg" alt="Inside Pawfee Café" loading="lazy">
         </div>
       </div>
+      <p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
     </footer>
 
+    <script src="../js/index.js"></script>
   </body>
 </html>

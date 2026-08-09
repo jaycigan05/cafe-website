@@ -6,8 +6,9 @@
 @media print {
 
   /* hide navigation and footer */
-  .site-header,
-  .site-footer,
+  .navbar,
+  .footer,
+  .skip-link,
   .nav-cta {
     display: none !important;
   }
