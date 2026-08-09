@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xiao Yan | Portfolio</title>
+<link rel="stylesheet" href="../css/new_style.css">
+<link rel="stylesheet" href="xiao_yan.css">
+</head>
+<body>
+
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- ===== NAVBAR — copied verbatim from menu.html ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../html/index.html" class="logo">
+        <img class="logo-image" src="../images/public/PAWFEE_CAFE_LOGO.svg" alt="" aria-hidden="true">
+        <span class="logo-text">PAWFEE CAFÉ</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="../html/index.html" class="nav-link">Home</a>
+        <a href="../html/menu.html" class="nav-link">Menu</a>
+        <a href="../html/reviews.html" class="nav-link">Reviews</a>
+        <a href="../html/team.html" class="nav-link active">Team</a>
+        <a href="../html/register.html" class="nav-link nav-cta">Join Us</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+<main id="mainContent">
+
+  <!-- ================= HERO ================= -->
+  <header class="portfolio-hero" id="portfolioHero">
+    <div class="hero-inner">
+
+      <a href="../html/team.html" class="back-to-team">← Back to Team</a>
+
+      <div class="hero-main">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo">
+            <img src="../images/xy_portfolio/xy_photo.jpg" alt="Ng Xiao Yan">
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <h1 class="hero-name">Ng Xiao Yan</h1>
+          <p class="hero-role">Front-End Developer | Menu Page</p>
+
+          <div class="bio-panel">
+            <h2 class="bio-heading">About Me</h2>
+            <p>
+              Hi, I’m Xiao Yan, a Year 1 Semester 3 Computer Science student at Sunway University and a Cadet at 42 Kuala Lumpur (42KL). 
+              I am passionate about software and web development, with a strong interest in building user-friendly and visually engaging websites. 
+              Through academic projects, hackathons, and hands-on programming experiences, I continue to strengthen my technical skills while exploring new technologies and creating practical digital solutions. 
+              For this project, I was primarily responsible for designing and developing the Menu page.
+
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://github.com/xiaoyan0427" target="_blank" rel="noopener" class="btn-primary">
+              <span class="btn-icon">
+                <img src="../images/xy_portfolio/icon-github.svg" alt="">
+              </span>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/ngxiaoyan" target="_blank" rel="noopener" class="btn-primary">
+              <span class="btn-icon">
+                <img src="../images/xy_portfolio/icon-linkedin.svg" alt="">
+              </span>
+              LinkedIn
+            </a>
+            <a href="../images/xy_portfolio/Xiao_Yan_Resume.pdf" download class="btn-primary">
+              <span class="btn-icon">
+                <img src="../images/xy_portfolio/icon-download.svg" alt="">
+              </span>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       EDUCATION — static layout (line runs top:0 to bottom:0 via
+       pure CSS, no JS position math). The one bit of JS on this
+       page lights up each star as you scroll past it — see the
+       inline <script> at the bottom of the page.
+       ========================================================= -->
+  <section class="section-wrap" id="education" aria-labelledby="eduHeading">
+    <div class="section-head">
+      <span class="eyebrow">Where I've been</span>
+      <h2 id="eduHeading">Education</h2>
+    </div>
+
+    <div class="edu-timeline">
+      <div class="edu-line" aria-hidden="true"></div>
+
+      <div class="edu-item">
+        <div class="edu-node-col">
+          <span class="edu-star" data-edu-star aria-hidden="true">✦</span>
+        </div>
+        <div class="edu-content-col">
+          <span class="edu-date">Jan 2019 – Dec 2024</span>
+          <div class="edu-body">
+            <div class="edu-info">
+              <span class="edu-place">Foon Yew High School Johor Bahru</span>
+              <p class="edu-main-detail">Unified Examination Certificate (UEC)</p>
+              <p class="edu-main-detail">Sijil Pelajaran Malaysia (SPM)</p>
+            </div>
+            <div class="edu-photo-wrap">
+              <img class="edu-photo" src="../images/xy_portfolio/highschool.jpeg" alt="Photo from Foon Yew High School">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-node-col">
+          <span class="edu-star" data-edu-star aria-hidden="true">✦</span>
+        </div>
+        <div class="edu-content-col">
+          <span class="edu-date">Sept 2025 – Present</span>
+          <div class="edu-body">
+            <div class="edu-info">
+              <span class="edu-place">Sunway University</span>
+              <p class="edu-main-detail">Bachelor of Science (Honours) in Computer Science</p>
+            </div>
+            <!-- TODO: confirm the real filename + extension for this photo -->
+            <div class="edu-photo-wrap">
+              <img class="edu-photo" src="../images/xy_portfolio/university.jpg" alt="Photo from Sunway University">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-node-col">
+          <span class="edu-star" data-edu-star aria-hidden="true">✦</span>
+        </div>
+        <div class="edu-content-col">
+          <span class="edu-date">June 2026 – Present</span>
+          <div class="edu-body">
+            <div class="edu-info">
+              <span class="edu-place">42 Kuala Lumpur</span>
+              <p class="edu-main-detail">Piscine June 2026</p>
+              <p class="edu-main-detail">Core Programme</p>
+            </div>
+            <div class="edu-photo-wrap">
+              <img class="edu-photo" src="../images/xy_portfolio/42KL.jpg" alt="Photo from 42 Kuala Lumpur">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SKILLS — plain static markup, no JS rendering. Flat list
+       (no Frontend/Backend split): each bar uses the shared
+       site gradient (--accent -> --accent-dark) from new_style.css.
+       ========================================================= -->
+  <section class="section-wrap section-alt" id="skills" aria-labelledby="skillsHeading">
+    <div class="section-head">
+      <span class="eyebrow">What I bring</span>
+      <h2 id="skillsHeading">Technical Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>HTML</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>CSS</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>JavaScript</span>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" style="--fill:75%"></div></div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>Python</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>Java</span>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" style="--fill:75%"></div></div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>C</span>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" style="--fill:70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROJECTS — plain static cards, no JS rendering. Each card
+       now shows a real preview image instead of an emoji icon.
+       ========================================================= -->
+  <section class="section-wrap" id="projects" aria-labelledby="projectsHeading">
+    <div class="section-head">
+      <span class="eyebrow">Selected work</span>
+      <h2 id="projectsHeading">Featured Projects</h2>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-card-media">
+          <img src="../images/xy_portfolio/menu.png" alt="Pawfee Café menu page">
+        </div>
+        <div class="project-card-body">
+          <h3>Pawfee Cafe: Menu Page</h3>
+          <p class="project-card-desc">A dynamic menu page with over 30 dishes, featuring real-time search, category filtering, three sorting options, and a Top Sellers leaderboard with Humans/Dogs toggle.</p>
+          <a href="../html/menu.html" class="project-link">View page →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-media">
+          <img src="../images/xy_portfolio/sentiment_flow_ai.png" alt="SentimentFlowAI project">
+        </div>
+        <div class="project-card-body">
+          <h3>UMHackathon Project: SentimentFlowAI</h3>
+          <p class="project-card-desc">SentimentFlowAI is an AI-powered customer service platform built for UMHackathon. It uses Gemini AI to analyze customer feedback, detect sentiment, and automatically organize support cases to improve customer service efficiency.</p>
+          <a href="https://github.com/timmmtam/SentimentFlow" class="project-link">View page →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+  <!-- ===== FOOTER — copied verbatim from menu.html ===== -->
+  <footer class="footer">
+    <div class="section-container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text footer-logo">PAWFEE CAFÉ</span>
+        <p>123 Bark Street, Selangor, Malaysia</p>
+        <p>Open daily · 11am – 9pm</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="../html/index.html">Home</a>
+        <a href="../html/menu.html">Menu</a>
+        <a href="../html/reviews.html">Reviews</a>
+        <a href="../html/team.html">Team</a>
+        <a href="../html/register.html">Join Us</a>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow along</h4>
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
+            </svg>
+            <span class="social-label">Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-image">
+        <img src="../images/cafe-interior.jpg" alt="Inside Pawfee Café" loading="lazy">
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
+  </footer>
+
+<script>
+  // Navbar mobile toggle — same behaviour as the rest of the site.
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle?.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Education timeline — each star lights up while its item is near
+  // the middle of the screen, and stays lit once you've scrolled
+  // past it, like a "you are here" trail.
+  const eduStars = document.querySelectorAll('[data-edu-star]');
+  if (eduStars.length) {
+    const starObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('is-current', entry.isIntersecting);
+        if (entry.isIntersecting) entry.target.classList.add('is-lit');
+      });
+    }, { rootMargin: '-20% 0px -20% 0px' });
+    eduStars.forEach((star) => starObserver.observe(star));
+  }
+</script>
+</body>
+</html>
