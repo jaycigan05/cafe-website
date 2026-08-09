@@ -144,7 +144,7 @@ function addReview(name, rating, ratingNumber, reviewText, date)
 	reviewCard.dataset.rating = ratingNumber;
 
 	reviewCard.innerHTML = `
-		<img src="../images/profile.jpg" class="rimage" alt="Profile">
+		<img src="../images/profile.jpg" class="rimage" alt="Photo of ${name}">
 
 		<h3>${name}</h3>
 
