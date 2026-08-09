@@ -23,13 +23,18 @@
     --radius-sm: 12px;
     --transition: 0.25s ease;
 
-    /* ---- Locked values so the navbar & footer keep their original look ---- */
+    /* ---- navbar (now theme-aware, see [data-theme="dark"] below) ---- */
     --nav-bg: #FAF4EC;
     --nav-text: #2E2D2B;
     --nav-accent: #96714b;
     --nav-accent-dark: #655340;
     --nav-radius: 999px;
     --nav-radius-sm: 14px;
+
+    /* footer intentionally stays this dark shade in both themes —
+       it's not tied to --nav-text any more (that one changes with
+       the theme now), see .footer below */
+    --footer-bg: #2E2D2B;
 
     /* old variable names — keeping these around so register.css etc
        don't need to be rewritten just to pick up this file */
@@ -52,10 +57,9 @@
 
 /* ---- dark mode ----
    toggled by js/theme.js, which sets data-theme="dark" on <html> and
-   remembers the choice in localStorage. navbar/footer colours
-   (--nav-*) stay put on purpose — see the "locked values" note above,
-   same reasoning applies here. --color-primary (button colour) also
-   stays as-is since the warm brown already reads fine on a dark page. */
+   remembers the choice in localStorage. --footer-bg and
+   --color-primary (button colour) stay as-is on purpose — both
+   already read fine on a dark page without changing. */
 [data-theme="dark"]
 {
     --cream: #23201c;
@@ -66,6 +70,11 @@
     --accent-dark: #a67c52;
     --text-dark: #EDE3D3;
     --text-muted: #b7a188;
+
+    --nav-bg: #201c18;
+    --nav-text: #EDE3D3;
+    --nav-accent: #c99f70;
+    --nav-accent-dark: #a67c52;
 
     --color-bg: var(--cream);
     --color-surface: var(--white);
@@ -402,8 +411,9 @@ h2.center
 .theme-icon
 {
     position: absolute;
-    font-size: 1.05rem;
-    line-height: 1;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
     transition: opacity var(--transition), transform var(--transition);
 }
 
@@ -555,7 +565,7 @@ h2.center
 
 .footer
 {
-    background: var(--nav-text);
+    background: var(--footer-bg);
     color: var(--text-light);
     padding: 70px 0 24px;
     font-family: var(--font-body);
