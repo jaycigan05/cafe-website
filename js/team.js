@@ -55,6 +55,10 @@ function initStaffCards()
 	const cards = Array.from(staffGrid.querySelectorAll('.staff-card'));
 	if (!cards.length) return;
 
+	// remembers whichever card opened the modal, so closing it can send
+	// keyboard focus back to that card instead of losing it to <body>
+	let triggerCard = null;
+
 	const openModal = (card) =>
 	{
 		const source = card.querySelector('.staff-card-scroll');
@@ -65,6 +69,7 @@ function initStaffCards()
 		if (backdrop) backdrop.classList.add('active');
 		document.body.style.overflow = 'hidden';
 		cards.forEach((c) => c.setAttribute('aria-expanded', String(c === card)));
+		triggerCard = card;
 		modalClose.focus();
 	};
 
@@ -75,6 +80,36 @@ function initStaffCards()
 		if (backdrop) backdrop.classList.remove('active');
 		document.body.style.overflow = '';
 		cards.forEach((c) => c.setAttribute('aria-expanded', 'false'));
+		if (triggerCard) triggerCard.focus();
+		triggerCard = null;
+	};
+
+	// keeps Tab/Shift+Tab cycling through the modal's own controls while
+	// it's open, instead of walking out past it into the rest of the
+	// page (previously: out of the modal, straight to the footer, since
+	// nothing else between the modal and the footer is focusable)
+	const trapFocus = (e) =>
+	{
+		if (e.key !== 'Tab' || !modal.classList.contains('active')) return;
+
+		const focusable = Array.from(
+			modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+		).filter((el) => el.offsetParent !== null);
+		if (!focusable.length) return;
+
+		const first = focusable[0];
+		const last = focusable[focusable.length - 1];
+
+		if (e.shiftKey && document.activeElement === first)
+		{
+			e.preventDefault();
+			last.focus();
+		}
+		else if (!e.shiftKey && document.activeElement === last)
+		{
+			e.preventDefault();
+			first.focus();
+		}
 	};
 
 	cards.forEach((card) =>
@@ -101,7 +136,12 @@ function initStaffCards()
 
 	document.addEventListener('keydown', (e) =>
 	{
-		if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+		if (e.key === 'Escape' && modal.classList.contains('active'))
+		{
+			closeModal();
+			return;
+		}
+		trapFocus(e);
 	});
 }
 
