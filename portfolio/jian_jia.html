@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Hor Jian Jia, a Computer Science student and 42KL cadet.">
+  <title>Hor Jian Jia | Portfolio</title>
+
+  <!-- Pawfee Café shared design: navbar, colours, typography, buttons and footer -->
+  <link rel="stylesheet" href="../css/new_style.css">
+  <!-- Portfolio-only screen styles -->
+  <link rel="stylesheet" href="jian_jia.css">
+  <!-- Functional CV / print layout -->
+  <link rel="stylesheet" href="jian_jia-print.css" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- ===== PAWFEE CAFÉ NAVBAR ===== -->
+  <header class="navbar portfolio-navbar">
+    <div class="nav-container">
+      <a href="../html/index.html" class="logo" aria-label="Pawfee Café home">
+        <img class="logo-image" src="../images/public/PAWFEE_CAFE_LOGO.svg" alt="" aria-hidden="true">
+        <span class="logo-text">PAWFEE CAFÉ</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="../html/index.html" class="nav-link">Home</a>
+        <a href="../html/menu.html" class="nav-link">Menu</a>
+        <a href="../html/reviews.html" class="nav-link">Reviews</a>
+        <a href="../html/team.html" class="nav-link active">Team</a>
+        <a href="../html/register.html" class="nav-link nav-cta">Join Us</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- ===== HERO / PERSONAL BIO ===== -->
+    <section class="portfolio-hero" aria-labelledby="portfolioTitle">
+      <div class="section-container hero-layout">
+        <div class="hero-visual reveal reveal-one">
+          <div class="portrait-frame">
+            <span class="portrait-dot dot-one" aria-hidden="true"></span>
+            <span class="portrait-dot dot-two" aria-hidden="true"></span>
+            <img src="../images/jianjia.jpeg" alt="Profile image of Hor Jian Jia" class="profile-photo">
+          </div>
+        </div>
+
+        <div class="hero-copy reveal reveal-two">
+          <h1 id="portfolioTitle">Hor Jian Jia</h1>
+          <p class="hero-tagline">Computer Science Student <span aria-hidden="true">·</span> 42KL Cadet</p>
+          <p class="hero-bio">
+            I am currently Year 1 Bachelor of Science (Hons) in Computer Science student and a 42KL cadet.
+            I enjoy turning ideas into practical digital solutions through programming, web development,
+            databases and emerging technologies.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#projects">View My Projects</a>
+            <button class="btn btn-outline cv-button" type="button" onclick="window.print()">
+              Print / Save CV
+            </button>
+          </div>
+
+          <ul class="hero-facts" aria-label="Quick profile facts">
+            <li><strong>Focus</strong><span>Software &amp; Web</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="portfolio-section about-section" id="about" aria-labelledby="aboutTitle">
+      <div class="section-container about-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow eyebrow-dark">About me</p>
+          <h2 id="aboutTitle">Learning by Building</h2>
+
+          <div class="learning-dog-visual" aria-hidden="true">
+            <span class="dog-paw dog-paw-one">🐾</span>
+            <span class="dog-paw dog-paw-two">🐾</span>
+            <div class="dog-bubble">
+              <span class="dog-face">🐶</span>
+            </div>
+            <span class="dog-shadow"></span>
+          </div>
+        </div>
+
+        <div class="about-card reveal reveal-two">
+          <p>
+            I am a Computer Science student with a strong interest in software development, web technologies,
+            databases and problem-solving. Alongside my university studies, I am undertaking the 42KL Core
+            Programme, where project-based learning continues to strengthen my programming and independent
+            learning skills.
+          </p>
+          <p>
+            I am also actively involved in technology communities through my role as a committee of marketing 
+            department of GDGoc and Sunway Tech Club. In these roles, I help promote events and activities, 
+            create promotional content, and support different marketing initiatives to encourage more students 
+            to get involved. Through these experiences, I have improved my communication, teamwork, creativity, 
+            and organisational skills while working with others.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="portfolio-section education-section" id="education" aria-labelledby="educationTitle">
+      <div class="section-container">
+        <div class="section-heading centered-heading reveal">
+          <p class="eyebrow eyebrow-dark">Academic journey</p>
+          <h2 id="educationTitle">Education</h2>
+          <p>My academic pathway from secondary school to university and project-based computing education.</p>
+        </div>
+
+        <div class="journey-grid education-grid">
+          <article class="journey-card reveal reveal-one">
+            <span class="journey-year">2019 – 2023</span>
+            <div class="journey-icon" aria-hidden="true">01</div>
+            <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+            <p class="journey-place">SMK Ibrahim · Kedah, Malaysia</p>
+            <p>Completed my secondary education and Sijil Pelajaran Malaysia qualification.</p>
+          </article>
+
+          <article class="journey-card reveal reveal-two">
+            <span class="journey-year">2024 – 2025</span>
+            <div class="journey-icon" aria-hidden="true">02</div>
+            <h3>Foundation in Arts</h3>
+            <p class="journey-place">Sunway College · Malaysia</p>
+            <p>Completed a foundation programme that prepared me for undergraduate study in Computer Science.</p>
+          </article>
+
+          <article class="journey-card reveal reveal-two">
+            <span class="journey-year">Sep 2025 – Present</span>
+            <div class="journey-icon" aria-hidden="true">03</div>
+            <h3>Bachelor of Science (Hons) in Computer Science</h3>
+            <p class="journey-place">Sunway University · Malaysia</p>
+            <p>Year 1 undergraduate studies covering core computer science knowledge, programming and software development.</p>
+          </article>
+
+          <article class="journey-card reveal reveal-three">
+            <span class="journey-year">Jul 2026 – Present</span>
+            <div class="journey-icon" aria-hidden="true">04</div>
+            <h3>42KL Core Programme</h3>
+            <p class="journey-place">42 Kuala Lumpur</p>
+            <p>Project-based peer-to-peer learning focused on programming, problem-solving, collaboration and independent learning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CO-CURRICULUM ===== -->
+    <section class="portfolio-section cocurriculum-section" id="cocurriculum" aria-labelledby="cocurriculumTitle">
+      <div class="section-container">
+        <div class="section-heading centered-heading reveal">
+          <p class="eyebrow eyebrow-dark">Beyond the classroom</p>
+          <h2 id="cocurriculumTitle">Co-Curriculum</h2>
+          <p>Technology community involvement that helps me develop communication, teamwork and leadership skills.</p>
+        </div>
+
+        <div class="journey-grid involvement-grid">
+          <article class="journey-card involvement-card reveal reveal-one">
+            <span class="journey-year">2025/26</span>
+            <div class="journey-icon" aria-hidden="true">01</div>
+            <h3>Marketing Committee Member</h3>
+            <p class="journey-place">GDGoc Sunway</p>
+            <p>Contributing to marketing and community activities for event related to Google technologies.</p>
+          </article>
+
+          <article class="journey-card involvement-card reveal reveal-two">
+            <span class="journey-year">2026/27</span>
+            <div class="journey-icon" aria-hidden="true">02</div>
+            <h3>Marketing Committee Member</h3>
+            <p class="journey-place">Sunway Tech Club</p>
+            <p>Promote Sunway Tech CLub and create poster for their events.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECHNICAL SKILLS ===== -->
+    <section class="portfolio-section skills-section" id="skills" aria-labelledby="skillsTitle">
+      <div class="section-container skills-layout">
+        <div class="skills-intro reveal">
+          <p class="eyebrow">Skills I’m Developing</p>
+          <h2 id="skillsTitle">Technical skills</h2>
+          <p>
+            These indicators show my current self-assessed familiarity.
+          </p>
+        </div>
+
+        <div class="skills-panel reveal reveal-two" aria-label="Technical skill levels">
+          <div class="skill-item" style="--skill-level: 75%;">
+            <div class="skill-meta"><span>HTML &amp; CSS</span><span>75%</span></div>
+            <div class="skill-track"><span class="skill-progress"></span></div>
+          </div>
+
+          <div class="skill-item" style="--skill-level: 75%;">
+            <div class="skill-meta"><span>SQL</span><span>75%</span></div>
+            <div class="skill-track"><span class="skill-progress"></span></div>
+          </div>
+
+          <div class="skill-item" style="--skill-level: 70%;">
+            <div class="skill-meta"><span>Java</span><span>70%</span></div>
+            <div class="skill-track"><span class="skill-progress"></span></div>
+          </div>
+
+          <div class="skill-item" style="--skill-level: 65%;">
+            <div class="skill-meta"><span>Python</span><span>65%</span></div>
+            <div class="skill-track"><span class="skill-progress"></span></div>
+          </div>
+
+          <div class="skill-item" style="--skill-level: 60%;">
+            <div class="skill-meta"><span>JavaScript</span><span>60%</span></div>
+            <div class="skill-track"><span class="skill-progress"></span></div>
+          </div>
+
+          <div class="skill-item" style="--skill-level: 45%;">
+            <div class="skill-meta"><span>C Language</span><span>45%</span></div>
+            <div class="skill-track"><span class="skill-progress"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT HIGHLIGHTS ===== -->
+    <section class="portfolio-section projects-section" id="projects" aria-labelledby="projectsTitle">
+      <div class="section-container">
+        <div class="section-heading centered-heading reveal">
+          <p class="eyebrow eyebrow-dark">Selected work</p>
+          <h2 id="projectsTitle">Project Highlights</h2>
+          <p>Three projects that reflect my experience on problem-solving.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal reveal-one">
+            <div class="project-topline">
+              <span class="project-number">01</span>
+              <span class="project-type">Web Development</span>
+            </div>
+            <h3>Pawfee Café</h3>
+            <p>
+              A dog café website presenting the café experience, menu, reviews, team members and membership registration.
+              My assigned contribution covers the Home Page and Team Page while maintaining the shared Pawfee Café visual identity.
+            </p>
+            <div class="project-tags" aria-label="Pawfee Café technologies">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+            </div>
+            <a class="project-link" href="../html/index.html">View Pawfee Café <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card featured-project reveal reveal-two">
+            <div class="project-topline">
+              <span class="project-number">02</span>
+              <span class="project-type">AI-Assisted Platform</span>
+            </div>
+            <h3>SentimentFlow</h3>
+            <p>
+              An AI-assisted customer service platform that transforms unstructured reviews, messages and support tickets into
+              actionable information. It analyses sentiment, intent, urgency and key topics. Then, supports case summarisation,
+              suggested resolutions and task prioritisation.
+            </p>
+            <div class="project-tags" aria-label="SentimentFlow focus areas">
+              <span>AI</span><span>LLMs</span><span>Sentiment Analysis</span><span>Workflow Automation</span>
+            </div>
+            <span class="project-link project-link-static">Customer Intelligence Platform</span>
+          </article>
+
+          <article class="project-card reveal reveal-three">
+            <div class="project-topline">
+              <span class="project-number">03</span>
+              <span class="project-type">Database Development</span>
+            </div>
+            <h3>Blood Donation Database</h3>
+            <p>
+              A relational database project for managing blood donors, donations, blood bags, laboratory testing,
+              hospital requests, blood issues and delivery records. The project applies structured database design
+              and SQL querying to a real-world healthcare scenario.
+            </p>
+            <div class="project-tags" aria-label="Blood Donation Database technologies">
+              <span>SQL</span><span>Relational Database</span><span>Data Modelling</span><span>Queries</span>
+            </div>
+            <span class="project-link project-link-static">Database Management Project</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="portfolio-section contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="section-container contact-card reveal">
+        <div>
+          <h2 id="contactTitle">Contact</h2>
+          <p>Have any questions or want to get in touch? Feel free to reach out.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:24078321@imail.sunway.edu.my" class="contact-item">
+            <span class="contact-label">Email</span>
+            <span>24078321@imail.sunway.edu.my</span>
+          </a>
+          <button type="button" class="contact-item phone-copy" data-phone="01158933623" aria-describedby="phoneCopyStatus" title="Click to copy phone number">
+            <span class="contact-label">Phone</span>
+            <span class="phone-number">011-5893 3623</span>
+            <span class="copy-status" id="phoneCopyStatus" aria-live="polite"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PAWFEE CAFÉ FOOTER ===== -->
+  <footer class="footer portfolio-footer">
+    <div class="section-container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text footer-logo">PAWFEE CAFÉ</span>
+        <p>123 Bark Street, Selangor, Malaysia</p>
+        <p>Open daily · 11am – 9pm</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="../html/index.html">Home</a>
+        <a href="../html/menu.html">Menu</a>
+        <a href="../html/reviews.html">Reviews</a>
+        <a href="../html/team.html">Team</a>
+        <a href="../html/register.html">Join Us</a>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow along</h4>
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <img class="social-icon" src="../images/instagram.svg" alt="" aria-hidden="true">
+            <span class="social-label">Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-image">
+        <img src="../images/cafe-interior.jpg" alt="Inside Pawfee Café" loading="lazy">
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
+  </footer>
+
+  <!-- Reuse the site's existing mobile navigation script. -->
+  <script src="../js/index.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Replay the skill-bar animation whenever the Skills section leaves and re-enters the viewport.
+      const skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        if ('IntersectionObserver' in window) {
+          const skillsObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                skillsSection.classList.add('skills-visible');
+              } else {
+                skillsSection.classList.remove('skills-visible');
+              }
+            });
+          }, { threshold: 0.25 });
+
+          skillsObserver.observe(skillsSection);
+        } else {
+          skillsSection.classList.add('skills-visible');
+        }
+      }
+
+      // Copy the phone number instead of opening the dialler.
+      const phoneButton = document.querySelector('.phone-copy');
+      if (phoneButton) {
+        const status = phoneButton.querySelector('.copy-status');
+        const phone = phoneButton.dataset.phone;
+
+        function showCopiedMessage() {
+          if (!status) return;
+          status.textContent = 'Copied!';
+          window.clearTimeout(phoneButton.copyTimer);
+          phoneButton.copyTimer = window.setTimeout(function () {
+            status.textContent = '';
+          }, 1800);
+        }
+
+        function fallbackCopy(value) {
+          const tempInput = document.createElement('textarea');
+          tempInput.value = value;
+          tempInput.setAttribute('readonly', '');
+          tempInput.style.position = 'fixed';
+          tempInput.style.opacity = '0';
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          showCopiedMessage();
+        }
+
+        phoneButton.addEventListener('click', function () {
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(phone).then(showCopiedMessage).catch(function () {
+              fallbackCopy(phone);
+            });
+          } else {
+            fallbackCopy(phone);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

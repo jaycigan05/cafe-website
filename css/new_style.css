@@ -360,6 +360,17 @@ h2.center {
   transform: translateY(-2px);
 }
 
+.btn-phone-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  margin-right: 4px;
+  /* phone.svg uses stroke="currentColor", which <img> can't inherit —
+     filter forces the icon to match the button's white text color. */
+  filter: brightness(0) invert(1);
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--accent-dark);

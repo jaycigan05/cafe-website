@@ -1,7 +1,7 @@
 /* ============================
    PAWFEE CAFÉ — INDEX PAGE STYLESHEET
    (hero, about, menu preview, resident dogs, reviews, cta banner)
-   Requires style.css to be loaded first for :root variables, buttons, eyebrow.
+   Requires new_style.css to be loaded first for :root variables, buttons, eyebrow.
    ============================ */
 
 /* ============================
@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--charcoal);
+  background: var(--brown);
 }
 
 .hero-video {
@@ -45,18 +45,6 @@
   align-items: center;
 }
 
-.paw-trail {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 18px;
-  opacity: 0.6;
-  font-size: 0.9rem;
-}
-
-.paw-trail span:nth-child(even) {
-  transform: translateY(6px);
-}
-
 .hero-heading {
   font-family: var(--font-display);
   font-weight: 600;
@@ -72,50 +60,7 @@
   font-weight: 500;
 }
 
-/* Interactive word-by-word hover on the hero heading */
-.hero-heading-interactive .word {
-  display: inline-block;
-  transition: color var(--transition), transform var(--transition);
-  cursor: default;
-}
-
-.hero-heading-interactive .word:hover {
-  color: var(--accent);
-  transform: translateY(-4px) rotate(-2deg);
-}
-
-.hero-heading-interactive .word.accent:hover {
-  color: var(--text-light);
-}
-
-/* Cursor-follow paw prints (populated by script.js) */
-.paw-cursor-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.paw-print {
-  position: absolute;
-  font-size: 1.1rem;
-  opacity: 0.8;
-  transform: translate(-50%, -50%) scale(0.9);
-  animation: pawFade 0.9s ease-out forwards;
-}
-
-@keyframes pawFade {
-  0% {
-    opacity: 0.85;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.4) translateY(-10px);
-  }
-}
-
+/* Quick-stats row (4.9 rating / 30+ dogs / hours) */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -147,6 +92,8 @@
   background: rgba(255, 255, 255, 0.25);
 }
 
+/* "See the Menu" / "Join Us" — pill-shaped on the dark hero background,
+   overriding new_style.css's default square .btn corners */
 .hero-buttons {
   display: flex;
   gap: 16px;
@@ -184,15 +131,15 @@
   gap: 60px;
   align-items: center;
 }
- 
+
 .about-image {
   position: relative;
   border-radius: var(--radius-sm);
   aspect-ratio: 4/3.2;
   overflow: hidden;
 }
- 
-.about-image img {
+
+.about-image > .about-slide {
   position: absolute;
   inset: 0;
   border-radius: var(--radius-sm);
@@ -204,8 +151,8 @@
   opacity: 0;
   transition: opacity 0.8s ease;
 }
- 
-.about-image img.active {
+
+.about-image > .about-slide.active {
   opacity: 1;
 }
 
@@ -235,16 +182,28 @@
   transform: scale(1.08);
 }
 
-.about-image-next svg {
+/* The story photos use the .about-slide class, so the arrow image is
+   kept separate from the slider and never counted as a fourth slide. */
+.about-image-next .about-image-next-icon {
+  position: static;
+  inset: auto;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 0;
+  background: none;
   transform: translateX(1px);
+  /* phone.svg/arrow.svg use stroke="currentColor", which <img> can't
+     inherit — filter forces the icon to match the button's white color. */
+  filter: brightness(0) invert(1);
 }
 
-/* Dot indicators, bottom-left of the story image */
+/* Dot indicators sit immediately to the left of the bottom-right next arrow. */
 .about-image-dots {
   position: absolute;
   z-index: 3;
-  left: 16px;
-  bottom: 20px;
+  right: 68px;
+  bottom: 32px;
   display: flex;
   gap: 8px;
 }
@@ -280,7 +239,32 @@
 }
 
 /* ============================
+   GHOST BUTTON HOVER FIX (this page only)
+   .btn-ghost is meant to only change text colour on hover, never
+   show a background. The shared .btn:hover rule in new_style.css
+   sets a solid background on ANY .btn (including .btn.btn-ghost)
+   and new_style.css's own .btn-ghost:hover references an undefined
+   variable (--brown-dark), so on every ghost link on this page the
+   hover state was rendering as a solid background block instead of
+   just the word changing colour. Scoping a higher-specificity rule
+   here (without touching the shared stylesheet) fixes it in place.
+   ============================ */
+
+.about-content .btn-ghost,
+.center-btn .btn-ghost {
+  font-size: 1.05rem;
+}
+
+.about-content .btn-ghost:hover,
+.center-btn .btn-ghost:hover {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+/* ============================
    SHARED SECTION HEADINGS (index page)
+   Common heading style reused by the 3 centered sections below
+   (menu preview, resident dogs, reviews teaser).
    ============================ */
 
 .menu-preview h2,
@@ -292,6 +276,8 @@
   margin: 10px 0 50px;
 }
 
+/* Centers the "View Full Menu / Meet the full team / Read more
+   reviews" ghost-link buttons under each section */
 .center-btn {
   text-align: center;
   margin-top: 44px;
@@ -305,11 +291,187 @@
   padding: 100px 0;
 }
 
-<<<<<<< HEAD
+/* ---------------------------------------------------------
+   TOP-SELLER PODIUM + HUMANS/DOGS TOGGLE
+   Copied from the Menu page's Top Sellers section. The toggle
+   is built with hidden radio inputs + labels (the ":checked ~"
+   trick) so switching between "For Humans" and "For Dogs" works
+   with pure CSS — no JavaScript required.
+   --------------------------------------------------------- */
+.podium-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.toggle-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.toggle-track {
+  position: relative;
+  display: flex;
+  background: var(--white);
+  border-radius: 999px;
+  padding: 6px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--cream);
+  width: 300px;
+  max-width: 90vw;
+}
+
+.toggle-track::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: calc(50% - 6px);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  border-radius: 999px;
+  z-index: 0;
+  transition: transform 0.45s cubic-bezier(.65, 0, .35, 1);
+}
+
+.toggle-btn {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-dark);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#flavorDog:checked ~ .toggle-switch .toggle-track::before {
+  transform: translateX(100%);
+}
+
+#flavorHuman:checked ~ .toggle-switch .toggle-btn[for="flavorHuman"],
+#flavorDog:checked ~ .toggle-switch .toggle-btn[for="flavorDog"] {
+  color: var(--white);
+}
+
+/* Only one podium shows at a time, based on which radio is checked.
+   NOTE: uses the compound selector ".podium.podium-dog" (not just
+   ".podium-dog") so it reliably beats the later ".podium { display:
+   flex }" rule below regardless of source order — otherwise both
+   podiums stayed visible in the default "For Humans" state. */
+.podium.podium-dog {
+  display: none;
+}
+
+#flavorDog:checked ~ .podium-human {
+  display: none;
+}
+
+#flavorDog:checked ~ .podium-dog {
+  display: flex;
+}
+
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 22px;
+  padding: 40px 10px 6px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.podium-slot {
+  flex: 0 0 210px;
+}
+
+.podium-slot.podium-center {
+  flex: 0 0 250px;
+  margin-bottom: 16px;
+}
+
+.podium-card {
+  position: relative;
+}
+
+.podium-medal {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  z-index: 2;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .25));
+}
+
+/* Whole card is an arch: horizontal radius in % (scales with the
+   card's own width), vertical radius in fixed px. */
+.podium-shape {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding-bottom: 16px;
+  overflow: hidden;
+  border-radius: 50% 50% 14px 14px / 56px 56px 14px 14px;
+}
+
+.podium-center .podium-shape {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .14);
+}
+
+.podium-media {
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.podium-center .podium-media {
+  height: 128px;
+}
+
+.card-media-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.podium-name {
+  font-family: var(--font-display);
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0 10px;
+  line-height: 1.25;
+}
+
+.podium-center .podium-name {
+  font-size: 1.05rem;
+}
+
+.podium-rank-label {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* ============================
    RESIDENT DOGS (section wrapper — homepage teaser only.
-   .dog-grid / .dog-card / .dog-name / .dog-type live in style.css
-   so they can be reused on the team page)
+   .dog-grid / .dog-card / .dog-name / .dog-type live in
+   new_style.css so they can be reused on the team page.
+   Background matches the "Our story" section above.)
    ============================ */
 
 .resident-dogs {
@@ -325,42 +487,58 @@
   padding: 100px 0;
 }
 
-.rimage{
-    border-radius: 100%;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    float:left;
-    margin-right: 20px;
+.rimage {
+  border-radius: 100%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 20px;
 }
 
-/* Review Cards */
-.reviewRow
-{
-    display:grid;
-    flex-direction: column;
-    gap:5px;
-
+/* Review Cards — same look as the Reviews page, laid out as a
+   fixed 3-across row (the Reviews page itself wraps + scrolls
+   because it lists many reviews; here we only show 3). */
+.reviewRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.reviewCard
-{
-    background:white;
-    border:2px solid #d3a859;
-    border-radius:20px;
-    padding:20px;
-    text-align:left;
-    box-shadow:var(--shadow);
-    transition:.3s;
-    margin: 20px;
-    width: 96%;
-    height: 80%;
+.reviewCard {
+  background: var(--white);
+  border: 2px solid var(--text-light);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition: .3s;
 }
 
-.reviewCard:hover
-{
-    transform:translateY(-8px);
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
+.reviewCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+}
+
+.reviewCard h3 {
+  color: var(--accent);
+}
+
+.reviewCard p {
+  font-size: 16px;
+  margin: 15px 0;
+  line-height: 1.6;
+  color: var(--brown);
+}
+
+.stars {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.reviewDate {
+  color: var(--brown);
+  font-size: 14px;
 }
 
 /* ============================
@@ -379,7 +557,7 @@
 .cta-content h2 {
   font-family: var(--font-display);
   font-size: 2.1rem;
-  color: var(--charcoal-dark);
+  color: var(--mocha);
   margin-bottom: 10px;
 }
 
@@ -417,12 +595,21 @@
     padding-bottom: 60px;
   }
 
-  .menu-grid {
-    grid-template-columns: 1fr 1fr;
+  .reviewRow {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .review-cards {
-    grid-template-columns: 1fr;
+  .podium {
+    gap: 10px;
+  }
+
+  .podium-slot {
+    flex-basis: 130px;
+  }
+
+  .podium-slot.podium-center {
+    flex-basis: 160px;
+    margin-bottom: 18px;
   }
 }
 
@@ -432,12 +619,21 @@
     row-gap: 16px;
   }
 
-  .menu-grid {
+  .reviewRow {
     grid-template-columns: 1fr;
   }
 
-  .menu-flip-card {
-    height: 200px;
+  .podium {
+    gap: 8px;
+  }
+
+  .podium-slot {
+    flex-basis: 100px;
+  }
+
+  .podium-slot.podium-center {
+    flex-basis: 130px;
+    margin-bottom: 14px;
   }
 }
 
@@ -463,68 +659,56 @@
   .about-image-next {
     width: 34px;
     height: 34px;
-    right: 12px;
+    left: 12px;
     bottom: 12px;
   }
 
   .about-image-dots {
-    left: 12px;
-    bottom: 16px;
+    left: 58px;
+    bottom: 25px;
   }
-=======
-/* ===== ONBOARDING TOOLTIP ===== */
-.tooltip-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  pointer-events: none;
-}
 
-.tooltip-overlay.hidden {
-  display: none;
-}
+  .podium {
+    gap: 6px;
+    padding: 32px 2px 6px;
+  }
 
-.tooltip-box {
-  position: absolute;
-  background-color: var(--color-primary-dark);
-  color: var(--color-surface);
-  padding: var(--space-md);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  width: 260px;
-  pointer-events: all;
-  animation: fadeIn 0.4s ease;
-}
+  .podium-slot {
+    flex-basis: 78px;
+  }
 
-.tooltip-box p {
-  color: var(--color-surface);
-  margin-bottom: var(--space-xs);
-  font-size: 0.9rem;
-}
+  .podium-slot.podium-center {
+    flex-basis: 104px;
+    margin-bottom: 10px;
+  }
 
-.tooltip-box .btn {
-  background-color: var(--color-accent);
-  margin-top: var(--space-xs);
-  width: 100%;
-  text-align: center;
-  display: block;
-}
+  .podium-shape {
+    border-radius: 50% 50% 12px 12px / 40px 40px 12px 12px;
+  }
 
-.tooltip-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--color-primary-dark);
-  pointer-events: none;
-}
+  .podium-media {
+    height: 66px;
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
->>>>>>> f1496b399c57be4d47ef4c061229722256967cde
+  .podium-center .podium-media {
+    height: 80px;
+  }
+
+  .podium-medal {
+    font-size: 1.15rem;
+    top: -12px;
+  }
+
+  .podium-name {
+    font-size: 0.72rem;
+    padding: 0 4px;
+  }
+
+  .podium-center .podium-name {
+    font-size: 0.8rem;
+  }
+
+  .podium-rank-label {
+    font-size: 0.6rem;
+  }
 }

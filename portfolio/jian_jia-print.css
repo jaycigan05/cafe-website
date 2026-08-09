@@ -1,0 +1,472 @@
+/* =========================================================
+   HOR JIAN JIA — FUNCTIONAL PRINT / CV STYLESHEET
+   Activated by: <link rel="stylesheet" ... media="print">
+   The "Print / Save CV" button calls window.print().
+   In the print dialog, choose "Save as PDF" to create a CV copy.
+   ========================================================= */
+
+@page {
+  size: A4;
+  margin: 13mm 15mm;
+}
+
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  animation: none !important;
+  transition: none !important;
+  filter: none !important;
+}
+
+html,
+body {
+  font-size: 10.2pt !important;
+  background: #fff !important;
+  color: #111 !important;
+  line-height: 1.38 !important;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Remove website-only chrome and interactive controls. */
+.navbar,
+.footer,
+.skip-link,
+.hero-actions,
+.portfolio-kicker,
+.portrait-dot,
+.project-link,
+.learning-visual,
+.learning-dog-visual {
+  display: none !important;
+}
+
+/* Remove decorative pseudo-elements that can overlap CV text in print preview. */
+.portfolio-hero::before,
+.portfolio-hero::after,
+.portfolio-kicker::before {
+  content: none !important;
+  display: none !important;
+}
+
+.portfolio-hero,
+.hero-layout,
+.hero-copy {
+  overflow: visible !important;
+}
+
+main,
+.portfolio-hero,
+.portfolio-section,
+.about-section,
+.skills-section,
+.projects-section,
+.cocurriculum-section,
+.contact-section {
+  background: #fff !important;
+  border: 0 !important;
+}
+
+.section-container {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.portfolio-hero,
+.portfolio-section,
+.contact-section {
+  padding: 0 !important;
+  margin: 0 0 7mm !important;
+}
+
+/* ===== Compact CV Header ===== */
+.hero-layout {
+  display: grid !important;
+  grid-template-columns: 36mm 1fr !important;
+  gap: 7mm !important;
+  align-items: start !important;
+}
+
+.hero-visual {
+  order: 1;
+  display: block !important;
+}
+
+.hero-copy {
+  order: 2;
+}
+
+.portfolio-hero h1 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 25pt !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  margin: 0 0 2mm !important;
+  color: #111 !important;
+}
+
+
+.hero-tagline {
+  font-size: 10.5pt !important;
+  margin: 0 0 2.5mm !important;
+  color: #333 !important;
+}
+
+.hero-bio {
+  font-size: 9.4pt !important;
+  margin: 0 !important;
+  color: #222 !important;
+}
+
+.portrait-frame {
+  width: 34mm !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+
+.profile-photo {
+  width: 34mm !important;
+  height: 42mm !important;
+  object-fit: cover !important;
+  border-radius: 3mm !important;
+  border: 0.3mm solid #aaa !important;
+}
+
+.hero-facts {
+  display: flex !important;
+  gap: 3mm !important;
+  margin-top: 3mm !important;
+  padding: 0 !important;
+}
+
+.hero-facts li {
+  display: block !important;
+  min-width: 0 !important;
+  padding: 0 3mm 0 0 !important;
+  border: 0 !important;
+  border-right: 0.3mm solid #bbb !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.hero-facts li:last-child {
+  border-right: 0 !important;
+}
+
+.hero-facts strong,
+.hero-facts span {
+  display: inline !important;
+  font-size: 8.3pt !important;
+  color: #222 !important;
+}
+
+.hero-facts strong::after {
+  content: ": ";
+}
+
+/* ===== Shared print headings ===== */
+.section-heading,
+.centered-heading {
+  max-width: none !important;
+  text-align: left !important;
+  margin: 0 0 2.5mm !important;
+}
+
+.eyebrow,
+.eyebrow-dark {
+  display: none !important;
+}
+
+h2,
+.about-grid h2,
+.education-section h2,
+.projects-section h2,
+.cocurriculum-section h2,
+.skills-section h2,
+.contact-section h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13pt !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #111 !important;
+  border-bottom: 0.5mm solid #333 !important;
+  padding-bottom: 1.3mm !important;
+  margin: 0 0 2.5mm !important;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10pt !important;
+  letter-spacing: 0 !important;
+  color: #111 !important;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+/* ===== About ===== */
+.about-grid {
+  display: block !important;
+}
+
+.about-grid .section-heading {
+  display: block !important;
+}
+
+.about-grid > .section-heading {
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.about-card {
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.about-card p {
+  margin: 0 0 2mm !important;
+  font-size: 9pt !important;
+}
+
+/* ===== Education / Involvement ===== */
+.journey-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3mm 6mm !important;
+}
+
+.journey-card {
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+.journey-card::after,
+.journey-icon {
+  display: none !important;
+}
+
+.journey-year {
+  display: block !important;
+  margin: 0 0 0.7mm !important;
+  font-size: 8pt !important;
+  color: #555 !important;
+}
+
+.journey-card h3 {
+  margin: 0 0 0.6mm !important;
+}
+
+.journey-place {
+  font-size: 8.7pt !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.5mm !important;
+  color: #333 !important;
+}
+
+.journey-card p:last-child {
+  font-size: 8.4pt !important;
+  margin: 0 !important;
+}
+
+/* ===== Skills ===== */
+.skills-layout {
+  display: block !important;
+}
+
+.skills-intro > p:not(.eyebrow) {
+  display: none !important;
+}
+
+.skills-panel {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2.2mm 8mm !important;
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.skill-item {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+.skill-meta {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 0.8mm !important;
+  color: #111 !important;
+  font-size: 8.5pt !important;
+}
+
+.skill-meta span:last-child {
+  color: #111 !important;
+}
+
+.skill-track {
+  position: relative !important;
+  height: 2mm !important;
+  border: 0.25mm solid #777 !important;
+  background: #fff !important;
+  overflow: visible !important;
+}
+
+/* Use a border for the filled portion because browser print dialogs may omit CSS backgrounds. */
+.skill-progress {
+  display: block !important;
+  width: var(--skill-level) !important;
+  height: 0 !important;
+  border-top: 1.05mm solid #333 !important;
+  transform: none !important;
+  background: transparent !important;
+  margin-top: 0.23mm !important;
+}
+
+/* ===== Projects ===== */
+.project-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 3mm !important;
+}
+
+.project-card,
+.featured-project {
+  display: block !important;
+  min-height: 0 !important;
+  padding: 0 0 2.2mm !important;
+  background: #fff !important;
+  color: #111 !important;
+  border: 0 !important;
+  border-bottom: 0.25mm solid #bbb !important;
+  border-radius: 0 !important;
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+.project-card:last-child {
+  border-bottom: 0 !important;
+}
+
+.project-topline {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin: 0 0 0.7mm !important;
+}
+
+.project-number,
+.project-type,
+.featured-project .project-number,
+.featured-project .project-type {
+  font-size: 8pt !important;
+  color: #555 !important;
+}
+
+.project-card h3,
+.featured-project h3 {
+  color: #111 !important;
+  margin: 0 0 0.8mm !important;
+}
+
+.project-card p {
+  font-size: 8.5pt !important;
+  margin: 0 0 1mm !important;
+}
+
+.project-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1.5mm !important;
+  margin: 0 !important;
+}
+
+.project-tags span,
+.featured-project .project-tags span {
+  padding: 0 !important;
+  background: transparent !important;
+  color: #333 !important;
+  font-size: 7.8pt !important;
+}
+
+.project-tags span:not(:last-child)::after {
+  content: " ·";
+}
+
+/* ===== Contact ===== */
+.contact-card {
+  display: grid !important;
+  grid-template-columns: 0.7fr 1.3fr !important;
+  gap: 6mm !important;
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  align-items: start !important;
+}
+
+.contact-card > div:first-child p:last-child {
+  display: none !important;
+}
+
+.contact-links {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1mm !important;
+  min-width: 0 !important;
+}
+
+.contact-item {
+  display: block !important;
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  color: #111 !important;
+}
+
+.contact-label {
+  display: inline !important;
+  font-size: 8pt !important;
+  color: #555 !important;
+}
+
+.contact-label::after {
+  content: ": ";
+}
+
+.copy-status {
+  display: none !important;
+}
+
+.phone-copy {
+  font: inherit !important;
+  text-align: left !important;
+}
+
+.contact-item span:last-child {
+  font-size: 8.5pt !important;
+}
+
+/* Keep links readable when printed; don't append long browser URLs. */
+a[href]::after {
+  content: "" !important;
+}

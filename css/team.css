@@ -1,35 +1,113 @@
 /* ============================
    TEAM PAGE — PAGE-SPECIFIC STYLES
-   (shared nav/footer/buttons/dog-card styles live in style.css)
+   (shared nav/footer/buttons/dog-card styles live in new_style.css)
    ============================ */
 
 /* ============================
    PAGE HEADER
+   Styled to match the Menu page's hero: dark banner, big centered
+   heading, with two small jumping paw-print icons flanking the text.
    ============================ */
 
+/* Same treatment as the Menu page's hero (.hero-podium in menu.css):
+   a dark gradient laid over a photo so the light heading text stays
+   readable while the photo still shows through.
+   ⚠️ Expects an image at images/team_bg.png — that file isn't in the
+   project yet, so add it there (same folder as cafe-interior.jpg)
+   or this will just show the gradient with no photo behind it. */
 .page-header {
-  background: var(--charcoal);
-  padding: 90px 0 70px;
+  background-image:
+    linear-gradient(180deg,
+      rgba(62, 42, 28, 0.82) 0%,
+      rgba(62, 42, 28, 0.72) 50%,
+      rgba(62, 42, 28, 0.82) 100%),
+    url('../images/team_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 130px 0 100px;
   text-align: center;
 }
 
 .page-header .eyebrow {
-  color: var(--accent);
+  color: var(--white);
+  font-size: 1.1rem;
 }
 
 .page-header h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2.6rem,6vw,4.2rem);
   color: var(--text-light);
   margin-bottom: 16px;
+  /* Lays the heading text out in a row with a paw-icon group on
+     each side, wrapping on narrow screens instead of overlapping. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Jumping paw-print icons beside the heading — copied from the
+   Menu page's "Our Menu" title (see .menu-paws / .paw-step-* in
+   menu.css). Each size floats on its own timing/delay so the
+   motion reads as loosely "walking" rather than perfectly synced. */
+.team-paws {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.team-paws .paw-step {
+  display: inline-block;
+}
+
+.paw-step-sm {
+  width: 14px;
+  opacity: 0.4;
+  animation: pawFloatSm 2.6s ease-in-out infinite;
+}
+
+.paw-step-md {
+  width: 20px;
+  opacity: 0.62;
+  animation: pawFloatMd 3.3s ease-in-out infinite 0.45s;
+}
+
+.paw-step-lg {
+  width: 26px;
+  opacity: 0.85;
+  animation: pawFloatLg 3.9s ease-in-out infinite 0.15s;
+}
+
+@keyframes pawFloatSm {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-6px) rotate(-15deg); }
+}
+
+@keyframes pawFloatMd {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-11px) rotate(-1deg); }
+}
+
+@keyframes pawFloatLg {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+@media (max-width: 640px) {
+  .menu-paws {
+    display: none; /* avoid crowding the title on narrow screens */
+  }
 }
 
 .page-header-text {
-  color: var(--text-light);
+  color: var(--white);
   opacity: 0.75;
   max-width: 520px;
   margin: 0 auto;
+  font-size: 1.1rem;
 }
 
 /* ============================
@@ -276,7 +354,7 @@
 
 /* ============================
    RESIDENT DOGS (grid layout reuses
-   .dog-grid / .dog-card from style.css)
+   .dog-grid / .dog-card from new_style.css)
    ============================ */
 
 .dogs-section {
