@@ -396,7 +396,10 @@ h2.center
     height: 38px;
     border: none;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.06);
+    /* solid white, same in both themes — the sun/moon PNGs aren't
+       perfectly transparent right up to their edges, so a white
+       circle hides that better than a see-through one would */
+    background: #fff;
     cursor: pointer;
     flex-shrink: 0;
     transition: background var(--transition), transform var(--transition);
@@ -404,7 +407,7 @@ h2.center
 
 .theme-toggle:hover
 {
-    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
     transform: translateY(-2px);
 }
 
