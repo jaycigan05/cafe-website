@@ -154,7 +154,10 @@ main
 .hero-bio
 {
     max-width: 720px;
-    color: #624e43;
+    /* var(--text-dark), not a fixed hex — this sits directly on the
+       page background (var(--portfolio-cream)), which does turn dark
+       at night, so the text needs to follow it */
+    color: var(--text-dark);
     font-size: 1.03rem;
 }
 
@@ -268,7 +271,10 @@ main
 /* ---- about — css grid ---- */
 .about-section
 {
-    background: #fff;
+    /* var(--portfolio-card), not a fixed #fff — this stayed white at
+       night while its h2/text (var(--portfolio-brown) etc) turned
+       light to match the dark page, so the text vanished */
+    background: var(--portfolio-card);
     border-top: 1px solid var(--portfolio-line);
     border-bottom: 1px solid var(--portfolio-line);
 }
@@ -476,13 +482,14 @@ main
 
 .involvement-card
 {
-    background: #fbf4e9;
+    /* var(--portfolio-soft), same reason as .about-section above */
+    background: var(--portfolio-soft);
 }
 
 .cocurriculum-section
 {
     padding-top: 0;
-    background: #fffdf9;
+    background: var(--portfolio-cream);
 }
 
 .involvement-grid
@@ -494,7 +501,13 @@ main
 /* ---- skills ---- */
 .skills-section
 {
-    background: var(--nav-text);
+    /* var(--footer-bg), not var(--nav-text) — nav-text is now
+       theme-reactive (it lights up the navbar text at night), which
+       flipped this panel's background from dark to light and left
+       its light-coloured text unreadable on it. footer-bg is the
+       fixed-dark token new_style.css keeps around for exactly this
+       "always dark panel" case */
+    background: var(--footer-bg);
     color: var(--text-light);
 }
 
@@ -589,7 +602,7 @@ main
 /* ---- projects — css grid ---- */
 .projects-section
 {
-    background: #fffdf9;
+    background: var(--portfolio-cream);
 }
 
 .project-grid
@@ -630,7 +643,9 @@ main
 
 .featured-project
 {
-    background: #ead9c6;
+    /* var(--portfolio-soft), same "fixed light hex behind reactive
+       text" bug as the section backgrounds above */
+    background: var(--portfolio-soft);
     color: var(--portfolio-brown);
     border-color: rgba(166, 124, 82, 0.24);
 }
@@ -643,7 +658,10 @@ main
 
 .featured-project .project-type
 {
-    color: #76583f;
+    /* var(--portfolio-accent-dark), not a fixed hex — matches the
+       non-featured .project-type below and tracks the (now reactive)
+       .featured-project background instead of assuming it stays light */
+    color: var(--portfolio-accent-dark);
 }
 
 .project-topline
@@ -724,7 +742,7 @@ main
 
 .featured-project .project-link
 {
-    color: #6b4d36;
+    color: var(--portfolio-accent-dark);
 }
 
 .project-link-static
@@ -1098,4 +1116,36 @@ main
     {
         transition: none !important;
     }
+}
+
+/* ---- dark-mode patches ----
+   a few backgrounds above are multi-stop gradients or translucent
+   white panels that can't just swap in a single var() like the
+   solid-colour ones did — they stayed permanently light and their
+   var(--portfolio-brown)/var(--text-muted) text turned invisible on
+   them at night. overriding just these here instead of rewriting the
+   gradients themselves, so the light-mode look is untouched. */
+[data-theme="dark"] .about-card
+{
+    background: linear-gradient(135deg, var(--portfolio-soft) 0%, var(--portfolio-card) 50%, var(--portfolio-soft) 100%);
+}
+
+[data-theme="dark"] .contact-card
+{
+    background: linear-gradient(135deg, var(--portfolio-soft) 0%, var(--portfolio-card) 100%);
+}
+
+[data-theme="dark"] .contact-item
+{
+    background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .contact-item:hover
+{
+    background: rgba(255, 255, 255, 0.14);
+}
+
+[data-theme="dark"] .featured-project .project-tags span
+{
+    background: rgba(255, 255, 255, 0.12);
 }

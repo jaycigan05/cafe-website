@@ -70,7 +70,11 @@
     left:50%;
     transform:translateX(-50%);
     text-align:center;
-    color:var(--white);
+    /* fixed white — this text sits on the video's dark gradient
+       overlay (.reviewHero::before), not the page background, so it
+       needs to stay light in both themes, not follow var(--white)
+       into a dark colour at night */
+    color:#fff;
     z-index:2;
     width:90%;
     font-family: var(--font-display);
@@ -78,7 +82,7 @@
 
 .reviewContent h1
 {
-    color: var(--white);
+    color: #fff;
     font-size:60px;
     margin-bottom:10px;
     text-shadow: 4px 4px 8px var(--text-shadow);
@@ -95,7 +99,9 @@
 .reviewContent p
 {
     font-size: 25px;
-    color: var(--cream);
+    /* var(--text-light), not var(--cream) — cream turns near-black at
+       night, same issue as h1/the container above */
+    color: var(--text-light);
     text-shadow: 4px 4px 8px var(--text-shadow);
     font-family: var(--font-display);
 }
@@ -621,6 +627,11 @@ meter::-webkit-meter-optimum-value
 .popupContent button:hover
 {
     background:var(--mocha);
+    /* mocha stays a near-black brown in dark mode (fixed-dark by
+       design), but the button's base text is var(--white), which
+       flips dark at night too — pin it white here so hover doesn't
+       go dark-on-dark */
+    color:#fff;
 }
 
 @keyframes popup

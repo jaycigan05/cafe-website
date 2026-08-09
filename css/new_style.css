@@ -455,7 +455,10 @@ h2.center
     cursor: pointer;
     border: 2px solid transparent;
     background: var(--color-primary);
-    color: var(--white);
+    /* fixed white, not var(--white) — --color-primary stays the same
+       dark brown in both themes (see the dark-mode block above), but
+       --white flips dark at night, which turned this text invisible */
+    color: #fff;
     transition: background var(--transition), color var(--transition),
     border-color var(--transition), transform var(--transition);
 }

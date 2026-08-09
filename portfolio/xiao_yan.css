@@ -10,8 +10,12 @@
     /* Lighter panel-background tones — new_style.css's lightest tokens
      (--cream, --text-light) are meant for backgrounds/text at body
      scale, not for a contained card/section background, so these
-     fill a genuine gap rather than duplicating an existing colour. */
-    --pf-light: #E1C8B1;
+     fill a genuine gap rather than duplicating an existing colour.
+     --pf-light aliases var(--white) so the Technical Skills panel
+     still tracks dark mode — it was a plain hex before, which stayed
+     light at night while its --text-dark labels turned light too and
+     disappeared. */
+    --pf-light: var(--white, #E1C8B1);
     --pf-pale:  #F7E8BE;
     --pf-dusty: #CCB6A9;
 

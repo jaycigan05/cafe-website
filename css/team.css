@@ -25,7 +25,10 @@
 
 .page-header .eyebrow
 {
-    color: var(--white);
+    /* fixed white — this sits on the hardcoded dark photo overlay
+       above, not the page background, so it must not follow
+       var(--white) into a dark colour at night */
+    color: #fff;
     font-size: 1.1rem;
 }
 
@@ -129,7 +132,9 @@
 
 .page-header-text
 {
-    color: var(--white);
+    /* same reasoning as .page-header .eyebrow above — fixed white on
+       the fixed dark overlay, not the reactive var */
+    color: #fff;
     opacity: 0.75;
     max-width: 520px;
     margin: 0 auto;
