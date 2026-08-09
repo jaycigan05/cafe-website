@@ -46,3 +46,21 @@
   font-style: italic;
   max-width: 620px;
 }
+
+.activity-photo {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 0 auto var(--space-lg);
+}
+
+.activity-text {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--color-text);
+  line-height: 1.85;
+}
