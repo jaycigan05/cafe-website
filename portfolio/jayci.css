@@ -205,7 +205,17 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: var(--space-md);
+  overflow: hidden; /* clips .p-project-image to the card's rounded top corners */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* photo strip at the top of a card — bleeds edge-to-edge by cancelling
+   the card's own padding with a negative margin */
+.p-project-image {
+  width: calc(100% + 2 * var(--space-md));
+  height: 160px;
+  object-fit: cover;
+  margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);
 }
 
 .p-project-card:hover {
