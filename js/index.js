@@ -52,12 +52,16 @@ function initAboutSlider()
 	const images = Array.from(wrapper.querySelectorAll('.about-slide'));
 	const nextBtn = document.getElementById('aboutImageNext');
 	const dotsContainer = document.getElementById('aboutImageDots');
+	const pauseToggle = document.getElementById('aboutImageToggle');
 	if (images.length < 2) return; // nothing to slide between
 
 	const AUTO_INTERVAL_MS = 2000; // 2s per photo
 	let current = images.findIndex((img) => img.classList.contains('active'));
 	if (current === -1) current = 0;
 	let timer = null;
+	// true once someone's explicitly hit pause — keeps hover/focus
+	// leaving the slider from silently restarting it against their wishes
+	let manuallyPaused = false;
 
 	// one dot per photo — .about-image-dot styling lives in index.css,
 	// the dots themselves only exist because this loop makes them
@@ -118,9 +122,43 @@ function initAboutSlider()
 		});
 	}
 
-	// pause while someone's hovering over the image
+	// pause while someone's hovering over or keyboard-focused inside the
+	// image (hover alone leaves keyboard/touch users with no way to stop it)
 	wrapper.addEventListener('mouseenter', () => clearInterval(timer));
-	wrapper.addEventListener('mouseleave', startAutoplay);
+	wrapper.addEventListener('mouseleave', () =>
+	{
+		if (!manuallyPaused) startAutoplay();
+	});
+	wrapper.addEventListener('focusin', () => clearInterval(timer));
+	wrapper.addEventListener('focusout', () =>
+	{
+		if (!manuallyPaused) startAutoplay();
+	});
+
+	// explicit pause/play button — WCAG 2.2.2 wants a real control for
+	// this, not just "stops while your mouse happens to be over it"
+	if (pauseToggle)
+	{
+		const icon = pauseToggle.querySelector('span');
+		pauseToggle.addEventListener('click', () =>
+		{
+			manuallyPaused = !manuallyPaused;
+			if (manuallyPaused)
+			{
+				clearInterval(timer);
+				pauseToggle.setAttribute('aria-label', 'Play photo slideshow');
+				pauseToggle.setAttribute('aria-pressed', 'true');
+				if (icon) icon.textContent = '▶';
+			}
+			else
+			{
+				startAutoplay();
+				pauseToggle.setAttribute('aria-label', 'Pause photo slideshow');
+				pauseToggle.setAttribute('aria-pressed', 'false');
+				if (icon) icon.textContent = '⏸';
+			}
+		});
+	}
 
 	render();
 	startAutoplay();

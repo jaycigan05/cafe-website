@@ -112,6 +112,13 @@
 					<img class="about-image-next-icon" src="../images/arrow.svg" alt="" aria-hidden="true">
 				</button>
 
+				<!-- reuses the same look as the hero video's pause button —
+					 this slide show auto-advances forever too (WCAG 2.2.2),
+					 and hovering to pause it doesn't help keyboard/touch users -->
+				<button type="button" class="video-toggle" id="aboutImageToggle" aria-label="Pause photo slideshow" aria-pressed="false">
+					<span aria-hidden="true">⏸</span>
+				</button>
+
 				<!-- Filled in by JS — one dot per photo above -->
 				<div class="about-image-dots" id="aboutImageDots" role="tablist" aria-label="Our story photos"></div>
 			</div>
@@ -398,4 +405,5 @@
 	<!-- Nav toggle, About slider, and cursor paw prints — see index.js -->
 	<script src="../js/index.js"></script>
 </body>
+</html>
 

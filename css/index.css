@@ -214,6 +214,15 @@
 	filter: brightness(0) invert(1);
 }
 
+/* .video-toggle defaults to the bottom-right, same corner the next
+   arrow already owns here — move it to the opposite corner */
+.about-image .video-toggle
+{
+	left: 16px;
+	right: auto;
+	bottom: 16px;
+}
+
 /* Dot indicators sit immediately to the left of the bottom-right next arrow. */
 .about-image-dots
 {
