@@ -1,0 +1,106 @@
+/* xiao yan's print stylesheet — same job as jayci-print.css /
+   mae_ann-print.css / jian_jia-print.css: hide the site chrome and
+   flatten the page to plain black-on-white for a clean printout */
+
+@media print
+{
+	/* hide navigation, footer, and controls that don't mean anything
+	   on paper (a "back to team" link, social/CV buttons) */
+	.navbar,
+	.footer,
+	.skip-link,
+	.back-to-team,
+	.hero-actions
+	{
+		display: none !important;
+	}
+
+	/* kill animation/transition/shadow everywhere */
+	*,
+	*::before,
+	*::after
+	{
+		animation: none !important;
+		transition: none !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	/* the hero is a full-bleed dark photo with light text over it —
+	   none of that survives to paper, so drop the photo entirely and
+	   force it to plain black-on-white like the rest of the page */
+	.portfolio-hero::before
+	{
+		content: none !important;
+		display: none !important;
+	}
+
+	.portfolio-hero
+	{
+		background: #fff !important;
+	}
+
+	.hero-name,
+	.hero-role,
+	.bio-heading,
+	.bio-panel p
+	{
+		color: black !important;
+	}
+
+	.bio-panel
+	{
+		background: #fff !important;
+		border: 1px solid #ccc !important;
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
+
+	/* section backgrounds white, text black */
+	body,
+	.section-wrap,
+	.section-alt,
+	.project-card
+	{
+		background: #fff !important;
+		color: black !important;
+	}
+
+	.section-alt::before
+	{
+		display: none !important;
+	}
+
+	h1, h2, h3, h4, p, span, li
+	{
+		color: black !important;
+	}
+
+	/* every education star reads as "reached" on a static page — the
+	   scroll-position-based lit/blink states the live site uses don't
+	   mean anything once it's on paper */
+	.edu-star
+	{
+		color: black !important;
+	}
+
+	/* skill bars: show the final fill, not the load-in animation */
+	.skill-fill
+	{
+		animation: none !important;
+	}
+
+	.skill-bar
+	{
+		background: #fff !important;
+		border: 1px solid #999 !important;
+	}
+
+	/* avoid splitting a card awkwardly across a page break */
+	.project-card,
+	.edu-item,
+	.skill-item
+	{
+		page-break-inside: avoid;
+	}
+}

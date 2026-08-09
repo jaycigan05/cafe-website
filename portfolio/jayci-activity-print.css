@@ -1,0 +1,56 @@
+/* shared print stylesheet for jayci's activity detail pages (SEED,
+   SAIBC, ETHGlobal, Ambank HackLab) — same idea as jayci-print.css,
+   just for the simpler activity-page layout instead of the main
+   portfolio page */
+
+@media print
+{
+	/* hide navigation, footer, and the "back" link — none of them
+	   mean anything on paper */
+	.navbar,
+	.footer,
+	.skip-link,
+	.back-link
+	{
+		display: none !important;
+	}
+
+	/* remove background colours and shadows (saves ink) */
+	body,
+	.activity-hero
+	{
+		background-color: white !important;
+		box-shadow: none !important;
+	}
+
+	/* remove animations/transitions */
+	*,
+	*::before,
+	*::after
+	{
+		animation: none !important;
+		transition: none !important;
+	}
+
+	/* make sure every bit of text prints black */
+	h1, h2, h3, p, span
+	{
+		color: black !important;
+	}
+
+	/* the activity photo is the main visual — keep it, just drop the
+	   drop-shadow and any height cap so it prints at full size */
+	.activity-photo
+	{
+		box-shadow: none !important;
+		max-height: none !important;
+	}
+
+	/* placeholder text (shown only if a photo hasn't been added yet)
+	   doesn't need italics for print */
+	.activity-placeholder
+	{
+		font-style: normal !important;
+		color: black !important;
+	}
+}
