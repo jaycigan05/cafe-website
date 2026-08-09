@@ -195,19 +195,19 @@
 	border-right: 1px dotted var(--accent);
 }
 
-.ratingSection1 h1
+.ratingSection1 h2
 {
 	font-size: 60px;
 	font-weight: bold;
 	margin: 0;
 }
 
-.ratingSection1 h2
+.ratingSection1 h3
 {
 	font-size: 30px;
 }
 
-.ratingSection1 h3
+.ratingSection1 h4
 {
 	font-size: 20px;
 }
@@ -266,6 +266,16 @@ meter::-webkit-meter-optimum-value
 	text-align:center;
 	color:var(--brown);
 	margin:50px 0;
+}
+
+/* "Customer Memories" / "Leave Your Review" — used to be bare <h1>
+   tags (browser default ~36px off html's 18px base font), demoted to
+   h2 so the page only has one real h1, this class keeps the same size */
+.section-title-lg
+{
+	font-size: 36px;
+	text-align: center;
+	margin: 50px 0 20px;
 }
 
 .ratingContainer2
@@ -705,17 +715,17 @@ meter::-webkit-meter-optimum-value
 		padding:20px;
 	}
 
-	.ratingSection1 h1
+	.ratingSection1 h2
 	{
 		font-size:48px;
 	}
 
-	.ratingSection1 h2
+	.ratingSection1 h3
 	{
 		font-size:26px;
 	}
 
-	.ratingSection1 h3
+	.ratingSection1 h4
 	{
 		font-size:16px;
 	}
@@ -920,12 +930,12 @@ meter::-webkit-meter-optimum-value
 		height:14px;
 	}
 
-	.ratingSection1 h1
+	.ratingSection1 h2
 	{
 		font-size:42px;
 	}
 
-	.ratingSection1 h2
+	.ratingSection1 h3
 	{
 		font-size:22px;
 	}
@@ -982,17 +992,17 @@ meter::-webkit-meter-optimum-value
 		height:12px;
 	}
 
-	.ratingSection1 h1
+	.ratingSection1 h2
 	{
 		font-size:36px;
 	}
 
-	.ratingSection1 h2
+	.ratingSection1 h3
 	{
 		font-size:20px;
 	}
 
-	.ratingSection1 h3
+	.ratingSection1 h4
 	{
 		font-size:14px;
 	}
