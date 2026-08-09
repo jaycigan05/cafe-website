@@ -5,22 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pawfee Café | Home</title>
-  <!-- new_style.css = site-wide rules (navbar, footer, buttons, colours).
-       index.css = rules for this page only (hero, about, menu preview,
-       resident dogs, reviews, cta banner). Load order matters: index.css
-       comes second so it can safely reuse new_style.css's variables. -->
+  <!-- new_style.css first for the shared vars, then index.css for
+       this page's own stuff — order matters here -->
   <link rel="stylesheet" href="../css/new_style.css">
   <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
 
-<!-- Accessibility: lets keyboard/screen-reader users jump straight past
-     the navbar to the page content, instead of tabbing through every
-     nav link first. Hidden until it receives keyboard focus. -->
+<!-- skip-link: hidden until focused, jumps past the navbar for keyboard/screen-reader users -->
 <a class="skip-link" href="#mainContent">Skip to main content</a>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- navbar -->
   <header class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">
@@ -46,7 +42,7 @@
 
 <main id="mainContent">
 
-  <!-- ===== HERO ===== -->
+  <!-- hero -->
   <section class="hero" id="hero">
     <video class="hero-video" autoplay muted loop playsinline poster="../images/interact-poster.jpg">
       <source src="../images/interact.mp4" type="video/mp4">
@@ -92,13 +88,12 @@
   </section>
 
 
-  <!-- ===== ABOUT / OUR STORY ===== -->
+  <!-- about / our story -->
   <section class="about" id="about">
     <div class="section-container about-grid">
-      <!-- Auto-rotating photo slider (logic in index.js:initAboutSlider).
-           The 3 images below are the only slides — index.js reads them
-           straight from the DOM, cross-fades whichever has the "active"
-           class, and generates the nav dots into #aboutImageDots itself. -->
+      <!-- auto-rotating slider, logic in index.js:initAboutSlider() — it
+           reads these 3 images straight from the DOM, cross-fades
+           whichever has .active, and builds the nav dots itself -->
       <div class="about-image" id="aboutImage">
         <img src="../images/ourstory1.webp" alt="Playing with dog" class="about-slide active" loading="lazy">
         <img src="../images/ourstory2.webp" alt="Dog getting a treat" class="about-slide" loading="lazy">
@@ -127,19 +122,15 @@
   </section>
 
 
-  <!-- ===== MENU PREVIEW ===== -->
+  <!-- menu preview -->
   <section class="menu-preview" id="menu-preview">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">Top Seller</p>
       <h2 class="center">Something for every set of paws</h2>
 
-      <!-- For Humans / For Dogs toggle — same look as the Menu page.
-           No JavaScript: two hidden radio inputs act as the toggle
-           state, the <label>s below act as clickable buttons (clicking
-           a label checks its matching radio), and index.css uses the
-           ":checked ~" CSS selector to show/hide the matching podium
-           and slide the pill highlight left/right. Only one of
-           .podium-human / .podium-dog is visible at any time. -->
+      <!-- Humans/Dogs toggle, same look as the Menu page — no JS
+           needed, two hidden radios drive it and index.css's
+           ":checked ~" selector shows/hides the matching podium -->
       <div class="podium-toggle">
         <input type="radio" name="menuFlavor" id="flavorHuman" class="podium-toggle-input" checked>
         <input type="radio" name="menuFlavor" id="flavorDog" class="podium-toggle-input">
@@ -151,10 +142,8 @@
           </div>
         </div>
 
-        <!-- Top 3 podium — For Humans. Ranked by "popularity" score in
-             the Menu page's MENU_ITEMS data (menu.js): Grilled Chicken
-             Chop (99), Carbonara (97), Beef Burger (93). Hardcoded here
-             since this page has no access to that JS data/logic. -->
+        <!-- top-3 for humans, ranked by popularity score in menu.js's
+             MENU_ITEMS. hardcoded here since this page can't read that data -->
         <div class="podium podium-human">
           <div class="podium-slot" data-slot="left">
             <div class="podium-card">
@@ -202,10 +191,8 @@
           </div>
         </div>
 
-        <!-- Top 3 podium — For Dogs (Paw Menu category). Same ranking
-             approach: Blueberry Pupcakes (99), Dog Biscuits (97),
-             Pumpkin Pancakes (95). Hidden by default; index.css reveals
-             this and hides .podium-human when #flavorDog is checked. -->
+        <!-- same idea but for dogs — hidden by default, index.css swaps
+             it in and hides .podium-human when #flavorDog is checked -->
         <div class="podium podium-dog">
           <div class="podium-slot" data-slot="left">
             <div class="podium-card">
@@ -260,9 +247,8 @@
     </div>
   </section>
 
-  <!-- ===== RESIDENT DOGS =====
-       Static teaser of 6 dogs (out of 31 total — see team.html for the
-       full roster, which is generated dynamically from js/team.js). -->
+  <!-- static teaser of 6 dogs (31 total live on team.html,
+       generated dynamically from js/team.js) -->
   <section class="resident-dogs" id="resident-dogs">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">Say hello</p>
@@ -307,11 +293,8 @@
     </div>
   </section>
 
-  <!-- ===== REVIEWS TEASER =====
-       3 real reviews copied word-for-word from reviews.html (same
-       names, star ratings, quotes and dates), styled to match that
-       page's review cards. This is a snapshot, not a live feed — if
-       reviews.html's content changes, update these 3 cards by hand. -->
+  <!-- 3 reviews copied word-for-word from reviews.html — this is a
+       snapshot, not live, update by hand if that page's content changes -->
   <section class="reviews-teaser" id="reviews-teaser">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">What guests say</p>
@@ -351,10 +334,8 @@
     </div>
   </section>
 
-  <!-- ===== CTA BANNER =====
-       Simple closing call-to-action. Clicking the phone-number button
-       copies the café phone number to the visitor's clipboard instead
-       of opening the device phone dialer. -->
+  <!-- closing cta — the phone button copies the number to clipboard
+       instead of trying to open a dialer -->
   <section class="cta-banner">
     <div class="section-container cta-content">
       <h2>Ready to visit us?</h2>
@@ -365,9 +346,8 @@
 
 </main>
 
-  <!-- ===== FOOTER =====
-       Shared layout/structure across every page (see new_style.css
-       for the actual styling) — only the content below changes. -->
+  <!-- same footer structure every page uses, styling lives in
+       new_style.css, only the content here changes -->
   <footer class="footer">
     <div class="section-container footer-grid">
       <!-- Brand + address block -->

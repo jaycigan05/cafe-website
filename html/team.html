@@ -4,20 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pawfee Café | Team</title>
-  <!-- new_style.css = site-wide rules (navbar, footer, buttons, colours,
-       .dog-grid/.dog-card), shared with index.html/menu.html/reviews.html.
-       team.css = rules for this page only (page header, staff cards/modal,
-       resident dogs grid wrapper). -->
+  <!-- new_style.css for the shared stuff (navbar/footer/buttons/
+       .dog-grid etc), team.css for this page's own bits -->
   <link rel="stylesheet" href="../css/new_style.css">
   <link rel="stylesheet" href="../css/team.css">
 </head>
 <body>
 
-<!-- Accessibility: lets keyboard/screen-reader users jump straight past
-     the navbar to the page content. Hidden until it receives keyboard focus. -->
+<!-- skip-link: hidden until focused, jumps past the navbar -->
 <a class="skip-link" href="#mainContent">Skip to main content</a>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- navbar -->
   <header class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">
@@ -43,10 +40,8 @@
 
 <main id="mainContent">
 
-  <!-- ===== PAGE HEADER =====
-       Styled like the Menu page's hero: big heading flanked by two
-       small jumping paw-print icons on each side (pure CSS animation,
-       see .menu-paws / .paw-step-* in team.css). -->
+  <!-- styled like the menu page's hero — jumping paw icons are
+       pure CSS, see .menu-paws / .paw-step-* in team.css -->
   <section class="page-header">
     <div class="section-container">
       <p class="eyebrow">Our people &amp; our pups</p>
@@ -70,7 +65,7 @@
     </div>
   </section>
 
-  <!-- ===== HUMAN STAFF ===== -->
+  <!-- human staff -->
   <section class="staff-section">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">The people</p>
@@ -173,7 +168,7 @@
     </div>
   </section>
 
-  <!-- ===== RESIDENT DOGS ===== -->
+  <!-- resident dogs -->
   <section class="dogs-section">
     <div class="section-container">
       <p class="eyebrow eyebrow-dark center">The regulars</p>
@@ -187,9 +182,8 @@
 
 </main>
 
-  <!-- ===== FOOTER =====
-       Shared layout/structure across every page (see new_style.css
-       for the actual styling) — only the content below changes. -->
+  <!-- same footer structure every page uses, styling lives in
+       new_style.css, only the content here changes -->
   <footer class="footer">
     <div class="section-container footer-grid">
       <div class="footer-brand">
