@@ -298,7 +298,10 @@ button
     font-weight:700;
     font-size:.9rem;
     border:none;
-    background:var(--brown);
+    /* var(--color-primary) instead of var(--brown) — --brown turns
+       light in dark mode (it's the heading colour), which would've
+       left this button light-on-light with the white text below */
+    background:var(--color-primary);
     color:#fff;
     box-shadow:var(--pf-shadow-soft);
     transition:transform var(--pf-transition-fast), background var(--pf-transition-fast);

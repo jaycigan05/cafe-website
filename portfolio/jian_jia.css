@@ -4,9 +4,13 @@
 
 :root
 {
-    --portfolio-cream: #fffaf3;
-    --portfolio-soft: #f7eee2;
-    --portfolio-card: #ffffff;
+    /* these three were plain hex before — --portfolio-brown already
+       tracked new_style.css's dark mode via var(), but the
+       backgrounds didn't, so dark mode would've turned this page's
+       text light while its cards/body stayed permanently light too */
+    --portfolio-cream: var(--cream, #fffaf3);
+    --portfolio-soft: var(--cream, #f7eee2);
+    --portfolio-card: var(--white, #ffffff);
     --portfolio-brown: var(--brown, #4a352a);
     --portfolio-accent: var(--accent, #a67c52);
     --portfolio-accent-dark: var(--accent-dark, #68523b);

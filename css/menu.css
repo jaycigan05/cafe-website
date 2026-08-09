@@ -5,8 +5,10 @@
    already come from new_style.css, don't redefine those here */
 :root
 {
-    --cream-card:  #FFFDF8;
-    /* menu card background */
+    --cream-card:  var(--white, #FFFDF8);
+    /* menu card background — aliased to the shared --white so dark
+       mode reaches it too, instead of every card staying stuck light
+       while its text (var(--text-dark) etc) turns light and vanishes */
     --blush:       #e4b4a3;
     /* "For Dogs" accent + link underline */
     --line:        #EEDCC6;
@@ -136,7 +138,7 @@
 {
     position:relative;
     display:flex;
-    background:#fff;
+    background:var(--white);
     border-radius:999px;
     padding:6px;
     box-shadow:var(--shadow-soft);
@@ -514,7 +516,7 @@
     display:flex;
     align-items:center;
     gap:8px;
-    background:#fff;
+    background:var(--white);
     border:2px solid var(--line);
     border-radius:999px;
     padding:10px 18px;
@@ -564,7 +566,7 @@
     gap:10px;
     border:2px solid var(--line);
     border-radius:999px;
-    background:#fff;
+    background:var(--white);
     padding:10px 18px;
     font-weight:700;
     color:var(--text-dark);
@@ -586,7 +588,7 @@
     left:0;
     right:0;
     z-index:50;
-    background:#fff;
+    background:var(--white);
     border:2px solid var(--line);
     border-radius:16px;
     box-shadow:var(--shadow);
@@ -614,7 +616,7 @@
 .custom-select-list li:hover,
 .custom-select-list li.is-active
 {
-    background:#F6E9D6;
+    background:var(--cream);
     color:var(--accent-dark);
 }
 .custom-select-list li[aria-selected="true"]::after

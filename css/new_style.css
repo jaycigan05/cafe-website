@@ -156,7 +156,11 @@ a:focus-visible, button:focus-visible, input:focus-visible,
     position:absolute;
     left:12px;
     top:-60px;
-    background:var(--text-dark);
+    /* fixed dark bg + white text on purpose, same in both themes —
+       a11y overlay needs to stay high-contrast, not track the theme
+       (var(--text-dark) turns light in dark mode, which would've
+       left white text nearly invisible on a light pill) */
+    background:#2E2D2B;
     color:#fff;
     padding:10px 16px;
     border-radius:0 0 10px 10px;

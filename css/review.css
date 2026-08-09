@@ -3,7 +3,10 @@
 {
     --star-gold: #F4B400;
     --meter-gold: #d89b23;
-    --comment-bg: #f1e4cd;
+    /* aliased to --cream so it tracks dark mode — was a plain hex
+       before, which left the comment wall stuck light while its
+       text (var(--brown) etc) turned light too and disappeared */
+    --comment-bg: var(--cream, #f1e4cd);
     --shadow-light: rgba(0, 0, 0, 0.08);
     --shadow-medium: rgba(0, 0, 0, 0.15);
     --shadow-dark: rgba(0, 0, 0, 0.20);
