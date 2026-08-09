@@ -1,3 +1,13 @@
+/* =====================================
+   Shadow colors
+===================================== */
+:root
+{
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.12);
+}
+
 /* ======================================================
    GENERAL PAGE STYLING
    Sets the overall background and text colours
@@ -18,7 +28,7 @@ body
     width:100%;
     background:linear-gradient(135deg,var(--mocha),var(--brown));
     padding:70px;
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
+    box-shadow: 0 18px 40px var(--shadow-medium);
 }
 
 /* ---------- Intro Layout ---------- */
@@ -153,7 +163,7 @@ body
     width:100%;
     background:var(--cream);
     padding:30px;
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
+    box-shadow: 0 18px 40px var(--shadow-medium);
 }
 
 /* ---------- Design Journey, Featured Project ---------- */
@@ -163,7 +173,7 @@ body
     width:100%;
     background:var(--white);
     padding:30px;
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
+    box-shadow: 0 18px 40px var(--shadow-medium);
 
 }
 
@@ -192,7 +202,7 @@ body
     background:var(--white);
     padding:45px;
     border-radius:25px;
-    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    box-shadow: 0 15px 30px var(--shadow-light);
     transition:.3s;
 }
 
@@ -224,7 +234,7 @@ body
     background:var(--white);
     padding:30px;
     border-radius:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    box-shadow: 0 10px 20px var(--shadow-light);
     transition:.3s;
 }
 
@@ -275,7 +285,7 @@ body
     text-align:center;
     position:relative;
     transition:.3s;
-    box-shadow:0 12px 25px rgba(0,0,0,.08);
+    box-shadow: 0 12px 25px var(--shadow-light);
 }
 
 .journeyStep:hover
@@ -357,7 +367,7 @@ body
     background:var(--white);
     border-radius:22px;
     padding:30px;
-    box-shadow:0 12px 25px rgba(0,0,0,.08);
+    box-shadow: 0 12px 25px var(--shadow-light);
     transition:.3s;
 }
 
@@ -448,7 +458,7 @@ body
 {
     overflow:hidden;
     border-radius:25px;
-    box-shadow:0 20px 35px rgba(0,0,0,.12);
+    box-shadow: 0 20px 35px var(--shadow-strong);
 }
 
 .projectImage img
@@ -513,7 +523,7 @@ body
     padding:35px 25px;
     text-align:center;
     transition:.35s;
-    box-shadow:0 12px 25px rgba(0,0,0,.08);
+    box-shadow: 0 12px 25px var(--shadow-light);
 }
 
 .contactCard:nth-child(even)

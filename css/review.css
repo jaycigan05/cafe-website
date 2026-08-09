@@ -1,4 +1,21 @@
 /* =====================================
+   Review colors
+===================================== */
+:root
+{
+    --star-gold: #F4B400;
+    --meter-gold: #d89b23;
+    --comment-bg: #f1e4cd;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-dark: rgba(0, 0, 0, 0.20);
+    --overlay-dark: rgba(0, 0, 0, 0.65);
+    --overlay-light: rgba(0, 0, 0, 0.15);
+    --overlay-popup: rgba(0, 0, 0, 0.5);
+    --text-shadow: rgba(70, 45, 30, 0.8);
+}
+
+/* =====================================
    SCROLL REVEAL ANIMATION
    Applies a fade-in effect when sections enter the viewport.
 ===================================== */
@@ -38,11 +55,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.65),
-        rgba(0, 0, 0, 0.15)
-    );
+    background: linear-gradient(to bottom, var(--overlay-dark), var(--overlay-light));
     z-index: 1;
     pointer-events: none;
 }
@@ -73,7 +86,7 @@
     color: var(--white);
     font-size:60px;
     margin-bottom:10px;
-    text-shadow: 4px 4px 8px rgba(70, 45, 30, 0.8);
+    text-shadow: 4px 4px 8px var(--text-shadow);
 }
 
 .reviewContent h2
@@ -81,14 +94,14 @@
     color: var(--text-light);
     font-size:60px;
     margin-bottom:20px;
-    text-shadow: 4px 4px 8px rgba(70, 45, 30, 0.8);
+    text-shadow: 4px 4px 8px var(--text-shadow);
 }
 
 .reviewContent p
 {
     font-size: 25px;
     color: var(--cream);
-    text-shadow: 4px 4px 8px rgba(70, 45, 30, 0.8);
+    text-shadow: 4px 4px 8px var(--text-shadow);
     font-family: var(--font-display);
 }
 
@@ -167,7 +180,7 @@
     padding:25px;
     background: var(--white);
     border-radius:20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-light);
     position:relative;
     z-index:10;
     height: auto;        
@@ -231,13 +244,13 @@ meter
 
 meter::-webkit-meter-optimum-value
 {
-    background:#d89b23;
+    background: var(--meter-gold);
     border-radius:20px;
 }
 
 .star
 {
-    color:#F4B400;
+    color: var(--star-gold);
     font-size:18px;
 }
 
@@ -267,7 +280,7 @@ meter::-webkit-meter-optimum-value
     max-width:1200px;   
     margin:40px auto;   
     padding:30px;
-    background:#f1e4cd;
+    background: var(--comment-bg);
     border-radius:30px;
 }
 
@@ -365,7 +378,7 @@ meter::-webkit-meter-optimum-value
     border-radius:20px;
     padding:20px;
     text-align:left;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-light);
     transition:.3s;
     width:350px;
     height: 250px;
@@ -397,7 +410,7 @@ meter::-webkit-meter-optimum-value
 .reviewCard:hover
 {
     transform:translateY(-8px);
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    box-shadow: 0 10px 20px var(--shadow-medium);
 }
 
 .reviewCard h3
@@ -493,7 +506,7 @@ meter::-webkit-meter-optimum-value
     background:var(--white);
     padding:12px;
     border-radius:8px;
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    box-shadow: 0 8px 20px var(--shadow-dark);
     transition:.3s;
 }
 
@@ -525,7 +538,7 @@ meter::-webkit-meter-optimum-value
     background:var(--white);
     padding:35px;
     border-radius:20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-light);
     display:flex;
     flex-direction:column;
     gap:20px;
@@ -587,7 +600,7 @@ meter::-webkit-meter-optimum-value
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.5);
+    background: var(--overlay-popup);
     z-index:9999;
 }
 
@@ -605,7 +618,7 @@ meter::-webkit-meter-optimum-value
     padding:35px;
     border-radius:20px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    box-shadow: 0 10px 30px var(--shadow-dark);
     animation:popup .35s ease;
 }
 
