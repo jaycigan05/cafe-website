@@ -151,6 +151,18 @@
 	margin-bottom: 2px;
 }
 
+/* centred intro line under a section heading — used under Skills,
+   Projects and Recent Activity's <h2>. was only ever in the HTML,
+   never actually had a rule here, so it was just falling back to the
+   plain <p> default (left-aligned, no muted colour) */
+.section-subtitle
+{
+	text-align: center;
+	max-width: 480px;
+	margin: 0 auto var(--space-lg);
+	color: var(--color-text-muted);
+}
+
 /* ---- SKILLS (CSS-only progress bars) ---- */
 .p-skills
 {
