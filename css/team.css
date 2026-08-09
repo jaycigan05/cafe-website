@@ -235,14 +235,21 @@
 }
 
 /* Hidden detail panel: position, contribution, portfolio link.
-   Collapsed by default, revealed when the card gains .expanded */
+   team.js never actually adds an .expanded class (the card's real
+   "expanded" view is the popup modal, which duplicates this content
+   instead) — so this panel is permanently collapsed. max-height/
+   opacity alone only hide it visually though; the real <a> link
+   inside it stayed in the keyboard tab order the whole time, so
+   Tab silently walked through an invisible link on every single
+   card. visibility:hidden removes it from the tab order too. */
 .staff-details
 {
 	max-height: 0;
 	opacity: 0;
+	visibility: hidden;
 	overflow: hidden;
 	margin-top: 0;
-	transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
+	transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease, visibility 0.4s;
 }
 
 .staff-contribution
@@ -402,6 +409,7 @@
 {
 	max-height: none;
 	opacity: 1;
+	visibility: visible;
 	overflow: visible;
 	margin-top: 22px;
 }
