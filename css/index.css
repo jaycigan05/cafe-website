@@ -1,12 +1,7 @@
-/* ============================
-   PAWFEE CAFÉ — INDEX PAGE STYLESHEET
-   (hero, about, menu preview, resident dogs, reviews, cta banner)
-   Requires new_style.css to be loaded first for :root variables, buttons, eyebrow.
-   ============================ */
+/* index.css — hero, about, menu preview, dogs, reviews, cta banner.
+   needs new_style.css loaded first for the :root vars/buttons/eyebrow */
 
-/* ============================
-   HERO
-   ============================ */
+/* ---- hero ---- */
 
 .hero
 {
@@ -131,9 +126,7 @@
     color: var(--white);
 }
 
-/* ============================
-   ABOUT
-   ============================ */
+/* ---- about ---- */
 
 .about
 {
@@ -266,17 +259,13 @@
     max-width: 440px;
 }
 
-/* ============================
-   GHOST BUTTON HOVER FIX (this page only)
-   .btn-ghost is meant to only change text colour on hover, never
-   show a background. The shared .btn:hover rule in new_style.css
-   sets a solid background on ANY .btn (including .btn.btn-ghost)
-   and new_style.css's own .btn-ghost:hover references an undefined
-   variable (--brown-dark), so on every ghost link on this page the
-   hover state was rendering as a solid background block instead of
-   just the word changing colour. Scoping a higher-specificity rule
-   here (without touching the shared stylesheet) fixes it in place.
-   ============================ */
+/* .btn-ghost should only change text colour on hover, no
+   background. but new_style.css's shared .btn:hover always sets a
+   background (even on .btn-ghost), and its own .btn-ghost:hover
+   points at an undefined --brown-dark var — so ghost buttons here
+   were rendering as solid blocks instead of just changing colour.
+   fixing it locally with higher specificity instead of touching
+   the shared file */
 
 .about-content .btn-ghost,
 .center-btn .btn-ghost
@@ -291,11 +280,8 @@
     color: var(--text-muted);
 }
 
-/* ============================
-   SHARED SECTION HEADINGS (index page)
-   Common heading style reused by the 3 centered sections below
-   (menu preview, resident dogs, reviews teaser).
-   ============================ */
+/* heading style shared by the 3 centered sections below
+   (menu preview, resident dogs, reviews teaser) */
 
 .menu-preview h2,
 .resident-dogs h2,
@@ -315,9 +301,7 @@
     margin-top: 44px;
 }
 
-/* ============================
-   MENU PREVIEW
-   ============================ */
+/* ---- menu preview ---- */
 
 .menu-preview
 {
@@ -523,12 +507,9 @@
     letter-spacing: 0.04em;
 }
 
-/* ============================
-   RESIDENT DOGS (section wrapper — homepage teaser only.
-   .dog-grid / .dog-card / .dog-name / .dog-type live in
-   new_style.css so they can be reused on the team page.
-   Background matches the "Our story" section above.)
-   ============================ */
+/* just the wrapper for the homepage teaser — the actual .dog-grid/
+   .dog-card/etc classes live in new_style.css so team.html can
+   reuse them too. background matches "Our Story" above */
 
 .resident-dogs
 {
@@ -536,9 +517,7 @@
     background: var(--cream);
 }
 
-/* ============================
-   REVIEWS TEASER
-   ============================ */
+/* ---- reviews teaser ---- */
 
 .reviews-teaser
 {
@@ -607,9 +586,7 @@
     font-size: 14px;
 }
 
-/* ============================
-   CTA BANNER
-   ============================ */
+/* ---- cta banner ---- */
 
 .cta-banner
 {
@@ -651,9 +628,7 @@
     color: var(--white);
 }
 
-/* ============================
-   RESPONSIVE — INDEX PAGE SECTIONS
-   ============================ */
+/* ---- responsive — index page sections ---- */
 
 @media (max-width: 900px)
 {

@@ -1,7 +1,4 @@
-/* ============================
-   PAWFEE CAFÉ — GLOBAL STYLESHEET
-   (shared across all pages: reset, colors, navbar, buttons, footer)
-   ============================ */
+/* pawfee café — global stylesheet — (shared across all pages: reset, colors, navbar, buttons, footer) */
 @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 /* Local Goudy Stout, matching themes.css (font files not yet supplied —
@@ -156,9 +153,7 @@ h2.center
     text-align: center;
 }
 
-/* ============================
-   NAVBAR
-   ============================ */
+/* ---- navbar ---- */
 
 .navbar
 {
@@ -297,9 +292,7 @@ h2.center
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ============================
-   BUTTONS (shared)
-   ============================ */
+/* ---- buttons (shared) ---- */
 
 .btn
 {
@@ -366,10 +359,7 @@ h2.center
     color: var(--charcoal-dark);
 }
 
-/* ============================
-   DOG CARD (shared component — used on the
-   homepage teaser and the full team page grid)
-   ============================ */
+/* dog card (shared component — used on the — homepage teaser and the full team page grid) */
 
 .dog-grid
 {
@@ -417,9 +407,7 @@ h2.center
     color: var(--text-muted);
 }
 
-/* ============================
-   FOOTER
-   ============================ */
+/* ---- footer ---- */
 
 .footer
 {
@@ -549,9 +537,7 @@ h2.center
     padding-top: 24px;
 }
 
-/* ============================
-   RESPONSIVE — NAVBAR & FOOTER
-   ============================ */
+/* ---- responsive — navbar & footer ---- */
 
 @media (max-width: 900px)
 {

@@ -1,15 +1,9 @@
-/* =========================================================
-   PAWFEE CAFÉ — Xiao Yan's Portfolio (page-specific stylesheet)
-
-   Loaded AFTER new_style.css (see xiao_yan.html). Shared stuff —
-   fonts, colour palette, navbar, buttons, footer, base resets —
-   lives in new_style.css and is not redeclared here.
-
-   Simplified version: no JS-driven scroll effects. The education
-   timeline is plain CSS layout, the hero name hover is a single
-   CSS rule on the whole heading, and skills/projects are hand-
-   written markup instead of JS-rendered.
-   ========================================================= */
+/* xiao yan's portfolio — loads after new_style.css, which already
+   covers fonts/colours/navbar/buttons/footer/resets, none of that
+   repeated here. kept simple on purpose: no JS-driven scroll
+   effects, education timeline is plain CSS, hero name hover is one
+   rule on the whole heading, skills/projects are hand-written
+   markup rather than JS-rendered */
 
 :root
 {
@@ -135,9 +129,7 @@ button
     color:var(--brown);
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* ---- hero ---- */
 .portfolio-hero
 {
     position:relative;
@@ -334,12 +326,7 @@ button
     object-fit:contain;
 }
 
-/* =========================================================
-   EDUCATION — plain static timeline, pure CSS.
-   The line runs top:0 to bottom:0 of .edu-timeline directly; no JS
-   measurement needed since items are always in normal flow at
-   their final size (nothing is being revealed/animated in).
-   ========================================================= */
+/* education — plain static timeline, pure css. — The line runs top:0 to bottom:0 of .edu-timeline directly; no JS measurement needed since items are always in normal flow at their final size (nothing is being revealed/animated in). */
 .edu-timeline
 {
     --edu-col: clamp(30px, 6vw, 42px);
@@ -508,12 +495,9 @@ button
     }
 }
 
-/* =========================================================
-   SKILLS — single flat grid (HTML5, CSS3, JavaScript, Python,
-   Java, C). No category split, so every bar shares one gradient
-   pulled straight from new_style.css's --accent / --accent-dark
-   instead of a page-local colour.
-   ========================================================= */
+/* skills — one flat grid (HTML5, CSS3, JS, Python, Java, C), no
+   category split, so every bar shares the same --accent gradient
+   from new_style.css instead of a page-local colour */
 .section-alt
 {
     position:relative;
@@ -618,9 +602,7 @@ button
     }
 }
 
-/* =========================================================
-   PROJECTS
-   ========================================================= */
+/* ---- projects ---- */
 .project-grid
 {
     display:grid;
@@ -779,9 +761,7 @@ button
     }
 }
 
-/* =========================================================
-   PRINT STYLESHEET
-   ========================================================= */
+/* ---- print stylesheet ---- */
 @media print
 {
     .navbar, .footer, .hero-actions, .skip-link

@@ -1,13 +1,6 @@
-/* ============================
-   TEAM PAGE — PAGE-SPECIFIC STYLES
-   (shared nav/footer/buttons/dog-card styles live in new_style.css)
-   ============================ */
+/* team page — page-specific styles — (shared nav/footer/buttons/dog-card styles live in new_style.css) */
 
-/* ============================
-   PAGE HEADER
-   Styled to match the Menu page's hero: dark banner, big centered
-   heading, with two small jumping paw-print icons flanking the text.
-   ============================ */
+/* page header — styled to match the Menu page's hero: dark banner, big centered heading, with two small jumping paw-print icons flanking the text. */
 
 /* Same treatment as the Menu page's hero (.hero-podium in menu.css):
    a dark gradient laid over a photo so the light heading text stays
@@ -143,9 +136,7 @@
     font-size: 1.1rem;
 }
 
-/* ============================
-   HUMAN STAFF
-   ============================ */
+/* ---- human staff ---- */
 
 .staff-section
 {
@@ -415,10 +406,7 @@
     font-size: 0.98rem;
 }
 
-/* ============================
-   RESIDENT DOGS (grid layout reuses
-   .dog-grid / .dog-card from new_style.css)
-   ============================ */
+/* resident dogs (grid layout reuses — .dog-grid / .dog-card from new_style.css) */
 
 .dogs-section
 {
@@ -447,9 +435,7 @@
     row-gap: 32px;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
+/* ---- responsive ---- */
 
 @media (max-width: 900px)
 {

@@ -205,7 +205,7 @@
     color: var(--color-text-muted);
 }
 
-/* ===== STEP 3: SUCCESS CARD ===== */
+/* step 3: success card */
 .success-card
 {
     text-align: center;
@@ -241,7 +241,7 @@
     margin-top: var(--space-sm);
 }
 
-/* ===== LOGIN ERROR ===== */
+/* login error */
 .login-error
 {
     background-color: #fdecea;
@@ -257,7 +257,7 @@
     margin: 0;
 }
 
-/* ===== RESPONSIVE ===== */
+/* responsive */
 @media (max-width: 600px)
 {
     .register-box

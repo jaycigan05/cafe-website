@@ -1,9 +1,6 @@
-/* =========================================================
-   HOR JIAN JIA — FUNCTIONAL PRINT / CV STYLESHEET
-   Activated by: <link rel="stylesheet" ... media="print">
-   The "Print / Save CV" button calls window.print().
-   In the print dialog, choose "Save as PDF" to create a CV copy.
-   ========================================================= */
+/* jian jia's CV print stylesheet — kicks in via media="print".
+   the "Print / Save CV" button calls window.print(); pick
+   "Save as PDF" in the print dialog to get a CV copy out of it */
 
 @page
 {

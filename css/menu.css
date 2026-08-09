@@ -1,18 +1,8 @@
-/* =========================================================
-   PAWFEE CAFÉ — MENU PAGE STYLESHEET
-   Page-specific styles only. Shared rules (navbar, footer, buttons,
-   global reset, colour palette) live in style.css and are not
-   repeated here — see that file for --brown / --accent / --text-dark
-   etc. This file only defines what menu.html actually needs.
-   ========================================================= */
+/* menu.css — just this page's own styles. navbar/footer/buttons/
+   colours all come from new_style.css, not repeated here */
 
-/* ---------------------------------------------------------
-   MENU-ONLY DESIGN TOKENS
-   Colours and shadows used exclusively on this page (dog-menu
-   accent, card backgrounds, podium borders). Everything shared
-   across the whole site comes from style.css instead — do not
-   redefine brown/accent/text colours here.
-   --------------------------------------------------------- */
+/* colours/shadows only used on this page — brown/accent/text etc
+   already come from new_style.css, don't redefine those here */
 :root
 {
     --cream-card:  #FFFDF8;
@@ -26,11 +16,7 @@
     --focus-ring: 3px solid #7A4A22;
 }
 
-/* ---------------------------------------------------------
-   BASE ELEMENT TWEAKS
-   Only the element defaults NOT already covered by style.css
-   (that file handles *, html, body, a, img, h1–h3, etc.)
-   --------------------------------------------------------- */
+/* only the element defaults new_style.css doesn't already cover */
 .hero-content
 {
     padding:0;
@@ -39,10 +25,7 @@
     text-align:center;
 }
 
-/* ---------------------------------------------------------
-   SECTION SHELL
-   Shared layout wrapper reused by every section on this page.
-   --------------------------------------------------------- */
+/* layout wrapper every section on this page reuses */
 .section-wrap
 {
     padding:64px 6vw;
@@ -81,12 +64,8 @@
     background: var(--white);
 }
 
-/* ---------------------------------------------------------
-   CARD "MEDIA" FALLBACK BACKGROUNDS
-   Gradient used only when a dish has no real photo yet (see
-   mediaMarkup() in menu.js). Kept as a safety fallback in case
-   an image path is ever wrong or missing — not dead code.
-   --------------------------------------------------------- */
+/* gradient shown when a dish has no photo yet (see mediaMarkup()
+   in menu.js) — safety fallback, not dead code */
 .media-all
 {
     background:linear-gradient(135deg,#EADFCB,#C9A16B);
@@ -146,9 +125,7 @@
     background-image:url('../images/menu/Paw_Menu/Dog_Biscuits.jpg');
 }
 
-/* ---------------------------------------------------------
-   TOGGLE SWITCH (Humans / Dogs)
-   --------------------------------------------------------- */
+/* ---- toggle switch (humans / dogs) ---- */
 .toggle-switch
 {
     display:flex;
@@ -209,14 +186,9 @@
     color:#fff;
 }
 
-/* ---------------------------------------------------------
-   HERO + TOP SELLERS SHARED BACKGROUND
-   One full-bleed background both sections sit on top of, so
-   there's no visible seam between them. Two stacked pseudo-
-   elements (::before = Humans photo, ::after = Dogs photo)
-   cross-fade via opacity when #heroPodiumSection gets the
-   .is-dog class toggled in menu.js.
-   --------------------------------------------------------- */
+/* one full-bleed background under both hero + top sellers so there's
+   no seam between them. ::before = Humans photo, ::after = Dogs
+   photo, cross-fading via opacity when menu.js toggles .is-dog */
 .hero-podium
 {
     position:relative;
@@ -414,13 +386,9 @@
     /* avoid crowding the title on narrow screens */
 }
 
-/* ---------------------------------------------------------
-   PODIUM (Top 3) — static ranking
-   All three cards are visible at once; the centre slot (#1) is
-   wider and lifted higher via CSS. Content only changes when the
-   Humans/Dogs toggle is clicked (paintPodium() in menu.js) via a
-   quick opacity cross-fade, not a continuous animation.
-   --------------------------------------------------------- */
+/* podium — all 3 cards visible at once, #1 in the middle wider
+   and lifted higher. content only changes on the Humans/Dogs
+   toggle (paintPodium() in menu.js), via a quick cross-fade */
 .podium
 {
     display:flex;
@@ -522,9 +490,7 @@
     letter-spacing:.04em;
 }
 
-/* ---------------------------------------------------------
-   CONTROLS — search box + custom sort dropdown
-   --------------------------------------------------------- */
+/* ---- controls: search box + sort dropdown ---- */
 .menu-controls
 {
     display:flex;
@@ -656,9 +622,7 @@
     content:" ✓";
 }
 
-/* ---------------------------------------------------------
-   CATEGORY CARDS + ACCORDION
-   --------------------------------------------------------- */
+/* ---- category cards + accordion ---- */
 .category-row
 {
     display:grid;
@@ -743,9 +707,7 @@
     color:var(--text-muted);
 }
 
-/* ---------------------------------------------------------
-   MENU GRID & ARCH CARDS
-   --------------------------------------------------------- */
+/* ---- menu grid & arch cards ---- */
 .menu-grid
 {
     display:grid;
@@ -981,15 +943,10 @@
     margin-bottom:10px;
 }
 
-/* ---------------------------------------------------------
-   HOVER-ONLY DECORATIONS
-   Touchscreens don't have real "hover", and iOS Safari can get a
-   tap stuck showing an element's :hover state. Gating every purely
-   decorative hover effect behind this query means touch devices
-   never run them at all. Every dish's name, price, description and
-   Top Seller badge stay visible either way, since none of that
-   content depends on hover.
-   --------------------------------------------------------- */
+/* touchscreens don't really have "hover" and iOS Safari can get a
+   tap stuck in :hover state, so gate the decorative hover effects
+   behind this query. nothing important (name/price/desc/badge)
+   actually depends on hover, so touch devices don't lose anything */
 @media (hover:hover) and (pointer:fine)
 {
     .category-card:hover
@@ -1006,12 +963,8 @@
     }
 }
 
-/* ---------------------------------------------------------
-   RESPONSIVE
-   NOTE: navbar responsive behaviour (nav-links / nav-toggle) is
-   handled entirely by style.css so it stays identical across
-   every page — do not redefine it here.
-   --------------------------------------------------------- */
+/* navbar responsive behaviour lives in new_style.css and stays
+   identical everywhere — don't redefine it here */
 @media (max-width:860px)
 {
     .podium
@@ -1053,16 +1006,9 @@
     }
 }
 
-/* ---------------------------------------------------------
-   NARROW-PHONE PODIUM FIX
-   At <=380px the previous breakpoint's flex-basis values
-   (100px / 130px + gaps) can slightly overflow the available
-   width once section padding is subtracted (e.g. iPhone SE,
-   320-375px viewports). This tightens sizing so all three
-   podium cards + gaps stay comfortably inside the viewport,
-   while keeping the same horizontal 3-card layout (no content
-   divergence between devices — just smaller proportions).
-   --------------------------------------------------------- */
+/* below 380px the previous breakpoint's flex-basis can overflow
+   once padding is subtracted (iPhone SE etc) — just shrinking
+   things down here, same 3-card layout either way */
 @media (max-width:380px)
 {
     .podium

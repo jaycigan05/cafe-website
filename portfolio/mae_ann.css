@@ -1,6 +1,4 @@
-/* =====================================
-   Shadow colors
-===================================== */
+/* ---- shadow colors ---- */
 :root
 {
     --shadow-light: rgba(0, 0, 0, 0.08);
@@ -8,20 +6,14 @@
     --shadow-strong: rgba(0, 0, 0, 0.12);
 }
 
-/* ======================================================
-   GENERAL PAGE STYLING
-   Sets the overall background and text colours
-====================================================== */
+/* general page styling — sets the overall background and text colours */
 body
 {
     background:var(--cream);
     color:var(--brown);
 }
 
-/* ======================================================
-   INTRO SECTION
-   Hero section containing profile image and introduction
-====================================================== */
+/* intro section — hero section containing profile image and introduction */
 /* ---------- Main Intro Container ---------- */
 .portfolioContainer1
 {
@@ -145,10 +137,7 @@ body
     cursor: pointer;
 }
 
-/* ======================================================
-   SHARED PAGE SECTIONS
-   Common styling used throughout the portfolio
-====================================================== */
+/* shared page sections — common styling used throughout the portfolio */
 /* ---------- Section Containers ---------- */
 .portfolioSection
 {
@@ -184,10 +173,7 @@ body
     position:relative;
 }
 
-/* ======================================================
-   ABOUT ME SECTION
-   Personal background and education
-====================================================== */
+/* about me section — personal background and education */
 /* ---------- About Section Layout ---------- */
 .aboutLayout
 {
@@ -258,10 +244,7 @@ body
     margin:10px 0;
 }
 
-/* ======================================================
-   DESIGN JOURNEY
-   Timeline of learning and achievements
-====================================================== */
+/* design journey — timeline of learning and achievements */
 /* ---------- Timeline Layout ---------- */
 .journey
 {
@@ -323,10 +306,7 @@ body
     display:none;
 }
 
-/* ======================================================
-   PAGE ANIMATIONS
-   Fade-in animation when the page loads
-====================================================== */
+/* page animations — fade-in animation when the page loads */
 /* ---------- Fade Animation ---------- */
 .fade
 {
@@ -348,10 +328,7 @@ body
     }
 }
 
-/* ======================================================
-   SKILLS SECTION
-   Displays programming skills with progress bars
-====================================================== */
+/* skills section — displays programming skills with progress bars */
 /* ---------- Skills Grid Layout ---------- */
 .skillsLayout
 {
@@ -428,10 +405,7 @@ body
     width:75%;
 }
 
-/* ======================================================
-   FEATURED PROJECT
-   Displays the main portfolio project
-====================================================== */
+/* featured project — displays the main portfolio project */
 /* ---------- Project Layout ---------- */
 .projectRow
 {
@@ -502,10 +476,7 @@ body
     font-weight:600;
 }
 
-/* ======================================================
-   CONTACT SECTION
-   Displays contact information cards
-====================================================== */
+/* contact section — displays contact information cards */
 /* ---------- Contact Card Layout ---------- */
 .contact
 {
@@ -552,10 +523,7 @@ body
     line-height:1.7;
 }
 
-/* ======================================================
-   RESPONSIVE DESIGN
-   Adjusts layout for different screen sizes
-====================================================== */
+/* responsive design — adjusts layout for different screen sizes */
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
 {
@@ -746,9 +714,7 @@ body
         width:180px;
     }
 
-    /* ======================================================
-   RESPONSIVE
-====================================================== */
+    /* ---- responsive ---- */
     /* ---------- Laptop ---------- */
     @media (max-width:1200px)
     {

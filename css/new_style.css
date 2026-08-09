@@ -1,7 +1,5 @@
-/* ============================
-   PAWFEE CAFÉ — GLOBAL STYLESHEET
-   (shared across all pages: reset, colors, navbar, buttons, footer)
-   ============================ */
+/* new_style.css — the shared stuff: reset, colours, navbar, buttons, footer.
+   everything else (index.css, menu.css etc) loads this first. */
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Mogra&family=Patrick+Hand&display=swap');
 
 :root
@@ -33,10 +31,8 @@
     --nav-radius: 999px;
     --nav-radius-sm: 14px;
 
-    /* ---- Legacy aliases (same palette, old variable names) ----
-     Kept so page-specific stylesheets written against the older
-     naming convention — e.g. register.css — still resolve correctly
-     without needing to be rewritten. */
+    /* old variable names — keeping these around so register.css etc
+       don't need to be rewritten just to pick up this file */
     --color-bg: var(--cream);
     --color-surface: var(--white);
     --color-primary: #6f533f;
@@ -61,19 +57,12 @@
     box-sizing: border-box;
 }
 
-/* ---------------------------------------------------------
-   METHOD A — SITE-WIDE FONT SIZE BUMP
-   The browser default root font-size is 16px, which every `rem`
-   value across every page's CSS is calculated from. Bumping it
-   here to 18px scales ALL rem-based type (headings, body text,
-   buttons, cards, etc.) up by ~12.5% site-wide in one place,
-   instead of hand-adjusting dozens of individual clamp()/rem
-   values across menu.css and every other page's stylesheet.
-   Chosen because Mogra / Patrick Hand / Coiny all have a smaller
-   visual x-height than the previous fonts (Open Sans/Karla) at
-   the same declared font-size, making text read as "too small"
-   even though nothing was misconfigured.
-   --------------------------------------------------------- */
+/* bumping the root font-size to 18px scales every rem value on the
+   site up ~12.5% in one place, instead of touching every clamp()/rem
+   in menu.css etc individually. needed this because Mogra/Patrick
+   Hand/Coiny just look smaller than Open Sans/Karla did at the same
+   size — text was reading as too small even though nothing was
+   actually wrong */
 html
 {
     font-size: 18px;
@@ -100,12 +89,9 @@ img
     display: block;
 }
 
-/* ---------------------------------------------------------
-   ACCESSIBILITY HELPERS (page-local for now)
-   Skip link, screen-reader-only text, and visible focus ring.
-   Kept here per-page until the team consolidates a shared
-   a11y.css — do not delete without checking other pages first.
-   --------------------------------------------------------- */
+/* a11y helpers: skip link, screen-reader-only text, focus ring.
+   should probably move to their own a11y.css eventually — don't
+   delete these without checking every page still has them */
 .visually-hidden
 {
     position:absolute;
@@ -145,9 +131,8 @@ a:focus-visible, button:focus-visible, input:focus-visible,
     top:0;
 }
 
-/* Generic fallback heading/paragraph styling — more specific
-   selectors elsewhere (e.g. .hero-heading, .staff-section h2)
-   still win, this only fills in unstyled headings/paragraphs */
+/* fallback for any heading/paragraph that doesn't have a more
+   specific rule elsewhere (.hero-heading etc still win over this) */
 h1, h2, h3, h4
 {
     font-family: var(--font-display);
@@ -169,8 +154,8 @@ p
     padding: 0 32px;
 }
 
-/* Generic centered-content wrapper (narrower legacy equivalent
-   of .section-container), used where markup already expects it */
+/* narrower legacy version of .section-container, some markup
+   already expects this class name so keeping it around */
 .container
 {
     max-width: var(--max-width);
@@ -178,7 +163,7 @@ p
     padding: 0 var(--space-md);
 }
 
-/* Eyebrow label + center utilities, reused above headings site-wide */
+/* the little label above headings, reused everywhere */
 .eyebrow
 {
     font-size: 0.8rem;
@@ -202,9 +187,7 @@ h2.center
     text-align: center;
 }
 
-/* ============================
-   NAVBAR
-   ============================ */
+/* ---- navbar ---- */
 
 .navbar
 {
@@ -232,9 +215,9 @@ h2.center
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
-    /* logo keeps its natural size — never gets squeezed by the nav-links */
+    /* keeps the logo from getting squeezed by nav-links */
     min-width: 0;
-    /* lets logo-text's own nowrap + potential ellipsis (if ever added) work correctly inside flex */
+    /* so logo-text's nowrap actually works inside a flex item */
 }
 
 .logo-image
@@ -248,14 +231,13 @@ h2.center
 {
     font-family: var(--font-logo);
     font-weight: 600;
-    /* clamp() instead of a fixed rem value so the text shrinks smoothly on
-     narrow phones instead of wrapping into two lines — this was the cause
-     of "PAWFEE CAFÉ" breaking onto two rows on small screens. */
+    /* clamp() so it shrinks smoothly instead of wrapping — "PAWFEE
+       CAFÉ" used to break onto two lines on small screens */
     font-size: clamp(1.05rem, 4.6vw, 1.5rem);
     letter-spacing: 1px;
     color: var(--nav-text);
     white-space: nowrap;
-    /* never wrap the logo text, no matter how tight the space */
+    /* logo text never wraps, however tight it gets */
 }
 
 .nav-links
@@ -274,7 +256,7 @@ h2.center
     position: relative;
     transition: color var(--transition);
     white-space: nowrap;
-    /* prevent link labels from wrapping/deforming under pressure */
+    /* don't let the labels wrap */
     flex-shrink: 0;
 }
 
@@ -309,11 +291,9 @@ h2.center
     padding: 9px 20px;
     border-radius: var(--nav-radius);
     transition: background var(--transition), transform var(--transition);
-    /* Fixed-shape pill button: never let flexbox shrink this below its
-     natural content size. Without this, in the ~721–900px "tablet"
-     range the nav row runs out of space and flexbox compresses this
-     button's width down near its height, which combined with the
-     999px border-radius made it collapse into a circle. */
+    /* stops flexbox squishing this into a circle around 721-900px
+       wide, where the nav row runs out of space and the 999px
+       radius + shrunk width made it collapse down to a dot */
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -365,9 +345,7 @@ h2.center
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ============================
-   BUTTONS (shared)
-   ============================ */
+/* ---- buttons ---- */
 
 .btn
 {
@@ -390,9 +368,8 @@ h2.center
     background: var(--accent);
 }
 
-/* Neutral outline, meant for light/white backgrounds (register form
-   card, team staff cards). Pages with an outline button over a dark
-   background — like the homepage hero — scope their own override. */
+/* for light backgrounds (register card, team cards). pages with a
+   dark hero etc need their own override, see below */
 .btn-outline
 {
     background: transparent;
@@ -427,8 +404,8 @@ h2.center
     height: 16px;
     vertical-align: -3px;
     margin-right: 4px;
-    /* phone.svg uses stroke="currentColor", which <img> can't inherit —
-     filter forces the icon to match the button's white text color. */
+    /* <img> can't inherit currentColor, so phone.svg won't pick up
+       the button's white text — this filter fakes it */
     filter: brightness(0) invert(1);
 }
 
@@ -446,10 +423,7 @@ h2.center
     color: var(--brown-dark);
 }
 
-/* ============================
-   DOG CARD (shared component — used on the
-   homepage teaser and the full team page grid)
-   ============================ */
+/* ---- dog card — used on both the homepage teaser and team.html ---- */
 
 .dog-grid
 {
@@ -497,9 +471,7 @@ h2.center
     color: var(--text-muted);
 }
 
-/* ============================
-   FOOTER
-   ============================ */
+/* ---- footer ---- */
 
 .footer
 {
@@ -630,9 +602,7 @@ h2.center
     padding-top: 24px;
 }
 
-/* ============================
-   RESPONSIVE — NAVBAR & FOOTER
-   ============================ */
+/* ---- responsive: navbar + footer ---- */
 
 @media (max-width: 900px)
 {
@@ -652,13 +622,9 @@ h2.center
     }
 }
 
-/* ---- Tablet-width navbar squeeze fix ----
-   Between the hamburger breakpoint (720px) and ~900px, five items
-   (4 links + the Join Us pill) plus the logo don't quite fit at full
-   desktop spacing. Rather than letting flexbox shrink/deform the
-   nav-link text or the nav-cta pill (now prevented via flex-shrink:0
-   above), tighten the gap and font sizes here so everything still
-   fits on one row at its natural, undeformed shape. */
+/* between 720-900px, the logo + 4 links + Join Us pill don't quite
+   fit at full desktop spacing. tighten gaps/font-size here instead
+   of letting flexbox squish anything out of shape */
 @media (max-width: 900px) and (min-width: 721px)
 {
     .nav-container
@@ -698,9 +664,7 @@ h2.center
         right: 0;
         background: var(--nav-bg);
         flex-direction: column;
-        /* Centres every item (links + the Join Us button) horizontally
-       inside the dropdown, instead of the previous flex-start which
-       hugged everything to the left edge. */
+        /* centres everything in the dropdown instead of hugging left */
         align-items: center;
         padding: 20px 32px;
         gap: 18px;
@@ -734,7 +698,7 @@ h2.center
     }
 }
 
-/* ---- Small phones ---- */
+/* ---- small phones ---- */
 @media (max-width: 480px)
 {
     .nav-container
@@ -781,7 +745,7 @@ h2.center
     }
 }
 
-/* Respect reduced motion preference */
+/* respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce)
 {
     *

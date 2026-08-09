@@ -1,7 +1,4 @@
-/* ============================================================
-   JAYCI GAN - Print Stylesheet
-   Hides nav, footer and animations for clean print output
-   ============================================================ */
+/* jayci's print stylesheet — hides nav/footer/animations for a clean printout */
 
 @media print
 {

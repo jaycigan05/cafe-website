@@ -1,6 +1,4 @@
-/* =====================================
-   Review colors
-===================================== */
+/* ---- review colors ---- */
 :root
 {
     --star-gold: #F4B400;
@@ -15,10 +13,7 @@
     --text-shadow: rgba(70, 45, 30, 0.8);
 }
 
-/* =====================================
-   SCROLL REVEAL ANIMATION
-   Applies a fade-in effect when sections enter the viewport.
-===================================== */
+/* scroll reveal animation — applies a fade-in effect when sections enter the viewport. */
 .reveal
 {
     opacity: 0;
@@ -32,10 +27,7 @@
     transform: translateY(0);
 }
 
-/* =====================================
-   HERO SECTION
-   Background video and introductory text.
-===================================== */
+/* hero section — background video and introductory text. */
 .reviewContainer
 {
     width: 100%;
@@ -166,10 +158,7 @@
     }
 }
 
-/* =====================================
-   CUSTOMER RATING SUMMARY
-   Displays the average rating and rating distribution.
-===================================== */
+/* customer rating summary — displays the average rating and rating distribution. */
 .ratingContainer
 {
     display:flex;
@@ -260,10 +249,7 @@ meter::-webkit-meter-optimum-value
     font-weight:bold;
 }
 
-/* =====================================
-   CUSTOMER COMMENTS PART
-   stores customers comments, filter and scrollbar
-===================================== */
+/* customer comments part — stores customers comments, filter and scrollbar */
 .commentTitle
 {
     font-size:45px;
@@ -306,10 +292,7 @@ meter::-webkit-meter-optimum-value
     font-family: var(--font-body);
 }
 
-/* =====================================
-   REVIEW FILTER
-   Allows users to filter reviews based on star ratings.
-===================================== */
+/* review filter — allows users to filter reviews based on star ratings. */
 .reviewFilter
 {
     display:flex;
@@ -354,10 +337,7 @@ meter::-webkit-meter-optimum-value
     margin-right: 20px;
 }
 
-/* =====================================
-   CUSTOMER REVIEW CARDS
-   Displays customer feedback inside scrollable cards.
-===================================== */
+/* customer review cards — displays customer feedback inside scrollable cards. */
 .reviewRow
 {
     display:flex;
@@ -434,10 +414,7 @@ meter::-webkit-meter-optimum-value
     font-size:14px;
 }
 
-/* =====================================
-   CUSTOMER MEMORY WALL
-   Polaroid-style image gallery with hover animations.
-===================================== */
+/* customer memory wall — polaroid-style image gallery with hover animations. */
 .memoryWall
 {
     display:grid;
@@ -511,10 +488,7 @@ meter::-webkit-meter-optimum-value
     transform:scale(1.05);
 }
 
-/* =====================================
-   REVIEW SUBMISSION FORM
-   Allows visitors to submit their own customer reviews.
-===================================== */
+/* review submission form — allows visitors to submit their own customer reviews. */
 .ratingContainer3
 {
     width:80%;
@@ -564,10 +538,7 @@ meter::-webkit-meter-optimum-value
     border:2px solid var(--accent);
 }
 
-/* =====================================
-   SUBMIT BUTTON
-   allow users to submit comment
-===================================== */
+/* submit button — allow users to submit comment */
 .submitButton
 {
     background:var(--accent-dark);
@@ -586,10 +557,7 @@ meter::-webkit-meter-optimum-value
     background:var(--brown);
 }
 
-/* =====================================
-   SUCCESS POPUP
-   Displayed after a review is submitted.
-===================================== */
+/* success popup — displayed after a review is submitted. */
 .successPopup
 {
     display:none;
@@ -666,10 +634,7 @@ meter::-webkit-meter-optimum-value
     }
 }
 
-/* =====================================
-   RESPONSIVE DESIGN
-   Adjusts the layout for laptops, tablets and mobile devices.
-===================================== */
+/* responsive design — adjusts the layout for laptops, tablets and mobile devices. */
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
 {
