@@ -74,6 +74,21 @@
 	gap: var(--space-xs);
 }
 
+/* CV/GitHub/LinkedIn/Email buttons here are icon-only (no visible
+   label — the icon speaks for itself, and each link still has its
+   own aria-label for screen readers). .btn's default padding assumes
+   icon + text side by side, so square it off and drop the icon's
+   margin-right, which only made sense next to text that's gone now */
+.p-hero-actions .btn
+{
+	padding: 13px;
+}
+
+.p-hero-actions .btn-icon
+{
+	margin-right: 0;
+}
+
 /* icon inside a .btn (GitHub / LinkedIn / Email) — sized to sit
    inline with the button label, colour set on the SVG itself since
    an <img> can't inherit currentColor */
