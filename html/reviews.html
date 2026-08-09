@@ -409,20 +409,20 @@
 						<p class="characterCount">
 							<span id="charCount">0</span>/500 characters
 						</p>
-						<button type="submit" class="submitButton">Submit Review</button>
+						<button type="submit" class="submitButton" id="reviewSubmitBtn">Submit Review</button>
 					</form>
 				</div>
-				
+
 			</div>
 		</section>
 
 		<!-- pop up message when submitted -->
-		<div id="successPopup" class="successPopup">
+		<div id="successPopup" class="successPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
 			<div class="popupContent">
-				<div class="popupIcon">🎉</div>
-				<h2>Thank You!</h2>
+				<div class="popupIcon" aria-hidden="true">🎉</div>
+				<h2 id="popupTitle">Thank You!</h2>
 				<p>Your review has been submitted successfully.</p>
-				<button onclick="closePopup()">OK</button>
+				<button type="button" onclick="closePopup()" id="popupCloseBtn">OK</button>
 			</div>
 		</div>
  

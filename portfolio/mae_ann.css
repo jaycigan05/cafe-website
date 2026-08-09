@@ -134,13 +134,13 @@ body
 
 .buttonGroup .btn:hover
 {
-	background:var(--accent-hover);
+	background:var(--accent-dark);
 	transform:translateY(-4px);
 }
 
 .btn-outline:hover
 {
-	background:var(--accent-hover);
+	background:var(--accent-dark);
 	color:var(--cream);
 }
 

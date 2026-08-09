@@ -15,7 +15,11 @@
 	/* borders/dividers on this page */
 	--shadow-soft: 0 8px 22px rgba(74,53,42,.10);
 	/* light card shadow, menu-only for now */
-	--focus-ring: 3px solid #7A4A22;
+	/* var(--accent-dark), not a fixed hex — the old #7A4A22 only hit
+	   ~1.9:1 against the dark-mode background, under the 3:1 WCAG
+	   needs for a focus indicator; accent-dark already flips lighter
+	   at night so it stays visible against the darker page */
+	--focus-ring: 3px solid var(--accent-dark);
 }
 
 /* only the element defaults new_style.css doesn't already cover */

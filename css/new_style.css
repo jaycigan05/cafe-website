@@ -12,8 +12,19 @@
 	--accent: #A67C52;
 	--accent-dark: #68523B;
 	--text-dark: #3E2C23;
-	--text-muted: #AA947B;
+	/* darkened from #AA947B — the old shade only hit ~2.9:1 against
+	   white and ~2.4:1 against cream, well under WCAG AA's 4.5:1 for
+	   body text. this is used all over (staff roles, card captions,
+	   hints etc) so fixing it here covers every spot at once. */
+	--text-muted: #6E604F;
 	--text-light: #E9D9C4;
+
+	/* the :focus-visible rule further down references this but never
+	   defined it — menu.css and xiao_yan.css each set their own local
+	   copy, but every other page had no keyboard focus ring at all
+	   (var() with an undefined custom property resolves to "invalid",
+	   not to some sensible default, so outline just came out blank) */
+	--focus-ring: 3px solid var(--accent-dark);
 
 	/* ---- Theme fonts ---- */
 	--font-display: 'Mogra', sans-serif;
@@ -527,7 +538,9 @@ h2.center
 
 .btn-ghost:hover
 {
-	color: var(--brown-dark);
+	/* var(--brown) — --brown-dark was never actually defined
+	   anywhere, so this hover colour was silently no-op-ing */
+	color: var(--brown);
 }
 
 /* ---- dog card — used on both the homepage teaser and team.html ---- */
@@ -624,11 +637,15 @@ h2.center
 .footer-links h4,
 .footer-social h4
 {
-	color: var(--accent);
+	/* var(--text-light) + higher opacity, not var(--accent) at 0.6 —
+	   that combo landed around 2.2:1 on the footer's dark background,
+	   nowhere near AA's 4.5:1 for text this small. text-light is what
+	   the rest of the footer already uses for exactly this reason. */
+	color: var(--text-light);
 	font-size: 0.85rem;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	opacity: 0.6;
+	opacity: 0.75;
 	margin-bottom: 16px;
 	font-weight: 500;
 }

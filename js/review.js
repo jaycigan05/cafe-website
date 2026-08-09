@@ -102,7 +102,12 @@ function submitReview(event)
 	saveReview(name, rating, ratingNumber, reviewText, today);
 
 	// pop the success message
-	document.getElementById("successPopup").classList.add("show");
+	const popup = document.getElementById("successPopup");
+	popup.classList.add("show");
+	popup.setAttribute("aria-hidden", "false");
+	// send keyboard focus into the dialog so it's not left behind on
+	// the now-reset form
+	document.getElementById("popupCloseBtn").focus();
 
 	// reset the form
 	reviewForm.reset();
@@ -158,7 +163,19 @@ function addReview(name, rating, ratingNumber, reviewText, date)
 function closePopup()
 {
 	document.getElementById("successPopup").classList.remove("show");
+	document.getElementById("successPopup").setAttribute("aria-hidden", "true");
+	// give focus back to the button that opened it, instead of
+	// dropping it back to the top of the page
+	const submitBtn = document.getElementById("reviewSubmitBtn");
+	if (submitBtn) submitBtn.focus();
 }
+
+// Escape closes the success popup same as clicking OK
+document.addEventListener("keydown", (e) =>
+{
+	const popup = document.getElementById("successPopup");
+	if (e.key === "Escape" && popup && popup.classList.contains("show")) closePopup();
+});
 
 // fade-in-on-scroll for anything with .reveal
 const reveals = document.querySelectorAll(".reveal");
