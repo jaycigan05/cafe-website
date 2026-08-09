@@ -27,6 +27,15 @@ function filterReviews()
 const reviewForm = document.getElementById("reviewForm");
 const reviewList = document.querySelector(".reviewRow");
 
+//Word count
+const reviewTextInput = document.getElementById("reviewText");
+const charCount = document.getElementById("charCount");
+
+reviewTextInput.addEventListener("input", function()
+{
+    charCount.textContent = reviewTextInput.value.length;
+});
+
 // Load any previously saved reviews when the page opens.
 loadReviews();
 
@@ -68,19 +77,19 @@ function submitReview(event)
 
     let ratingNumber = "";
     // Convert the selected star rating into a numeric value.
-    if (rating === "★★★★★") 
+    if (rating === "⭐⭐⭐⭐⭐") 
         {
         ratingNumber = "5";
     }
-    else if (rating === "★★★★☆") 
+    else if (rating === "⭐⭐⭐⭐☆") 
         {
         ratingNumber = "4";
     }
-    else if (rating === "★★★☆☆") 
+    else if (rating === "⭐⭐⭐☆☆") 
         {
         ratingNumber = "3";
     }
-    else if (rating === "★★☆☆☆") 
+    else if (rating === "⭐⭐☆☆☆") 
         {
         ratingNumber = "2";
     }

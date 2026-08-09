@@ -393,13 +393,16 @@
                         
                         <select id="rating" required>
                             <option value="">Select Rating</option>
-                            <option value="★★★★★">★★★★★</option>
-                            <option value="★★★★☆">★★★★☆</option>
-                            <option value="★★★☆☆">★★★☆☆</option>
-                            <option value="★★☆☆☆">★★☆☆☆</option>
-                            <option value="★☆☆☆☆">★☆☆☆☆</option>
+                            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+                            <option value="⭐⭐⭐⭐☆">⭐⭐⭐⭐☆</option>
+                            <option value="⭐⭐⭐☆☆">⭐⭐⭐☆☆</option>
+                            <option value="⭐⭐☆☆☆">⭐⭐☆☆☆</option>
+                            <option value="⭐☆☆☆☆">⭐☆☆☆☆</option>
                         </select>
-                        <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+                        <textarea id="reviewText" name="reviewText" placeholder="Write your review..." maxlength="500" required></textarea>
+                        <p class="characterCount">
+                            <span id="charCount">0</span>/500 characters
+                        </p>
                         <button type="submit" class="submitButton">Submit Review</button>
                     </form>
                 </div>
