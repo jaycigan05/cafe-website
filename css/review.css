@@ -16,7 +16,7 @@
     --text-shadow: rgba(70, 45, 30, 0.8);
 }
 
-/* scroll reveal animation — applies a fade-in effect when sections enter the viewport. */
+/* scroll reveal — fades sections in as they enter the viewport */
 .reveal
 {
     opacity: 0;
@@ -30,7 +30,7 @@
     transform: translateY(0);
 }
 
-/* hero section — background video and introductory text. */
+/* hero — background video + intro text */
 .reviewContainer
 {
     width: 100%;
@@ -167,7 +167,7 @@
     }
 }
 
-/* customer rating summary — displays the average rating and rating distribution. */
+/* rating summary — the average score plus the star breakdown */
 .ratingContainer
 {
     display:flex;
@@ -258,7 +258,7 @@ meter::-webkit-meter-optimum-value
     font-weight:bold;
 }
 
-/* customer comments part — stores customers comments, filter and scrollbar */
+/* comment wall — filter dropdown + scrollable review cards */
 .commentTitle
 {
     font-size:45px;
@@ -301,7 +301,7 @@ meter::-webkit-meter-optimum-value
     font-family: var(--font-body);
 }
 
-/* review filter — allows users to filter reviews based on star ratings. */
+/* review filter — filter the reviews below by star rating */
 .reviewFilter
 {
     display:flex;
@@ -351,7 +351,7 @@ meter::-webkit-meter-optimum-value
     margin-right: 20px;
 }
 
-/* customer review cards — displays customer feedback inside scrollable cards. */
+/* review cards — scrollable row of customer feedback */
 .reviewRow
 {
     display:flex;
@@ -428,7 +428,7 @@ meter::-webkit-meter-optimum-value
     font-size:14px;
 }
 
-/* customer memory wall — polaroid-style image gallery with hover animations. */
+/* memory wall — polaroid-style photo gallery */
 .memoryWall
 {
     display:grid;
@@ -502,7 +502,7 @@ meter::-webkit-meter-optimum-value
     transform:scale(1.05);
 }
 
-/* review submission form — allows visitors to submit their own customer reviews. */
+/* review form — lets visitors submit their own review */
 .ratingContainer3
 {
     width:80%;
@@ -552,7 +552,7 @@ meter::-webkit-meter-optimum-value
     border:2px solid var(--accent);
 }
 
-/* submit button — allow users to submit comment */
+/* submit button */
 .submitButton
 {
     background:var(--accent-dark);
@@ -571,7 +571,7 @@ meter::-webkit-meter-optimum-value
     background:var(--brown);
 }
 
-/* success popup — displayed after a review is submitted. */
+/* success popup — shows after a review gets submitted */
 .successPopup
 {
     display:none;
@@ -653,7 +653,7 @@ meter::-webkit-meter-optimum-value
     }
 }
 
-/* responsive design — adjusts the layout for laptops, tablets and mobile devices. */
+/* responsive — laptop/tablet/mobile breakpoints */
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
 {

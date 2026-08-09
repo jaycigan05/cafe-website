@@ -333,7 +333,10 @@ button
     object-fit:contain;
 }
 
-/* education — plain static timeline, pure css. — The line runs top:0 to bottom:0 of .edu-timeline directly; no JS measurement needed since items are always in normal flow at their final size (nothing is being revealed/animated in). */
+/* education — plain static timeline, pure css.
+   the line runs top:0 to bottom:0 of .edu-timeline directly — no JS
+   measurement needed since items are always in normal flow at their
+   final size, nothing here gets revealed/animated in */
 .edu-timeline
 {
     --edu-col: clamp(30px, 6vw, 42px);

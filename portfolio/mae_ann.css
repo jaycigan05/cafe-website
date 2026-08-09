@@ -6,14 +6,13 @@
     --shadow-strong: rgba(0, 0, 0, 0.12);
 }
 
-/* general page styling — sets the overall background and text colours */
+/* base page colours */
 body
 {
     background:var(--cream);
     color:var(--brown);
 }
 
-/* intro section — hero section containing profile image and introduction */
 /* ---------- Main Intro Container ---------- */
 .portfolioContainer1
 {
@@ -150,7 +149,6 @@ body
     cursor: pointer;
 }
 
-/* shared page sections — common styling used throughout the portfolio */
 /* ---------- Section Containers ---------- */
 .portfolioSection
 {
@@ -186,7 +184,6 @@ body
     position:relative;
 }
 
-/* about me section — personal background and education */
 /* ---------- About Section Layout ---------- */
 .aboutLayout
 {
@@ -257,7 +254,6 @@ body
     margin:10px 0;
 }
 
-/* design journey — timeline of learning and achievements */
 /* ---------- Timeline Layout ---------- */
 .journey
 {
@@ -319,7 +315,6 @@ body
     display:none;
 }
 
-/* page animations — fade-in animation when the page loads */
 /* ---------- Fade Animation ---------- */
 .fade
 {
@@ -341,7 +336,6 @@ body
     }
 }
 
-/* skills section — displays programming skills with progress bars */
 /* ---------- Skills Grid Layout ---------- */
 .skillsLayout
 {
@@ -418,7 +412,6 @@ body
     width:75%;
 }
 
-/* featured project — displays the main portfolio project */
 /* ---------- Project Layout ---------- */
 .projectRow
 {
@@ -489,7 +482,6 @@ body
     font-weight:600;
 }
 
-/* contact section — displays contact information cards */
 /* ---------- Contact Card Layout ---------- */
 .contact
 {
@@ -536,7 +528,6 @@ body
     line-height:1.7;
 }
 
-/* responsive design — adjusts layout for different screen sizes */
 /* ---------- Laptop ---------- */
 @media (max-width:1200px)
 {
