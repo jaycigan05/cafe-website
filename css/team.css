@@ -15,341 +15,404 @@
    ⚠️ Expects an image at images/team_bg.png — that file isn't in the
    project yet, so add it there (same folder as cafe-interior.jpg)
    or this will just show the gradient with no photo behind it. */
-.page-header {
-  background-image:
+.page-header
+{
+    background-image:
     linear-gradient(180deg,
       rgba(62, 42, 28, 0.82) 0%,
       rgba(62, 42, 28, 0.72) 50%,
       rgba(62, 42, 28, 0.82) 100%),
     url('../images/team_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 130px 0 100px;
-  text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 130px 0 100px;
+    text-align: center;
 }
 
-.page-header .eyebrow {
-  color: var(--white);
-  font-size: 1.1rem;
+.page-header .eyebrow
+{
+    color: var(--white);
+    font-size: 1.1rem;
 }
 
-.page-header h1 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.6rem,6vw,4.2rem);
-  color: var(--text-light);
-  margin-bottom: 16px;
-  /* Lays the heading text out in a row with a paw-icon group on
+.page-header h1
+{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.6rem,6vw,4.2rem);
+    color: var(--text-light);
+    margin-bottom: 16px;
+    /* Lays the heading text out in a row with a paw-icon group on
      each side, wrapping on narrow screens instead of overlapping. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 /* Jumping paw-print icons beside the heading — copied from the
    Menu page's "Our Menu" title (see .menu-paws / .paw-step-* in
    menu.css). Each size floats on its own timing/delay so the
    motion reads as loosely "walking" rather than perfectly synced. */
-.team-paws {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.team-paws
+{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.team-paws .paw-step {
-  display: inline-block;
+.team-paws .paw-step
+{
+    display: inline-block;
 }
 
-.paw-step-sm {
-  width: 14px;
-  opacity: 0.4;
-  animation: pawFloatSm 2.6s ease-in-out infinite;
+.paw-step-sm
+{
+    width: 14px;
+    opacity: 0.4;
+    animation: pawFloatSm 2.6s ease-in-out infinite;
 }
 
-.paw-step-md {
-  width: 20px;
-  opacity: 0.62;
-  animation: pawFloatMd 3.3s ease-in-out infinite 0.45s;
+.paw-step-md
+{
+    width: 20px;
+    opacity: 0.62;
+    animation: pawFloatMd 3.3s ease-in-out infinite 0.45s;
 }
 
-.paw-step-lg {
-  width: 26px;
-  opacity: 0.85;
-  animation: pawFloatLg 3.9s ease-in-out infinite 0.15s;
+.paw-step-lg
+{
+    width: 26px;
+    opacity: 0.85;
+    animation: pawFloatLg 3.9s ease-in-out infinite 0.15s;
 }
 
-@keyframes pawFloatSm {
-  0%, 100% { transform: translateY(0) rotate(-10deg); }
-  50% { transform: translateY(-6px) rotate(-15deg); }
+@keyframes pawFloatSm
+{
+    0%, 100%
+    {
+        transform: translateY(0) rotate(-10deg);
+    }
+    50%
+    {
+        transform: translateY(-6px) rotate(-15deg);
+    }
 }
 
-@keyframes pawFloatMd {
-  0%, 100% { transform: translateY(0) rotate(-6deg); }
-  50% { transform: translateY(-11px) rotate(-1deg); }
+@keyframes pawFloatMd
+{
+    0%, 100%
+    {
+        transform: translateY(0) rotate(-6deg);
+    }
+    50%
+    {
+        transform: translateY(-11px) rotate(-1deg);
+    }
 }
 
-@keyframes pawFloatLg {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
+@keyframes pawFloatLg
+{
+    0%, 100%
+    {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50%
+    {
+        transform: translateY(-8px) rotate(3deg);
+    }
 }
 
-@media (max-width: 640px) {
-  .menu-paws {
-    display: none; /* avoid crowding the title on narrow screens */
-  }
+@media (max-width: 640px)
+{
+    .menu-paws
+    {
+        display: none;
+        /* avoid crowding the title on narrow screens */
+    }
 }
 
-.page-header-text {
-  color: var(--white);
-  opacity: 0.75;
-  max-width: 520px;
-  margin: 0 auto;
-  font-size: 1.1rem;
+.page-header-text
+{
+    color: var(--white);
+    opacity: 0.75;
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 1.1rem;
 }
 
 /* ============================
    HUMAN STAFF
    ============================ */
 
-.staff-section {
-  padding: 100px 0;
+.staff-section
+{
+    padding: 100px 0;
 }
 
-.staff-section h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 10px 0 50px;
+.staff-section h2
+{
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0 50px;
 }
 
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  align-items: start;
+.staff-grid
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    align-items: start;
 }
 
-.staff-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: var(--cream);
-  border-radius: var(--radius-sm);
-  padding: 24px 20px 28px;
-  cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+.staff-card
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 24px 20px 28px;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
-.staff-card:not(.expanded):hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+.staff-card:not(.expanded):hover
+{
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
 }
 
-.staff-card:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+.staff-card:focus-visible
+{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
-.staff-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius-sm);
-  object-fit: cover;
-  background: #e5ddcf;
-  margin-bottom: 18px;
+.staff-card img
+{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    background: #e5ddcf;
+    margin-bottom: 18px;
 }
 
-.staff-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.05rem;
-  margin-bottom: 6px;
+.staff-name
+{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
 }
 
-.staff-role {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.staff-role
+{
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 /* "+" toggle indicator, top-right of each card, rotates into an "×" when expanded */
-.staff-toggle-icon {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1;
-  transition: transform var(--transition);
+.staff-toggle-icon
+{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform var(--transition);
 }
 
 /* Hidden detail panel: position, contribution, portfolio link.
    Collapsed by default, revealed when the card gains .expanded */
-.staff-details {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
+.staff-details
+{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
 }
 
-.staff-contribution {
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  text-align: left;
-  margin-bottom: 18px;
+.staff-contribution
+{
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    text-align: left;
+    margin-bottom: 18px;
 }
 
-.staff-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  background: var(--cream);
-  border-radius: 10px;
-  padding: 12px 14px;
-  margin-bottom: 20px;
-  text-align: left;
+.staff-meta
+{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.staff-meta strong {
-  color: var(--text-dark);
-  font-weight: 600;
+.staff-meta strong
+{
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
-.staff-portfolio-btn {
-  display: inline-block;
+.staff-portfolio-btn
+{
+    display: inline-block;
 }
 
 /* Dimmed backdrop shown behind the expanded card so it visually sits
    on top of the rest of the staff grid */
-.staff-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(24, 17, 12, 0.55);
-  z-index: 150;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+.staff-backdrop
+{
+    position: fixed;
+    inset: 0;
+    background: rgba(24, 17, 12, 0.55);
+    z-index: 150;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-.staff-backdrop.active {
-  opacity: 1;
-  pointer-events: auto;
+.staff-backdrop.active
+{
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Wrapper inside each grid card (img/name/role/details) — keeps the
    collapsed card's contents centered and stacked */
-.staff-card-scroll {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.staff-card-scroll
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Standalone popup modal — built fresh with no inherited rules from
    .staff-card, so its sizing/scrolling can't be affected by the grid
    card's own display/position/flex rules. Filled in by JS on click. */
-.staff-modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(600px, 92vw);
-  max-height: 85vh;
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
-  z-index: 200;
-  overflow: hidden;
+.staff-modal
+{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(600px, 92vw);
+    max-height: 85vh;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
+    z-index: 200;
+    overflow: hidden;
 }
 
-.staff-modal.active {
-  display: block;
+.staff-modal.active
+{
+    display: block;
 }
 
-.staff-modal-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  background: var(--accent);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 3;
+.staff-modal-close
+{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
 }
 
-.staff-modal-scroll {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 85vh;
-  overflow-y: auto;
-  padding: 40px 44px 46px;
-  text-align: center;
-  scrollbar-width: thin;
+.staff-modal-scroll
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px 44px 46px;
+    text-align: center;
+    scrollbar-width: thin;
 }
 
-.staff-modal-scroll::-webkit-scrollbar {
-  width: 8px;
+.staff-modal-scroll::-webkit-scrollbar
+{
+    width: 8px;
 }
 
-.staff-modal-scroll::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
+.staff-modal-scroll::-webkit-scrollbar-thumb
+{
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 4px;
 }
 
-.staff-modal-scroll::-webkit-scrollbar-track {
-  background: transparent;
+.staff-modal-scroll::-webkit-scrollbar-track
+{
+    background: transparent;
 }
 
-.staff-modal-scroll img {
-  width: 170px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  background: #e5ddcf;
-  margin-bottom: 20px;
+.staff-modal-scroll img
+{
+    width: 170px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    background: #e5ddcf;
+    margin-bottom: 20px;
 }
 
-.staff-modal-scroll .staff-name {
-  font-size: 1.3rem;
+.staff-modal-scroll .staff-name
+{
+    font-size: 1.3rem;
 }
 
-.staff-modal-scroll .staff-role {
-  font-size: 1rem;
+.staff-modal-scroll .staff-role
+{
+    font-size: 1rem;
 }
 
-.staff-modal-scroll .staff-details {
-  max-height: none;
-  opacity: 1;
-  overflow: visible;
-  margin-top: 22px;
+.staff-modal-scroll .staff-details
+{
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    margin-top: 22px;
 }
 
-.staff-modal-scroll .staff-contribution {
-  font-size: 0.98rem;
+.staff-modal-scroll .staff-contribution
+{
+    font-size: 0.98rem;
 }
 
 /* ============================
@@ -357,89 +420,109 @@
    .dog-grid / .dog-card from new_style.css)
    ============================ */
 
-.dogs-section {
-  padding: 100px 0;
-  background: var(--cream);
+.dogs-section
+{
+    padding: 100px 0;
+    background: var(--cream);
 }
 
-.dogs-section h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 10px 0 12px;
+.dogs-section h2
+{
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0 12px;
 }
 
-.dogs-intro {
-  color: var(--text-muted);
-  margin-bottom: 50px;
+.dogs-intro
+{
+    color: var(--text-muted);
+    margin-bottom: 50px;
 }
 
 /* Team page shows many more dogs than the homepage teaser,
    so give the grid a bit more breathing room between rows */
-.dogs-section .dog-grid {
-  row-gap: 32px;
+.dogs-section .dog-grid
+{
+    row-gap: 32px;
 }
 
 /* ============================
    RESPONSIVE
    ============================ */
 
-@media (max-width: 900px) {
-  .staff-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 900px)
+{
+    .staff-grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .dogs-section .dog-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .dogs-section .dog-grid
+    {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-  .staff-modal-scroll {
-    padding: 32px;
-  }
+    .staff-modal-scroll
+    {
+        padding: 32px;
+    }
 }
 
-@media (max-width: 720px) {
-  .page-header {
-    padding: 70px 0 50px;
-  }
+@media (max-width: 720px)
+{
+    .page-header
+    {
+        padding: 70px 0 50px;
+    }
 
-  .staff-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
+    .staff-grid
+    {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
 
-  .dogs-section .dog-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
+    .dogs-section .dog-grid
+    {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
 
-  .staff-modal {
-    width: 94vw;
-  }
+    .staff-modal
+    {
+        width: 94vw;
+    }
 
-  .staff-modal-scroll {
-    padding: 26px 22px 30px;
-  }
+    .staff-modal-scroll
+    {
+        padding: 26px 22px 30px;
+    }
 }
 
-@media (max-width: 480px) {
-  .staff-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 480px)
+{
+    .staff-grid
+    {
+        grid-template-columns: 1fr;
+    }
 
-  .dogs-section .dog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .dogs-section .dog-grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .staff-modal {
-    max-height: 90vh;
-  }
+    .staff-modal
+    {
+        max-height: 90vh;
+    }
 
-  .staff-modal-scroll {
-    max-height: 90vh;
-  }
+    .staff-modal-scroll
+    {
+        max-height: 90vh;
+    }
 
-  .staff-modal-scroll img {
-    width: 130px;
-  }
+    .staff-modal-scroll img
+    {
+        width: 130px;
+    }
 }

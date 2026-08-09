@@ -1,122 +1,129 @@
-// ============================
-// PAWFEE CAFÉ — TEAM PAGE SCRIPT
-// The human staff cards are now written directly in team.html.
-// This script only wires up the expand/collapse interaction for them,
-// and still generates the resident dog cards from dogData.
-// ============================
+// team.js — the human staff cards are static HTML in team.html now,
+// this just wires up their expand/collapse. dog cards still get
+// generated here though, from dogData below
 
 const dogData = [
-  { name: "Waffle",      type: "Australian Shepherd" },
-  { name: "Lucy",        type: "Basenji" },
-  { name: "Biscuit",     type: "Beagle" },
-  { name: "Bailey",      type: "Bearded Collie" },
-  { name: "Peanut",      type: "Bernese Mountain" },
-  { name: "Ruby",        type: "Yorkshire Terrier" },
-  { name: "Oreo",        type: "Border Collie" },
-  { name: "Mochi",       type: "Brittany" },
-  { name: "Nala",        type: "Cairn Terrier" },
-  { name: "Zeus",        type: "Cardigan Welsh Cogi" },
-  { name: "Rocky",       type: "Cattle Dog" },
-  { name: "Daisy",       type: "Cavalier King Charles Spaniel" },
-  { name: "Cici",        type: "Corgi" },
-  { name: "Bella",       type: "Dashshund" },
-  { name: "Max",         type: "Dalmatian" },
-  { name: "Ashley",      type: "French Bulldog" },
-  { name: "Charlie",     type: "Golden Retriever" },
-  { name: "Molly",       type: "Labrador Retriever" },
-  { name: "Buddy",       type: "Maltipoo" },
-  { name: "Happy",       type: "Papillon" },
-  { name: "Cooper",      type: "Pomeranian" },
-  { name: "Moana",       type: "Portuguese Water Dog" },
-  { name: "Duke",        type: "Pug" },
-  { name: "Sophie",      type: "Samoyed" },
-  { name: "Hira",        type: "Shibainu" },
-  { name: "Chloe",       type: "Shih Tzu" },
-  { name: "Bear",        type: "Siberian Husky" },
-  { name: "Zoe",         type: "Soft Coated Wheaten" },
-  { name: "Oliver",      type: "Toypoddle" },
-  { name: "Leo",         type: "West Highland White Terrier" },
+    { name: "Waffle",      type: "Australian Shepherd" },
+    { name: "Lucy",        type: "Basenji" },
+    { name: "Biscuit",     type: "Beagle" },
+    { name: "Bailey",      type: "Bearded Collie" },
+    { name: "Peanut",      type: "Bernese Mountain" },
+    { name: "Ruby",        type: "Yorkshire Terrier" },
+    { name: "Oreo",        type: "Border Collie" },
+    { name: "Mochi",       type: "Brittany" },
+    { name: "Nala",        type: "Cairn Terrier" },
+    { name: "Zeus",        type: "Cardigan Welsh Cogi" },
+    { name: "Rocky",       type: "Cattle Dog" },
+    { name: "Daisy",       type: "Cavalier King Charles Spaniel" },
+    { name: "Cici",        type: "Corgi" },
+    { name: "Bella",       type: "Dashshund" },
+    { name: "Max",         type: "Dalmatian" },
+    { name: "Ashley",      type: "French Bulldog" },
+    { name: "Charlie",     type: "Golden Retriever" },
+    { name: "Molly",       type: "Labrador Retriever" },
+    { name: "Buddy",       type: "Maltipoo" },
+    { name: "Happy",       type: "Papillon" },
+    { name: "Cooper",      type: "Pomeranian" },
+    { name: "Moana",       type: "Portuguese Water Dog" },
+    { name: "Duke",        type: "Pug" },
+    { name: "Sophie",      type: "Samoyed" },
+    { name: "Hira",        type: "Shibainu" },
+    { name: "Chloe",       type: "Shih Tzu" },
+    { name: "Bear",        type: "Siberian Husky" },
+    { name: "Zoe",         type: "Soft Coated Wheaten" },
+    { name: "Oliver",      type: "Toypoddle" },
+    { name: "Leo",         type: "West Highland White Terrier" },
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-  initStaffCards();
-  renderDogs();
+document.addEventListener('DOMContentLoaded', () =>
+{
+    initStaffCards();
+    renderDogs();
 });
 
-/* ---- Human staff: click a card to expand it with more detail ----
-   The cards themselves are static HTML in team.html; this just wires
-   up the expand/collapse behaviour on whatever cards are already there. */
-function initStaffCards() {
-  const staffGrid = document.getElementById('staffGrid');
-  const modal = document.getElementById('staffModal');
-  const modalScroll = document.getElementById('staffModalScroll');
-  const modalClose = document.getElementById('staffModalClose');
-  const backdrop = document.getElementById('staffBackdrop');
-  if (!staffGrid || !modal || !modalScroll) return;
+// click a staff card to expand it — cards are already in the HTML,
+// just toggling a class here
+function initStaffCards()
+{
+    const staffGrid = document.getElementById('staffGrid');
+    const modal = document.getElementById('staffModal');
+    const modalScroll = document.getElementById('staffModalScroll');
+    const modalClose = document.getElementById('staffModalClose');
+    const backdrop = document.getElementById('staffBackdrop');
+    if (!staffGrid || !modal || !modalScroll) return;
 
-  const cards = Array.from(staffGrid.querySelectorAll('.staff-card'));
-  if (!cards.length) return;
+    const cards = Array.from(staffGrid.querySelectorAll('.staff-card'));
+    if (!cards.length) return;
 
-  const openModal = (card) => {
-    const source = card.querySelector('.staff-card-scroll');
-    if (!source) return;
-    modalScroll.innerHTML = source.innerHTML;
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    if (backdrop) backdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    cards.forEach((c) => c.setAttribute('aria-expanded', String(c === card)));
-    modalClose.focus();
-  };
+    const openModal = (card) =>
+    {
+        const source = card.querySelector('.staff-card-scroll');
+        if (!source) return;
+        modalScroll.innerHTML = source.innerHTML;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        if (backdrop) backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        cards.forEach((c) => c.setAttribute('aria-expanded', String(c === card)));
+        modalClose.focus();
+    };
 
-  const closeModal = () => {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    if (backdrop) backdrop.classList.remove('active');
-    document.body.style.overflow = '';
-    cards.forEach((c) => c.setAttribute('aria-expanded', 'false'));
-  };
+    const closeModal = () =>
+    {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+        cards.forEach((c) => c.setAttribute('aria-expanded', 'false'));
+    };
 
-  cards.forEach((card) => {
-    card.addEventListener('click', (e) => {
-      if (e.target.closest('.staff-portfolio-btn')) return;
-      openModal(card);
+    cards.forEach((card) =>
+    {
+        card.addEventListener('click', (e) =>
+        {
+            if (e.target.closest('.staff-portfolio-btn')) return;
+            openModal(card);
+        });
+
+        card.addEventListener('keydown', (e) =>
+        {
+            if (e.target.closest('.staff-portfolio-btn')) return;
+            if (e.key === 'Enter' || e.key === ' ')
+            {
+                e.preventDefault();
+                openModal(card);
+            }
+        });
     });
 
-    card.addEventListener('keydown', (e) => {
-      if (e.target.closest('.staff-portfolio-btn')) return;
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(card);
-      }
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) =>
+    {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
-  });
-
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (backdrop) backdrop.addEventListener('click', closeModal);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-  });
 }
 
 /* ---- Resident dogs ---- */
-function renderDogs() {
-  const dogGrid = document.getElementById('dogGrid');
-  if (!dogGrid) return;
+function renderDogs()
+{
+    const dogGrid = document.getElementById('dogGrid');
+    if (!dogGrid) return;
 
-  dogData.forEach((dog, index) => {
-    const card = document.createElement('div');
-    card.className = 'dog-card';
+    dogData.forEach((dog, index) =>
+    {
+        const card = document.createElement('div');
+        card.className = 'dog-card';
 
-    const imgNumber = String(index + 1).padStart(2, '0');
+        const imgNumber = String(index + 1).padStart(2, '0');
 
-    card.innerHTML = `
+        card.innerHTML = `
       <img src="../images/dogs/dog-${imgNumber}.avif" alt="${dog.name}, resident dog" loading="lazy">
       <span class="dog-name">${dog.name}</span>
       <span class="dog-type">${dog.type}</span>
     `;
 
-    dogGrid.appendChild(card);
-  });
+        dogGrid.appendChild(card);
+    });
 }

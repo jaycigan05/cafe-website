@@ -3,47 +3,54 @@
    Hides nav, footer and animations for clean print output
    ============================================================ */
 
-@media print {
+@media print
+{
 
-  /* hide navigation and footer */
-  .navbar,
-  .footer,
-  .skip-link,
-  .nav-cta {
-    display: none !important;
-  }
+    /* hide navigation and footer */
+    .navbar,
+    .footer,
+    .skip-link,
+    .nav-cta
+    {
+        display: none !important;
+    }
 
-  /* remove background colours (saves ink) */
-  body,
-  .p-hero,
-  .p-about,
-  .p-skills,
-  .p-projects,
-  .p-card,
-  .p-project-card {
-    background-color: white !important;
-    box-shadow: none !important;
-  }
+    /* remove background colours (saves ink) */
+    body,
+    .p-hero,
+    .p-about,
+    .p-skills,
+    .p-projects,
+    .p-card,
+    .p-project-card
+    {
+        background-color: white !important;
+        box-shadow: none !important;
+    }
 
-  /* remove animations for print */
-  .p-avatar,
-  .p-hero-text,
-  .p-bar-fill {
-    animation: none !important;
-  }
+    /* remove animations for print */
+    .p-avatar,
+    .p-hero-text,
+    .p-bar-fill
+    {
+        animation: none !important;
+    }
 
-  /* make progress bars show at full width for print */
-  .p-bar-fill {
-    width: var(--fill) !important;
-  }
+    /* make progress bars show at full width for print */
+    .p-bar-fill
+    {
+        width: var(--fill) !important;
+    }
 
-  /* ensure text is black for print */
-  h1, h2, h3, p, span {
-    color: black !important;
-  }
+    /* ensure text is black for print */
+    h1, h2, h3, p, span
+    {
+        color: black !important;
+    }
 
-  /* page break control */
-  .p-projects {
-    page-break-before: always;
-  }
+    /* page break control */
+    .p-projects
+    {
+        page-break-before: always;
+    }
 }

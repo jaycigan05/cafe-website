@@ -1,13 +1,13 @@
 /* ============================================================
    PORTFOLIO PRINT STYLESHEET
 ============================================================ */
-@media print 
+@media print
 {
     /* Hide navigation and footer */
     .navbar,
     .footer,
     .buttonGroup,
-    .nav-toggle 
+    .nav-toggle
     {
         display: none !important;
     }
@@ -25,7 +25,7 @@
     .skillCard,
     .journeyStep,
     .contactCard,
-    .projectImage 
+    .projectImage
     {
         background: white !important;
         color: black !important;
@@ -35,7 +35,7 @@
     /* Remove animations and transitions */
     *,
     *::before,
-    *::after 
+    *::after
     {
         animation: none !important;
         transition: none !important;
@@ -48,14 +48,14 @@
     h4,
     p,
     span,
-    li 
+    li
     {
         color: black !important;
     }
 
-     /* Hide only About Me icons and Design Journey icons */
+    /* Hide only About Me icons and Design Journey icons */
     .journeyIcon,
-    .contactIcon 
+    .contactIcon
     {
         display: none !important;
     }
@@ -67,18 +67,18 @@
     .skillCard,
     .journeyStep,
     .contactCard,
-    .projectImage img 
+    .projectImage img
     {
         transform: none !important;
     }
 
     /* Contact becomes vertical */
-    .contact 
+    .contact
     {
         display: block !important;
     }
 
-    .contactCard 
+    .contactCard
     {
         display: block !important;
         width: 100% !important;
@@ -87,7 +87,7 @@
     }
 
     /* Make project rows vertical */
-    .projectRow 
+    .projectRow
     {
         display: block !important;
         page-break-inside: avoid;
@@ -95,18 +95,18 @@
     }
 
     /* Remove alternating layout */
-    .projectRow:nth-child(even) 
+    .projectRow:nth-child(even)
     {
         direction: ltr !important;
     }
 
     /* Design Journey */
-    .journeyLine 
+    .journeyLine
     {
         display: block !important;
     }
 
-    .journeyStep 
+    .journeyStep
     {
         margin-bottom: 20px;
         page-break-inside: avoid;
@@ -122,5 +122,4 @@
     {
         page-break-before: always;
     }
-
 }

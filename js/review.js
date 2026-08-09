@@ -1,29 +1,24 @@
-// ==============================
-// Filter Reviews
-// ==============================
-// Display only reviews that match the selected star rating.
-function filterReviews() 
+// only show reviews matching whatever star rating is picked
+function filterReviews()
 {
     const selectedRating = document.getElementById("ratingFilter").value;
     const reviews = document.querySelectorAll(".reviewCard");
 
-    reviews.forEach(function (review) 
+    reviews.forEach(function (review)
     {
-        // Show all reviews or only reviews with the selected rating.
-        if (selectedRating === "all" || review.dataset.rating === selectedRating) 
-            {
+        // "all" shows everything, otherwise match the rating
+        if (selectedRating === "all" || review.dataset.rating === selectedRating)
+        {
             review.style.display = "block";
-        } else 
-            {
+        }
+        else
+        {
             review.style.display = "none";
         }
     });
 }
 
-// ==============================
-// Get Elements
-// ==============================
-// Store frequently used page elements.
+// elements we reuse a lot
 const reviewForm = document.getElementById("reviewForm");
 const reviewList = document.querySelector(".reviewRow");
 
@@ -36,19 +31,16 @@ reviewTextInput.addEventListener("input", function()
     charCount.textContent = reviewTextInput.value.length;
 });
 
-// Load any previously saved reviews when the page opens.
+// load whatever was saved last time
 loadReviews();
 
-// ==============================
-// Load Reviews
-// ==============================
-// Retrieve saved reviews from Local Storage and display them.
-function loadReviews() 
+// pull saved reviews out of localStorage and render them
+function loadReviews()
 {
     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-    reviews.forEach(review => 
-        {
+    reviews.forEach(review =>
+    {
         addReview
         (
             review.name,
@@ -60,15 +52,12 @@ function loadReviews()
     });
 }
 
-// ==============================
-// Submit Review
-// ==============================
-// Run submitReview() whenever the review form is submitted.
+// runs whenever the review form gets submitted
 reviewForm.addEventListener("submit", submitReview);
 
-function submitReview(event) 
+function submitReview(event)
 {
-    // Prevent the page from refreshing after form submission.
+    // stop the page from reloading
     event.preventDefault();
 
     const name = document.getElementById("customerName").value;
@@ -76,77 +65,72 @@ function submitReview(event)
     const reviewText = document.getElementById("reviewText").value;
 
     let ratingNumber = "";
-    // Convert the selected star rating into a numeric value.
-    if (rating === "⭐⭐⭐⭐⭐") 
-        {
+    // turn the star emoji into a plain number
+    if (rating === "⭐⭐⭐⭐⭐")
+    {
         ratingNumber = "5";
     }
-    else if (rating === "⭐⭐⭐⭐☆") 
-        {
+    else if (rating === "⭐⭐⭐⭐☆")
+    {
         ratingNumber = "4";
     }
-    else if (rating === "⭐⭐⭐☆☆") 
-        {
+    else if (rating === "⭐⭐⭐☆☆")
+    {
         ratingNumber = "3";
     }
-    else if (rating === "⭐⭐☆☆☆") 
-        {
+    else if (rating === "⭐⭐☆☆☆")
+    {
         ratingNumber = "2";
     }
-    else {
+    else
+    {
         ratingNumber = "1";
     }
 
-    // Generate today's date for the review.
-    const today = new Date().toLocaleDateString("en-US", 
+    // today's date, for the review timestamp
+    const today = new Date().toLocaleDateString("en-US",
         {
-        month: "long",
-        day: "numeric",
-        year: "numeric"
-    });
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
 
-    // Display review immediately
+    // show it straight away
     addReview(name, rating, ratingNumber, reviewText, today);
 
-    // Save to Local Storage
+    // persist it
     saveReview(name, rating, ratingNumber, reviewText, today);
 
-    // Show success popup
+    // pop the success message
     document.getElementById("successPopup").classList.add("show");
 
-    // Clear all form fields.
+    // reset the form
     reviewForm.reset();
 
-    // Reapply the selected filter.
+    // re-run the filter so the new review shows up right
     filterReviews();
 }
 
-// ==============================
-// Save Review
-// ==============================
-// Store the review inside Local Storage.
-function saveReview(name, rating, ratingNumber, reviewText, date) 
+// stash the review in localStorage
+function saveReview(name, rating, ratingNumber, reviewText, date)
 {
 
     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-     // Insert the newest review at the beginning of the array.
+    // newest first
     reviews.unshift(
         {
-        name,
-        rating,
-        ratingNumber,
-        reviewText,
-        date
-    });
+            name,
+            rating,
+            ratingNumber,
+            reviewText,
+            date
+        });
 
     localStorage.setItem("reviews", JSON.stringify(reviews));
 }
 
-// ==============================
-// Add Review
-// ==============================
-// Create a new review card and display it on the page.
-function addReview(name, rating, ratingNumber, reviewText, date) 
+// builds a review card and drops it into the page
+function addReview(name, rating, ratingNumber, reviewText, date)
 {
 
     const reviewCard = document.createElement("div");
@@ -165,43 +149,37 @@ function addReview(name, rating, ratingNumber, reviewText, date)
 
         <div class="reviewDate">📅 ${date}</div>
     `;
-    
-    // Add the newest review to the top of the review list.
+
+    // stick it at the top
     reviewList.prepend(reviewCard);
 }
 
-// ==============================
-// Success Popup
-// ==============================
-// Close the success popup after submission.
-function closePopup() 
+// hides the success popup
+function closePopup()
 {
     document.getElementById("successPopup").classList.remove("show");
 }
 
-// ==============================
-// Scroll Reveal
-// ==============================
-// Select all elements that will animate when scrolling.
+// fade-in-on-scroll for anything with .reveal
 const reveals = document.querySelectorAll(".reveal");
-// Add the animation once an element enters the viewport.
-function revealOnScroll() 
+// flip .active once it's in view
+function revealOnScroll()
 {
 
-    reveals.forEach((item) => 
-        {
+    reveals.forEach((item) =>
+    {
 
         const windowHeight = window.innerHeight;
         const revealTop = item.getBoundingClientRect().top;
         const revealPoint = 120;
 
-        if (revealTop < windowHeight - revealPoint) 
-            {
+        if (revealTop < windowHeight - revealPoint)
+        {
             item.classList.add("active");
         }
     });
 }
-// Run the reveal animation whenever the page is scrolled.
+// check on every scroll
 window.addEventListener("scroll", revealOnScroll);
-// Run once when the page first loads.
+// and once on load too
 revealOnScroll();

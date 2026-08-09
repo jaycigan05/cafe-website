@@ -13,12 +13,17 @@
    across the whole site comes from style.css instead — do not
    redefine brown/accent/text colours here.
    --------------------------------------------------------- */
-:root{
-  --cream-card:  #FFFDF8;                       /* menu card background */
-  --blush:       #e4b4a3;                       /* "For Dogs" accent + link underline */
-  --line:        #EEDCC6;                       /* borders/dividers on this page */
-  --shadow-soft: 0 8px 22px rgba(74,53,42,.10);  /* light card shadow, menu-only for now */
-  --focus-ring: 3px solid #7A4A22;
+:root
+{
+    --cream-card:  #FFFDF8;
+    /* menu card background */
+    --blush:       #e4b4a3;
+    /* "For Dogs" accent + link underline */
+    --line:        #EEDCC6;
+    /* borders/dividers on this page */
+    --shadow-soft: 0 8px 22px rgba(74,53,42,.10);
+    /* light card shadow, menu-only for now */
+    --focus-ring: 3px solid #7A4A22;
 }
 
 /* ---------------------------------------------------------
@@ -26,23 +31,54 @@
    Only the element defaults NOT already covered by style.css
    (that file handles *, html, body, a, img, h1–h3, etc.)
    --------------------------------------------------------- */
-.hero-content{ padding:0; max-width:680px; margin:0 auto; text-align:center; }
+.hero-content
+{
+    padding:0;
+    max-width:680px;
+    margin:0 auto;
+    text-align:center;
+}
 
 /* ---------------------------------------------------------
    SECTION SHELL
    Shared layout wrapper reused by every section on this page.
    --------------------------------------------------------- */
-.section-wrap{ padding:64px 6vw; max-width:1280px; margin:0 auto; }
-.section-head{ text-align:center; max-width:560px; margin:0 auto 32px; }
-.section-head .eyebrow{
-  color:var(--accent-dark); font-weight:700; letter-spacing:.08em;
-  text-transform:uppercase; font-size:.8rem; margin-bottom:8px; display:block;
+.section-wrap
+{
+    padding:64px 6vw;
+    max-width:1280px;
+    margin:0 auto;
 }
-.section-head h2{ font-size:clamp(1.8rem,3.4vw,2.6rem); }
-.section-head p{ margin-top:10px; color:var(--text-muted); font-weight:600; }
+.section-head
+{
+    text-align:center;
+    max-width:560px;
+    margin:0 auto 32px;
+}
+.section-head .eyebrow
+{
+    color:var(--accent-dark);
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:.8rem;
+    margin-bottom:8px;
+    display:block;
+}
+.section-head h2
+{
+    font-size:clamp(1.8rem,3.4vw,2.6rem);
+}
+.section-head p
+{
+    margin-top:10px;
+    color:var(--text-muted);
+    font-weight:600;
+}
 
-#fullMenu{
-  background: var(--white);
+#fullMenu
+{
+    background: var(--white);
 }
 
 /* ---------------------------------------------------------
@@ -51,55 +87,127 @@
    mediaMarkup() in menu.js). Kept as a safety fallback in case
    an image path is ever wrong or missing — not dead code.
    --------------------------------------------------------- */
-.media-all{               background:linear-gradient(135deg,#EADFCB,#C9A16B); }
-.media-mains{              background:linear-gradient(135deg,#F7D9A0,#E8B34A); }
-.media-pasta-pizza{        background:linear-gradient(135deg,#F3B7A0,#E27E7E); }
-.media-burgers-sandwiches{ background:linear-gradient(135deg,#E3CBA3,#C98A4B); }
-.media-snacks-desserts{    background:linear-gradient(135deg,#F3C9D9,#E9A3A3); }
-.media-beverages{          background:linear-gradient(135deg,#D9C7EE,#A98BDE); }
-.media-paw{                background:linear-gradient(135deg,#CFE3C8,#8FAE86); }
+.media-all
+{
+    background:linear-gradient(135deg,#EADFCB,#C9A16B);
+}
+.media-mains
+{
+    background:linear-gradient(135deg,#F7D9A0,#E8B34A);
+}
+.media-pasta-pizza
+{
+    background:linear-gradient(135deg,#F3B7A0,#E27E7E);
+}
+.media-burgers-sandwiches
+{
+    background:linear-gradient(135deg,#E3CBA3,#C98A4B);
+}
+.media-snacks-desserts
+{
+    background:linear-gradient(135deg,#F3C9D9,#E9A3A3);
+}
+.media-beverages
+{
+    background:linear-gradient(135deg,#D9C7EE,#A98BDE);
+}
+.media-paw
+{
+    background:linear-gradient(135deg,#CFE3C8,#8FAE86);
+}
 
 /* Category card background photos */
-.cat-photo-all{                background-image:url('../images/menu/All_Cat_Background.jpg'); }
-.cat-photo-mains{              background-image:url('../images/menu/Mains/Grilled_Chicken_Chop.jpg'); }
-.cat-photo-pasta-pizza{        background-image:url('../images/menu/Pasta&Pizza/Carbonara.jpg'); }
-.cat-photo-burgers-sandwiches{ background-image:url('../images/menu/Burgers&Sandwiches/Beef_Burger.jpg'); }
-.cat-photo-snacks-desserts{    background-image:url('../images/menu/Snacks&Desserts/Cheesecake.jpg'); }
-.cat-photo-beverages{          background-image:url('../images/menu/Beverages/Cappuccino.jpg'); }
-.cat-photo-paw{                background-image:url('../images/menu/Paw_Menu/Dog_Biscuits.jpg'); }
+.cat-photo-all
+{
+    background-image:url('../images/menu/All_Cat_Background.jpg');
+}
+.cat-photo-mains
+{
+    background-image:url('../images/menu/Mains/Grilled_Chicken_Chop.jpg');
+}
+.cat-photo-pasta-pizza
+{
+    background-image:url('../images/menu/Pasta&Pizza/Carbonara.jpg');
+}
+.cat-photo-burgers-sandwiches
+{
+    background-image:url('../images/menu/Burgers&Sandwiches/Beef_Burger.jpg');
+}
+.cat-photo-snacks-desserts
+{
+    background-image:url('../images/menu/Snacks&Desserts/Cheesecake.jpg');
+}
+.cat-photo-beverages
+{
+    background-image:url('../images/menu/Beverages/Cappuccino.jpg');
+}
+.cat-photo-paw
+{
+    background-image:url('../images/menu/Paw_Menu/Dog_Biscuits.jpg');
+}
 
 /* ---------------------------------------------------------
    TOGGLE SWITCH (Humans / Dogs)
    --------------------------------------------------------- */
-.toggle-switch{ display:flex; justify-content:center; margin-bottom:18px; }
-.toggle-track{
-  position:relative; display:flex; background:#fff; border-radius:999px;
-  padding:6px; box-shadow:var(--shadow-soft); border:2px solid var(--line);
-  width: 340px;
-  max-width: 90vw;
+.toggle-switch
+{
+    display:flex;
+    justify-content:center;
+    margin-bottom:18px;
 }
-.toggle-track .toggle-thumb{
-  position:absolute; top:6px; bottom:6px; left:6px;
-  width:calc(50% - 6px);
-  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-  border-radius:999px; transition:transform .45s cubic-bezier(.65,0,.35,1), background .3s ease;
-  z-index:0;
+.toggle-track
+{
+    position:relative;
+    display:flex;
+    background:#fff;
+    border-radius:999px;
+    padding:6px;
+    box-shadow:var(--shadow-soft);
+    border:2px solid var(--line);
+    width: 340px;
+    max-width: 90vw;
 }
-.toggle-track.is-dog .toggle-thumb{
-  transform:translateX(100%);
-  background:linear-gradient(135deg,var(--blush),var(--accent-dark));
+.toggle-track .toggle-thumb
+{
+    position:absolute;
+    top:6px;
+    bottom:6px;
+    left:6px;
+    width:calc(50% - 6px);
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+    border-radius:999px;
+    transition:transform .45s cubic-bezier(.65,0,.35,1), background .3s ease;
+    z-index:0;
 }
-.toggle-track button{
-  flex: 1;
-  justify-content: center;
-  font-family: var(--font-display);   /* fixed: was var(--font-body) by mistake — this should match the header font */
-  position:relative; z-index:1; border:none; background:transparent;
-  padding:9px 20px; border-radius:999px; font-weight:700; font-size:.85rem;
-  color:var(--accent-dark);
-  display:flex; align-items:center; gap:6px;
-  transition:color .3s ease;
+.toggle-track.is-dog .toggle-thumb
+{
+    transform:translateX(100%);
+    background:linear-gradient(135deg,var(--blush),var(--accent-dark));
 }
-.toggle-track button.active{ color:#fff; }
+.toggle-track button
+{
+    flex: 1;
+    justify-content: center;
+    font-family: var(--font-display);
+    /* fixed: was var(--font-body) by mistake — this should match the header font */
+    position:relative;
+    z-index:1;
+    border:none;
+    background:transparent;
+    padding:9px 20px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.85rem;
+    color:var(--accent-dark);
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:color .3s ease;
+}
+.toggle-track button.active
+{
+    color:#fff;
+}
 
 /* ---------------------------------------------------------
    HERO + TOP SELLERS SHARED BACKGROUND
@@ -109,29 +217,33 @@
    cross-fade via opacity when #heroPodiumSection gets the
    .is-dog class toggled in menu.js.
    --------------------------------------------------------- */
-.hero-podium{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-  width:100vw;
-  max-width:100vw;
-  margin-left:calc(50% - 50vw);
-  margin-right:calc(50% - 50vw);
-  padding-top:20px;
+.hero-podium
+{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    width:100vw;
+    max-width:100vw;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    padding-top:20px;
 }
 .hero-podium::before,
-.hero-podium::after{
-  content:"";
-  position:absolute; inset:0;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  z-index:-1;
-  opacity:0;
-  transition:opacity .5s ease;
+.hero-podium::after
+{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:-1;
+    opacity:0;
+    transition:opacity .5s ease;
 }
-.hero-podium::before{
-  background-image:
+.hero-podium::before
+{
+    background-image:
     linear-gradient(180deg,
       rgba(62,42,28,.80) 0%,
       rgba(62,42,28,.75) 30%,
@@ -139,10 +251,11 @@
       rgba(255,246,234,.65) 82%,
       var(--white) 100%),
     url('../images/menu/Background/For_Humans_Background.jpg');
-  opacity:1;
+    opacity:1;
 }
-.hero-podium::after{
-  background-image:
+.hero-podium::after
+{
+    background-image:
     linear-gradient(180deg,
       rgba(62,42,28,.68) 0%,
       rgba(62,42,28,.55) 30%,
@@ -151,62 +264,154 @@
       var(--cream) 100%),
     url('../images/menu/Background/For_Dogs_Background.jpg');
 }
-.hero-podium.is-dog::before{ opacity:0; }
-.hero-podium.is-dog::after{ opacity:1; }
+.hero-podium.is-dog::before
+{
+    opacity:0;
+}
+.hero-podium.is-dog::after
+{
+    opacity:1;
+}
 
 /* Text sitting on the photo background needs its own colours,
    scoped to .hero-podium so Full Menu's headings underneath
    aren't affected. */
-.hero-podium .hero-eyebrow{
-  display:inline-flex; align-items:center; gap:6px;
-  background:rgba(62,42,28,.35);
-  border:none; color:var(--line);
-  padding:5px 14px; border-radius:999px;
-  font-weight:700; font-size:.78rem;
-  letter-spacing:.12em; text-transform:uppercase;
-  margin-bottom:8px;
-  text-shadow:0 2px 6px rgba(0,0,0,.4);
+.hero-podium .hero-eyebrow
+{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(62,42,28,.35);
+    border:none;
+    color:var(--line);
+    padding:5px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    text-shadow:0 2px 6px rgba(0,0,0,.4);
 }
-.hero-title{
-  display:flex; align-items:center; justify-content:center; gap:18px;
-  flex-wrap:wrap;
-  color:#fff; font-size:clamp(2.6rem,6vw,4.2rem); line-height:1.05;
-  text-shadow:0 6px 24px rgba(0,0,0,.3);
+.hero-title
+{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    color:#fff;
+    font-size:clamp(2.6rem,6vw,4.2rem);
+    line-height:1.05;
+    text-shadow:0 6px 24px rgba(0,0,0,.3);
 }
-.hero-title .accent{ color:var(--line); }
-.hero-tagline{
-  color:#fdf3e6; font-weight:600; margin-top:10px;
-  font-size:clamp(.72rem,2.6vw,1.15rem);
-  line-height:1.45;
-  max-width:90%;
-  margin-left:auto; margin-right:auto;
+.hero-title .accent
+{
+    color:var(--line);
+}
+.hero-tagline
+{
+    color:#fdf3e6;
+    font-weight:600;
+    margin-top:10px;
+    font-size:clamp(.72rem,2.6vw,1.15rem);
+    line-height:1.45;
+    max-width:90%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.hero-podium .section-head{ margin-bottom:14px; }
-.hero-podium .section-head h2{
-  color:var(--line);
-  font-size:clamp(1.9rem,3.2vw,2.4rem);
-  text-shadow:0 3px 10px rgba(0,0,0,.3);
+.hero-podium .section-head
+{
+    margin-bottom:14px;
+}
+.hero-podium .section-head h2
+{
+    color:var(--line);
+    font-size:clamp(1.9rem,3.2vw,2.4rem);
+    text-shadow:0 3px 10px rgba(0,0,0,.3);
 }
 
-#topSellerSection{ padding-top:12px; padding-bottom:20px; }
+#topSellerSection
+{
+    padding-top:12px;
+    padding-bottom:20px;
+}
 
 /* Left/right paw-print images beside "Our Menu" — three sizes,
    each floating at its own speed/delay so the motion reads as
    loosely "walking" rather than perfectly synchronised. */
-.menu-paws{ display:inline-flex; align-items:center; gap:6px; }
-.menu-paws .paw-step{ display:inline-block; }
+.menu-paws
+{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+.menu-paws .paw-step
+{
+    display:inline-block;
+}
 
-.paw-step-sm{ width:14px; opacity:.4;  animation:pawFloatSm 2.6s ease-in-out infinite; }
-.paw-step-md{ width:20px; opacity:.62; animation:pawFloatMd 3.3s ease-in-out infinite .45s; }
-.paw-step-lg{ width:26px; opacity:.85; animation:pawFloatLg 3.9s ease-in-out infinite .15s; }
+.paw-step-sm
+{
+    width:14px;
+    opacity:.4;
+    animation:pawFloatSm 2.6s ease-in-out infinite;
+}
+.paw-step-md
+{
+    width:20px;
+    opacity:.62;
+    animation:pawFloatMd 3.3s ease-in-out infinite .45s;
+}
+.paw-step-lg
+{
+    width:26px;
+    opacity:.85;
+    animation:pawFloatLg 3.9s ease-in-out infinite .15s;
+}
 
-@keyframes pawFloatSm{ 0%,100%{ transform:translateY(0) rotate(-10deg); } 50%{ transform:translateY(-6px) rotate(-15deg); } }
-@keyframes pawFloatMd{ 0%,100%{ transform:translateY(0) rotate(-6deg); }  50%{ transform:translateY(-11px) rotate(-1deg); } }
-@keyframes pawFloatLg{ 0%,100%{ transform:translateY(0) rotate(-3deg); }  50%{ transform:translateY(-8px) rotate(3deg); } }
+@keyframes pawFloatSm
+{
+    0%,100%
+    {
+        transform:translateY(0) rotate(-10deg);
+    }
+    50%
+    {
+        transform:translateY(-6px) rotate(-15deg);
+    }
+}
+@keyframes pawFloatMd
+{
+    0%,100%
+    {
+        transform:translateY(0) rotate(-6deg);
+    }
+    50%
+    {
+        transform:translateY(-11px) rotate(-1deg);
+    }
+}
+@keyframes pawFloatLg
+{
+    0%,100%
+    {
+        transform:translateY(0) rotate(-3deg);
+    }
+    50%
+    {
+        transform:translateY(-8px) rotate(3deg);
+    }
+}
 
-@media (max-width:640px){
-  .menu-paws{ display:none; } /* avoid crowding the title on narrow screens */
+@media (max-width:640px)
+{
+    .menu-paws
+    {
+        display:none;
+    }
+    /* avoid crowding the title on narrow screens */
 }
 
 /* ---------------------------------------------------------
@@ -216,261 +421,565 @@
    Humans/Dogs toggle is clicked (paintPodium() in menu.js) via a
    quick opacity cross-fade, not a continuous animation.
    --------------------------------------------------------- */
-.podium{
-  display:flex; align-items:flex-end; justify-content:center;
-  gap:22px; padding:14px 10px 6px; max-width:780px; margin:0 auto;
+.podium
+{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:22px;
+    padding:14px 10px 6px;
+    max-width:780px;
+    margin:0 auto;
 }
-.podium-slot{ flex:0 0 210px; }
-.podium-slot.podium-center{ flex:0 0 250px; margin-bottom:16px; }
-.podium-card{ position:relative; }
-.podium-medal{
-  position:absolute; top:-16px; left:50%; transform:translateX(-50%);
-  font-size:1.6rem; z-index:2; filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));
+.podium-slot
+{
+    flex:0 0 210px;
+}
+.podium-slot.podium-center
+{
+    flex:0 0 250px;
+    margin-bottom:16px;
+}
+.podium-card
+{
+    position:relative;
+}
+.podium-medal
+{
+    position:absolute;
+    top:-16px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:1.6rem;
+    z-index:2;
+    filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));
 }
 /* Whole card is an arch: horizontal radius in % (scales with the
    card's own width), vertical radius in fixed px (stays consistent
    regardless of how tall the text underneath ends up). */
-.podium-shape{
-  background:var(--cream-card); box-shadow:var(--shadow-soft);
-  text-align:center; padding-bottom:16px; overflow:hidden;
-  border-radius:50% 50% 14px 14px / 56px 56px 14px 14px;
-  transition:box-shadow .3s ease;
+.podium-shape
+{
+    background:var(--cream-card);
+    box-shadow:var(--shadow-soft);
+    text-align:center;
+    padding-bottom:16px;
+    overflow:hidden;
+    border-radius:50% 50% 14px 14px / 56px 56px 14px 14px;
+    transition:box-shadow .3s ease;
 }
-.podium-center .podium-shape{ box-shadow:var(--shadow); }
-.podium-media{ height:108px; display:flex; align-items:center; justify-content:center; }
-.podium-center .podium-media{ height:128px; }
-.podium-content{ transition:opacity .3s ease; opacity:1; }
-.podium-content.fading{ opacity:0; }
-.podium-name{
-  font-family: var(--font-display);
-  margin-top:10px; font-weight:700; font-size:.92rem; padding:0 10px;
-  line-height:1.25;
-  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2;
-  overflow:hidden; min-height:2.5em;  /* reserve 2 lines so short/long names stay same height */
+.podium-center .podium-shape
+{
+    box-shadow:var(--shadow);
 }
-.podium-center .podium-name{ font-size:1.05rem; }
-.podium-rank-label{
-  display:block; margin-top:2px; font-size:.72rem; font-weight:700;
-  color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em;
+.podium-media
+{
+    height:108px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.podium-center .podium-media
+{
+    height:128px;
+}
+.podium-content
+{
+    transition:opacity .3s ease;
+    opacity:1;
+}
+.podium-content.fading
+{
+    opacity:0;
+}
+.podium-name
+{
+    font-family: var(--font-display);
+    margin-top:10px;
+    font-weight:700;
+    font-size:.92rem;
+    padding:0 10px;
+    line-height:1.25;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    overflow:hidden;
+    min-height:2.5em;
+    /* reserve 2 lines so short/long names stay same height */
+}
+.podium-center .podium-name
+{
+    font-size:1.05rem;
+}
+.podium-rank-label
+{
+    display:block;
+    margin-top:2px;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:.04em;
 }
 
 /* ---------------------------------------------------------
    CONTROLS — search box + custom sort dropdown
    --------------------------------------------------------- */
-.menu-controls{
-  display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between;
-  margin-bottom:26px;
+.menu-controls
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:26px;
 }
-.search-sort{ display:flex; gap:12px; flex-wrap:wrap; flex:1; min-width:260px; align-items:stretch; }
-.search-box{
-  display:flex; align-items:center; gap:8px;
-  background:#fff; border:2px solid var(--line); border-radius:999px;
-  padding:10px 18px; flex:1; min-width:200px;
-  transition:border-color .2s ease;
+.search-sort
+{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    flex:1;
+    min-width:260px;
+    align-items:stretch;
 }
-.search-box:focus-within{ border-color:var(--accent); }
-.search-box input{
-  border:none; outline:none; background:transparent; font-family:inherit;
-  font-weight:600; color:var(--text-dark); width:100%; font-size:.95rem;
+.search-box
+{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:2px solid var(--line);
+    border-radius:999px;
+    padding:10px 18px;
+    flex:1;
+    min-width:200px;
+    transition:border-color .2s ease;
 }
-.search-box .search-icon{
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  color: var(--brown);
+.search-box:focus-within
+{
+    border-color:var(--accent);
+}
+.search-box input
+{
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:inherit;
+    font-weight:600;
+    color:var(--text-dark);
+    width:100%;
+    font-size:.95rem;
+}
+.search-box .search-icon
+{
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--brown);
 }
 
 /* Custom accessible dropdown — a native <select>'s popup list
    can't be restyled consistently across browsers, so this is a
    hand-built listbox instead (button + ul[role=listbox]), fully
    stylable and still keyboard accessible (see menu.js). */
-.custom-select{ position:relative; min-width:210px; }
-.custom-select-trigger{
-  font-family: var(--font-body);
-  width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px;
-  border:2px solid var(--line); border-radius:999px; background:#fff;
-  padding:10px 18px; font-weight:700; color:var(--text-dark); font-size:.9rem;
+.custom-select
+{
+    position:relative;
+    min-width:210px;
 }
-.custom-select-trigger .chevron{ transition:transform .25s ease; color:var(--accent-dark); }
-.custom-select.open .custom-select-trigger .chevron{ transform:rotate(180deg); }
-.custom-select-list{
-  position:absolute; top:calc(100% + 8px); left:0; right:0; z-index:50;
-  background:#fff; border:2px solid var(--line); border-radius:16px;
-  box-shadow:var(--shadow); padding:6px; opacity:0; transform:translateY(-6px);
-  pointer-events:none; transition:opacity .2s ease, transform .2s ease;
+.custom-select-trigger
+{
+    font-family: var(--font-body);
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    border:2px solid var(--line);
+    border-radius:999px;
+    background:#fff;
+    padding:10px 18px;
+    font-weight:700;
+    color:var(--text-dark);
+    font-size:.9rem;
 }
-.custom-select.open .custom-select-list{ opacity:1; transform:translateY(0); pointer-events:auto; }
-.custom-select-list li{
-  padding:10px 14px; border-radius:10px; font-weight:600; font-size:.88rem; cursor:pointer;
-  transition:background .15s ease, color .15s ease;
+.custom-select-trigger .chevron
+{
+    transition:transform .25s ease;
+    color:var(--accent-dark);
+}
+.custom-select.open .custom-select-trigger .chevron
+{
+    transform:rotate(180deg);
+}
+.custom-select-list
+{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+    z-index:50;
+    background:#fff;
+    border:2px solid var(--line);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:6px;
+    opacity:0;
+    transform:translateY(-6px);
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+}
+.custom-select.open .custom-select-list
+{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+.custom-select-list li
+{
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:.88rem;
+    cursor:pointer;
+    transition:background .15s ease, color .15s ease;
 }
 .custom-select-list li:hover,
-.custom-select-list li.is-active{ background:#F6E9D6; color:var(--accent-dark); }
-.custom-select-list li[aria-selected="true"]::after{ content:" ✓"; }
+.custom-select-list li.is-active
+{
+    background:#F6E9D6;
+    color:var(--accent-dark);
+}
+.custom-select-list li[aria-selected="true"]::after
+{
+    content:" ✓";
+}
 
 /* ---------------------------------------------------------
    CATEGORY CARDS + ACCORDION
    --------------------------------------------------------- */
-.category-row{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:12px; margin-top:20px;
+.category-row
+{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:12px;
+    margin-top:20px;
 }
-.category-card{
-  font-family: var(--font-display);
-  position:relative; border:none; padding:0; overflow:hidden;
-  height:82px; border-radius:16px;
-  box-shadow:var(--shadow-soft);
-  transition:transform .25s ease, box-shadow .25s ease;
-  background-size:cover;
-  background-position:center;
+.category-card
+{
+    font-family: var(--font-display);
+    position:relative;
+    border:none;
+    padding:0;
+    overflow:hidden;
+    height:82px;
+    border-radius:16px;
+    box-shadow:var(--shadow-soft);
+    transition:transform .25s ease, box-shadow .25s ease;
+    background-size:cover;
+    background-position:center;
 }
-.category-card-label{
-  position:absolute; left:14px; bottom:12px; right:14px;
-  color:#fff; font-family:var(--font-display); font-weight:600; font-size:1rem;
-  text-align:left; text-shadow:0 2px 6px rgba(0,0,0,.35);
+.category-card-label
+{
+    position:absolute;
+    left:14px;
+    bottom:12px;
+    right:14px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1rem;
+    text-align:left;
+    text-shadow:0 2px 6px rgba(0,0,0,.35);
 }
-.category-card::before{
-  content:""; position:absolute; inset:0;
-  background:rgba(74,53,42,.38); /* dark overlay for label legibility over photo */
-  transition:background .25s ease;
+.category-card::before
+{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(74,53,42,.38);
+    /* dark overlay for label legibility over photo */
+    transition:background .25s ease;
 }
-.category-card.active::before{ background:rgba(74,53,42,.52); }
-.category-card.active{ outline:3px solid var(--accent-dark); outline-offset:2px; }
+.category-card.active::before
+{
+    background:rgba(74,53,42,.52);
+}
+.category-card.active
+{
+    outline:3px solid var(--accent-dark);
+    outline-offset:2px;
+}
 
 /* CSS grid-rows accordion trick: animates height from 0fr to 1fr
    without any JS measuring the content's pixel height. */
-.accordion{
-  display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s ease;
-  margin-top:28px;
+.accordion
+{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .5s ease;
+    margin-top:28px;
 }
-.accordion.open{ grid-template-rows:1fr; }
-.accordion-inner{ overflow:hidden; min-height:0; }
+.accordion.open
+{
+    grid-template-rows:1fr;
+}
+.accordion-inner
+{
+    overflow:hidden;
+    min-height:0;
+}
 
 /* Live result-count text, shown above the grid. Updated in
    renderGrid() (menu.js). role="status" + aria-live="polite" on
    the element itself (see menu.html) means screen readers hear
    the update too, not just see it. */
-.results-status{
-  margin:4px 4px 0;
-  font-size:.85rem;
-  font-weight:700;
-  color:var(--text-muted);
+.results-status
+{
+    margin:4px 4px 0;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--text-muted);
 }
 
 /* ---------------------------------------------------------
    MENU GRID & ARCH CARDS
    --------------------------------------------------------- */
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-  gap:26px;
-  padding-top:18px;
-  transition:opacity .18s ease;
+.menu-grid
+{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:26px;
+    padding-top:18px;
+    transition:opacity .18s ease;
 }
-.menu-grid.is-fading{ opacity:0; }
+.menu-grid.is-fading
+{
+    opacity:0;
+}
 
-.menu-card{
-  position:relative;
-  opacity:0; transform:translateY(24px);
-  transition:opacity .5s ease, transform .5s ease;
-  display:flex; flex-direction:column; height:100%;
-  container-type:inline-size; /* lets .card-body text scale to THIS card's width, not the viewport */
+.menu-card
+{
+    position:relative;
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .5s ease, transform .5s ease;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    container-type:inline-size;
+    /* lets .card-body text scale to THIS card's width, not the viewport */
 }
-.menu-card.in-view{ opacity:1; transform:translateY(0); }
+.menu-card.in-view
+{
+    opacity:1;
+    transform:translateY(0);
+}
 
 /* Staggered entrance delay, driven by a data-attribute set in JS
    instead of an inline style="transition-delay:...", so all CSS
    stays in this external stylesheet. */
-.menu-card[data-delay="0"]{ transition-delay:0ms; }
-.menu-card[data-delay="1"]{ transition-delay:55ms; }
-.menu-card[data-delay="2"]{ transition-delay:110ms; }
-.menu-card[data-delay="3"]{ transition-delay:165ms; }
-.menu-card[data-delay="4"]{ transition-delay:220ms; }
-.menu-card[data-delay="5"]{ transition-delay:275ms; }
-.menu-card[data-delay="6"]{ transition-delay:330ms; }
-.menu-card[data-delay="7"]{ transition-delay:385ms; }
-.menu-card[data-delay="8"]{ transition-delay:440ms; }
-.menu-card[data-delay="9"]{ transition-delay:495ms; }
+.menu-card[data-delay="0"]
+{
+    transition-delay:0ms;
+}
+.menu-card[data-delay="1"]
+{
+    transition-delay:55ms;
+}
+.menu-card[data-delay="2"]
+{
+    transition-delay:110ms;
+}
+.menu-card[data-delay="3"]
+{
+    transition-delay:165ms;
+}
+.menu-card[data-delay="4"]
+{
+    transition-delay:220ms;
+}
+.menu-card[data-delay="5"]
+{
+    transition-delay:275ms;
+}
+.menu-card[data-delay="6"]
+{
+    transition-delay:330ms;
+}
+.menu-card[data-delay="7"]
+{
+    transition-delay:385ms;
+}
+.menu-card[data-delay="8"]
+{
+    transition-delay:440ms;
+}
+.menu-card[data-delay="9"]
+{
+    transition-delay:495ms;
+}
 
 /* Whole card is one clipped arch shape holding the picture,
    divider and text together (not just the picture on its own). */
-.card-shape{
-  background:var(--cream-card); overflow:hidden;
-  border-radius:50% 50% 16px 16px / 95px 95px 16px 16px;
-  box-shadow:var(--shadow-soft);
-  transition:box-shadow .3s ease, background .3s ease, transform .3s ease;
-  display:flex; flex-direction:column; height:100%;
+.card-shape
+{
+    background:var(--cream-card);
+    overflow:hidden;
+    border-radius:50% 50% 16px 16px / 95px 95px 16px 16px;
+    box-shadow:var(--shadow-soft);
+    transition:box-shadow .3s ease, background .3s ease, transform .3s ease;
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
-.menu-card:hover .card-shape{ box-shadow:var(--shadow); }
+.menu-card:hover .card-shape
+{
+    box-shadow:var(--shadow);
+}
 
 /* Top Seller badge sits centred on the seam of the arch, like a
    plaque above a doorway, so it never covers the photo or text. */
-.badge{
-  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
-  z-index:5;
-  display:flex; align-items:center; gap:5px;
-  padding:5px 14px; border-radius:999px; font-size:.72rem; font-weight:700;
-  color:#fff; box-shadow:0 3px 8px rgba(0,0,0,.25); white-space:nowrap;
+.badge
+{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:5;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    padding:5px 14px;
+    border-radius:999px;
+    font-size:.72rem;
+    font-weight:700;
+    color:#fff;
+    box-shadow:0 3px 8px rgba(0,0,0,.25);
+    white-space:nowrap;
 }
-.badge.top-seller{ background:linear-gradient(135deg,var(--accent),var(--accent-dark)); }
-
-.card-media{ position:relative; height:220px; }
-.card-media-inner{
-  width:100%; height:100%;
-  object-fit:cover;      /* crops to fill without distorting real photos */
-  object-position:center;
-  display:flex; align-items:center; justify-content:center; /* centres the fallback icon, if used */
-  transition:transform .5s ease;
+.badge.top-seller
+{
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));
 }
 
-.card-divider{ margin:0 16px; }
-
-.card-body{
-  padding:16px 16px 30px 16px;
-  display:flex; flex-direction:column;
-  flex:1; /* pushes to fill remaining card height, keeping cards even */
+.card-media
+{
+    position:relative;
+    height:220px;
 }
-.card-title-row{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; flex-wrap:wrap; }
+.card-media-inner
+{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    /* crops to fill without distorting real photos */
+    object-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /* centres the fallback icon, if used */
+    transition:transform .5s ease;
+}
+
+.card-divider
+{
+    margin:0 16px;
+}
+
+.card-body
+{
+    padding:16px 16px 30px 16px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    /* pushes to fill remaining card height, keeping cards even */
+}
+.card-title-row
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+    flex-wrap:wrap;
+}
 
 /* Font sizes below use cqw (container query width units) instead of
    vw/rem breakpoints — text scales to how wide THIS card currently
    is in the grid, not the browser window, so it stays readable
    whether the grid is showing 1, 2, 3 or 4 columns. */
-.card-body h3{
-  font-size:clamp(1rem,5.8cqw,1.25rem);
-  line-height:1.3;
-  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; line-clamp:1;
-  overflow:hidden; min-height:1.3em;
+.card-body h3
+{
+    font-size:clamp(1rem,5.8cqw,1.25rem);
+    line-height:1.3;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:1;
+    line-clamp:1;
+    overflow:hidden;
+    min-height:1.3em;
 }
-.card-price{
-  font-family:var(--font-display); color:var(--accent-dark); font-weight:700;
-  font-size:clamp(.95rem,5.4cqw,1.2rem);
-  white-space:nowrap;
+.card-price
+{
+    font-family:var(--font-display);
+    color:var(--accent-dark);
+    font-weight:700;
+    font-size:clamp(.95rem,5.4cqw,1.2rem);
+    white-space:nowrap;
 }
-.card-desc{
-  margin-top:6px;
-  font-size:clamp(.85rem,4.2cqw,1rem);
-  color:var(--text-muted); font-weight:600; line-height:1.4;
-  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2;
-  overflow:hidden; min-height:2.8em;
+.card-desc
+{
+    margin-top:6px;
+    font-size:clamp(.85rem,4.2cqw,1rem);
+    color:var(--text-muted);
+    font-weight:600;
+    line-height:1.4;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    overflow:hidden;
+    min-height:2.8em;
 }
-.card-ingredients{
-  margin-top:10px;
-  font-size:clamp(.8rem,3.8cqw,.9rem);
-  color:var(--accent-dark); font-weight:700; text-transform:uppercase; letter-spacing:.03em;
+.card-ingredients
+{
+    margin-top:10px;
+    font-size:clamp(.8rem,3.8cqw,.9rem);
+    color:var(--accent-dark);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.03em;
 }
-.card-ingredients span{
-  text-transform:none; color:var(--text-muted); font-weight:600; letter-spacing:0;
-  line-height:1.4;
-  font-size:clamp(.8rem,3.8cqw,.9rem);
-  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2;
-  overflow:hidden; min-height:2.8em;
+.card-ingredients span
+{
+    text-transform:none;
+    color:var(--text-muted);
+    font-weight:600;
+    letter-spacing:0;
+    line-height:1.4;
+    font-size:clamp(.8rem,3.8cqw,.9rem);
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    overflow:hidden;
+    min-height:2.8em;
 }
 
-.empty-state{
-  grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--text-muted);
+.empty-state
+{
+    grid-column:1/-1;
+    text-align:center;
+    padding:60px 20px;
+    color:var(--text-muted);
 }
-.empty-state .paw-icon{ font-size:2.4rem; display:block; margin-bottom:10px; }
+.empty-state .paw-icon
+{
+    font-size:2.4rem;
+    display:block;
+    margin-bottom:10px;
+}
 
 /* ---------------------------------------------------------
    HOVER-ONLY DECORATIONS
@@ -481,14 +990,20 @@
    Top Seller badge stay visible either way, since none of that
    content depends on hover.
    --------------------------------------------------------- */
-@media (hover:hover) and (pointer:fine){
-  .category-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+@media (hover:hover) and (pointer:fine)
+{
+    .category-card:hover
+    {
+        transform:translateY(-4px);
+        box-shadow:var(--shadow);
+    }
 
-  .menu-card:hover .card-shape{
-    background:#FFF9F0;
-    transform:scale(1.03);
-    box-shadow:var(--shadow);
-  }
+    .menu-card:hover .card-shape
+    {
+        background:#FFF9F0;
+        transform:scale(1.03);
+        box-shadow:var(--shadow);
+    }
 }
 
 /* ---------------------------------------------------------
@@ -497,17 +1012,45 @@
    handled entirely by style.css so it stays identical across
    every page — do not redefine it here.
    --------------------------------------------------------- */
-@media (max-width:860px){
-  .podium{ gap:10px; }
-  .podium-slot{ flex-basis:130px; }
-  .podium-slot.podium-center{ flex-basis:160px; margin-bottom:18px; }
+@media (max-width:860px)
+{
+    .podium
+    {
+        gap:10px;
+    }
+    .podium-slot
+    {
+        flex-basis:130px;
+    }
+    .podium-slot.podium-center
+    {
+        flex-basis:160px;
+        margin-bottom:18px;
+    }
 }
-@media (max-width:600px){
-  .section-wrap{ padding:46px 5vw; }
-  .category-row{ grid-template-columns:repeat(2,1fr); }
-  .podium{ gap:8px; }
-  .podium-slot{ flex-basis:100px; }
-  .podium-slot.podium-center{ flex-basis:130px; margin-bottom:14px; }
+@media (max-width:600px)
+{
+    .section-wrap
+    {
+        padding:46px 5vw;
+    }
+    .category-row
+    {
+        grid-template-columns:repeat(2,1fr);
+    }
+    .podium
+    {
+        gap:8px;
+    }
+    .podium-slot
+    {
+        flex-basis:100px;
+    }
+    .podium-slot.podium-center
+    {
+        flex-basis:130px;
+        margin-bottom:14px;
+    }
 }
 
 /* ---------------------------------------------------------
@@ -520,40 +1063,72 @@
    while keeping the same horizontal 3-card layout (no content
    divergence between devices — just smaller proportions).
    --------------------------------------------------------- */
-@media (max-width:380px){
-  .podium{ gap:6px; padding:14px 2px 6px; }
+@media (max-width:380px)
+{
+    .podium
+    {
+        gap:6px;
+        padding:14px 2px 6px;
+    }
 
-  .podium-slot{ flex-basis:78px; }
-  .podium-slot.podium-center{ flex-basis:104px; margin-bottom:10px; }
+    .podium-slot
+    {
+        flex-basis:78px;
+    }
+    .podium-slot.podium-center
+    {
+        flex-basis:104px;
+        margin-bottom:10px;
+    }
 
-  /* Shrink the arch shape's curvature to match the smaller card
+    /* Shrink the arch shape's curvature to match the smaller card
      width — the fixed 56px vertical radius from the base rule
      looks too tall/exaggerated at this size. */
-  .podium-shape{
-    border-radius:50% 50% 12px 12px / 40px 40px 12px 12px;
-  }
+    .podium-shape
+    {
+        border-radius:50% 50% 12px 12px / 40px 40px 12px 12px;
+    }
 
-  .podium-media{ height:66px; }
-  .podium-center .podium-media{ height:80px; }
+    .podium-media
+    {
+        height:66px;
+    }
+    .podium-center .podium-media
+    {
+        height:80px;
+    }
 
-  .podium-medal{ font-size:1.15rem; top:-12px; }
+    .podium-medal
+    {
+        font-size:1.15rem;
+        top:-12px;
+    }
 
-  .podium-name{
-    font-size:.72rem;
-    min-height:2.2em;
-    padding:0 4px;
-  }
-  .podium-center .podium-name{ font-size:.8rem; }
+    .podium-name
+    {
+        font-size:.72rem;
+        min-height:2.2em;
+        padding:0 4px;
+    }
+    .podium-center .podium-name
+    {
+        font-size:.8rem;
+    }
 
-  .podium-rank-label{ font-size:.6rem; }
+    .podium-rank-label
+    {
+        font-size:.6rem;
+    }
 }
 
 /* Respect users who've asked their OS for reduced motion */
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
-    scroll-behavior:auto !important;
-  }
+@media (prefers-reduced-motion:reduce)
+{
+    *,*::before,*::after
+    {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
 }
