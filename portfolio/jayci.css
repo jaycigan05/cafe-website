@@ -3,75 +3,75 @@
 /* ---- CSS custom properties (scoped to this page) ---- */
 :root
 {
-    --p-accent: var(--color-accent);
-    /* warm orange, matches café theme */
-    --p-tag-bg: #FDF0E6;
-    /* light orange tint for tags */
-    --p-tag-color: var(--color-primary);
-    /* coffee brown for tag text */
+	--p-accent: var(--color-accent);
+	/* warm orange, matches café theme */
+	--p-tag-bg: #FDF0E6;
+	/* light orange tint for tags */
+	--p-tag-color: var(--color-primary);
+	/* coffee brown for tag text */
 }
 
 /* ---- HERO ---- */
 .p-hero
 {
-    background-color: var(--color-surface);
-    padding: var(--space-xl) 0;
-    border-bottom: 1px solid var(--color-border);
+	background-color: var(--color-surface);
+	padding: var(--space-xl) 0;
+	border-bottom: 1px solid var(--color-border);
 }
 
 .p-hero-inner
 {
-    display: flex;
-    /* Flexbox: photo left, text right */
-    align-items: center;
-    gap: var(--space-lg);
+	display: flex;
+	/* Flexbox: photo left, text right */
+	align-items: center;
+	gap: var(--space-lg);
 }
 
 .p-avatar
 {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    /* makes it a circle */
-    object-fit: cover;
-    object-position: center top;
-    border: 4px solid var(--color-accent);
-    flex-shrink: 0;
-    /* never squish the photo */
-    animation: fadeInLeft 0.6s ease;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	/* makes it a circle */
+	object-fit: cover;
+	object-position: center top;
+	border: 4px solid var(--color-accent);
+	flex-shrink: 0;
+	/* never squish the photo */
+	animation: fadeInLeft 0.6s ease;
 }
 
 .p-hero-text
 {
-    animation: fadeInRight 0.6s ease;
+	animation: fadeInRight 0.6s ease;
 }
 
 .p-hero-text h1
 {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-xs);
+	font-size: 2.5rem;
+	margin-bottom: var(--space-xs);
 }
 
 .p-title
 {
-    color: var(--p-accent);
-    font-weight: 600;
-    margin-bottom: var(--space-sm);
+	color: var(--p-accent);
+	font-weight: 600;
+	margin-bottom: var(--space-sm);
 }
 
 .p-bio-short
 {
-    color: var(--color-text-muted);
-    max-width: 540px;
-    margin-bottom: var(--space-md);
+	color: var(--color-text-muted);
+	max-width: 540px;
+	margin-bottom: var(--space-md);
 }
 
 /* row of CV download + social buttons under the bio */
 .p-hero-actions
 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-xs);
 }
 
 /* icon inside a .btn (GitHub / LinkedIn / Email) — sized to sit
@@ -79,315 +79,315 @@
    an <img> can't inherit currentColor */
 .btn-icon
 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    margin-right: 6px;
-    vertical-align: -3px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	margin-right: 6px;
+	vertical-align: -3px;
 }
 
 .btn-icon img
 {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 /* ---- ABOUT & EDUCATION (CSS Grid 2 columns) ---- */
 .p-about
 {
-    background-color: var(--color-bg);
-    padding: var(--space-xl) 0;
+	background-color: var(--color-bg);
+	padding: var(--space-xl) 0;
 }
 
 .p-grid-2
 {
-    display: grid;
-    /* CSS Grid */
-    grid-template-columns: 1fr 1fr;
-    /* two equal columns */
-    gap: var(--space-lg);
+	display: grid;
+	/* CSS Grid */
+	grid-template-columns: 1fr 1fr;
+	/* two equal columns */
+	gap: var(--space-lg);
 }
 
 .p-card
 {
-    background-color: var(--color-surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: var(--space-md);
+	background-color: var(--color-surface);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: var(--space-md);
 }
 
 .p-card h2
 {
-    margin-bottom: var(--space-sm);
+	margin-bottom: var(--space-sm);
 }
 
 .p-edu-item
 {
-    margin-bottom: var(--space-sm);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--color-border);
+	margin-bottom: var(--space-sm);
+	padding-bottom: var(--space-sm);
+	border-bottom: 1px solid var(--color-border);
 }
 
 .p-edu-item:last-child
 {
-    border-bottom: none;
-    margin-bottom: 0;
+	border-bottom: none;
+	margin-bottom: 0;
 }
 
 .p-edu-title
 {
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 2px;
+	font-weight: 600;
+	color: var(--color-text);
+	margin-bottom: 2px;
 }
 
 .p-edu-sub
 {
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 2px;
+	color: var(--color-text-muted);
+	font-size: 0.85rem;
+	margin-bottom: 2px;
 }
 
 /* ---- SKILLS (CSS-only progress bars) ---- */
 .p-skills
 {
-    background-color: var(--color-surface);
-    padding: var(--space-xl) 0;
+	background-color: var(--color-surface);
+	padding: var(--space-xl) 0;
 }
 
 .p-skills h2
 {
-    text-align: center;
-    margin-bottom: var(--space-xs);
+	text-align: center;
+	margin-bottom: var(--space-xs);
 }
 
 .p-skills-grid
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
-    margin-top: var(--space-lg);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-md);
+	margin-top: var(--space-lg);
 }
 
 .p-skill-item
 {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }
 
 .p-skill-label
 {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-text);
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--color-text);
 }
 
 /* the grey track */
 .p-bar-track
 {
-    background-color: var(--color-border);
-    border-radius: 999px;
-    height: 10px;
-    overflow: hidden;
+	background-color: var(--color-border);
+	border-radius: 999px;
+	height: 10px;
+	overflow: hidden;
 }
 
 /* the coloured fill, width driven by CSS variable --fill */
 .p-bar-fill
 {
-    height: 100%;
-    width: var(--fill);
-    /* e.g. 85% set inline in HTML */
-    background-color: var(--p-accent);
-    border-radius: 999px;
-    animation: growBar 1s ease forwards;
+	height: 100%;
+	width: var(--fill);
+	/* e.g. 85% set inline in HTML */
+	background-color: var(--p-accent);
+	border-radius: 999px;
+	animation: growBar 1s ease forwards;
 }
 
 /* bar grows from 0 to full width on page load */
 @keyframes growBar
 {
-    from
-    {
-        width: 0;
-    }
-    to
-    {
-        width: var(--fill);
-    }
+	from
+	{
+		width: 0;
+	}
+	to
+	{
+		width: var(--fill);
+	}
 }
 
 /* ---- PROJECTS (CSS Grid) ---- */
 .p-projects
 {
-    background-color: var(--color-bg);
-    padding: var(--space-xl) 0;
+	background-color: var(--color-bg);
+	padding: var(--space-xl) 0;
 }
 
 .p-projects h2
 {
-    text-align: center;
-    margin-bottom: var(--space-xs);
+	text-align: center;
+	margin-bottom: var(--space-xs);
 }
 
 .p-projects-more
 {
-    text-align: center;
-    margin-top: var(--space-lg);
+	text-align: center;
+	margin-top: var(--space-lg);
 }
 
 .p-projects-grid
 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
-    margin-top: var(--space-lg);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-md);
+	margin-top: var(--space-lg);
 }
 
 .p-project-card
 {
-    background-color: var(--color-surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: var(--space-md);
-    overflow: hidden;
-    /* clips .p-project-image to the card's rounded top corners */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+	background-color: var(--color-surface);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: var(--space-md);
+	overflow: hidden;
+	/* clips .p-project-image to the card's rounded top corners */
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* photo strip at the top of a card — bleeds edge-to-edge by cancelling
    the card's own padding with a negative margin */
 .p-project-image
 {
-    width: calc(100% + 2 * var(--space-md));
-    height: 160px;
-    object-fit: cover;
-    margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);
+	width: calc(100% + 2 * var(--space-md));
+	height: 160px;
+	object-fit: cover;
+	margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);
 }
 
 .p-project-card:hover
 {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .p-project-tag
 {
-    display: inline-block;
-    background-color: var(--p-tag-bg);
-    color: var(--p-tag-color);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 2px var(--space-xs);
-    border-radius: 999px;
-    margin-bottom: var(--space-xs);
-    letter-spacing: 0.04em;
+	display: inline-block;
+	background-color: var(--p-tag-bg);
+	color: var(--p-tag-color);
+	font-size: 0.75rem;
+	font-weight: 700;
+	padding: 2px var(--space-xs);
+	border-radius: 999px;
+	margin-bottom: var(--space-xs);
+	letter-spacing: 0.04em;
 }
 
 .p-project-card h3
 {
-    margin-bottom: var(--space-xs);
+	margin-bottom: var(--space-xs);
 }
 
 .p-project-card p
 {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 0;
+	color: var(--color-text-muted);
+	font-size: 0.9rem;
+	margin-bottom: 0;
 }
 
 .p-project-link
 {
-    display: inline-block;
-    margin-top: var(--space-xs);
-    color: var(--p-accent);
-    font-weight: 600;
-    font-size: 0.85rem;
+	display: inline-block;
+	margin-top: var(--space-xs);
+	color: var(--p-accent);
+	font-weight: 600;
+	font-size: 0.85rem;
 }
 
 .p-project-link:hover
 {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* ---- RECENT ACTIVITY (reuses .p-projects-grid / .p-project-card) ---- */
 .p-activities
 {
-    background-color: var(--color-surface);
-    padding: var(--space-xl) 0;
+	background-color: var(--color-surface);
+	padding: var(--space-xl) 0;
 }
 
 .p-activities h2
 {
-    text-align: center;
-    margin-bottom: var(--space-xs);
+	text-align: center;
+	margin-bottom: var(--space-xs);
 }
 
 .p-activities-more
 {
-    text-align: center;
-    margin-top: var(--space-lg);
+	text-align: center;
+	margin-top: var(--space-lg);
 }
 
 /* ---- ANIMATIONS ---- */
 @keyframes fadeInLeft
 {
-    from
-    {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to
-    {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	from
+	{
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	to
+	{
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 @keyframes fadeInRight
 {
-    from
-    {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to
-    {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	from
+	{
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	to
+	{
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px)
 {
-    .p-hero-inner
-    {
-        flex-direction: column;
-        text-align: center;
-    }
+	.p-hero-inner
+	{
+		flex-direction: column;
+		text-align: center;
+	}
 
-    .p-hero-actions
-    {
-        justify-content: center;
-    }
+	.p-hero-actions
+	{
+		justify-content: center;
+	}
 
-    .p-grid-2
-    {
-        grid-template-columns: 1fr;
-    }
+	.p-grid-2
+	{
+		grid-template-columns: 1fr;
+	}
 
-    .p-skills-grid
-    {
-        grid-template-columns: 1fr;
-    }
+	.p-skills-grid
+	{
+		grid-template-columns: 1fr;
+	}
 
-    .p-projects-grid
-    {
-        grid-template-columns: 1fr;
-    }
+	.p-projects-grid
+	{
+		grid-template-columns: 1fr;
+	}
 }

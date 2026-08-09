@@ -4,39 +4,39 @@
 
 (function ()
 {
-    const saved = localStorage.getItem('pawfeeTheme');
-    if (saved === 'dark')
-    {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
+	const saved = localStorage.getItem('pawfeeTheme');
+	if (saved === 'dark')
+	{
+		document.documentElement.setAttribute('data-theme', 'dark');
+	}
 })();
 
 document.addEventListener('DOMContentLoaded', () =>
 {
-    const toggle = document.getElementById('themeToggle');
-    if (!toggle) return;
+	const toggle = document.getElementById('themeToggle');
+	if (!toggle) return;
 
-    const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+	const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
 
-    // sync the button's own state with whatever theme actually got applied
-    toggle.setAttribute('aria-pressed', String(isDark()));
-    toggle.setAttribute('aria-label', isDark() ? 'Switch to light mode' : 'Switch to dark mode');
+	// sync the button's own state with whatever theme actually got applied
+	toggle.setAttribute('aria-pressed', String(isDark()));
+	toggle.setAttribute('aria-label', isDark() ? 'Switch to light mode' : 'Switch to dark mode');
 
-    toggle.addEventListener('click', () =>
-    {
-        const goingDark = !isDark();
+	toggle.addEventListener('click', () =>
+	{
+		const goingDark = !isDark();
 
-        if (goingDark)
-        {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-        else
-        {
-            document.documentElement.removeAttribute('data-theme');
-        }
+		if (goingDark)
+		{
+			document.documentElement.setAttribute('data-theme', 'dark');
+		}
+		else
+		{
+			document.documentElement.removeAttribute('data-theme');
+		}
 
-        localStorage.setItem('pawfeeTheme', goingDark ? 'dark' : 'light');
-        toggle.setAttribute('aria-pressed', String(goingDark));
-        toggle.setAttribute('aria-label', goingDark ? 'Switch to light mode' : 'Switch to dark mode');
-    });
+		localStorage.setItem('pawfeeTheme', goingDark ? 'dark' : 'light');
+		toggle.setAttribute('aria-pressed', String(goingDark));
+		toggle.setAttribute('aria-label', goingDark ? 'Switch to light mode' : 'Switch to dark mode');
+	});
 });

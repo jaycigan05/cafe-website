@@ -4,55 +4,55 @@
 
 :root
 {
-    /* ---- Theme palette ---- */
-    --cream: #F2E7D5;
-    --white: #FFFFFF;
-    --brown: #4A352A;
-    --mocha: #3B2A20;
-    --accent: #A67C52;
-    --accent-dark: #68523B;
-    --text-dark: #3E2C23;
-    --text-muted: #AA947B;
-    --text-light: #E9D9C4;
+	/* ---- Theme palette ---- */
+	--cream: #F2E7D5;
+	--white: #FFFFFF;
+	--brown: #4A352A;
+	--mocha: #3B2A20;
+	--accent: #A67C52;
+	--accent-dark: #68523B;
+	--text-dark: #3E2C23;
+	--text-muted: #AA947B;
+	--text-light: #E9D9C4;
 
-    /* ---- Theme fonts ---- */
-    --font-display: 'Mogra', sans-serif;
-    --font-body: 'Patrick Hand', sans-serif;
-    --font-logo: 'Coiny', sans-serif;
-    --radius: 12px;
-    --radius-sm: 12px;
-    --transition: 0.25s ease;
+	/* ---- Theme fonts ---- */
+	--font-display: 'Mogra', sans-serif;
+	--font-body: 'Patrick Hand', sans-serif;
+	--font-logo: 'Coiny', sans-serif;
+	--radius: 12px;
+	--radius-sm: 12px;
+	--transition: 0.25s ease;
 
-    /* ---- navbar (now theme-aware, see [data-theme="dark"] below) ---- */
-    --nav-bg: #FAF4EC;
-    --nav-text: #2E2D2B;
-    --nav-accent: #96714b;
-    --nav-accent-dark: #655340;
-    --nav-radius: 999px;
-    --nav-radius-sm: 14px;
+	/* ---- navbar (now theme-aware, see [data-theme="dark"] below) ---- */
+	--nav-bg: #FAF4EC;
+	--nav-text: #2E2D2B;
+	--nav-accent: #96714b;
+	--nav-accent-dark: #655340;
+	--nav-radius: 999px;
+	--nav-radius-sm: 14px;
 
-    /* footer intentionally stays this dark shade in both themes —
-       it's not tied to --nav-text any more (that one changes with
-       the theme now), see .footer below */
-    --footer-bg: #2E2D2B;
+	/* footer intentionally stays this dark shade in both themes —
+	   it's not tied to --nav-text any more (that one changes with
+	   the theme now), see .footer below */
+	--footer-bg: #2E2D2B;
 
-    /* old variable names — keeping these around so register.css etc
-       don't need to be rewritten just to pick up this file */
-    --color-bg: var(--cream);
-    --color-surface: var(--white);
-    --color-primary: #6f533f;
-    --color-primary-dark: var(--brown);
-    --color-accent: var(--accent);
-    --color-text: var(--text-dark);
-    --color-text-muted: var(--text-muted);
-    --color-border: #e0d7c9;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --max-width: 1100px;
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2.5rem;
-    --space-xl: 4rem;
+	/* old variable names — keeping these around so register.css etc
+	   don't need to be rewritten just to pick up this file */
+	--color-bg: var(--cream);
+	--color-surface: var(--white);
+	--color-primary: #6f533f;
+	--color-primary-dark: var(--brown);
+	--color-accent: var(--accent);
+	--color-text: var(--text-dark);
+	--color-text-muted: var(--text-muted);
+	--color-border: #e0d7c9;
+	--shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--max-width: 1100px;
+	--space-xs: 0.5rem;
+	--space-sm: 1rem;
+	--space-md: 1.5rem;
+	--space-lg: 2.5rem;
+	--space-xl: 4rem;
 }
 
 /* ---- dark mode ----
@@ -62,37 +62,37 @@
    already read fine on a dark page without changing. */
 [data-theme="dark"]
 {
-    --cream: #23201c;
-    --white: #2e2a25;
-    --brown: #EDE3D3;
-    --mocha: #17130f;
-    --accent: #c99f70;
-    --accent-dark: #a67c52;
-    --text-dark: #EDE3D3;
-    --text-muted: #b7a188;
+	--cream: #23201c;
+	--white: #2e2a25;
+	--brown: #EDE3D3;
+	--mocha: #17130f;
+	--accent: #c99f70;
+	--accent-dark: #a67c52;
+	--text-dark: #EDE3D3;
+	--text-muted: #b7a188;
 
-    --nav-bg: #201c18;
-    --nav-text: #EDE3D3;
-    --nav-accent: #c99f70;
-    --nav-accent-dark: #a67c52;
+	--nav-bg: #201c18;
+	--nav-text: #EDE3D3;
+	--nav-accent: #c99f70;
+	--nav-accent-dark: #a67c52;
 
-    --color-bg: var(--cream);
-    --color-surface: var(--white);
-    --color-text: var(--text-dark);
-    --color-text-muted: var(--text-muted);
-    --color-border: #43392f;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+	--color-bg: var(--cream);
+	--color-surface: var(--white);
+	--color-text: var(--text-dark);
+	--color-text-muted: var(--text-muted);
+	--color-border: #43392f;
+	--shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 *
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* fallback fade for the dark-mode switch — anything with its own
-       transition already set (buttons, links, etc) just keeps that one,
-       since a more specific selector always wins over this */
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* fallback fade for the dark-mode switch — anything with its own
+	   transition already set (buttons, links, etc) just keeps that one,
+	   since a more specific selector always wins over this */
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 /* bumping the root font-size to 18px scales every rem value on the
@@ -103,28 +103,28 @@
    actually wrong */
 html
 {
-    font-size: 18px;
-    scroll-behavior: smooth;
+	font-size: 18px;
+	scroll-behavior: smooth;
 }
 
 body
 {
-    font-family: var(--font-body);
-    color: var(--text-dark);
-    background: var(--white);
-    line-height: 1.6;
+	font-family: var(--font-body);
+	color: var(--text-dark);
+	background: var(--white);
+	line-height: 1.6;
 }
 
 a
 {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 img
 {
-    max-width: 100%;
-    display: block;
+	max-width: 100%;
+	display: block;
 }
 
 /* a11y helpers: skip link, screen-reader-only text, focus ring.
@@ -132,259 +132,259 @@ img
    delete these without checking every page still has them */
 .visually-hidden
 {
-    position:absolute;
-    width:1px;
-    height:1px;
-    padding:0;
-    margin:-1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap;
-    border:0;
+	position:absolute;
+	width:1px;
+	height:1px;
+	padding:0;
+	margin:-1px;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	white-space:nowrap;
+	border:0;
 }
 
 a:focus-visible, button:focus-visible, input:focus-visible,
 [tabindex]:focus-visible
 {
-    outline:var(--focus-ring);
-    outline-offset:3px;
-    border-radius:6px;
+	outline:var(--focus-ring);
+	outline-offset:3px;
+	border-radius:6px;
 }
 
 .skip-link
 {
-    position:absolute;
-    left:12px;
-    top:-60px;
-    /* fixed dark bg + white text on purpose, same in both themes —
-       a11y overlay needs to stay high-contrast, not track the theme
-       (var(--text-dark) turns light in dark mode, which would've
-       left white text nearly invisible on a light pill) */
-    background:#2E2D2B;
-    color:#fff;
-    padding:10px 16px;
-    border-radius:0 0 10px 10px;
-    z-index:999;
-    font-weight:700;
-    transition:top .2s ease;
+	position:absolute;
+	left:12px;
+	top:-60px;
+	/* fixed dark bg + white text on purpose, same in both themes —
+	   a11y overlay needs to stay high-contrast, not track the theme
+	   (var(--text-dark) turns light in dark mode, which would've
+	   left white text nearly invisible on a light pill) */
+	background:#2E2D2B;
+	color:#fff;
+	padding:10px 16px;
+	border-radius:0 0 10px 10px;
+	z-index:999;
+	font-weight:700;
+	transition:top .2s ease;
 }
 .skip-link:focus
 {
-    top:0;
+	top:0;
 }
 
 /* fallback for any heading/paragraph that doesn't have a more
    specific rule elsewhere (.hero-heading etc still win over this) */
 h1, h2, h3, h4
 {
-    font-family: var(--font-display);
-    letter-spacing: 0.05em;
-    color: var(--brown);
-    margin-bottom: var(--space-sm);
-    line-height: 1.2;
+	font-family: var(--font-display);
+	letter-spacing: 0.05em;
+	color: var(--brown);
+	margin-bottom: var(--space-sm);
+	line-height: 1.2;
 }
 
 p
 {
-    margin-bottom: var(--space-sm);
+	margin-bottom: var(--space-sm);
 }
 
 .section-container
 {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 32px;
+	max-width: 1160px;
+	margin: 0 auto;
+	padding: 0 32px;
 }
 
 /* narrower legacy version of .section-container, some markup
    already expects this class name so keeping it around */
 .container
 {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--space-md);
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 var(--space-md);
 }
 
 /* the little label above headings, reused everywhere */
 .eyebrow
 {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    opacity: 0.75;
-    margin-bottom: 14px;
-    font-weight: 500;
+	font-size: 0.8rem;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: var(--text-light);
+	opacity: 0.75;
+	margin-bottom: 14px;
+	font-weight: 500;
 }
 
 .eyebrow-dark
 {
-    color: var(--accent-dark);
-    opacity: 1;
+	color: var(--accent-dark);
+	opacity: 1;
 }
 
 .eyebrow.center,
 h2.center
 {
-    text-align: center;
+	text-align: center;
 }
 
 /* ---- navbar ---- */
 
 .navbar
 {
-    background: var(--nav-bg);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    font-family: var(--font-body);
+	background: var(--nav-bg);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	font-family: var(--font-body);
 }
 
 .nav-container
 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 18px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 18px 32px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .logo
 {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    /* keeps the logo from getting squeezed by nav-links */
-    min-width: 0;
-    /* so logo-text's nowrap actually works inside a flex item */
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+	/* keeps the logo from getting squeezed by nav-links */
+	min-width: 0;
+	/* so logo-text's nowrap actually works inside a flex item */
 }
 
 .logo-image
 {
-    height: 58px;
-    width: auto;
-    flex-shrink: 0;
+	height: 58px;
+	width: auto;
+	flex-shrink: 0;
 }
 
 .logo-text
 {
-    font-family: var(--font-logo);
-    font-weight: 600;
-    /* clamp() so it shrinks smoothly instead of wrapping — "PAWFEE
-       CAFÉ" used to break onto two lines on small screens */
-    font-size: clamp(1.05rem, 4.6vw, 1.5rem);
-    letter-spacing: 1px;
-    color: var(--nav-text);
-    white-space: nowrap;
-    /* logo text never wraps, however tight it gets */
+	font-family: var(--font-logo);
+	font-weight: 600;
+	/* clamp() so it shrinks smoothly instead of wrapping — "PAWFEE
+	   CAFÉ" used to break onto two lines on small screens */
+	font-size: clamp(1.05rem, 4.6vw, 1.5rem);
+	letter-spacing: 1px;
+	color: var(--nav-text);
+	white-space: nowrap;
+	/* logo text never wraps, however tight it gets */
 }
 
 .nav-links
 {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+	display: flex;
+	align-items: center;
+	gap: 32px;
 }
 
 .nav-link
 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--nav-text);
-    padding: 6px 2px;
-    position: relative;
-    transition: color var(--transition);
-    white-space: nowrap;
-    /* don't let the labels wrap */
-    flex-shrink: 0;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--nav-text);
+	padding: 6px 2px;
+	position: relative;
+	transition: color var(--transition);
+	white-space: nowrap;
+	/* don't let the labels wrap */
+	flex-shrink: 0;
 }
 
 .nav-link::after
 {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: var(--nav-accent);
-    transition: width var(--transition);
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 0;
+	height: 2px;
+	background: var(--nav-accent);
+	transition: width var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active
 {
-    color: var(--nav-accent);
+	color: var(--nav-accent);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after
 {
-    width: 100%;
+	width: 100%;
 }
 
 .nav-cta
 {
-    background: var(--nav-accent);
-    color: var(--white);
-    padding: 9px 20px;
-    border-radius: var(--nav-radius);
-    transition: background var(--transition), transform var(--transition);
-    /* stops flexbox squishing this into a circle around 721-900px
-       wide, where the nav row runs out of space and the 999px
-       radius + shrunk width made it collapse down to a dot */
-    white-space: nowrap;
-    flex-shrink: 0;
+	background: var(--nav-accent);
+	color: var(--white);
+	padding: 9px 20px;
+	border-radius: var(--nav-radius);
+	transition: background var(--transition), transform var(--transition);
+	/* stops flexbox squishing this into a circle around 721-900px
+	   wide, where the nav row runs out of space and the 999px
+	   radius + shrunk width made it collapse down to a dot */
+	white-space: nowrap;
+	flex-shrink: 0;
 }
 
 .nav-cta::after
 {
-    display: none;
+	display: none;
 }
 
 .nav-cta:hover
 {
-    background: var(--nav-accent-dark);
-    color: var(--white);
-    transform: translateY(-2px);
+	background: var(--nav-accent-dark);
+	color: var(--white);
+	transform: translateY(-2px);
 }
 
 .nav-toggle
 {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    flex-shrink: 0;
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+	flex-shrink: 0;
 }
 
 .nav-toggle span
 {
-    width: 24px;
-    height: 2px;
-    background: var(--nav-text);
-    transition: var(--transition);
+	width: 24px;
+	height: 2px;
+	background: var(--nav-text);
+	transition: var(--transition);
 }
 
 .nav-toggle.open span:nth-child(1)
 {
-    transform: translateY(7px) rotate(45deg);
+	transform: translateY(7px) rotate(45deg);
 }
 
 .nav-toggle.open span:nth-child(2)
 {
-    opacity: 0;
+	opacity: 0;
 }
 
 .nav-toggle.open span:nth-child(3)
 {
-    transform: translateY(-7px) rotate(-45deg);
+	transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ---- day/night toggle ----
@@ -392,80 +392,80 @@ h2.center
    (set by js/theme.js) decides which one is visible */
 .theme-toggle
 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    /* solid white, same in both themes — the sun/moon PNGs aren't
-       perfectly transparent right up to their edges, so a white
-       circle hides that better than a see-through one would */
-    background: #fff;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background var(--transition), transform var(--transition);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 38px;
+	height: 38px;
+	border: none;
+	border-radius: 50%;
+	/* solid white, same in both themes — the sun/moon PNGs aren't
+	   perfectly transparent right up to their edges, so a white
+	   circle hides that better than a see-through one would */
+	background: #fff;
+	cursor: pointer;
+	flex-shrink: 0;
+	transition: background var(--transition), transform var(--transition);
 }
 
 .theme-toggle:hover
 {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
-    transform: translateY(-2px);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+	transform: translateY(-2px);
 }
 
 .theme-icon
 {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    transition: opacity var(--transition), transform var(--transition);
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+	transition: opacity var(--transition), transform var(--transition);
 }
 
 .theme-icon-moon
 {
-    opacity: 0;
-    transform: scale(0.6) rotate(-40deg);
+	opacity: 0;
+	transform: scale(0.6) rotate(-40deg);
 }
 
 [data-theme="dark"] .theme-icon-sun
 {
-    opacity: 0;
-    transform: scale(0.6) rotate(40deg);
+	opacity: 0;
+	transform: scale(0.6) rotate(40deg);
 }
 
 [data-theme="dark"] .theme-icon-moon
 {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
+	opacity: 1;
+	transform: scale(1) rotate(0deg);
 }
 
 /* ---- buttons ---- */
 
 .btn
 {
-    display: inline-block;
-    padding: 13px 28px;
-    border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 0.92rem;
-    text-align: center;
-    cursor: pointer;
-    border: 2px solid transparent;
-    background: var(--color-primary);
-    /* fixed white, not var(--white) — --color-primary stays the same
-       dark brown in both themes (see the dark-mode block above), but
-       --white flips dark at night, which turned this text invisible */
-    color: #fff;
-    transition: background var(--transition), color var(--transition),
-    border-color var(--transition), transform var(--transition);
+	display: inline-block;
+	padding: 13px 28px;
+	border-radius: var(--radius);
+	font-weight: 600;
+	font-size: 0.92rem;
+	text-align: center;
+	cursor: pointer;
+	border: 2px solid transparent;
+	background: var(--color-primary);
+	/* fixed white, not var(--white) — --color-primary stays the same
+	   dark brown in both themes (see the dark-mode block above), but
+	   --white flips dark at night, which turned this text invisible */
+	color: #fff;
+	transition: background var(--transition), color var(--transition),
+	border-color var(--transition), transform var(--transition);
 }
 
 .btn:hover
 {
-    background: var(--accent);
+	background: var(--accent);
 }
 
 /* for light backgrounds (register card, team cards). pages with a
@@ -479,254 +479,254 @@ h2.center
    until those backgrounds started turning dark too. */
 .btn-outline
 {
-    background: transparent;
-    border-color: var(--color-primary-dark);
-    color: var(--color-primary-dark);
+	background: transparent;
+	border-color: var(--color-primary-dark);
+	color: var(--color-primary-dark);
 }
 
 .btn-outline:hover
 {
-    background: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-    color: var(--white);
-    transform: translateY(-2px);
+	background: var(--color-primary-dark);
+	border-color: var(--color-primary-dark);
+	color: var(--white);
+	transform: translateY(-2px);
 }
 
 .btn-solid
 {
-    background: var(--accent);
-    color: var(--white);
+	background: var(--accent);
+	color: var(--white);
 }
 
 .btn-solid:hover
 {
-    background: var(--accent-dark);
-    transform: translateY(-2px);
+	background: var(--accent-dark);
+	transform: translateY(-2px);
 }
 
 .btn-phone-icon
 {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: -3px;
-    margin-right: 4px;
-    /* <img> can't inherit currentColor, so phone.svg won't pick up
-       the button's white text — this filter fakes it */
-    filter: brightness(0) invert(1);
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: -3px;
+	margin-right: 4px;
+	/* <img> can't inherit currentColor, so phone.svg won't pick up
+	   the button's white text — this filter fakes it */
+	filter: brightness(0) invert(1);
 }
 
 .btn-ghost
 {
-    background: transparent;
-    color: var(--accent-dark);
-    padding: 0;
-    font-weight: 600;
-    border: none;
+	background: transparent;
+	color: var(--accent-dark);
+	padding: 0;
+	font-weight: 600;
+	border: none;
 }
 
 .btn-ghost:hover
 {
-    color: var(--brown-dark);
+	color: var(--brown-dark);
 }
 
 /* ---- dog card — used on both the homepage teaser and team.html ---- */
 
 .dog-grid
 {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
 }
 
 .dog-card
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	text-align: center;
 }
 
 .dog-card img
 {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #e5ddcf;
-    border: 3px solid var(--white);
-    transition: transform var(--transition), border-color var(--transition);
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #e5ddcf;
+	border: 3px solid var(--white);
+	transition: transform var(--transition), border-color var(--transition);
 }
 
 .dog-card:hover img
 {
-    transform: scale(1.06) rotate(-3deg);
-    border-color: var(--accent);
+	transform: scale(1.06) rotate(-3deg);
+	border-color: var(--accent);
 }
 
 .dog-name
 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 0.95rem;
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: 0.95rem;
 }
 
 .dog-type
 {
-    font-size: 0.78rem;
-    color: var(--text-muted);
+	font-size: 0.78rem;
+	color: var(--text-muted);
 }
 
 /* ---- footer ---- */
 
 .footer
 {
-    background: var(--footer-bg);
-    color: var(--text-light);
-    padding: 70px 0 24px;
-    font-family: var(--font-body);
+	background: var(--footer-bg);
+	color: var(--text-light);
+	padding: 70px 0 24px;
+	font-family: var(--font-body);
 }
 
 .footer-grid
 {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
-    gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: start;
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+	gap: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	align-items: start;
 }
 
 .footer-image img
 {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: var(--nav-radius-sm);
-    background: #55534f;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border-radius: var(--nav-radius-sm);
+	background: #55534f;
 }
 
 .footer-logo
 {
-    color: var(--text-light);
-    display: block;
-    margin-bottom: 14px;
+	color: var(--text-light);
+	display: block;
+	margin-bottom: 14px;
 }
 
 .footer-brand p
 {
-    opacity: 0.65;
-    font-size: 0.88rem;
-    margin-bottom: 4px;
+	opacity: 0.65;
+	font-size: 0.88rem;
+	margin-bottom: 4px;
 }
 
 .footer-links h4,
 .footer-social h4
 {
-    color: var(--accent);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.6;
-    margin-bottom: 16px;
-    font-weight: 500;
+	color: var(--accent);
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	opacity: 0.6;
+	margin-bottom: 16px;
+	font-weight: 500;
 }
 
 .footer-links a
 {
-    display: block;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 10px;
-    transition: color var(--transition), opacity var(--transition);
+	display: block;
+	font-size: 0.9rem;
+	opacity: 0.8;
+	margin-bottom: 10px;
+	transition: color var(--transition), opacity var(--transition);
 }
 
 .footer-links a:hover
 {
-    color: var(--nav-accent);
-    opacity: 1;
+	color: var(--nav-accent);
+	opacity: 1;
 }
 
 .social-icons
 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
 }
 
 .social-link
 {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-light);
-    opacity: 0.8;
-    transition: opacity var(--transition), transform var(--transition);
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--text-light);
+	opacity: 0.8;
+	transition: opacity var(--transition), transform var(--transition);
 }
 
 .social-icon
 {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    color: var(--text-light);
-    transition: color var(--transition), transform var(--transition);
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	color: var(--text-light);
+	transition: color var(--transition), transform var(--transition);
 }
 
 .social-label
 {
-    transition: color var(--transition);
+	transition: color var(--transition);
 }
 
 .social-link:hover,
 .social-link:focus-visible
 {
-    opacity: 1;
-    transform: translateY(-3px);
+	opacity: 1;
+	transform: translateY(-3px);
 }
 
 .social-link:hover .social-icon,
 .social-link:focus-visible .social-icon
 {
-    color: var(--nav-accent);
-    transform: scale(1.12) rotate(-6deg);
+	color: var(--nav-accent);
+	transform: scale(1.12) rotate(-6deg);
 }
 
 .social-link:hover .social-label,
 .social-link:focus-visible .social-label
 {
-    color: var(--nav-accent);
+	color: var(--nav-accent);
 }
 
 .footer-bottom
 {
-    text-align: center;
-    font-size: 0.8rem;
-    opacity: 0.5;
-    padding-top: 24px;
+	text-align: center;
+	font-size: 0.8rem;
+	opacity: 0.5;
+	padding-top: 24px;
 }
 
 /* ---- responsive: navbar + footer ---- */
 
 @media (max-width: 900px)
 {
-    .footer-grid
-    {
-        grid-template-columns: 1fr 1fr;
-    }
+	.footer-grid
+	{
+		grid-template-columns: 1fr 1fr;
+	}
 
-    .footer-image
-    {
-        grid-column: span 2;
-    }
+	.footer-image
+	{
+		grid-column: span 2;
+	}
 
-    .dog-grid
-    {
-        grid-template-columns: repeat(3, 1fr);
-    }
+	.dog-grid
+	{
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 /* between 720-900px, the logo + 4 links + Join Us pill don't quite
@@ -734,130 +734,130 @@ h2.center
    of letting flexbox squish anything out of shape */
 @media (max-width: 900px) and (min-width: 721px)
 {
-    .nav-container
-    {
-        padding: 16px 20px;
-    }
+	.nav-container
+	{
+		padding: 16px 20px;
+	}
 
-    .nav-links
-    {
-        gap: 16px;
-    }
+	.nav-links
+	{
+		gap: 16px;
+	}
 
-    .nav-link
-    {
-        font-size: 0.85rem;
-    }
+	.nav-link
+	{
+		font-size: 0.85rem;
+	}
 
-    .nav-cta
-    {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
+	.nav-cta
+	{
+		padding: 8px 16px;
+		font-size: 0.85rem;
+	}
 
-    .logo-text
-    {
-        font-size: 1.2rem;
-    }
+	.logo-text
+	{
+		font-size: 1.2rem;
+	}
 }
 
 @media (max-width: 720px)
 {
-    .nav-links
-    {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--nav-bg);
-        flex-direction: column;
-        /* centres everything in the dropdown instead of hugging left */
-        align-items: center;
-        padding: 20px 32px;
-        gap: 18px;
-        display: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
+	.nav-links
+	{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: var(--nav-bg);
+		flex-direction: column;
+		/* centres everything in the dropdown instead of hugging left */
+		align-items: center;
+		padding: 20px 32px;
+		gap: 18px;
+		display: none;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	}
 
-    .nav-links.open
-    {
-        display: flex;
-    }
+	.nav-links.open
+	{
+		display: flex;
+	}
 
-    .nav-toggle
-    {
-        display: flex;
-    }
+	.nav-toggle
+	{
+		display: flex;
+	}
 
-    .dog-grid
-    {
-        grid-template-columns: repeat(2, 1fr);
-    }
+	.dog-grid
+	{
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-    .footer-grid
-    {
-        grid-template-columns: 1fr;
-    }
+	.footer-grid
+	{
+		grid-template-columns: 1fr;
+	}
 
-    .footer-image
-    {
-        grid-column: span 1;
-    }
+	.footer-image
+	{
+		grid-column: span 1;
+	}
 }
 
 /* ---- small phones ---- */
 @media (max-width: 480px)
 {
-    .nav-container
-    {
-        padding: 14px 20px;
-    }
+	.nav-container
+	{
+		padding: 14px 20px;
+	}
 
-    .logo-text
-    {
-        font-size: 1.1rem;
-    }
+	.logo-text
+	{
+		font-size: 1.1rem;
+	}
 
-    .section-container,
-    .container
-    {
-        padding: 0 20px;
-    }
+	.section-container,
+	.container
+	{
+		padding: 0 20px;
+	}
 
-    .btn
-    {
-        padding: 12px 22px;
-        font-size: 0.88rem;
-    }
+	.btn
+	{
+		padding: 12px 22px;
+		font-size: 0.88rem;
+	}
 
-    .footer
-    {
-        padding: 50px 0 20px;
-    }
+	.footer
+	{
+		padding: 50px 0 20px;
+	}
 
-    .footer-grid
-    {
-        gap: 30px;
-    }
+	.footer-grid
+	{
+		gap: 30px;
+	}
 
-    .social-icons
-    {
-        gap: 14px;
-    }
+	.social-icons
+	{
+		gap: 14px;
+	}
 
-    .dog-grid
-    {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
+	.dog-grid
+	{
+		grid-template-columns: repeat(2, 1fr);
+		gap: 14px;
+	}
 }
 
 /* respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce)
 {
-    *
-    {
-        scroll-behavior: auto !important;
-        transition: none !important;
-    }
+	*
+	{
+		scroll-behavior: auto !important;
+		transition: none !important;
+	}
 }

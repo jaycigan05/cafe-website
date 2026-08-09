@@ -5,258 +5,258 @@
 
 .hero
 {
-    position: relative;
-    min-height: 88vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: var(--brown);
+	position: relative;
+	min-height: 88vh;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background: var(--brown);
 }
 
 .hero-video
 {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
 }
 
 .hero-overlay
 {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(100deg, rgba(58, 57, 54, 0.88) 40%, rgba(130, 127, 120, 0.72) 100%);
-    z-index: 1;
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, rgba(58, 57, 54, 0.88) 40%, rgba(130, 127, 120, 0.72) 100%);
+	z-index: 1;
 }
 
 .hero-container
 {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 32px;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 60px;
-    align-items: center;
+	position: relative;
+	z-index: 2;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 60px 32px;
+	display: grid;
+	grid-template-columns: 1.1fr 1fr;
+	gap: 60px;
+	align-items: center;
 }
 
 .hero-heading
 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-    line-height: 1.15;
-    letter-spacing: 0.05em;
-    color: var(--text-light);
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+	line-height: 1.15;
+	letter-spacing: 0.05em;
+	color: var(--text-light);
 }
 
 .hero-heading .accent
 {
-    color: var(--accent);
-    font-style: italic;
-    font-weight: 500;
+	color: var(--accent);
+	font-style: italic;
+	font-weight: 500;
 }
 
 /* Quick-stats row (4.9 rating / 30+ dogs / hours) */
 .hero-stats
 {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 38px;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	margin-bottom: 38px;
 }
 
 .stat
 {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .stat-number
 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    color: var(--text-light);
-    font-weight: 600;
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	color: var(--text-light);
+	font-weight: 600;
 }
 
 .stat-label
 {
-    font-size: 0.78rem;
-    color: var(--text-light);
-    opacity: 0.65;
+	font-size: 0.78rem;
+	color: var(--text-light);
+	opacity: 0.65;
 }
 
 .stat-divider
 {
-    width: 1px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.25);
+	width: 1px;
+	height: 32px;
+	background: rgba(255, 255, 255, 0.25);
 }
 
 /* "See the Menu" / "Join Us" — pill-shaped on the dark hero background,
    overriding new_style.css's default square .btn corners */
 .hero-buttons
 {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
 }
 
 .hero-buttons .btn
 {
-    border-radius: 999px;
+	border-radius: 999px;
 }
 
 .hero-buttons .btn-outline
 {
-    background: var(--cream);
-    border-color: var(--cream);
-    color: var(--text-dark);
+	background: var(--cream);
+	border-color: var(--cream);
+	color: var(--text-dark);
 }
 
 .hero-buttons .btn-outline:hover
 {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--white);
+	background: var(--accent);
+	border-color: var(--accent);
+	color: var(--white);
 }
 
 /* ---- about ---- */
 
 .about
 {
-    padding: 100px 0;
-    background: var(--cream);
+	padding: 100px 0;
+	background: var(--cream);
 }
 
 .about-grid
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	align-items: center;
 }
 
 .about-image
 {
-    position: relative;
-    border-radius: var(--radius-sm);
-    aspect-ratio: 4/3.2;
-    overflow: hidden;
+	position: relative;
+	border-radius: var(--radius-sm);
+	aspect-ratio: 4/3.2;
+	overflow: hidden;
 }
 
 .about-image > .about-slide
 {
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-sm);
-    aspect-ratio: 4/3.2;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    background: #e5ddcf;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+	position: absolute;
+	inset: 0;
+	border-radius: var(--radius-sm);
+	aspect-ratio: 4/3.2;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	background: #e5ddcf;
+	opacity: 0;
+	transition: opacity 0.8s ease;
 }
 
 .about-image > .about-slide.active
 {
-    opacity: 1;
+	opacity: 1;
 }
 
 /* Manual "next" control for the story slider */
 .about-image-next
 {
-    position: absolute;
-    z-index: 3;
-    right: 16px;
-    bottom: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(58, 42, 32, 0.55);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(2px);
-    transition: background var(--transition), transform var(--transition);
+	position: absolute;
+	z-index: 3;
+	right: 16px;
+	bottom: 16px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(58, 42, 32, 0.55);
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	backdrop-filter: blur(2px);
+	transition: background var(--transition), transform var(--transition);
 }
 
 .about-image-next:hover,
 .about-image-next:focus-visible
 {
-    background: var(--accent);
-    transform: scale(1.08);
+	background: var(--accent);
+	transform: scale(1.08);
 }
 
 /* The story photos use the .about-slide class, so the arrow image is
    kept separate from the slider and never counted as a fourth slide. */
 .about-image-next .about-image-next-icon
 {
-    position: static;
-    inset: auto;
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    border-radius: 0;
-    background: none;
-    transform: translateX(1px);
-    /* phone.svg/arrow.svg use stroke="currentColor", which <img> can't
-     inherit — filter forces the icon to match the button's white color. */
-    filter: brightness(0) invert(1);
+	position: static;
+	inset: auto;
+	width: 18px;
+	height: 18px;
+	object-fit: contain;
+	border-radius: 0;
+	background: none;
+	transform: translateX(1px);
+	/* phone.svg/arrow.svg use stroke="currentColor", which <img> can't
+	 inherit — filter forces the icon to match the button's white color. */
+	filter: brightness(0) invert(1);
 }
 
 /* Dot indicators sit immediately to the left of the bottom-right next arrow. */
 .about-image-dots
 {
-    position: absolute;
-    z-index: 3;
-    right: 68px;
-    bottom: 32px;
-    display: flex;
-    gap: 8px;
+	position: absolute;
+	z-index: 3;
+	right: 68px;
+	bottom: 32px;
+	display: flex;
+	gap: 8px;
 }
 
 .about-image-dot
 {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    padding: 0;
-    background: rgba(255, 255, 255, 0.55);
-    cursor: pointer;
-    transition: background var(--transition), transform var(--transition);
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	border: none;
+	padding: 0;
+	background: rgba(255, 255, 255, 0.55);
+	cursor: pointer;
+	transition: background var(--transition), transform var(--transition);
 }
 
 .about-image-dot.active
 {
-    background: var(--white);
-    transform: scale(1.25);
+	background: var(--white);
+	transform: scale(1.25);
 }
 
 .about-content h2
 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 18px;
-    line-height: 1.25;
+	font-family: var(--font-display);
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 18px;
+	line-height: 1.25;
 }
 
 .about-content p
 {
-    color: var(--text-muted);
-    margin-bottom: 26px;
-    max-width: 440px;
+	color: var(--text-muted);
+	margin-bottom: 26px;
+	max-width: 440px;
 }
 
 /* .btn-ghost should only change text colour on hover, no
@@ -270,14 +270,14 @@
 .about-content .btn-ghost,
 .center-btn .btn-ghost
 {
-    font-size: 1.05rem;
+	font-size: 1.05rem;
 }
 
 .about-content .btn-ghost:hover,
 .center-btn .btn-ghost:hover
 {
-    background: transparent;
-    color: var(--text-muted);
+	background: transparent;
+	color: var(--text-muted);
 }
 
 /* heading style shared by the 3 centered sections below
@@ -287,25 +287,25 @@
 .resident-dogs h2,
 .reviews-teaser h2
 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 10px 0 50px;
+	font-family: var(--font-display);
+	font-size: 2rem;
+	font-weight: 600;
+	margin: 10px 0 50px;
 }
 
 /* Centers the "View Full Menu / Meet the full team / Read more
    reviews" ghost-link buttons under each section */
 .center-btn
 {
-    text-align: center;
-    margin-top: 44px;
+	text-align: center;
+	margin-top: 44px;
 }
 
 /* ---- menu preview ---- */
 
 .menu-preview
 {
-    padding: 100px 0;
+	padding: 100px 0;
 }
 
 /* ---------------------------------------------------------
@@ -317,72 +317,72 @@
    --------------------------------------------------------- */
 .podium-toggle-input
 {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    pointer-events: none;
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	pointer-events: none;
 }
 
 .toggle-switch
 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 8px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 8px;
 }
 
 .toggle-track
 {
-    position: relative;
-    display: flex;
-    background: var(--white);
-    border-radius: 999px;
-    padding: 6px;
-    box-shadow: var(--shadow);
-    border: 2px solid var(--cream);
-    width: 300px;
-    max-width: 90vw;
+	position: relative;
+	display: flex;
+	background: var(--white);
+	border-radius: 999px;
+	padding: 6px;
+	box-shadow: var(--shadow);
+	border: 2px solid var(--cream);
+	width: 300px;
+	max-width: 90vw;
 }
 
 .toggle-track::before
 {
-    content: "";
-    position: absolute;
-    top: 6px;
-    bottom: 6px;
-    left: 6px;
-    width: calc(50% - 6px);
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    border-radius: 999px;
-    z-index: 0;
-    transition: transform 0.45s cubic-bezier(.65, 0, .35, 1);
+	content: "";
+	position: absolute;
+	top: 6px;
+	bottom: 6px;
+	left: 6px;
+	width: calc(50% - 6px);
+	background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+	border-radius: 999px;
+	z-index: 0;
+	transition: transform 0.45s cubic-bezier(.65, 0, .35, 1);
 }
 
 .toggle-btn
 {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    padding: 9px 18px;
-    border-radius: 999px;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--accent-dark);
-    cursor: pointer;
-    transition: color 0.3s ease;
+	flex: 1;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	padding: 9px 18px;
+	border-radius: 999px;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 0.85rem;
+	color: var(--accent-dark);
+	cursor: pointer;
+	transition: color 0.3s ease;
 }
 
 #flavorDog:checked ~ .toggle-switch .toggle-track::before
 {
-    transform: translateX(100%);
+	transform: translateX(100%);
 }
 
 #flavorHuman:checked ~ .toggle-switch .toggle-btn[for="flavorHuman"],
 #flavorDog:checked ~ .toggle-switch .toggle-btn[for="flavorDog"]
 {
-    color: var(--white);
+	color: var(--white);
 }
 
 /* Only one podium shows at a time, based on which radio is checked.
@@ -392,119 +392,119 @@
    podiums stayed visible in the default "For Humans" state. */
 .podium.podium-dog
 {
-    display: none;
+	display: none;
 }
 
 #flavorDog:checked ~ .podium-human
 {
-    display: none;
+	display: none;
 }
 
 #flavorDog:checked ~ .podium-dog
 {
-    display: flex;
+	display: flex;
 }
 
 .podium
 {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 22px;
-    padding: 40px 10px 6px;
-    max-width: 780px;
-    margin: 0 auto;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 22px;
+	padding: 40px 10px 6px;
+	max-width: 780px;
+	margin: 0 auto;
 }
 
 .podium-slot
 {
-    flex: 0 0 210px;
+	flex: 0 0 210px;
 }
 
 .podium-slot.podium-center
 {
-    flex: 0 0 250px;
-    margin-bottom: 16px;
+	flex: 0 0 250px;
+	margin-bottom: 16px;
 }
 
 .podium-card
 {
-    position: relative;
+	position: relative;
 }
 
 .podium-medal
 {
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.6rem;
-    z-index: 2;
-    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .25));
+	position: absolute;
+	top: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.6rem;
+	z-index: 2;
+	filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .25));
 }
 
 /* Whole card is an arch: horizontal radius in % (scales with the
    card's own width), vertical radius in fixed px. */
 .podium-shape
 {
-    background: var(--white);
-    box-shadow: var(--shadow);
-    text-align: center;
-    padding-bottom: 16px;
-    overflow: hidden;
-    border-radius: 50% 50% 14px 14px / 56px 56px 14px 14px;
+	background: var(--white);
+	box-shadow: var(--shadow);
+	text-align: center;
+	padding-bottom: 16px;
+	overflow: hidden;
+	border-radius: 50% 50% 14px 14px / 56px 56px 14px 14px;
 }
 
 .podium-center .podium-shape
 {
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .14);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, .14);
 }
 
 .podium-media
 {
-    height: 108px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	height: 108px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .podium-center .podium-media
 {
-    height: 128px;
+	height: 128px;
 }
 
 .card-media-inner
 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 .podium-name
 {
-    font-family: var(--font-display);
-    margin-top: 10px;
-    font-weight: 700;
-    font-size: 0.92rem;
-    padding: 0 10px;
-    line-height: 1.25;
+	font-family: var(--font-display);
+	margin-top: 10px;
+	font-weight: 700;
+	font-size: 0.92rem;
+	padding: 0 10px;
+	line-height: 1.25;
 }
 
 .podium-center .podium-name
 {
-    font-size: 1.05rem;
+	font-size: 1.05rem;
 }
 
 .podium-rank-label
 {
-    display: block;
-    margin-top: 2px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+	display: block;
+	margin-top: 2px;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
 }
 
 /* just the wrapper for the homepage teaser — the actual .dog-grid/
@@ -513,25 +513,25 @@
 
 .resident-dogs
 {
-    padding: 100px 0;
-    background: var(--cream);
+	padding: 100px 0;
+	background: var(--cream);
 }
 
 /* ---- reviews teaser ---- */
 
 .reviews-teaser
 {
-    padding: 100px 0;
+	padding: 100px 0;
 }
 
 .rimage
 {
-    border-radius: 100%;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 20px;
+	border-radius: 100%;
+	margin: 10px;
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-right: 20px;
 }
 
 /* Review Cards — same look as the Reviews page, laid out as a
@@ -539,256 +539,256 @@
    because it lists many reviews; here we only show 3). */
 .reviewRow
 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
 }
 
 .reviewCard
 {
-    background: var(--white);
-    border: 2px solid var(--text-light);
-    border-radius: 20px;
-    padding: 20px;
-    text-align: left;
-    box-shadow: var(--shadow);
-    transition: .3s;
+	background: var(--white);
+	border: 2px solid var(--text-light);
+	border-radius: 20px;
+	padding: 20px;
+	text-align: left;
+	box-shadow: var(--shadow);
+	transition: .3s;
 }
 
 .reviewCard:hover
 {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+	transform: translateY(-8px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
 }
 
 .reviewCard h3
 {
-    color: var(--accent);
+	color: var(--accent);
 }
 
 .reviewCard p
 {
-    font-size: 16px;
-    margin: 15px 0;
-    line-height: 1.6;
-    color: var(--brown);
+	font-size: 16px;
+	margin: 15px 0;
+	line-height: 1.6;
+	color: var(--brown);
 }
 
 .stars
 {
-    font-size: 18px;
-    margin-bottom: 10px;
+	font-size: 18px;
+	margin-bottom: 10px;
 }
 
 .reviewDate
 {
-    color: var(--brown);
-    font-size: 14px;
+	color: var(--brown);
+	font-size: 14px;
 }
 
 /* ---- cta banner ---- */
 
 .cta-banner
 {
-    background: var(--cream);
-    padding: 90px 0;
+	background: var(--cream);
+	padding: 90px 0;
 }
 
 .cta-content
 {
-    text-align: center;
+	text-align: center;
 }
 
 .cta-content h2
 {
-    font-family: var(--font-display);
-    font-size: 2.1rem;
-    /* var(--text-dark), not var(--mocha) — mocha stays a near-black
-       brown in dark mode (it's meant for fixed-dark surfaces), which
-       went nearly invisible against this section's cream background
-       once the cream itself turned dark too */
-    color: var(--text-dark);
-    margin-bottom: 10px;
+	font-family: var(--font-display);
+	font-size: 2.1rem;
+	/* var(--text-dark), not var(--mocha) — mocha stays a near-black
+	   brown in dark mode (it's meant for fixed-dark surfaces), which
+	   went nearly invisible against this section's cream background
+	   once the cream itself turned dark too */
+	color: var(--text-dark);
+	margin-bottom: 10px;
 }
 
 .cta-content p
 {
-    color: var(--text-muted);
-    opacity: 1;
-    margin-bottom: 30px;
+	color: var(--text-muted);
+	opacity: 1;
+	margin-bottom: 30px;
 }
 
 /* On the cream banner, use the solid accent button so it stands out */
 .cta-content .btn-solid
 {
-    background: var(--accent);
-    color: var(--white);
-    border-radius: 999px;
+	background: var(--accent);
+	color: var(--white);
+	border-radius: 999px;
 }
 
 .cta-content .btn-solid:hover
 {
-    background: var(--accent-dark);
-    color: var(--white);
+	background: var(--accent-dark);
+	color: var(--white);
 }
 
 /* ---- responsive — index page sections ---- */
 
 @media (max-width: 900px)
 {
-    .hero-container,
-    .about-grid
-    {
-        grid-template-columns: 1fr;
-    }
+	.hero-container,
+	.about-grid
+	{
+		grid-template-columns: 1fr;
+	}
 
-    .hero-container
-    {
-        text-align: left;
-        padding-top: 40px;
-        padding-bottom: 60px;
-    }
+	.hero-container
+	{
+		text-align: left;
+		padding-top: 40px;
+		padding-bottom: 60px;
+	}
 
-    .reviewRow
-    {
-        grid-template-columns: repeat(2, 1fr);
-    }
+	.reviewRow
+	{
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-    .podium
-    {
-        gap: 10px;
-    }
+	.podium
+	{
+		gap: 10px;
+	}
 
-    .podium-slot
-    {
-        flex-basis: 130px;
-    }
+	.podium-slot
+	{
+		flex-basis: 130px;
+	}
 
-    .podium-slot.podium-center
-    {
-        flex-basis: 160px;
-        margin-bottom: 18px;
-    }
+	.podium-slot.podium-center
+	{
+		flex-basis: 160px;
+		margin-bottom: 18px;
+	}
 }
 
 @media (max-width: 720px)
 {
-    .hero-stats
-    {
-        flex-wrap: wrap;
-        row-gap: 16px;
-    }
+	.hero-stats
+	{
+		flex-wrap: wrap;
+		row-gap: 16px;
+	}
 
-    .reviewRow
-    {
-        grid-template-columns: 1fr;
-    }
+	.reviewRow
+	{
+		grid-template-columns: 1fr;
+	}
 
-    .podium
-    {
-        gap: 8px;
-    }
+	.podium
+	{
+		gap: 8px;
+	}
 
-    .podium-slot
-    {
-        flex-basis: 100px;
-    }
+	.podium-slot
+	{
+		flex-basis: 100px;
+	}
 
-    .podium-slot.podium-center
-    {
-        flex-basis: 130px;
-        margin-bottom: 14px;
-    }
+	.podium-slot.podium-center
+	{
+		flex-basis: 130px;
+		margin-bottom: 14px;
+	}
 }
 
 @media (max-width: 480px)
 {
-    .hero
-    {
-        min-height: auto;
-    }
+	.hero
+	{
+		min-height: auto;
+	}
 
-    .hero-container
-    {
-        padding-top: 32px;
-        padding-bottom: 48px;
-        gap: 36px;
-    }
+	.hero-container
+	{
+		padding-top: 32px;
+		padding-bottom: 48px;
+		gap: 36px;
+	}
 
-    .about,
-    .menu-preview,
-    .resident-dogs,
-    .reviews-teaser,
-    .cta-banner
-    {
-        padding: 64px 0;
-    }
+	.about,
+	.menu-preview,
+	.resident-dogs,
+	.reviews-teaser,
+	.cta-banner
+	{
+		padding: 64px 0;
+	}
 
-    .about-image-next
-    {
-        width: 34px;
-        height: 34px;
-        left: 12px;
-        bottom: 12px;
-    }
+	.about-image-next
+	{
+		width: 34px;
+		height: 34px;
+		left: 12px;
+		bottom: 12px;
+	}
 
-    .about-image-dots
-    {
-        left: 58px;
-        bottom: 25px;
-    }
+	.about-image-dots
+	{
+		left: 58px;
+		bottom: 25px;
+	}
 
-    .podium
-    {
-        gap: 6px;
-        padding: 32px 2px 6px;
-    }
+	.podium
+	{
+		gap: 6px;
+		padding: 32px 2px 6px;
+	}
 
-    .podium-slot
-    {
-        flex-basis: 78px;
-    }
+	.podium-slot
+	{
+		flex-basis: 78px;
+	}
 
-    .podium-slot.podium-center
-    {
-        flex-basis: 104px;
-        margin-bottom: 10px;
-    }
+	.podium-slot.podium-center
+	{
+		flex-basis: 104px;
+		margin-bottom: 10px;
+	}
 
-    .podium-shape
-    {
-        border-radius: 50% 50% 12px 12px / 40px 40px 12px 12px;
-    }
+	.podium-shape
+	{
+		border-radius: 50% 50% 12px 12px / 40px 40px 12px 12px;
+	}
 
-    .podium-media
-    {
-        height: 66px;
-    }
+	.podium-media
+	{
+		height: 66px;
+	}
 
-    .podium-center .podium-media
-    {
-        height: 80px;
-    }
+	.podium-center .podium-media
+	{
+		height: 80px;
+	}
 
-    .podium-medal
-    {
-        font-size: 1.15rem;
-        top: -12px;
-    }
+	.podium-medal
+	{
+		font-size: 1.15rem;
+		top: -12px;
+	}
 
-    .podium-name
-    {
-        font-size: 0.72rem;
-        padding: 0 4px;
-    }
+	.podium-name
+	{
+		font-size: 0.72rem;
+		padding: 0 4px;
+	}
 
-    .podium-center .podium-name
-    {
-        font-size: 0.8rem;
-    }
+	.podium-center .podium-name
+	{
+		font-size: 0.8rem;
+	}
 
-    .podium-rank-label
-    {
-        font-size: 0.6rem;
-    }
+	.podium-rank-label
+	{
+		font-size: 0.6rem;
+	}
 }

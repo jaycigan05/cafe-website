@@ -1,123 +1,123 @@
 /* ---- portfolio print stylesheet ---- */
 @media print
 {
-    /* Hide navigation and footer */
-    .navbar,
-    .footer,
-    .buttonGroup,
-    .nav-toggle
-    {
-        display: none !important;
-    }
+	/* Hide navigation and footer */
+	.navbar,
+	.footer,
+	.buttonGroup,
+	.nav-toggle
+	{
+		display: none !important;
+	}
 
-    /* White background and remove shadows */
-    body,
-    .portfolioContainer1,
-    .portfolioContainer2,
-    .portfolioContainer3,
-    .portfolioContainer4,
-    .portfolioContainer5,
-    .portfolioContainer6,
-    .storyCard,
-    .infoCard,
-    .skillCard,
-    .journeyStep,
-    .contactCard,
-    .projectImage
-    {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-    }
+	/* White background and remove shadows */
+	body,
+	.portfolioContainer1,
+	.portfolioContainer2,
+	.portfolioContainer3,
+	.portfolioContainer4,
+	.portfolioContainer5,
+	.portfolioContainer6,
+	.storyCard,
+	.infoCard,
+	.skillCard,
+	.journeyStep,
+	.contactCard,
+	.projectImage
+	{
+		background: white !important;
+		color: black !important;
+		box-shadow: none !important;
+	}
 
-    /* Remove animations and transitions */
-    *,
-    *::before,
-    *::after
-    {
-        animation: none !important;
-        transition: none !important;
-    }
+	/* Remove animations and transitions */
+	*,
+	*::before,
+	*::after
+	{
+		animation: none !important;
+		transition: none !important;
+	}
 
-    /* Make all text black */
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    span,
-    li
-    {
-        color: black !important;
-    }
+	/* Make all text black */
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	span,
+	li
+	{
+		color: black !important;
+	}
 
-    /* Hide only About Me icons and Design Journey icons */
-    .journeyIcon,
-    .contactIcon
-    {
-        display: none !important;
-    }
+	/* Hide only About Me icons and Design Journey icons */
+	.journeyIcon,
+	.contactIcon
+	{
+		display: none !important;
+	}
 
-    /* Remove hover transforms */
-    .profileBox img,
-    .storyCard,
-    .infoCard,
-    .skillCard,
-    .journeyStep,
-    .contactCard,
-    .projectImage img
-    {
-        transform: none !important;
-    }
+	/* Remove hover transforms */
+	.profileBox img,
+	.storyCard,
+	.infoCard,
+	.skillCard,
+	.journeyStep,
+	.contactCard,
+	.projectImage img
+	{
+		transform: none !important;
+	}
 
-    /* Contact becomes vertical */
-    .contact
-    {
-        display: block !important;
-    }
+	/* Contact becomes vertical */
+	.contact
+	{
+		display: block !important;
+	}
 
-    .contactCard
-    {
-        display: block !important;
-        width: 100% !important;
-        margin: 0 0 20px 0 !important;
-        page-break-inside: avoid;
-    }
+	.contactCard
+	{
+		display: block !important;
+		width: 100% !important;
+		margin: 0 0 20px 0 !important;
+		page-break-inside: avoid;
+	}
 
-    /* Make project rows vertical */
-    .projectRow
-    {
-        display: block !important;
-        page-break-inside: avoid;
-        margin-bottom: 30px;
-    }
+	/* Make project rows vertical */
+	.projectRow
+	{
+		display: block !important;
+		page-break-inside: avoid;
+		margin-bottom: 30px;
+	}
 
-    /* Remove alternating layout */
-    .projectRow:nth-child(even)
-    {
-        direction: ltr !important;
-    }
+	/* Remove alternating layout */
+	.projectRow:nth-child(even)
+	{
+		direction: ltr !important;
+	}
 
-    /* Design Journey */
-    .journeyLine
-    {
-        display: block !important;
-    }
+	/* Design Journey */
+	.journeyLine
+	{
+		display: block !important;
+	}
 
-    .journeyStep
-    {
-        margin-bottom: 20px;
-        page-break-inside: avoid;
-    }
+	.journeyStep
+	{
+		margin-bottom: 20px;
+		page-break-inside: avoid;
+	}
 
-    /* Print each major section cleanly */
-    .portfolioContainer1,
-    .portfolioContainer2,
-    .portfolioContainer3,
-    .portfolioContainer4,
-    .portfolioContainer5,
-    .portfolioContainer6
-    {
-        page-break-before: always;
-    }
+	/* Print each major section cleanly */
+	.portfolioContainer1,
+	.portfolioContainer2,
+	.portfolioContainer3,
+	.portfolioContainer4,
+	.portfolioContainer5,
+	.portfolioContainer6
+	{
+		page-break-before: always;
+	}
 }

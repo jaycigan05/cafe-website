@@ -1,317 +1,317 @@
 /* centres the whole form on the page */
 .register-main
 {
-    padding: var(--space-xl) 0;
-    background-color: var(--color-bg);
-    min-height: 70vh;
+	padding: var(--space-xl) 0;
+	background-color: var(--color-bg);
+	min-height: 70vh;
 }
 
 /* The white card wrap everything */
 .register-box
 {
-    background-color: var(--color-surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: var(--space-lg);
-    max-width: 560px;
-    margin: 0 auto;
+	background-color: var(--color-surface);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: var(--space-lg);
+	max-width: 560px;
+	margin: 0 auto;
 }
 
 /* Progress bar */
 .progress-bar
 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--space-lg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: var(--space-lg);
 }
 
 .progress-step
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xs);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-xs);
 }
 
 .progress-dot
 {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--color-border);
-    color: var(--color-text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background-color: var(--color-border);
+	color: var(--color-text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 0.9rem;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .progress-step span
 {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
+	font-size: 0.75rem;
+	color: var(--color-text-muted);
 }
 
 /* active step: filled brown dot */
 .progress-step.active .progress-dot
 {
-    background-color: var(--color-primary);
-    /* fixed white, not var(--color-surface) — the dot's background
-       stays a fixed brown in both themes, but --color-surface flips
-       dark at night, which turned this into dark-on-dark */
-    color: #fff;
+	background-color: var(--color-primary);
+	/* fixed white, not var(--color-surface) — the dot's background
+	   stays a fixed brown in both themes, but --color-surface flips
+	   dark at night, which turned this into dark-on-dark */
+	color: #fff;
 }
 
 .progress-step.active span
 {
-    /* var(--color-primary-dark) — this label sits on the page
-       background, which does turn dark at night, unlike the dot's
-       own fixed background above. --color-primary-dark aliases
-       var(--brown) so it flips light to match. */
-    color: var(--color-primary-dark);
-    font-weight: 600;
+	/* var(--color-primary-dark) — this label sits on the page
+	   background, which does turn dark at night, unlike the dot's
+	   own fixed background above. --color-primary-dark aliases
+	   var(--brown) so it flips light to match. */
+	color: var(--color-primary-dark);
+	font-weight: 600;
 }
 
 /* done step: accent colour */
 .progress-step.done .progress-dot
 {
-    background-color: var(--color-accent);
-    color: var(--color-surface);
+	background-color: var(--color-accent);
+	color: var(--color-surface);
 }
 
 /* the line connecting dots */
 .progress-line
 {
-    flex: 1;
-    height: 2px;
-    background-color: var(--color-border);
-    margin: 0 var(--space-xs);
-    margin-bottom: var(--space-lg);
-    transition: background-color 0.3s ease;
+	flex: 1;
+	height: 2px;
+	background-color: var(--color-border);
+	margin: 0 var(--space-xs);
+	margin-bottom: var(--space-lg);
+	transition: background-color 0.3s ease;
 }
 
 .progress-line.done
 {
-    background-color: var(--color-accent);
+	background-color: var(--color-accent);
 }
 
 /* Form Steps (show and hide logic)*/
 /* all steps hidden by default */
 .form-step
 {
-    display: none;
+	display: none;
 }
 
 /* only the active step shows */
 .form-step.active
 {
-    display: block;
+	display: block;
 }
 
 /* STEP 1: CHOOSE BUTTONS */
 .form-step h2
 {
-    text-align: center;
-    margin-bottom: var(--space-sm);
+	text-align: center;
+	margin-bottom: var(--space-sm);
 }
 
 .form-step > p
 {
-    text-align: center;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-lg);
+	text-align: center;
+	color: var(--color-text-muted);
+	margin-bottom: var(--space-lg);
 }
 
 .choose-buttons
 {
-    display: flex;
-    gap: var(--space-sm);
-    justify-content: center;
+	display: flex;
+	gap: var(--space-sm);
+	justify-content: center;
 }
 
 .form-group
 {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: var(--space-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	margin-bottom: var(--space-sm);
 }
 
 .form-group label
 {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--color-text);
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: var(--color-text);
 }
 
 .form-group input,
 .form-group select
 {
-    padding: var(--space-xs) var(--space-sm);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    transition: border-color 0.2s ease;
+	padding: var(--space-xs) var(--space-sm);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	font-family: var(--font-body);
+	font-size: 1rem;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	transition: border-color 0.2s ease;
 }
 
 /* highlight input when user clicks on it */
 .form-group input:focus,
 .form-group select:focus
 {
-    outline: none;
-    border-color: var(--color-primary);
+	outline: none;
+	border-color: var(--color-primary);
 }
 
 /* red border when input is invalid */
 .form-group input.invalid,
 .form-group select.invalid
 {
-    border-color: #E05252;
+	border-color: #E05252;
 }
 
 /* error message below each field */
 .error-msg
 {
-    font-size: 0.8rem;
-    color: #E05252;
-    min-height: 1rem;
+	font-size: 0.8rem;
+	color: #E05252;
+	min-height: 1rem;
 }
 
 /* checkbox row */
 .form-check
 {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-sm);
+	flex-direction: row;
+	align-items: center;
+	gap: var(--space-sm);
 }
 
 .form-check input[type="checkbox"]
 {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
 }
 
 /* back and next buttons */
 .form-nav
 {
-    display: flex;
-    justify-content: space-between;
-    margin-top: var(--space-md);
+	display: flex;
+	justify-content: space-between;
+	margin-top: var(--space-md);
 }
 
 .field-hint
 {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
+	font-size: 0.75rem;
+	color: var(--color-text-muted);
 }
 
 /* step 3: success card */
 .success-card
 {
-    text-align: center;
-    padding: var(--space-md) 0;
+	text-align: center;
+	padding: var(--space-md) 0;
 }
 
 .success-icon
 {
-    font-size: 4rem;
-    margin-bottom: var(--space-sm);
+	font-size: 4rem;
+	margin-bottom: var(--space-sm);
 }
 
 .success-card h2
 {
-    margin-bottom: var(--space-sm);
+	margin-bottom: var(--space-sm);
 }
 
 .success-card p
 {
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xs);
+	color: var(--color-text-muted);
+	margin-bottom: var(--space-xs);
 }
 
 .success-card .btn
 {
-    margin-top: var(--space-md);
+	margin-top: var(--space-md);
 }
 
 .success-msg
 {
-    color: var(--color-primary-dark);
-    font-weight: 600;
-    margin-top: var(--space-sm);
+	color: var(--color-primary-dark);
+	font-weight: 600;
+	margin-top: var(--space-sm);
 }
 
 /* login error */
 .login-error
 {
-    background-color: #fdecea;
-    border: 1px solid #E05252;
-    border-radius: var(--radius);
-    padding: var(--space-xs) var(--space-sm);
-    margin-bottom: var(--space-sm);
+	background-color: #fdecea;
+	border: 1px solid #E05252;
+	border-radius: var(--radius);
+	padding: var(--space-xs) var(--space-sm);
+	margin-bottom: var(--space-sm);
 }
 
 .login-error p
 {
-    color: #E05252;
-    margin: 0;
+	color: #E05252;
+	margin: 0;
 }
 
 /* responsive */
 @media (max-width: 600px)
 {
-    .register-box
-    {
-        padding: var(--space-md);
-    }
+	.register-box
+	{
+		padding: var(--space-md);
+	}
 
-    .choose-buttons
-    {
-        flex-direction: column;
-    }
+	.choose-buttons
+	{
+		flex-direction: column;
+	}
 }
 
 @media (max-width: 420px)
 {
-    .register-main
-    {
-        padding: var(--space-lg) 0;
-    }
+	.register-main
+	{
+		padding: var(--space-lg) 0;
+	}
 
-    .register-box
-    {
-        padding: var(--space-sm);
-        border-radius: 0;
-        box-shadow: none;
-    }
+	.register-box
+	{
+		padding: var(--space-sm);
+		border-radius: 0;
+		box-shadow: none;
+	}
 
-    .progress-step span
-    {
-        font-size: 0.68rem;
-    }
+	.progress-step span
+	{
+		font-size: 0.68rem;
+	}
 
-    .progress-dot
-    {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
-    }
+	.progress-dot
+	{
+		width: 30px;
+		height: 30px;
+		font-size: 0.8rem;
+	}
 
-    .form-nav
-    {
-        flex-direction: column-reverse;
-        gap: var(--space-xs);
-    }
+	.form-nav
+	{
+		flex-direction: column-reverse;
+		gap: var(--space-xs);
+	}
 
-    .form-nav .btn
-    {
-        width: 100%;
-    }
+	.form-nav .btn
+	{
+		width: 100%;
+	}
 }
