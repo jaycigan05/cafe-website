@@ -193,6 +193,11 @@
   margin-bottom: var(--space-xs);
 }
 
+.p-projects-more {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
 .p-projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
