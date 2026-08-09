@@ -12,6 +12,9 @@
 
 	<body>
 
+		<!-- skip-link: hidden until focused, jumps past the navbar -->
+		<a class="skip-link" href="#mainContent">Skip to main content</a>
+
 		<!-- navbar -->
 		<header class="navbar">
 			<div class="nav-container">
@@ -40,6 +43,8 @@
 			</button>
 			</div>
 		</header>
+
+		<main id="mainContent">
 
 		<!-- animation -->
 		<section class="reviewSummary reveal">
@@ -439,7 +444,9 @@
 				<button type="button" onclick="closePopup()" id="popupCloseBtn">OK</button>
 			</div>
 		</div>
- 
+
+		</main>
+
 		<!-- footer -->
 		<footer class="footer">
 			<div class="section-container footer-grid">
@@ -480,7 +487,6 @@
 			</div>
 			<p class="footer-bottom">© 2026 Pawfee Café. All rights reserved.</p>
 		</footer>
-		</div>
 
 		<script src="../js/index.js"></script>
 		<script src="../js/team.js"></script>
