@@ -963,7 +963,11 @@
 
 	.menu-card:hover .card-shape
 	{
-		background:#FFF9F0;
+		/* var(--cream-card), not a fixed hex — this stayed near-white on
+		   hover even in dark mode, while the card's dish name/price
+		   (var(--text-dark) etc) turned light to match the dark card,
+		   so hovering made the text nearly disappear */
+		background:var(--cream-card);
 		transform:scale(1.03);
 		box-shadow:var(--shadow);
 	}
