@@ -441,6 +441,34 @@ h2.center
 	transform: scale(0.6) rotate(-40deg);
 }
 
+/* pause/play control for the looping background hero videos (index,
+   reviews) — WCAG 2.2.2 wants a way to stop motion that autoplays
+   and keeps going indefinitely, muted or not */
+.video-toggle
+{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	z-index: 5;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	border: none;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background var(--transition);
+}
+
+.video-toggle:hover
+{
+	background: rgba(0, 0, 0, 0.7);
+}
+
 [data-theme="dark"] .theme-icon-sun
 {
 	opacity: 0;

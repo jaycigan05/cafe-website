@@ -1,15 +1,16 @@
-// index.js — just the bits of the home page that actually need JS.
-// Nav toggle + the "Our Story" slider. Everything else (Humans/Dogs
-// toggle, hover states) is plain CSS, nothing to see here for that.
+// index.js — nav toggle + the "Our Story" slider, plus a couple of
+// small bits (phone copy, hero video pause button) reused by
+// team.html/reviews.html since they load this file too.
 
 // wait for the DOM then wire everything up. each init function
 // bails out early if its HTML isn't on the page, so it's safe to
-// call all three even on pages that don't have all of them
+// call all of them even on pages that don't have all of them
 document.addEventListener('DOMContentLoaded', () =>
 {
 	initNavToggle();
 	initAboutSlider();
 	initCopyCafePhone();
+	initHeroVideoToggle();
 });
 
 // opens/closes the hamburger menu, closes itself again once you tap a link
@@ -180,6 +181,36 @@ function initCopyCafePhone()
 		{
 			// clipboard access blocked — just leave the number showing
 			if (label) label.textContent = originalText;
+		}
+	});
+}
+
+// lets people stop the looping background hero video (index's
+// .hero-video or reviews' .video) instead of it just running forever
+// with no way to turn it off
+function initHeroVideoToggle()
+{
+	const video = document.querySelector('.hero-video, .video');
+	const toggle = document.getElementById('heroVideoToggle');
+	if (!video || !toggle) return;
+
+	const icon = toggle.querySelector('span');
+
+	toggle.addEventListener('click', () =>
+	{
+		if (video.paused)
+		{
+			video.play();
+			toggle.setAttribute('aria-label', 'Pause background video');
+			toggle.setAttribute('aria-pressed', 'false');
+			if (icon) icon.textContent = '⏸';
+		}
+		else
+		{
+			video.pause();
+			toggle.setAttribute('aria-label', 'Play background video');
+			toggle.setAttribute('aria-pressed', 'true');
+			if (icon) icon.textContent = '▶';
 		}
 	});
 }

@@ -51,6 +51,9 @@
 					<video class="video" autoplay muted loop>
 						<source src="../images/Vid1.mp4" type="video/mp4">
 					</video>
+					<button type="button" class="video-toggle" id="heroVideoToggle" aria-label="Pause background video" aria-pressed="false">
+						<span aria-hidden="true">⏸</span>
+					</button>
 
 					<!-- Hero Text Content -->
 					<div class="reviewContent">
@@ -398,8 +401,15 @@
 					<h2 class="section-title-lg">Leave Your Review</h2>
 					<!-- Review Form -->
 					<form class="reviewForm" id="reviewForm">
+						<!-- placeholder alone isn't a real label — it vanishes
+							 the moment you start typing, and isn't a reliable
+							 accessible name across screen readers. these three
+							 fields had nothing else, unlike the filter dropdown
+							 above which already does this correctly. -->
+						<label for="customerName" class="visually-hidden">Your Name</label>
 						<input type="text" id="customerName" placeholder="Your Name" required>
-						
+
+						<label for="rating" class="visually-hidden">Rating</label>
 						<select id="rating" required>
 							<option value="">Select Rating</option>
 							<option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
@@ -408,6 +418,7 @@
 							<option value="⭐⭐☆☆☆">⭐⭐☆☆☆</option>
 							<option value="⭐☆☆☆☆">⭐☆☆☆☆</option>
 						</select>
+						<label for="reviewText" class="visually-hidden">Your review</label>
 						<textarea id="reviewText" name="reviewText" placeholder="Write your review..." maxlength="500" required></textarea>
 						<p class="characterCount">
 							<span id="charCount">0</span>/500 characters
