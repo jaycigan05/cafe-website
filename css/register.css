@@ -59,12 +59,19 @@
 .progress-step.active .progress-dot
 {
     background-color: var(--color-primary);
-    color: var(--color-surface);
+    /* fixed white, not var(--color-surface) — the dot's background
+       stays a fixed brown in both themes, but --color-surface flips
+       dark at night, which turned this into dark-on-dark */
+    color: #fff;
 }
 
 .progress-step.active span
 {
-    color: var(--color-primary);
+    /* var(--color-primary-dark) — this label sits on the page
+       background, which does turn dark at night, unlike the dot's
+       own fixed background above. --color-primary-dark aliases
+       var(--brown) so it flips light to match. */
+    color: var(--color-primary-dark);
     font-weight: 600;
 }
 
@@ -236,7 +243,7 @@
 
 .success-msg
 {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     font-weight: 600;
     margin-top: var(--space-sm);
 }

@@ -194,6 +194,15 @@ main
     border-radius: 0 12px 12px 0;
 }
 
+/* the 62%-white glass pill above still reads as mostly-light even
+   over a dark background at night, so the --text-muted/--portfolio-
+   brown text inside it (which turns light to match dark mode) went
+   near-invisible — swap the glass to dark instead of light */
+[data-theme="dark"] .hero-facts li
+{
+    background: rgba(0, 0, 0, 0.35);
+}
+
 .hero-facts strong
 {
     font-size: 0.72rem;
@@ -466,6 +475,16 @@ main
     font-family: var(--font-display);
     font-size: 2rem;
     color: rgba(166, 124, 82, 0.25);
+}
+
+/* the big "01"/"02" watermark digit above is a translucent warm
+   brown, tuned to sit softly on the light card behind it — at 25%
+   opacity it nearly disappears against the same card once its
+   background turns dark at night, so give dark mode a lighter,
+   slightly more opaque version instead */
+[data-theme="dark"] .journey-icon
+{
+    color: rgba(201, 159, 112, 0.35);
 }
 
 .journey-card h3

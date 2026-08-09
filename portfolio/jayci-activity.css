@@ -16,7 +16,9 @@
 {
     display: inline-block;
     margin-bottom: var(--space-md);
-    color: var(--color-primary);
+    /* var(--color-primary-dark), not --color-primary — sits directly
+       on .activity-hero's background, which turns dark at night */
+    color: var(--color-primary-dark);
     font-weight: 600;
     font-size: 0.9rem;
 }
