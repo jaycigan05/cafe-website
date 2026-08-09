@@ -80,46 +80,46 @@
 			<h2>Create Your Account</h2>
 			<div class="form-group">
 				<label for="first-name">First Name</label>
-				<input type="text" id="first-name" placeholder="e.g. Alice">
-				<span class="error-msg" id="err-first-name"></span>
+				<input type="text" id="first-name" placeholder="e.g. Alice" aria-describedby="err-first-name">
+				<span class="error-msg" id="err-first-name" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="last-name">Last Name</label>
-				<input type="text" id="last-name" placeholder="e.g. Smith">
-				<span class="error-msg" id="err-last-name"></span>
+				<input type="text" id="last-name" placeholder="e.g. Smith" aria-describedby="err-last-name">
+				<span class="error-msg" id="err-last-name" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="email" id="email" placeholder="e.g. alicesmith@email.com">
-				<span class="error-msg" id="err-email"></span>
+				<input type="email" id="email" placeholder="e.g. alicesmith@email.com" aria-describedby="err-email">
+				<span class="error-msg" id="err-email" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="phone">Phone Number</label>
-				<input type="tel" id="phone" placeholder="e.g. 601123456789">
-				<span class="error-msg" id="err-phone"></span>
+				<input type="tel" id="phone" placeholder="e.g. 601123456789" aria-describedby="err-phone">
+				<span class="error-msg" id="err-phone" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="password" id="password" placeholder="Min 8 characters">
+				<input type="password" id="password" placeholder="Min 8 characters" aria-describedby="err-password">
 				<small class="field-hint">
 						Min 8 characters, must include uppercase, lowercase, number and symbol.
 				</small>
-				<span class="error-msg" id="err-password"></span>
+				<span class="error-msg" id="err-password" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="age">Age</label>
-				<input type="number" id="age" placeholder="Must be 18 or above" min="18">
-				<span class="error-msg" id="err-age"></span>
+				<input type="number" id="age" placeholder="Must be 18 or above" min="18" aria-describedby="err-age">
+				<span class="error-msg" id="err-age" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="gender">Gender</label>
-				<select id="gender">
+				<select id="gender" aria-describedby="err-gender">
 				<option value="">Select gender</option>
 				<option value="male">Male</option>
 				<option value="female">Female</option>
 				<option value="prefer-not">Prefer not to say</option>
 				</select>
-				<span class="error-msg" id="err-gender"></span>
+				<span class="error-msg" id="err-gender" role="alert"></span>
 			</div>
 			<div class="form-group form-check">
 				<input type="checkbox" id="promo">
@@ -136,15 +136,15 @@
 			<h2>Welcome Back 🐾</h2>
 			<div class="form-group">
 				<label for="login-email">Email</label>
-				<input type="email" id="login-email" placeholder="Your registered email">
-				<span class="error-msg" id="err-login-email"></span>
+				<input type="email" id="login-email" placeholder="Your registered email" aria-describedby="err-login-email">
+				<span class="error-msg" id="err-login-email" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label for="login-password">Password</label>
-				<input type="password" id="login-password" placeholder="Your password">
-				<span class="error-msg" id="err-login-password"></span>
+				<input type="password" id="login-password" placeholder="Your password" aria-describedby="err-login-password">
+				<span class="error-msg" id="err-login-password" role="alert"></span>
 			</div>
-			<div class="login-error" id="login-fail" style="display:none">
+			<div class="login-error" id="login-fail" role="alert" style="display:none">
 				<p>❌ Incorrect email or password. Please try again.</p>
 			</div>
 			<div class="form-nav">

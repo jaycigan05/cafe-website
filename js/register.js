@@ -76,6 +76,7 @@ function showError(inputId, errorId, message)
 	const input = document.getElementById(inputId);
 	const error = document.getElementById(errorId);
 	input.classList.add('invalid');
+	input.setAttribute('aria-invalid', 'true');
 	error.textContent = message;
 }
 
@@ -85,6 +86,7 @@ function clearError(inputId, errorId)
 	const input = document.getElementById(inputId);
 	const error = document.getElementById(errorId);
 	input.classList.remove('invalid');
+	input.removeAttribute('aria-invalid');
 	error.textContent = '';
 }
 
