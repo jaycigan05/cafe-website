@@ -291,8 +291,15 @@
 .p-project-image
 {
 	width: calc(100% + 2 * var(--space-md));
+	/* new_style.css's global "img { max-width:100% }" reset was
+	   clamping this back down to 100% — the negative side margins
+	   below still pulled it left, but with nothing left to stretch
+	   into on the right, so every photo ended up hugging the left
+	   edge with a gap on the right instead of bleeding edge-to-edge */
+	max-width: none;
 	height: 160px;
 	object-fit: cover;
+	object-position: center;
 	margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);
 }
 
