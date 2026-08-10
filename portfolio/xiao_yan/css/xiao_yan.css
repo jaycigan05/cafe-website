@@ -156,7 +156,7 @@ button
 	z-index:-1;
 	background:
 	linear-gradient(180deg, rgba(62,42,28,.72) 0%, rgba(62,42,28,.5) 35%, rgba(62,42,28,.2) 65%, transparent 100%),
-	url('../images/xy_portfolio/Background.jpg');
+	url('../../../images/xy_portfolio/Background.jpg');
 	background-size:cover;
 	background-position:center;
 	-webkit-mask-image:linear-gradient(180deg, #000 0%, #000 62%, transparent 100%);
@@ -591,8 +591,8 @@ button
 	height:20px;
 	transform:translate(50%,-50%);
 	background-color:var(--accent-dark);
-	-webkit-mask-image:url('../images/xy_portfolio/paw_print.png');
-	mask-image:url('../images/xy_portfolio/paw_print.png');
+	-webkit-mask-image:url('../../../images/xy_portfolio/paw_print.png');
+	mask-image:url('../../../images/xy_portfolio/paw_print.png');
 	-webkit-mask-size:contain;
 	mask-size:contain;
 	-webkit-mask-repeat:no-repeat;
