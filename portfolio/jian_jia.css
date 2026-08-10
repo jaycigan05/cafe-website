@@ -156,7 +156,7 @@ main
 .portfolio-hero h1
 {
 	margin: 0 0 14px;
-	font-size: clamp(3rem, 7vw, 5.8rem);
+	font-size: clamp(2.8rem, 6vw, 5rem);
 	line-height: 0.96;
 	letter-spacing: 0.015em;
 	color: var(--portfolio-ink);
