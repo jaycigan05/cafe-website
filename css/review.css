@@ -541,6 +541,12 @@ meter::-webkit-meter-optimum-value
 .reviewForm textarea,
 .reviewForm select
 {
+	/* explicit, not just relying on the flex column's default
+	   align-items:stretch — makes sure these never sit narrower (or,
+	   with a stray min-width somewhere, wider) than the form itself
+	   on small screens */
+	width:100%;
+	box-sizing:border-box;
 	padding:15px;
 	border:1px solid var(--accent);
 	border-radius:12px;
@@ -551,6 +557,7 @@ meter::-webkit-meter-optimum-value
 .reviewForm textarea
 {
 	height:150px;
+	max-width:100%;
 	resize:vertical;
 }
 
