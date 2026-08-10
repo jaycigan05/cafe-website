@@ -10,9 +10,17 @@
 	   mode reaches it too, instead of every card staying stuck light
 	   while its text (var(--text-dark) etc) turns light and vanishes */
 	--blush:       #e4b4a3;
-	/* "For Dogs" accent + link underline */
+	/* "For Dogs" accent + link underline — this one stays a fixed pale
+	   tan on purpose, it's used as text on the hero-podium's fixed
+	   dark photo overlay, not on a card, so it must NOT track the
+	   theme (see .hero-podium .hero-eyebrow etc below) */
 	--line:        #EEDCC6;
-	/* borders/dividers on this page */
+	/* card borders/dividers — var(--accent), not --line. --line only
+	   hits ~1.3:1 against a card background (it's tuned to sit on the
+	   dark hero photo instead), well under the 3:1 WCAG minimum for a
+	   UI border, so card outlines were barely visible. --accent
+	   already flips lighter at night too. */
+	--card-border: var(--accent);
 	--shadow-soft: 0 8px 22px rgba(74,53,42,.10);
 	/* light card shadow, menu-only for now */
 	/* var(--accent-dark), not a fixed hex — the old #7A4A22 only hit
@@ -20,6 +28,16 @@
 	   needs for a focus indicator; accent-dark already flips lighter
 	   at night so it stays visible against the darker page */
 	--focus-ring: 3px solid var(--accent-dark);
+}
+
+/* --shadow-soft above is a fixed 10%-opacity dark-brown shadow — reads
+   fine as a soft drop shadow against the light page, but that same
+   10% opacity is basically imperceptible once the page and card
+   behind it are both already dark. Boost it for dark mode instead of
+   trying to make one shadow value work for both. */
+[data-theme="dark"]
+{
+	--shadow-soft: 0 8px 22px rgba(0,0,0,.45);
 }
 
 /* only the element defaults new_style.css doesn't already cover */
@@ -146,7 +164,7 @@
 	border-radius:999px;
 	padding:6px;
 	box-shadow:var(--shadow-soft);
-	border:2px solid var(--line);
+	border:2px solid var(--card-border);
 	width: 340px;
 	max-width: 90vw;
 }
@@ -521,7 +539,7 @@
 	align-items:center;
 	gap:8px;
 	background:var(--white);
-	border:2px solid var(--line);
+	border:2px solid var(--card-border);
 	border-radius:999px;
 	padding:10px 18px;
 	flex:1;
@@ -568,7 +586,7 @@
 	align-items:center;
 	justify-content:space-between;
 	gap:10px;
-	border:2px solid var(--line);
+	border:2px solid var(--card-border);
 	border-radius:999px;
 	background:var(--white);
 	padding:10px 18px;
@@ -593,7 +611,7 @@
 	right:0;
 	z-index:50;
 	background:var(--white);
-	border:2px solid var(--line);
+	border:2px solid var(--card-border);
 	border-radius:16px;
 	box-shadow:var(--shadow);
 	padding:6px;
