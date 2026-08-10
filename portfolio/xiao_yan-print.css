@@ -1,106 +1,261 @@
-/* xiao yan's print stylesheet — same job as jayci-print.css /
-   mae_ann-print.css / jian_jia-print.css: hide the site chrome and
-   flatten the page to plain black-on-white for a clean printout */
+/* xiao_yan-print.css — loaded only when printing (media="print").
+   Triggered by the "Download CV" button (window.print()). Per the
+   rubric: hides navigation, adjusts the layout for print, keeps all
+   personal content — including photos — intact. */
 
-@media print
+/* ============ Hide navigation / site chrome ============ */
+.navbar,
+.footer,
+.skip-link,
+.back-to-team,
+.hero-actions,
+.theme-toggle,
+.nav-toggle
 {
-	/* hide navigation, footer, and controls that don't mean anything
-	   on paper (a "back to team" link, social/CV buttons) */
-	.navbar,
-	.footer,
-	.skip-link,
-	.back-to-team,
-	.hero-actions
-	{
-		display: none !important;
-	}
+	display:none !important;
+}
 
-	/* kill animation/transition/shadow everywhere */
-	*,
-	*::before,
-	*::after
-	{
-		animation: none !important;
-		transition: none !important;
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+/* ============ Base page ============ */
+body
+{
+	background:#fff;
+	color:#000;
+}
+body::before
+{
+	display:none; /* decorative page-wide gradient wash, not content */
+}
 
-	/* the hero is a full-bleed dark photo with light text over it —
-	   none of that survives to paper, so drop the photo entirely and
-	   force it to plain black-on-white like the rest of the page */
-	.portfolio-hero::before
-	{
-		content: none !important;
-		display: none !important;
-	}
+/* ============ Hero — adjusted layout, photo kept ============ */
+.portfolio-hero
+{
+	width:100%;
+	max-width:100%;
+	margin:0;
+	padding:0 0 24px;
+	isolation:auto;
+	overflow:visible;
+	break-inside:avoid;
+	page-break-inside:avoid;
+}
+.portfolio-hero::before
+{
+	display:none; /* dark photo-overlay background, not the person's own photo */
+}
+.hero-main
+{
+	display:grid;
+	grid-template-columns:150px 1fr;
+	grid-template-rows:auto auto auto;
+	grid-template-areas:
+		"photo name"
+		"photo role"
+		"bio   bio";
+	column-gap:24px;
+	row-gap:0;
+	align-items:start;
+}
+.hero-photo-wrap
+{
+	grid-area:photo;
+	align-self:start;
+}
+/* .hero-text is a flex column in screen styles — in print it needs to
+   stop being one wrapper block so its children (name, role, bio) can
+   each go into their own grid area below instead of stacking as one
+   block next to the photo. Name and role get separate rows (not a
+   shared area) since grid items sharing one area overlap rather than
+   flowing one after another the way block elements would. */
+.hero-text
+{
+	display:contents;
+}
+.hero-photo
+{
+	width:150px;
+	height:150px;
+	box-shadow:none;
+	border:2px solid #000;
+	transition:none;
+}
+.hero-photo:hover
+{
+	transform:none;
+}
+.hero-name
+{
+	grid-area:name;
+	margin:0;
+	font-size:1.9rem;
+	line-height:1.1;
+	color:#000 !important;
+	text-shadow:none;
+	transition:none;
+}
+.hero-name:hover
+{
+	color:#000 !important;
+	transform:none;
+}
+.hero-role
+{
+	grid-area:role;
+	margin:0;
+	color:#000 !important;
+	text-shadow:none;
+	font-size:.95rem;
+}
+.bio-panel
+{
+	grid-area:bio;
+	background:#fff;
+	border:1px solid #ccc;
+	backdrop-filter:none;
+	border-radius:0;
+	margin-top:14px;
+	padding:12px 0 0;
+	border-width:1px 0 0 0; /* thin rule separating bio from the name row above, instead of a boxed panel */
+	max-width:100%;
+}
+.bio-heading
+{
+	color:#000 !important;
+	text-shadow:none;
+	font-size:.9rem;
+}
+.bio-panel p
+{
+	color:#000 !important;
+	font-size:.85rem;
+	line-height:1.5;
+}
 
-	.portfolio-hero
-	{
-		background: #fff !important;
-	}
+/* ============ Education — decorative timeline graphic dropped, photos kept ============ */
+.edu-line,
+.edu-node-col
+{
+	display:none; /* decorative connecting line + animated star markers, not content */
+}
+.edu-timeline
+{
+	max-width:100%;
+	padding-left:0;
+}
+.edu-item
+{
+	margin-left:0;
+	margin-bottom:20px;
+	break-inside:avoid;
+}
+.edu-date
+{
+	color:#000;
+	font-size:.75rem;
+}
+.edu-place
+{
+	color:#000;
+}
+.edu-main-detail
+{
+	color:#000;
+	max-width:100%;
+}
+.edu-photo
+{
+	width:120px;
+	height:88px;
+	border:1px solid #000;
+	box-shadow:none;
+	transition:none;
+}
+.edu-photo:hover
+{
+	transform:none;
+}
 
-	.hero-name,
-	.hero-role,
-	.bio-heading,
-	.bio-panel p
-	{
-		color: black !important;
-	}
+/* ============ Skills — flows naturally, protected from being split mid-section ============ */
+.section-alt
+{
+	background:#fff;
+	border-radius:0;
+	width:100%;
+	margin:0;
+	padding:16px 0;
+	break-inside:avoid;
+	page-break-inside:avoid; /* fallback for browsers without break-inside support */
+}
+.section-alt::before
+{
+	display:none; /* decorative noise texture */
+}
+.skill-item
+{
+	break-inside:avoid;
+	page-break-inside:avoid;
+}
+.skill-label,
+.skill-pct
+{
+	color:#000;
+}
+.skill-fill
+{
+	animation:none;
+	background:#888 !important;
+	-webkit-print-color-adjust:exact;
+	print-color-adjust:exact;
+}
+.skill-fill::after
+{
+	display:none; /* decorative paw-print icon */
+}
 
-	.bio-panel
-	{
-		background: #fff !important;
-		border: 1px solid #ccc !important;
-		backdrop-filter: none !important;
-		-webkit-backdrop-filter: none !important;
-	}
+/* ============ Projects — 2-column tidy grid, photos kept ============ */
+.project-grid
+{
+	grid-template-columns:repeat(2, 1fr);
+	gap:16px;
+}
+.project-card
+{
+	box-shadow:none;
+	border:1px solid #ccc;
+	break-inside:avoid;
+}
+.project-card-media
+{
+	height:140px;
+}
+.project-card-body h3
+{
+	color:#000;
+}
+.project-card-desc
+{
+	color:#000;
+}
+.project-link
+{
+	display:none; /* "View page →" isn't actionable on paper */
+}
 
-	/* section backgrounds white, text black */
-	body,
-	.section-wrap,
-	.section-alt,
-	.project-card
-	{
-		background: #fff !important;
-		color: black !important;
-	}
-
-	.section-alt::before
-	{
-		display: none !important;
-	}
-
-	h1, h2, h3, h4, p, span, li
-	{
-		color: black !important;
-	}
-
-	/* every education star reads as "reached" on a static page — the
-	   scroll-position-based lit/blink states the live site uses don't
-	   mean anything once it's on paper */
-	.edu-star
-	{
-		color: black !important;
-	}
-
-	/* skill bars: show the final fill, not the load-in animation */
-	.skill-fill
-	{
-		animation: none !important;
-	}
-
-	.skill-bar
-	{
-		background: #fff !important;
-		border: 1px solid #999 !important;
-	}
-
-	/* avoid splitting a card awkwardly across a page break */
-	.project-card,
-	.edu-item,
-	.skill-item
-	{
-		page-break-inside: avoid;
-	}
+/* ============ Generic cleanup ============ */
+.section-head
+{
+	break-after:avoid;
+	page-break-after:avoid;
+}
+.section-head .eyebrow
+{
+	display:none; /* decorative label above each heading */
+}
+.section-head h2
+{
+	color:#000;
+}
+a
+{
+	color:#000;
+	text-decoration:underline;
 }

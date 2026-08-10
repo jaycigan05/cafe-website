@@ -59,7 +59,7 @@
 
 				<div class="hero-text">
 					<h1 class="hero-name">Ng Xiao Yan</h1>
-					<p class="hero-role">Front-End Developer | Menu Page</p>
+					<p class="hero-role">Computer Science Student | 42KL Cadet</p>
 
 					<div class="bio-panel">
 						<h2 class="bio-heading">About Me</h2>
@@ -85,12 +85,13 @@
 							</span>
 							LinkedIn
 						</a>
-						<a href="../images/xy_portfolio/Xiao_Yan_Resume.pdf" download class="btn-primary">
+						<!-- simulated CV download: triggers window.print(), styled by xiao_yan-print.css -->
+						<button type="button" id="downloadCvBtn" class="btn-primary">
 							<span class="btn-icon">
 								<img src="../images/xy_portfolio/icon-download.svg" alt="">
 							</span>
 							Download CV
-						</a>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -265,12 +266,14 @@
 	<!-- footer, copied straight from menu.html -->
 	<footer class="footer">
 		<div class="section-container footer-grid">
+			<!-- Brand + address block -->
 			<div class="footer-brand">
 				<span class="logo-text footer-logo">PAWFEE CAFÉ</span>
 				<p>123 Bark Street, Selangor, Malaysia</p>
 				<p>Open daily · 11am – 9pm</p>
 			</div>
 
+			<!-- Site navigation, duplicated from the navbar for convenience -->
 			<div class="footer-links">
 				<h4>Explore</h4>
 				<a href="../html/index.html">Home</a>
@@ -280,15 +283,13 @@
 				<a href="../html/register.html">Join Us</a>
 			</div>
 
+			<!-- Social links. "#" is a placeholder — swap in the real
+					 Instagram profile URL when the café has one. -->
 			<div class="footer-social">
 				<h4>Follow along</h4>
 				<div class="social-icons">
 					<a href="#" class="social-link" aria-label="Instagram">
-						<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-							<rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-							<circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
-							<circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
-						</svg>
+						<img class="social-icon" src="../images/instagram.svg" alt="" aria-hidden="true">
 						<span class="social-label">Instagram</span>
 					</a>
 				</div>
@@ -324,6 +325,11 @@
 		}, { rootMargin: '-20% 0px -20% 0px' });
 		eduStars.forEach((star) => starObserver.observe(star));
 	}
+
+	// simulated CV download — opens the browser's print dialog
+	document.getElementById('downloadCvBtn')?.addEventListener('click', () => {
+		window.print();
+	});
 </script>
 </body>
 </html>
