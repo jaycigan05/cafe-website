@@ -185,15 +185,21 @@ body
 }
 
 /* ---------- About Section Layout ----------
-   3 boxes in one row (My Story / Education / Interests) instead of the
-   old "wide story card + 2 stacked side cards" — that left the story
-   card looking mostly-empty next to a much taller stacked column once
-   the education timeline had real content in it */
+   My Story on its own full-width row, Education + Interests as a
+   matched pair below it — those two are both short fact-lists (same
+   kind of content), so pairing them separately from the prose story
+   card reads more natural than forcing all 3 into one row */
 .aboutLayout
 {
 	display:grid;
-	grid-template-columns:repeat(3, 1fr);
-	align-items:start;
+	grid-template-columns:1fr;
+	gap:30px;
+}
+
+.sideCards
+{
+	display:grid;
+	grid-template-columns:1fr 1fr;
 	gap:30px;
 }
 
@@ -658,6 +664,11 @@ body
 		grid-template-columns:1fr;
 	}
 
+	.sideCards
+	{
+		grid-template-columns:1fr;
+	}
+
 	.journeyLine
 	{
 		grid-template-columns:repeat(2,1fr);
@@ -850,6 +861,11 @@ body
 		}
 
 		.aboutLayout
+		{
+			grid-template-columns:1fr;
+		}
+
+		.sideCards
 		{
 			grid-template-columns:1fr;
 		}

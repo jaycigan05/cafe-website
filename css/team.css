@@ -5,7 +5,7 @@
 /* Same treatment as the Menu page's hero (.hero-podium in menu.css):
    a dark gradient laid over a photo so the light heading text stays
    readable while the photo still shows through.
-   ⚠️ Expects an image at images/team_bg.png — that file isn't in the
+   Expects an image at images/team_bg.png — that file isn't in the
    project yet, so add it there (same folder as cafe-interior.jpg)
    or this will just show the gradient with no photo behind it. */
 .page-header
