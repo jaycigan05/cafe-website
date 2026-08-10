@@ -312,6 +312,14 @@ sortTrigger.addEventListener('keydown', (e) =>
 	{
 		e.preventDefault(); openSortList(); sortOptions[0].focus();
 	}
+	// Escape used to only be handled on the option <li>s below, so it
+	// only worked once you'd arrow-keyed into the list — opening the
+	// dropdown by mouse click (focus stays on the trigger) and hitting
+	// Escape right away did nothing.
+	if (e.key === 'Escape' && sortWrap.classList.contains('open'))
+	{
+		closeSortList();
+	}
 });
 sortOptions.forEach((li, i) =>
 {
