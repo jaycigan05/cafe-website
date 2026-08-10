@@ -191,7 +191,6 @@ function validateSignup()
 	}
 
 	// phone
-	// phone
 	if (phone === '')
 	{
 		showError('phone', 'err-phone', 'Phone number is required.');
