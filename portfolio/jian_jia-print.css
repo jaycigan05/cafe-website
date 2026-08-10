@@ -1,13 +1,13 @@
-/* jian jia's CV print stylesheet — kicks in via media="print".
-   the "Print / Save CV" button calls window.print(); pick
-   "Save as PDF" in the print dialog to get a CV copy out of it */
+/* This is print styles for the portfolio CV. */
 
+/* A4 page setup. */
 @page
 {
 	size: A4;
 	margin: 13mm 15mm;
 }
 
+/* Remove screen effects when printing. */
 *
 {
 	box-shadow: none !important;
@@ -33,24 +33,21 @@ body
 	print-color-adjust: exact !important;
 }
 
-/* Remove website-only chrome and interactive controls. */
+/* Hide navigation, footer and screen-only controls. */
 .navbar,
 .footer,
 .skip-link,
 .hero-actions,
-.portfolio-kicker,
 .portrait-dot,
 .project-link,
-.learning-visual,
 .learning-dog-visual
 {
 	display: none !important;
 }
 
-/* Remove decorative pseudo-elements that can overlap CV text in print preview. */
+/* Hide hero decorations in print. */
 .portfolio-hero::before,
-.portfolio-hero::after,
-.portfolio-kicker::before
+.portfolio-hero::after
 {
 	content: none !important;
 	display: none !important;
@@ -92,7 +89,8 @@ main,
 	margin: 0 0 7mm !important;
 }
 
-/* ===== Compact CV Header ===== */
+/* Compact CV header. */
+/* Put the photo beside the name and bio. */
 .hero-layout
 {
 	display: grid !important;
@@ -136,6 +134,7 @@ main,
 	color: #222 !important;
 }
 
+/* Simple photo frame for the printed CV. */
 .portrait-frame
 {
 	width: 34mm !important;
@@ -191,7 +190,7 @@ main,
 	content: ": ";
 }
 
-/* ===== Shared print headings ===== */
+/* Heading style for each section. */
 .section-heading,
 .centered-heading
 {
@@ -238,7 +237,7 @@ p
 	widows: 3;
 }
 
-/* ===== About ===== */
+/* About section. */
 .about-grid
 {
 	display: block !important;
@@ -272,7 +271,7 @@ p
 	font-size: 9pt !important;
 }
 
-/* ===== Education / Involvement ===== */
+/* Education and co-curriculum: two items per row. */
 .journey-grid
 {
 	display: grid !important;
@@ -280,6 +279,7 @@ p
 	gap: 3mm 6mm !important;
 }
 
+/* Keep each education card together on one page. */
 .journey-card
 {
 	min-height: 0 !important;
@@ -324,7 +324,7 @@ p
 	margin: 0 !important;
 }
 
-/* ===== Skills ===== */
+/* Skills section. */
 .skills-layout
 {
 	display: block !important;
@@ -335,6 +335,7 @@ p
 	display: none !important;
 }
 
+/* Print skill bars in two columns. */
 .skills-panel
 {
 	display: grid !important;
@@ -375,7 +376,7 @@ p
 	overflow: visible !important;
 }
 
-/* Use a border for the filled portion because browser print dialogs may omit CSS backgrounds. */
+/* Use a border for skill levels so the bars stay visible in print. */
 .skill-progress
 {
 	display: block !important;
@@ -387,7 +388,7 @@ p
 	margin-top: 0.23mm !important;
 }
 
-/* ===== Projects ===== */
+/* Project list for the CV. */
 .project-grid
 {
 	display: grid !important;
@@ -395,6 +396,7 @@ p
 	gap: 3mm !important;
 }
 
+/* Remove website card effects for print. */
 .project-card,
 .featured-project
 {
@@ -466,7 +468,7 @@ p
 	content: " ·";
 }
 
-/* ===== Contact ===== */
+/* Contact details. */
 .contact-card
 {
 	display: grid !important;
@@ -529,7 +531,7 @@ p
 	font-size: 8.5pt !important;
 }
 
-/* Keep links readable when printed; don't append long browser URLs. */
+/* Do not print long link URLs after the text. */
 a[href]::after
 {
 	content: "" !important;

@@ -1,40 +1,51 @@
-/* jian jia's portfolio — screen styles only, navbar/palette/fonts/
-   buttons/footer all come from ../css/new_style.css. layout uses
-   custom properties, grid, flexbox, animations, the usual */
-
 :root
 {
-	/* these three were plain hex before — --portfolio-brown already
-	   tracked new_style.css's dark mode via var(), but the
-	   backgrounds didn't, so dark mode would've turned this page's
-	   text light while its cards/body stayed permanently light too */
-	--portfolio-cream: var(--cream, #fffaf3);
-	--portfolio-soft: var(--cream, #f7eee2);
-	--portfolio-card: var(--white, #ffffff);
-	--portfolio-brown: var(--brown, #4a352a);
-	--portfolio-accent: var(--accent, #a67c52);
-	--portfolio-accent-dark: var(--accent-dark, #68523b);
-	--portfolio-line: rgba(74, 53, 42, 0.14);
+	/* Main colours used across the portfolio. */
+	--portfolio-bg: #FFF8EE;
+	--portfolio-surface: #FFFDF8;
+	--portfolio-surface-alt: #F4E4D1;
+	--portfolio-surface-strong: #EBCFAF;
+	--portfolio-ink: #4A352A;
+	--portfolio-accent: #9B6C47;
+	--portfolio-accent-strong: #654630;
+	--portfolio-on-accent: #FFFFFF;
+	--portfolio-border: rgba(86, 58, 42, 0.20);
+	--portfolio-dark-panel: #3A281E;
+
 	--portfolio-shadow: 0 18px 50px rgba(59, 42, 32, 0.10);
-	--portfolio-shadow-hover: 0 24px 60px rgba(59, 42, 32, 0.16);
+	--portfolio-shadow-hover: 0 24px 60px rgba(59, 42, 32, 0.17);
 	--portfolio-radius-lg: 28px;
 	--portfolio-radius-md: 18px;
-	--portfolio-max: 1160px;
 	--portfolio-ease: 280ms ease;
+}
+
+/* Dark mode colours. */
+[data-theme="dark"]
+{
+	--portfolio-bg: #1B120D;
+	--portfolio-surface: #281C16;
+	--portfolio-surface-alt: #35241B;
+	--portfolio-surface-strong: #493124;
+	--portfolio-ink: #F3E7D8;
+	--portfolio-accent: #BD8555;
+	--portfolio-accent-strong: #E0AF7A;
+	--portfolio-on-accent: #1B120D;
+	--portfolio-border: rgba(224, 175, 122, 0.30);
+	--portfolio-dark-panel: #140D09;
+
+	--portfolio-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+	--portfolio-shadow-hover: 0 28px 68px rgba(0, 0, 0, 0.52);
 }
 
 body
 {
 	overflow-x: hidden;
-	background: var(--portfolio-cream);
+	background: var(--portfolio-bg);
 }
 
 main
 {
-	background:
-	radial-gradient(circle at 8% 14%, rgba(166, 124, 82, 0.11), transparent 24rem),
-	radial-gradient(circle at 95% 38%, rgba(74, 53, 42, 0.06), transparent 22rem),
-	var(--portfolio-cream);
+	background: var(--portfolio-bg);
 }
 
 .portfolio-section
@@ -60,10 +71,48 @@ main
 	margin: 0 auto;
 }
 
-/* ---- hero ---- */
+/* Navigation bar. */
+.portfolio-navbar .nav-link:not(.nav-cta):hover,
+.portfolio-navbar .nav-link.active
+{
+	color: var(--portfolio-accent-strong);
+}
+
+.portfolio-navbar .nav-link:not(.nav-cta)::after
+{
+	background: var(--portfolio-accent-strong);
+}
+
+.portfolio-navbar .nav-cta
+{
+	background: var(--portfolio-accent-strong);
+	color: var(--portfolio-on-accent);
+}
+
+.portfolio-navbar .nav-cta:hover
+{
+	background: var(--portfolio-accent);
+	color: var(--portfolio-on-accent);
+}
+
+/* Buttons in the hero section. */
+.portfolio-hero .btn-solid
+{
+	background: var(--portfolio-accent-strong);
+	color: var(--portfolio-on-accent);
+}
+
+.portfolio-hero .btn-solid:hover
+{
+	background: var(--portfolio-accent);
+	color: var(--portfolio-on-accent);
+}
+
+/* Hero section. */
 .portfolio-hero
 {
 	position: relative;
+	background: var(--portfolio-surface);
 	padding: 92px 0 88px;
 	overflow: hidden;
 }
@@ -83,7 +132,7 @@ main
 	height: 320px;
 	right: -130px;
 	top: 40px;
-	border: 54px solid rgba(166, 124, 82, 0.08);
+	border: 54px solid color-mix(in srgb, var(--portfolio-accent) 10%, transparent);
 }
 
 .portfolio-hero::after
@@ -92,9 +141,10 @@ main
 	height: 190px;
 	left: -95px;
 	bottom: 4px;
-	background: rgba(166, 124, 82, 0.08);
+	background: color-mix(in srgb, var(--portfolio-accent) 10%, transparent);
 }
 
+/* Two column hero layout. */
 .hero-layout
 {
 	display: grid;
@@ -103,43 +153,13 @@ main
 	align-items: center;
 }
 
-.portfolio-kicker
-{
-	font-weight: 700;
-	color: var(--portfolio-accent-dark);
-}
-
-.portfolio-kicker
-{
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	padding: 8px 14px;
-	border: 1px solid rgba(166, 124, 82, 0.25);
-	background: rgba(255, 255, 255, 0.7);
-	border-radius: 999px;
-	font-size: 0.78rem;
-	text-transform: uppercase;
-	letter-spacing: 0.12em;
-}
-
-.portfolio-kicker::before
-{
-	content: "";
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: var(--portfolio-accent);
-	box-shadow: 0 0 0 5px rgba(166, 124, 82, 0.12);
-}
-
 .portfolio-hero h1
 {
 	margin: 0 0 14px;
 	font-size: clamp(3rem, 7vw, 5.8rem);
 	line-height: 0.96;
 	letter-spacing: 0.015em;
-	color: var(--portfolio-brown);
+	color: var(--portfolio-ink);
 }
 
 .hero-tagline
@@ -147,17 +167,14 @@ main
 	max-width: 760px;
 	font-size: clamp(1.05rem, 2.2vw, 1.32rem);
 	font-weight: 700;
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 	margin-bottom: 22px;
 }
 
 .hero-bio
 {
 	max-width: 720px;
-	/* var(--text-dark), not a fixed hex — this sits directly on the
-	   page background (var(--portfolio-cream)), which does turn dark
-	   at night, so the text needs to follow it */
-	color: var(--text-dark);
+	color: var(--portfolio-ink);
 	font-size: 1.03rem;
 }
 
@@ -182,6 +199,7 @@ main
 	gap: 10px;
 }
 
+/* Small Focus card below the hero buttons. */
 .hero-facts li
 {
 	min-width: 150px;
@@ -189,18 +207,19 @@ main
 	flex-direction: column;
 	gap: 2px;
 	padding: 12px 16px;
+	border: 1px solid var(--portfolio-border);
 	border-left: 3px solid var(--portfolio-accent);
-	background: rgba(255, 255, 255, 0.62);
+	background: var(--portfolio-surface-alt);
 	border-radius: 0 12px 12px 0;
+	box-shadow: 0 6px 18px rgba(59, 42, 32, 0.07);
 }
 
-/* the 62%-white glass pill above still reads as mostly-light even
-   over a dark background at night, so the --text-muted/--portfolio-
-   brown text inside it (which turns light to match dark mode) went
-   near-invisible — swap the glass to dark instead of light */
+/* Dark mode colour for the Focus card. */
 [data-theme="dark"] .hero-facts li
 {
-	background: rgba(0, 0, 0, 0.35);
+	background: var(--portfolio-surface-strong);
+	border-color: var(--portfolio-border);
+	border-left-color: var(--portfolio-accent-strong);
 }
 
 .hero-facts strong
@@ -208,13 +227,13 @@ main
 	font-size: 0.72rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	color: var(--text-muted);
+	color: var(--portfolio-accent-strong);
 }
 
 .hero-facts span
 {
 	font-weight: 700;
-	color: var(--portfolio-brown);
+	color: var(--portfolio-ink);
 }
 
 .hero-visual
@@ -223,13 +242,14 @@ main
 	justify-content: flex-start;
 }
 
+/* Profile image frame and hover movement. */
 .portrait-frame
 {
 	position: relative;
 	width: min(100%, 410px);
 	padding: 18px;
-	background: var(--portfolio-card);
-	border: 1px solid var(--portfolio-line);
+	background: var(--portfolio-surface-alt);
+	border: 2px solid var(--portfolio-accent);
 	border-radius: 42px 42px 130px 42px;
 	box-shadow: var(--portfolio-shadow);
 	transform: rotate(1.5deg);
@@ -248,7 +268,7 @@ main
 	aspect-ratio: 4 / 5;
 	object-fit: cover;
 	border-radius: 30px 30px 112px 30px;
-	background: var(--portfolio-soft);
+	background: var(--portfolio-surface-alt);
 }
 
 .portrait-dot
@@ -277,15 +297,12 @@ main
 	animation-delay: 0.7s;
 }
 
-/* ---- about — css grid ---- */
+/* About section: two-column Grid layout. */
 .about-section
 {
-	/* var(--portfolio-card), not a fixed #fff — this stayed white at
-	   night while its h2/text (var(--portfolio-brown) etc) turned
-	   light to match the dark page, so the text vanished */
-	background: var(--portfolio-card);
-	border-top: 1px solid var(--portfolio-line);
-	border-bottom: 1px solid var(--portfolio-line);
+	background: var(--portfolio-bg);
+	border-top: 1px solid var(--portfolio-border);
+	border-bottom: 1px solid var(--portfolio-border);
 }
 
 .about-grid
@@ -309,10 +326,10 @@ main
 .about-card
 {
 	padding: 42px 44px;
-	background: linear-gradient(135deg, #f3dfc7 0%, #fbf1e4 50%, #efd2b5 100%);
+	background: linear-gradient(135deg, var(--portfolio-surface-alt) 0%, var(--portfolio-surface) 50%, var(--portfolio-surface-strong) 100%);
 	border-radius: var(--portfolio-radius-lg);
-	border: 1px solid rgba(166, 124, 82, 0.18);
-	box-shadow: 0 14px 34px rgba(59, 42, 32, 0.08);
+	border: 1px solid var(--portfolio-border);
+	box-shadow: var(--portfolio-shadow);
 }
 
 .about-card p:last-child
@@ -320,7 +337,7 @@ main
 	margin-bottom: 0;
 }
 
-/* Keep the title side clean; the biography card on the right carries the gradient. */
+/* Left side of the About section stays transparent. */
 .about-grid > .section-heading
 {
 	padding: 10px 0 0;
@@ -330,7 +347,7 @@ main
 	box-shadow: none;
 }
 
-/* CSS-only animated dog with no background panel or tail. */
+/* Animated dog decoration in the About section. */
 .learning-dog-visual
 {
 	position: relative;
@@ -374,7 +391,7 @@ main
 	width: 128px;
 	height: 20px;
 	border-radius: 50%;
-	background: rgba(91, 65, 48, 0.15);
+	background: color-mix(in srgb, var(--portfolio-accent) 28%, transparent);
 	filter: blur(2px);
 	animation: dog-shadow-pulse 2.8s ease-in-out infinite;
 }
@@ -383,7 +400,7 @@ main
 {
 	position: absolute;
 	z-index: 1;
-	color: rgba(104, 82, 59, 0.58);
+	color: var(--portfolio-accent);
 	filter: grayscale(1) sepia(0.25);
 	animation: dog-paw-float 3.2s ease-in-out infinite;
 }
@@ -405,7 +422,18 @@ main
 	animation-delay: 0.8s;
 }
 
-/* ---- education — css grid ---- */
+/* Education section and card grid. */
+.education-section
+{
+	background: var(--portfolio-surface-alt);
+}
+
+/* Education cards. */
+.education-section .journey-card
+{
+	background: var(--portfolio-surface);
+}
+/* Two cards per row on desktop. */
 .journey-grid
 {
 	display: grid;
@@ -419,9 +447,10 @@ main
 	min-height: 270px;
 	padding: 32px;
 	border-radius: var(--portfolio-radius-md);
-	background: var(--portfolio-card);
-	border: 1px solid var(--portfolio-line);
+	background: var(--portfolio-surface);
+	border: 1px solid var(--portfolio-border);
 	box-shadow: 0 8px 28px rgba(59, 42, 32, 0.06);
+	color: var(--portfolio-ink);
 	overflow: hidden;
 	transition: transform var(--portfolio-ease), box-shadow var(--portfolio-ease), border-color var(--portfolio-ease);
 }
@@ -435,20 +464,19 @@ main
 	right: -55px;
 	bottom: -55px;
 	border-radius: 50%;
-	background: rgba(166, 124, 82, 0.09);
+	background: color-mix(in srgb, var(--portfolio-accent) 12%, transparent);
 	transition: transform var(--portfolio-ease);
 }
 
+/* Hover effect on the card. */
 .journey-card:hover
 {
 	transform: translateY(-12px) scale(1.012);
-	border-color: rgba(166, 124, 82, 0.42);
-	box-shadow: 0 22px 48px rgba(59, 42, 32, 0.16);
+	border-color: var(--portfolio-accent-strong);
+	box-shadow: var(--portfolio-shadow-hover);
 }
 
-/* .reveal previously kept its final transform through animation-fill-mode,
-   which could override :hover. On journey cards we release that transform
-   after the entrance animation so the entire card can lift under the mouse. */
+/* Card hover effect after reveal. */
 .journey-card.reveal
 {
 	animation-fill-mode: backwards;
@@ -463,7 +491,7 @@ main
 {
 	display: inline-block;
 	margin-bottom: 22px;
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 	font-weight: 700;
 }
 
@@ -474,17 +502,7 @@ main
 	right: 26px;
 	font-family: var(--font-display);
 	font-size: 2rem;
-	color: rgba(166, 124, 82, 0.25);
-}
-
-/* the big "01"/"02" watermark digit above is a translucent warm
-   brown, tuned to sit softly on the light card behind it — at 25%
-   opacity it nearly disappears against the same card once its
-   background turns dark at night, so give dark mode a lighter,
-   slightly more opaque version instead */
-[data-theme="dark"] .journey-icon
-{
-	color: rgba(201, 159, 112, 0.35);
+	color: color-mix(in srgb, var(--portfolio-accent) 35%, transparent);
 }
 
 .journey-card h3
@@ -495,20 +513,22 @@ main
 
 .journey-place
 {
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 	font-weight: 700;
 }
 
+/* Co-curriculum cards. */
 .involvement-card
 {
-	/* var(--portfolio-soft), same reason as .about-section above */
-	background: var(--portfolio-soft);
+	background: var(--portfolio-surface-alt);
 }
 
 .cocurriculum-section
 {
-	padding-top: 0;
-	background: var(--portfolio-cream);
+	padding-top: 96px;
+	background: var(--portfolio-bg);
+	border-top: 1px solid var(--portfolio-border);
+	border-bottom: 1px solid var(--portfolio-border);
 }
 
 .involvement-grid
@@ -517,19 +537,14 @@ main
 	margin: 0 auto;
 }
 
-/* ---- skills ---- */
+/* Technical skills section. */
 .skills-section
 {
-	/* var(--footer-bg), not var(--nav-text) — nav-text is now
-	   theme-reactive (it lights up the navbar text at night), which
-	   flipped this panel's background from dark to light and left
-	   its light-coloured text unreadable on it. footer-bg is the
-	   fixed-dark token new_style.css keeps around for exactly this
-	   "always dark panel" case */
-	background: var(--footer-bg);
+	background: var(--portfolio-dark-panel);
 	color: var(--text-light);
 }
 
+/* Skills text and progress bars sit in two columns. */
 .skills-layout
 {
 	display: grid;
@@ -543,11 +558,18 @@ main
 	color: #fff;
 }
 
+/* Light text for labels in the Skills section. */
+.skills-section .eyebrow
+{
+	color: #E6C59F;
+}
+
 .skills-intro > p:not(.eyebrow)
 {
 	opacity: 0.82;
 }
 
+/* Skill bars. */
 .skills-panel
 {
 	display: grid;
@@ -573,6 +595,7 @@ main
 	color: #d9b993;
 }
 
+/*  Progress bar background. */
 .skill-track
 {
 	height: 10px;
@@ -581,6 +604,7 @@ main
 	background: rgba(255, 255, 255, 0.12);
 }
 
+/* Start each skill bar from 0%. */
 .skill-progress
 {
 	display: block;
@@ -592,11 +616,13 @@ main
 	transform-origin: left center;
 }
 
+/* JavaScript adds this class when the Skills section enters the screen. */
 .skills-section.skills-visible .skill-progress
 {
 	animation: skill-fill 1.2s cubic-bezier(.22,.74,.3,1) both;
 }
 
+/* Small delay between each progress bar. */
 .skills-section.skills-visible .skill-item:nth-child(2) .skill-progress
 {
 	animation-delay: 0.08s;
@@ -618,10 +644,10 @@ main
 	animation-delay: 0.40s;
 }
 
-/* ---- projects — css grid ---- */
+/* Project cards: three-column Grid layout on desktop. */
 .projects-section
 {
-	background: var(--portfolio-cream);
+	background: var(--portfolio-surface-alt);
 }
 
 .project-grid
@@ -632,55 +658,54 @@ main
 	align-items: stretch;
 }
 
+/* Shared style for all project cards. */
 .project-card
 {
 	display: flex;
 	flex-direction: column;
 	min-height: 430px;
 	padding: 30px;
-	background: var(--portfolio-card);
-	border: 1px solid var(--portfolio-line);
+	background: var(--portfolio-surface);
+	border: 1px solid var(--portfolio-border);
 	border-radius: var(--portfolio-radius-lg);
 	box-shadow: 0 8px 26px rgba(59, 42, 32, 0.055);
+	color: var(--portfolio-ink);
 	transition: transform var(--portfolio-ease), box-shadow var(--portfolio-ease), border-color var(--portfolio-ease);
 }
 
-/* Release the entrance animation transform after it finishes so hover scaling can take over. */
+/* Ensure hover movement after the reveal animation. */
 .project-card.reveal
 {
 	animation-fill-mode: backwards;
 }
 
+/* Project card hover effect. */
 .project-card:hover
 {
 	position: relative;
 	z-index: 2;
 	transform: translateY(-15px) scale(1.035);
-	box-shadow: 0 32px 72px rgba(59, 42, 32, 0.24);
-	border-color: rgba(166, 124, 82, 0.50);
+	box-shadow: var(--portfolio-shadow-hover);
+	border-color: var(--portfolio-accent-strong);
 }
 
+/* Different surface colour for the SentimentFlow card. */
 .featured-project
 {
-	/* var(--portfolio-soft), same "fixed light hex behind reactive
-	   text" bug as the section backgrounds above */
-	background: var(--portfolio-soft);
-	color: var(--portfolio-brown);
-	border-color: rgba(166, 124, 82, 0.24);
+	background: var(--portfolio-surface-strong);
+	color: var(--portfolio-ink);
+	border-color: var(--portfolio-accent);
 }
 
 .featured-project h3,
 .featured-project .project-number
 {
-	color: var(--portfolio-brown);
+	color: var(--portfolio-ink);
 }
 
 .featured-project .project-type
 {
-	/* var(--portfolio-accent-dark), not a fixed hex — matches the
-	   non-featured .project-type below and tracks the (now reactive)
-	   .featured-project background instead of assuming it stays light */
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 }
 
 .project-topline
@@ -696,7 +721,7 @@ main
 {
 	font-family: var(--font-display);
 	font-size: 1.7rem;
-	color: var(--portfolio-accent);
+	color: var(--portfolio-accent-strong);
 }
 
 .project-type
@@ -705,7 +730,7 @@ main
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.09em;
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 }
 
 .project-card h3
@@ -730,16 +755,16 @@ main
 {
 	padding: 6px 10px;
 	border-radius: 999px;
-	background: var(--portfolio-soft);
-	color: var(--portfolio-brown);
+	background: var(--portfolio-surface-alt);
+	color: var(--portfolio-ink);
 	font-size: 0.72rem;
 	font-weight: 700;
 }
 
 .featured-project .project-tags span
 {
-	background: rgba(255, 255, 255, 0.58);
-	color: var(--portfolio-brown);
+	background: var(--portfolio-surface);
+	color: var(--portfolio-ink);
 }
 
 .project-link
@@ -748,7 +773,7 @@ main
 	align-items: center;
 	gap: 7px;
 	width: fit-content;
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 	font-weight: 700;
 	transition: gap var(--portfolio-ease), color var(--portfolio-ease);
 }
@@ -756,12 +781,12 @@ main
 .project-link:hover
 {
 	gap: 12px;
-	color: var(--portfolio-accent);
+	color: var(--portfolio-ink);
 }
 
 .featured-project .project-link
 {
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 }
 
 .project-link-static
@@ -769,11 +794,12 @@ main
 	cursor: default;
 }
 
-/* ---- contact — flexbox ---- */
+/* Contact section: Flexbox layout. */
 .contact-section
 {
 	padding-top: 72px;
 	padding-bottom: 110px;
+	background: var(--portfolio-bg);
 }
 
 .contact-card
@@ -783,8 +809,8 @@ main
 	align-items: center;
 	gap: 44px;
 	padding: 42px 46px;
-	background: linear-gradient(135deg, #efe0cd 0%, #fbf6ef 100%);
-	border: 1px solid rgba(166, 124, 82, 0.20);
+	background: linear-gradient(135deg, var(--portfolio-surface-strong) 0%, var(--portfolio-surface) 100%);
+	border: 1px solid var(--portfolio-border);
 	border-radius: var(--portfolio-radius-lg);
 }
 
@@ -801,12 +827,13 @@ main
 	min-width: min(100%, 335px);
 }
 
+/* Email and phone contact blocks. */
 .contact-item
 {
 	display: flex;
 	flex-direction: column;
 	padding: 13px 16px;
-	background: rgba(255, 255, 255, 0.72);
+	background: var(--portfolio-surface);
 	border-radius: 14px;
 	border: 1px solid transparent;
 	transition: transform var(--portfolio-ease), border-color var(--portfolio-ease), background var(--portfolio-ease);
@@ -815,8 +842,8 @@ main
 .contact-item:hover
 {
 	transform: translateX(-6px);
-	background: #fff;
-	border-color: rgba(166, 124, 82, 0.28);
+	background: var(--portfolio-surface-strong);
+	border-color: var(--portfolio-accent);
 }
 
 .phone-copy
@@ -830,7 +857,7 @@ main
 
 .phone-copy:focus-visible
 {
-	outline: 3px solid rgba(166, 124, 82, 0.42);
+	outline: 3px solid color-mix(in srgb, var(--portfolio-accent) 55%, transparent);
 	outline-offset: 3px;
 }
 
@@ -838,7 +865,7 @@ main
 {
 	min-height: 1em;
 	margin-top: 2px;
-	color: var(--portfolio-accent-dark);
+	color: var(--portfolio-accent-strong);
 	font-size: 0.72rem;
 	font-weight: 700;
 }
@@ -852,7 +879,7 @@ main
 	font-weight: 700;
 }
 
-/* ---- animations / transitions ---- */
+/* Entrance and decorative animations. */
 .reveal
 {
 	animation: rise-in 0.72s ease both;
@@ -893,6 +920,7 @@ main
 	}
 }
 
+/* Fill the progress bar from 0% to its specific percentage. */
 @keyframes skill-fill
 {
 	from
@@ -957,7 +985,7 @@ main
 	}
 }
 
-/* ---- responsive layout ---- */
+/* Tablet layout. */
 @media (max-width: 980px)
 {
 	.portfolio-section
@@ -1016,6 +1044,7 @@ main
 	}
 }
 
+/* Mobile layout. */
 @media (max-width: 700px)
 {
 	.portfolio-hero
@@ -1081,6 +1110,7 @@ main
 	}
 }
 
+/* Small phone layout. */
 @media (max-width: 480px)
 {
 	.portfolio-section
@@ -1088,12 +1118,7 @@ main
 		padding: 62px 0;
 	}
 
-	.portfolio-kicker
-	{
-		font-size: 0.67rem;
-	}
-
-	.portfolio-hero h1
+.portfolio-hero h1
 	{
 		font-size: 2.9rem;
 	}
@@ -1107,64 +1132,4 @@ main
 	{
 		margin-bottom: 30px;
 	}
-}
-
-/* Accessible reduced-motion fallback. */
-@media (prefers-reduced-motion: reduce)
-{
-	.reveal,
-	.portrait-dot,
-	.skill-progress,
-	.dog-bubble,
-	.dog-face,
-	.dog-shadow,
-	.dog-paw
-	{
-		animation: none !important;
-	}
-
-	.skill-progress
-	{
-		transform: scaleX(1) !important;
-	}
-
-	.journey-card,
-	.project-card,
-	.portrait-frame,
-	.contact-item
-	{
-		transition: none !important;
-	}
-}
-
-/* ---- dark-mode patches ----
-   a few backgrounds above are multi-stop gradients or translucent
-   white panels that can't just swap in a single var() like the
-   solid-colour ones did — they stayed permanently light and their
-   var(--portfolio-brown)/var(--text-muted) text turned invisible on
-   them at night. overriding just these here instead of rewriting the
-   gradients themselves, so the light-mode look is untouched. */
-[data-theme="dark"] .about-card
-{
-	background: linear-gradient(135deg, var(--portfolio-soft) 0%, var(--portfolio-card) 50%, var(--portfolio-soft) 100%);
-}
-
-[data-theme="dark"] .contact-card
-{
-	background: linear-gradient(135deg, var(--portfolio-soft) 0%, var(--portfolio-card) 100%);
-}
-
-[data-theme="dark"] .contact-item
-{
-	background: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .contact-item:hover
-{
-	background: rgba(255, 255, 255, 0.14);
-}
-
-[data-theme="dark"] .featured-project .project-tags span
-{
-	background: rgba(255, 255, 255, 0.12);
 }
