@@ -180,14 +180,18 @@
 
 </main>
 
+<!-- same footer structure every page uses, styling lives in
+		 new_style.css, only the content here changes -->
 <footer class="footer">
 	<div class="section-container footer-grid">
+		<!-- Brand + address block -->
 		<div class="footer-brand">
 			<span class="logo-text footer-logo">PAWFEE CAFÉ</span>
 			<p>123 Bark Street, Selangor, Malaysia</p>
 			<p>Open daily · 11am – 9pm</p>
 		</div>
 
+		<!-- Site navigation, duplicated from the navbar for convenience -->
 		<div class="footer-links">
 			<h4>Explore</h4>
 			<a href="index.html">Home</a>
@@ -197,15 +201,13 @@
 			<a href="register.html">Join Us</a>
 		</div>
 
+		<!-- Social links. "#" is a placeholder — swap in the real
+				 Instagram profile URL when the café has one. -->
 		<div class="footer-social">
 			<h4>Follow along</h4>
 			<div class="social-icons">
 				<a href="#" class="social-link" aria-label="Instagram">
-					<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-						<rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-						<circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
-						<circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
-					</svg>
+					<img class="social-icon" src="../images/instagram.svg" alt="" aria-hidden="true">
 					<span class="social-label">Instagram</span>
 				</a>
 			</div>
