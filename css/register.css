@@ -67,10 +67,8 @@
 
 .progress-step.active span
 {
-	/* var(--color-primary-dark) — this label sits on the page
-	   background, which does turn dark at night, unlike the dot's
-	   own fixed background above. --color-primary-dark aliases
-	   var(--brown) so it flips light to match. */
+	/* var(--color-primary-dark) — sits on the page background, which
+	   turns dark at night, unlike the dot's fixed background above */
 	color: var(--color-primary-dark);
 	font-weight: 600;
 }

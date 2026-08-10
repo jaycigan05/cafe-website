@@ -22,11 +22,8 @@ body
 	box-shadow: 0 18px 40px var(--shadow-medium);
 }
 
-/* --brown flips to a light cream at night (it doubles as heading
-   text elsewhere), which turned this gradient half-black/half-cream
-   instead of the uniformly dark banner the white hero text expects.
-   pinning it back to its light-mode shade here keeps this banner
-   dark in both themes, same idea as the reviews-page video hero. */
+/* --brown flips light at night, which broke this gradient — pin it
+   to its light-mode shade so the banner stays dark in both themes */
 [data-theme="dark"] .portfolioContainer1
 {
 	background:linear-gradient(135deg,var(--mocha),#4a352a);
@@ -185,10 +182,8 @@ body
 }
 
 /* ---------- About Section Layout ----------
-   My Story on its own full-width row, Education + Interests as a
-   matched pair below it — those two are both short fact-lists (same
-   kind of content), so pairing them separately from the prose story
-   card reads more natural than forcing all 3 into one row */
+   My Story full-width on top, Education + Interests paired below —
+   those two are both short fact-lists, so they read better together */
 .aboutLayout
 {
 	display:grid;
@@ -260,11 +255,8 @@ body
 }
 
 /* ---------- Education Timeline ----------
-   a slim vertical stepper with a year badge on each step — deliberately
-   not the card-grid Jian Jia uses or the glowing-star line Xiao Yan
-   uses for their own education sections, just a plain connected list
-   that fits inside this existing Education card instead of needing
-   its own full-width section */
+   a slim vertical stepper with a year badge per step — deliberately
+   not Jian Jia's card-grid or Xiao Yan's glowing-star line */
 .eduTimeline
 {
 	list-style:none;

@@ -10,31 +10,21 @@
 	   mode reaches it too, instead of every card staying stuck light
 	   while its text (var(--text-dark) etc) turns light and vanishes */
 	--blush:       #e4b4a3;
-	/* "For Dogs" accent + link underline — this one stays a fixed pale
-	   tan on purpose, it's used as text on the hero-podium's fixed
-	   dark photo overlay, not on a card, so it must NOT track the
-	   theme (see .hero-podium .hero-eyebrow etc below) */
+	/* "For Dogs" accent + link underline — fixed pale tan on purpose,
+	   sits on the hero-podium's fixed dark photo overlay, not a card */
 	--line:        #EEDCC6;
-	/* card borders/dividers — var(--accent), not --line. --line only
-	   hits ~1.3:1 against a card background (it's tuned to sit on the
-	   dark hero photo instead), well under the 3:1 WCAG minimum for a
-	   UI border, so card outlines were barely visible. --accent
-	   already flips lighter at night too. */
+	/* card borders/dividers — var(--accent), not --line (only ~1.3:1
+	   against a card, tuned for the dark hero photo instead) */
 	--card-border: var(--accent);
 	--shadow-soft: 0 8px 22px rgba(74,53,42,.10);
 	/* light card shadow, menu-only for now */
-	/* var(--accent-dark), not a fixed hex — the old #7A4A22 only hit
-	   ~1.9:1 against the dark-mode background, under the 3:1 WCAG
-	   needs for a focus indicator; accent-dark already flips lighter
-	   at night so it stays visible against the darker page */
+	/* var(--accent-dark), not a fixed hex — old #7A4A22 only hit ~1.9:1
+	   in dark mode, under the 3:1 WCAG minimum for a focus ring */
 	--focus-ring: 3px solid var(--accent-dark);
 }
 
-/* --shadow-soft above is a fixed 10%-opacity dark-brown shadow — reads
-   fine as a soft drop shadow against the light page, but that same
-   10% opacity is basically imperceptible once the page and card
-   behind it are both already dark. Boost it for dark mode instead of
-   trying to make one shadow value work for both. */
+/* --shadow-soft's 10% opacity reads fine on the light page but is
+   nearly invisible once the page and card are both already dark */
 [data-theme="dark"]
 {
 	--shadow-soft: 0 8px 22px rgba(0,0,0,.45);
@@ -569,10 +559,8 @@
 	color: var(--brown);
 }
 
-/* Custom accessible dropdown — a native <select>'s popup list
-   can't be restyled consistently across browsers, so this is a
-   hand-built listbox instead (button + ul[role=listbox]), fully
-   stylable and still keyboard accessible (see menu.js). */
+/* hand-built listbox (button + ul[role=listbox]) instead of a native
+   <select>, which can't be restyled consistently — see menu.js */
 .custom-select
 {
 	position:relative;
@@ -719,10 +707,8 @@
 	min-height:0;
 }
 
-/* Live result-count text, shown above the grid. Updated in
-   renderGrid() (menu.js). role="status" + aria-live="polite" on
-   the element itself (see menu.html) means screen readers hear
-   the update too, not just see it. */
+/* live result-count above the grid, updated in renderGrid() (menu.js).
+   role="status" + aria-live="polite" in menu.html so screen readers hear it too */
 .results-status
 {
 	margin:4px 4px 0;
@@ -891,10 +877,8 @@
 	flex-wrap:wrap;
 }
 
-/* Font sizes below use cqw (container query width units) instead of
-   vw/rem breakpoints — text scales to how wide THIS card currently
-   is in the grid, not the browser window, so it stays readable
-   whether the grid is showing 1, 2, 3 or 4 columns. */
+/* cqw units, not vw/rem — text scales to the card's own width,
+   not the browser window, so it stays readable at 1-4 columns */
 .card-body h3
 {
 	font-size:clamp(1rem,5.8cqw,1.25rem);
@@ -967,10 +951,8 @@
 	margin-bottom:10px;
 }
 
-/* touchscreens don't really have "hover" and iOS Safari can get a
-   tap stuck in :hover state, so gate the decorative hover effects
-   behind this query. nothing important (name/price/desc/badge)
-   actually depends on hover, so touch devices don't lose anything */
+/* iOS Safari can get a tap stuck in :hover, so decorative hover
+   effects are gated behind this — nothing important depends on hover */
 @media (hover:hover) and (pointer:fine)
 {
 	.category-card:hover
@@ -981,10 +963,8 @@
 
 	.menu-card:hover .card-shape
 	{
-		/* var(--cream-card), not a fixed hex — this stayed near-white on
-		   hover even in dark mode, while the card's dish name/price
-		   (var(--text-dark) etc) turned light to match the dark card,
-		   so hovering made the text nearly disappear */
+		/* var(--cream-card), not a fixed hex — stayed near-white on
+		   hover even in dark mode, making the light dish text vanish */
 		background:var(--cream-card);
 		transform:scale(1.03);
 		box-shadow:var(--shadow);

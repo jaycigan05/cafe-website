@@ -2,12 +2,9 @@
 
 /* page header — styled to match the Menu page's hero: dark banner, big centered heading, with two small jumping paw-print icons flanking the text. */
 
-/* Same treatment as the Menu page's hero (.hero-podium in menu.css):
-   a dark gradient laid over a photo so the light heading text stays
-   readable while the photo still shows through.
-   Expects an image at images/team_bg.png — that file isn't in the
-   project yet, so add it there (same folder as cafe-interior.jpg)
-   or this will just show the gradient with no photo behind it. */
+/* same treatment as the Menu hero (.hero-podium) — dark gradient over
+   a photo so the light heading stays readable. expects images/team_bg.png,
+   which isn't in the project yet — add it or this just shows the gradient */
 .page-header
 {
 	background-image:
@@ -48,10 +45,8 @@
 	flex-wrap: wrap;
 }
 
-/* Jumping paw-print icons beside the heading — copied from the
-   Menu page's "Our Menu" title (see .menu-paws / .paw-step-* in
-   menu.css). Each size floats on its own timing/delay so the
-   motion reads as loosely "walking" rather than perfectly synced. */
+/* jumping paw-print icons, copied from Menu's .menu-paws/.paw-step-* —
+   each size floats on its own delay so it reads as "walking" */
 .team-paws
 {
 	display: inline-flex;
@@ -234,14 +229,9 @@
 	transition: transform var(--transition);
 }
 
-/* Hidden detail panel: position, contribution, portfolio link.
-   team.js never actually adds an .expanded class (the card's real
-   "expanded" view is the popup modal, which duplicates this content
-   instead) — so this panel is permanently collapsed. max-height/
-   opacity alone only hide it visually though; the real <a> link
-   inside it stayed in the keyboard tab order the whole time, so
-   Tab silently walked through an invisible link on every single
-   card. visibility:hidden removes it from the tab order too. */
+/* permanently collapsed — the real "expanded" view is the popup modal.
+   visibility:hidden (not just opacity/max-height) keeps its <a> link
+   out of the tab order while collapsed */
 .staff-details
 {
 	max-height: 0;

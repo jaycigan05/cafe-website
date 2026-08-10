@@ -1,54 +1,27 @@
-/* xiao yan's portfolio — loads after new_style.css, which already
-   covers fonts/colours/navbar/buttons/footer/resets, none of that
-   repeated here. kept simple on purpose: no JS-driven scroll
-   effects, education timeline is plain CSS, hero name hover is one
-   rule on the whole heading, skills/projects are hand-written
-   markup rather than JS-rendered */
+/* xiao yan's portfolio — loads after new_style.css (fonts/colours/
+   navbar/buttons/footer/resets). no JS-driven scroll effects; the
+   education timeline, skills and projects are all plain CSS/markup. */
 
 :root
 {
-	/* Lighter panel-background tones — new_style.css's lightest tokens
-	 (--cream, --text-light) are meant for backgrounds/text at body
-	 scale, not for a contained card/section background, so these
-	 fill a genuine gap rather than duplicating an existing colour.
-	 --pf-light aliases var(--white) so the Technical Skills panel
-	 still tracks dark mode — it was a plain hex before, which stayed
-	 light at night while its --text-dark labels turned light too and
-	 disappeared. */
+	/* panel-background tones — a step lighter than the shared tokens,
+	   for card/section backgrounds rather than body-level ones.
+	   --pf-light aliases var(--white) so it still tracks dark mode. */
 	--pf-light: var(--white, #E1C8B1);
 	--pf-pale:  #F7E8BE;
 	--pf-dusty: #CCB6A9;
 
-	/* Heavier elevation than new_style.css's own --shadow (which is
-	 tuned for small UI elements like buttons) — used here for the
-	 hero photo / education photos / project cards, which want more
-	 dramatic depth to read as portfolio-grade per the I1 rubric. */
+	/* heavier shadow than the shared --shadow, for hero/edu/project photos */
 	--pf-shadow:      0 16px 36px rgba(74,46,31,.16);
 	--pf-shadow-soft: 0 8px 22px rgba(74,46,31,.08);
 
-	/* new_style.css's a11y helpers reference var(--focus-ring) but
-	 never define it — without this, focus outlines don't render
-	 anywhere on the site. Defined here so at least this page's
-	 keyboard focus is visible. */
+	/* new_style.css references var(--focus-ring) but never defines it —
+	   without this, keyboard focus wouldn't be visible on this page */
 	--focus-ring: 3px solid var(--nav-accent-dark);
 
-	/* ---------------------------------------------------------
-	 LAYOUT TOKENS — page-specific, deliberately NOT in new_style.css
-	 new_style.css defines colour/font/shadow tokens but nothing for
-	 radius, spacing rhythm, or transition timing, so this page's
-	 layout values were previously hardcoded in ~15 different rules
-	 (22px here, 16px there, .3s in one place, .2s in another) with
-	 no single source of truth. Centralising them here means:
-	   (a) every radius/gap/timing on this page traces back to one
-		   definition (satisfies "Consistent use of variables
-		   throughout the page" in I2), and
-	   (b) they're intentionally distinct from --radius (12px) and
-		   --transition (.25s) in new_style.css — this page wants a
-		   softer, slightly slower feel for its cards/photos than the
-		   site's default buttons/nav use, so these are NOT aliases
-		   of the shared tokens, they're genuinely this page's own
-		   design decision.
-	 --------------------------------------------------------- */
+	/* page-specific layout tokens (radius/spacing/timing) — new_style.css
+	   doesn't define these, and this page wants a softer/slower feel
+	   than the site's default buttons/nav, so these aren't shared aliases */
 	--pf-radius-lg: 22px;
 	/* bio panel, section-alt block */
 	--pf-radius-md: 16px;
@@ -203,10 +176,7 @@ button
 	justify-content:center;
 }
 
-/* Was an unstyled wrapper div — now controls the vertical rhythm
-   between name/role/bio/actions in one place instead of each child
-   managing its own margin-top. Reuses --pf-gap-card so the token
-   gets a second, genuine use rather than sitting on just one rule. */
+/* controls vertical rhythm between name/role/bio/actions in one place */
 .hero-text
 {
 	display:flex;
@@ -333,10 +303,7 @@ button
 	object-fit:contain;
 }
 
-/* education — plain static timeline, pure css.
-   the line runs top:0 to bottom:0 of .edu-timeline directly — no JS
-   measurement needed since items are always in normal flow at their
-   final size, nothing here gets revealed/animated in */
+/* education — plain static timeline, pure CSS, no JS positioning */
 .edu-timeline
 {
 	--edu-col: clamp(30px, 6vw, 42px);

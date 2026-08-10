@@ -74,11 +74,8 @@
 	gap: var(--space-xs);
 }
 
-/* CV/GitHub/LinkedIn/Email buttons here are icon-only (no visible
-   label — the icon speaks for itself, and each link still has its
-   own aria-label for screen readers). .btn's default padding assumes
-   icon + text side by side, so square it off and drop the icon's
-   margin-right, which only made sense next to text that's gone now */
+/* icon-only buttons (each link has its own aria-label) — square off
+   .btn's padding and drop the icon's margin-right, both meant for text */
 .p-hero-actions .btn
 {
 	padding: 13px;
@@ -166,10 +163,8 @@
 	margin-bottom: 2px;
 }
 
-/* centred intro line under a section heading — used under Skills,
-   Projects and Recent Activity's <h2>. was only ever in the HTML,
-   never actually had a rule here, so it was just falling back to the
-   plain <p> default (left-aligned, no muted colour) */
+/* centred intro line under Skills/Projects/Recent Activity's <h2> —
+   was only ever in the HTML, had no rule, fell back to plain <p> */
 .section-subtitle
 {
 	text-align: center;
@@ -291,11 +286,8 @@
 .p-project-image
 {
 	width: calc(100% + 2 * var(--space-md));
-	/* new_style.css's global "img { max-width:100% }" reset was
-	   clamping this back down to 100% — the negative side margins
-	   below still pulled it left, but with nothing left to stretch
-	   into on the right, so every photo ended up hugging the left
-	   edge with a gap on the right instead of bleeding edge-to-edge */
+	/* global img{max-width:100%} was clamping this — the negative
+	   margins below still pulled it left, hugging the left edge */
 	max-width: none;
 	height: 160px;
 	object-fit: cover;

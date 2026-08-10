@@ -70,10 +70,8 @@
 	left:50%;
 	transform:translateX(-50%);
 	text-align:center;
-	/* fixed white — this text sits on the video's dark gradient
-	   overlay (.reviewHero::before), not the page background, so it
-	   needs to stay light in both themes, not follow var(--white)
-	   into a dark colour at night */
+	/* fixed white — sits on the video's dark overlay, not the page
+	   background, so it must stay light in both themes */
 	color:#fff;
 	z-index:2;
 	width:90%;
@@ -335,10 +333,7 @@ meter::-webkit-meter-optimum-value
 	border-radius:12px;
 	border:2px solid var(--accent);
 	background:var(--white);
-	/* explicit, not relying on inheritance — <select> text colour
-	   doesn't reliably inherit from the page in every browser, which
-	   could leave it stuck at the browser's default text colour
-	   instead of following the theme like its background does */
+	/* explicit — <select> text colour doesn't reliably inherit in every browser */
 	color:var(--text-dark);
 	font-size:16px;
 	cursor:pointer;
@@ -541,10 +536,8 @@ meter::-webkit-meter-optimum-value
 .reviewForm textarea,
 .reviewForm select
 {
-	/* explicit, not just relying on the flex column's default
-	   align-items:stretch — makes sure these never sit narrower (or,
-	   with a stray min-width somewhere, wider) than the form itself
-	   on small screens */
+	/* explicit, not just the flex column's default stretch — keeps
+	   these matched to the form's width on small screens */
 	width:100%;
 	box-sizing:border-box;
 	padding:15px;
@@ -649,10 +642,8 @@ meter::-webkit-meter-optimum-value
 .popupContent button:hover
 {
 	background:var(--mocha);
-	/* mocha stays a near-black brown in dark mode (fixed-dark by
-	   design), but the button's base text is var(--white), which
-	   flips dark at night too — pin it white here so hover doesn't
-	   go dark-on-dark */
+	/* mocha stays near-black in dark mode; pin text white so hover
+	   doesn't go dark-on-dark */
 	color:#fff;
 }
 

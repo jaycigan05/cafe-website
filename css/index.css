@@ -209,8 +209,6 @@
 	border-radius: 0;
 	background: none;
 	transform: translateX(1px);
-	/* phone.svg/arrow.svg use stroke="currentColor", which <img> can't
-	 inherit — filter forces the icon to match the button's white color. */
 	filter: brightness(0) invert(1);
 }
 
@@ -223,7 +221,6 @@
 	bottom: 16px;
 }
 
-/* Dot indicators sit immediately to the left of the bottom-right next arrow. */
 .about-image-dots
 {
 	position: absolute;
@@ -268,13 +265,6 @@
 	max-width: 440px;
 }
 
-/* .btn-ghost should only change text colour on hover, no
-   background. but new_style.css's shared .btn:hover always sets a
-   background (even on .btn-ghost), and its own .btn-ghost:hover
-   points at an undefined --brown-dark var — so ghost buttons here
-   were rendering as solid blocks instead of just changing colour.
-   fixing it locally with higher specificity instead of touching
-   the shared file */
 
 .about-content .btn-ghost,
 .center-btn .btn-ghost
@@ -317,13 +307,6 @@
 	padding: 100px 0;
 }
 
-/* ---------------------------------------------------------
-   TOP-SELLER PODIUM + HUMANS/DOGS TOGGLE
-   Copied from the Menu page's Top Sellers section. The toggle
-   is built with hidden radio inputs + labels (the ":checked ~"
-   trick) so switching between "For Humans" and "For Dogs" works
-   with pure CSS — no JavaScript required.
-   --------------------------------------------------------- */
 .podium-toggle-input
 {
 	position: absolute;
@@ -394,11 +377,8 @@
 	color: var(--white);
 }
 
-/* Only one podium shows at a time, based on which radio is checked.
-   NOTE: uses the compound selector ".podium.podium-dog" (not just
-   ".podium-dog") so it reliably beats the later ".podium { display:
-   flex }" rule below regardless of source order — otherwise both
-   podiums stayed visible in the default "For Humans" state. */
+/* ".podium.podium-dog" (not just ".podium-dog") so it reliably beats
+   the ".podium { display:flex }" rule below regardless of source order */
 .podium.podium-dog
 {
 	display: none;
@@ -612,10 +592,6 @@
 {
 	font-family: var(--font-display);
 	font-size: 2.1rem;
-	/* var(--text-dark), not var(--mocha) — mocha stays a near-black
-	   brown in dark mode (it's meant for fixed-dark surfaces), which
-	   went nearly invisible against this section's cream background
-	   once the cream itself turned dark too */
 	color: var(--text-dark);
 	margin-bottom: 10px;
 }

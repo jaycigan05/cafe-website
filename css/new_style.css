@@ -12,18 +12,12 @@
 	--accent: #A67C52;
 	--accent-dark: #68523B;
 	--text-dark: #3E2C23;
-	/* darkened from #AA947B — the old shade only hit ~2.9:1 against
-	   white and ~2.4:1 against cream, well under WCAG AA's 4.5:1 for
-	   body text. this is used all over (staff roles, card captions,
-	   hints etc) so fixing it here covers every spot at once. */
+	/* darkened from #AA947B — old shade only hit ~2.9:1, under AA's 4.5:1 */
 	--text-muted: #6E604F;
 	--text-light: #E9D9C4;
 
-	/* the :focus-visible rule further down references this but never
-	   defined it — menu.css and xiao_yan.css each set their own local
-	   copy, but every other page had no keyboard focus ring at all
-	   (var() with an undefined custom property resolves to "invalid",
-	   not to some sensible default, so outline just came out blank) */
+	/* :focus-visible below used this but never defined it — other pages
+	   had no keyboard focus ring at all until this was added */
 	--focus-ring: 3px solid var(--accent-dark);
 
 	/* ---- Theme fonts ---- */
@@ -67,10 +61,8 @@
 }
 
 /* ---- dark mode ----
-   toggled by js/theme.js, which sets data-theme="dark" on <html> and
-   remembers the choice in localStorage. --footer-bg and
-   --color-primary (button colour) stay as-is on purpose — both
-   already read fine on a dark page without changing. */
+   toggled by js/theme.js, sets data-theme="dark" on <html>, remembered
+   in localStorage. --footer-bg and --color-primary stay fixed on purpose. */
 [data-theme="dark"]
 {
 	--cream: #23201c;
@@ -106,12 +98,8 @@
 	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* bumping the root font-size to 18px scales every rem value on the
-   site up ~12.5% in one place, instead of touching every clamp()/rem
-   in menu.css etc individually. needed this because Mogra/Patrick
-   Hand/Coiny just look smaller than Open Sans/Karla did at the same
-   size — text was reading as too small even though nothing was
-   actually wrong */
+/* 18px root scales every rem site-wide ~12.5% up — Mogra/Patrick
+   Hand/Coiny read smaller than a default sans at the same size */
 html
 {
 	font-size: 18px;
@@ -138,9 +126,7 @@ img
 	display: block;
 }
 
-/* a11y helpers: skip link, screen-reader-only text, focus ring.
-   should probably move to their own a11y.css eventually — don't
-   delete these without checking every page still has them */
+/* a11y helpers: skip link, screen-reader-only text, focus ring */
 .visually-hidden
 {
 	position:absolute;
@@ -167,10 +153,7 @@ a:focus-visible, button:focus-visible, input:focus-visible,
 	position:absolute;
 	left:12px;
 	top:-60px;
-	/* fixed dark bg + white text on purpose, same in both themes —
-	   a11y overlay needs to stay high-contrast, not track the theme
-	   (var(--text-dark) turns light in dark mode, which would've
-	   left white text nearly invisible on a light pill) */
+	/* fixed dark bg + white text on purpose — stays high-contrast in both themes */
 	background:#2E2D2B;
 	color:#fff;
 	padding:10px 16px;
@@ -507,15 +490,8 @@ h2.center
 	background: var(--accent);
 }
 
-/* for light backgrounds (register card, team cards). pages with a
-   dark hero etc need their own override, see below.
-   uses --color-primary-dark (aliased to var(--brown), reactive)
-   rather than --color-primary — this button's background is
-   transparent, so it sits directly on whatever card/page background
-   is behind it, and that background does turn dark at night. plain
-   --color-primary stays a fixed medium brown forever, which read
-   fine on the "light backgrounds" this comment mentions right up
-   until those backgrounds started turning dark too. */
+/* for light backgrounds — uses --color-primary-dark, not the fixed
+   --color-primary, since this transparent bg tracks the page behind it */
 .btn-outline
 {
 	background: transparent;
@@ -665,10 +641,8 @@ h2.center
 .footer-links h4,
 .footer-social h4
 {
-	/* var(--text-light) + higher opacity, not var(--accent) at 0.6 —
-	   that combo landed around 2.2:1 on the footer's dark background,
-	   nowhere near AA's 4.5:1 for text this small. text-light is what
-	   the rest of the footer already uses for exactly this reason. */
+	/* var(--text-light), not var(--accent) at 0.6 opacity — that combo
+	   only hit ~2.2:1 on the footer's dark background */
 	color: var(--text-light);
 	font-size: 0.85rem;
 	text-transform: uppercase;

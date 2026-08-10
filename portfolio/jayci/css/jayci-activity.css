@@ -1,9 +1,5 @@
-/* ============================================================
-   JAYCI GAN - Activity detail page styles
-   Shared by jayci-seed.html, jayci-saibc.html, jayci-ethglobal.html
-   and jayci-amback.html. Relies on new_style.css for the design
-   tokens (colours, spacing, .btn, .eyebrow, .container).
-   ============================================================ */
+/* activity detail pages (seed/saibc/ethglobal/amback) — relies on
+   new_style.css for colours, spacing, .btn, .eyebrow, .container */
 
 .activity-hero
 {
